@@ -7,6 +7,10 @@ import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
 import ballImage from "@/assets/product-ball.jpg";
+import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
+import autoSparesImage from "@/assets/product-auto-spares.jpg";
+import serviceKitsImage from "@/assets/product-service-kits.jpg";
+import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 
 const Home = () => {
   const products = [
@@ -33,22 +37,22 @@ const Home = () => {
     {
       title: "Mechanical Tools",
       description: "Professional-grade tools for industrial maintenance",
-      image: valveImage,
+      image: mechanicalToolsImage,
     },
     {
       title: "Auto Spares",
       description: "Quality automotive spare parts and components",
-      image: steamImage,
+      image: autoSparesImage,
     },
     {
       title: "Service Kits",
       description: "Complete maintenance and repair kits",
-      image: gasketsImage,
+      image: serviceKitsImage,
     },
     {
       title: "Fault Recognition Devices",
       description: "Advanced diagnostic and monitoring equipment",
-      image: ballImage,
+      image: faultDevicesImage,
     },
   ];
 
