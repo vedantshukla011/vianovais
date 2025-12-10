@@ -36,7 +36,7 @@ const Home = () => {
     {
       icon: Shield,
       title: "Quality Assured",
-      description: "Compliance with ASTM, ASME, API, and BS international standards",
+      description: "ISO 9001 certified with compliance to ASTM, ASME, API, and BS international standards",
     },
     {
       icon: Factory,
@@ -45,7 +45,7 @@ const Home = () => {
     },
     {
       icon: Zap,
-      title: "40+ Years",
+      title: "25+ Years",
       description: "Decades of expertise in industrial flow solutions",
     },
   ];
