@@ -15,7 +15,7 @@ export const Navigation = () => {
               ViaNova Industrial Solutions
             </div>
             <span className="text-xs text-muted-foreground hidden md:block">
-              A UV TEST SOLUTIONS subsidiary
+              A UVTS and DASKMEI subsidiary
             </span>
           </NavLink>
 
