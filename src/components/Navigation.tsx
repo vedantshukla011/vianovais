@@ -12,7 +12,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <NavLink to="/" className="flex items-center gap-2">
             <div className="font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ViaNova Engineering Products
+              ViaNova Industrial Solutions
             </div>
             <span className="text-xs text-muted-foreground hidden md:block">
               A UV TEST SOLUTIONS subsidiary

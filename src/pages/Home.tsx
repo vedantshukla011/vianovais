@@ -186,7 +186,7 @@ const Home = () => {
                 Ready to Enhance Your Industrial Operations?
               </h2>
               <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
-                Partner with ViaNova Engineering Products for reliable, efficient, and sustainable industrial solutions
+                Partner with ViaNova Industrial Solutions for reliable, efficient, and sustainable industrial solutions
               </p>
               <Link to="/inquiry">
                 <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground">
