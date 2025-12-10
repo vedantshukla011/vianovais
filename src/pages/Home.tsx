@@ -30,6 +30,26 @@ const Home = () => {
       description: "Durable valves for demanding environments",
       image: ballImage,
     },
+    {
+      title: "Mechanical Tools",
+      description: "Professional-grade tools for industrial maintenance",
+      image: valveImage,
+    },
+    {
+      title: "Auto Spares",
+      description: "Quality automotive spare parts and components",
+      image: steamImage,
+    },
+    {
+      title: "Service Kits",
+      description: "Complete maintenance and repair kits",
+      image: gasketsImage,
+    },
+    {
+      title: "Fault Recognition Devices",
+      description: "Advanced diagnostic and monitoring equipment",
+      image: ballImage,
+    },
   ];
 
   const features = [
