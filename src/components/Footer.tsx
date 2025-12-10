@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl">ViaNova Engineering Products</h3>
+            <h3 className="font-bold text-xl">ViaNova Industrial Solutions</h3>
             <p className="text-sm text-primary-foreground/80">
               A subsidiary of UV TEST SOLUTIONS, providing comprehensive engineering products for industrial applications.
             </p>
@@ -65,7 +65,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} ViaNova Engineering Products. A UV TEST SOLUTIONS subsidiary. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ViaNova Industrial Solutions. A UV TEST SOLUTIONS subsidiary. All rights reserved.</p>
         </div>
       </div>
     </footer>

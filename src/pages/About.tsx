@@ -32,7 +32,7 @@ const About = () => {
       {/* Header */}
       <section className="bg-gradient-to-r from-primary via-primary-light to-secondary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About ViaNova Engineering Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About ViaNova Industrial Solutions</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             A UV TEST SOLUTIONS subsidiary committed to delivering high-quality engineering products for industrial applications
           </p>
@@ -45,7 +45,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              ViaNova Engineering Products combines over 40 years of expertise in industrial valve manufacturing with innovative engineering solutions. As a subsidiary of UV TEST SOLUTIONS, we bring together world-class engineering, manufacturing excellence, and customer-centric service.
+              ViaNova Industrial Solutions combines over 40 years of expertise in industrial valve manufacturing with innovative engineering solutions. As a subsidiary of UV TEST SOLUTIONS, we bring together world-class engineering, manufacturing excellence, and customer-centric service.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Our products serve diverse industries including oil refineries, chemical and petrochemical plants, pharmaceuticals, food and beverage, paper, textiles, and tire manufacturing. We are committed to providing solutions that enhance safety, efficiency, and sustainability in industrial operations across India.
