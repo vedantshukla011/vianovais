@@ -2,6 +2,7 @@ import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoImage from "@/assets/logo-vianova.jpg";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +12,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <NavLink to="/" className="flex items-center gap-2">
-            <div className="font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ViaNova Industrial Solutions
-            </div>
-            <span className="text-xs text-muted-foreground hidden md:block">
-              A UVTS and DASKMEI subsidiary
-            </span>
+            <img src={logoImage} alt="ViaNova Industrial Solutions" className="h-14 w-auto" />
           </NavLink>
 
           {/* Desktop Navigation */}
