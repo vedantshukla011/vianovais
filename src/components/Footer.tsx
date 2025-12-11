@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { NavLink } from "./NavLink";
+import logoImage from "@/assets/logo-vianova.jpg";
 
 export const Footer = () => {
   return (
@@ -8,7 +9,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl">ViaNova Industrial Solutions</h3>
+            <img src={logoImage} alt="ViaNova Industrial Solutions" className="h-12 w-auto bg-white p-1 rounded" />
             <p className="text-sm text-primary-foreground/80">
               A subsidiary of UVTS and DASKMEI, providing comprehensive engineering products for industrial applications.
             </p>
