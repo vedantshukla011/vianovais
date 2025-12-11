@@ -109,7 +109,7 @@ const Industries = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="text-center border-none shadow-lg">
               <CardContent className="pt-8">
-                <p className="text-5xl font-bold text-primary mb-2">40+</p>
+                <p className="text-5xl font-bold text-primary mb-2">25+</p>
                 <p className="text-lg text-muted-foreground">Years of Experience</p>
               </CardContent>
             </Card>
