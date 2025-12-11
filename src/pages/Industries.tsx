@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Factory, Flame, Pill, Droplets, Leaf, FileText, Shirt, Zap } from "lucide-react";
+import { Factory, Flame, Pill, Droplets, Leaf, FileText, Shirt, Zap, Car, Shield } from "lucide-react";
 
 const Industries = () => {
   const industries = [
@@ -44,6 +44,16 @@ const Industries = () => {
       icon: Shirt,
       name: "Textiles",
       description: "Steam systems and control valves for dyeing, finishing, and textile processing. Optimized for efficiency and energy savings.",
+    },
+    {
+      icon: Car,
+      name: "Automobile",
+      description: "Precision components and spare parts for automotive manufacturing. Supporting assembly lines, paint shops, and quality control systems.",
+    },
+    {
+      icon: Shield,
+      name: "Defence",
+      description: "High-reliability components meeting military specifications. Trusted solutions for defence manufacturing and critical infrastructure applications.",
     },
   ];
 
