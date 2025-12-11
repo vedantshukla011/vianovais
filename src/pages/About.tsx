@@ -45,7 +45,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              ViaNova Industrial Solutions combines over 40 years of expertise in industrial valve manufacturing with innovative engineering solutions. As a subsidiary of UV TEST SOLUTIONS, we bring together world-class engineering, manufacturing excellence, and customer-centric service.
+              ViaNova Industrial Solutions combines over 25 years of expertise in industrial valve manufacturing with innovative engineering solutions. As a subsidiary of UV TEST SOLUTIONS, we bring together world-class engineering, manufacturing excellence, and customer-centric service.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Our products serve diverse industries including oil refineries, chemical and petrochemical plants, pharmaceuticals, food and beverage, paper, textiles, and tire manufacturing. We are committed to providing solutions that enhance safety, efficiency, and sustainability in industrial operations across India.
@@ -56,7 +56,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <Card className="text-center border-none shadow-lg">
               <CardContent className="pt-8">
-                <p className="text-4xl font-bold text-primary mb-2">40+</p>
+                <p className="text-4xl font-bold text-primary mb-2">25+</p>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </CardContent>
             </Card>
