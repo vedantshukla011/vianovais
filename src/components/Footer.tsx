@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Download } from "lucide-react";
 import { NavLink } from "./NavLink";
 import logoImage from "@/assets/logo-vianova.jpg";
 
@@ -43,6 +43,14 @@ export const Footer = () => {
               <span>Gaskets & Jointing Sheets</span>
               <span>Industrial Compounds</span>
             </div>
+            <a 
+              href="/DASKM_VIS_Product_Brochure.pdf" 
+              download 
+              className="inline-flex items-center gap-2 text-sm text-primary-foreground hover:text-primary-foreground/80 transition-colors mt-2"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Product Brochure</span>
+            </a>
           </div>
 
           {/* Contact */}
