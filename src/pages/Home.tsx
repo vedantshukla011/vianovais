@@ -76,7 +76,7 @@ const Home = () => {
     {
       icon: Zap,
       title: "25+ Years",
-      description: "Decades of expertise in industrial flow solutions",
+      description: "Decades of expertise in industrial engineering solutions",
     },
   ];
 

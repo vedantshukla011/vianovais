@@ -18,7 +18,7 @@ const Industries = () => {
     {
       icon: Pill,
       name: "Pharmaceuticals",
-      description: "Hygienic and sterile flow control solutions meeting cGMP standards. Precision-engineered for pharmaceutical manufacturing and processing.",
+      description: "Hygienic and sterile industrial solutions meeting cGMP standards. Precision-engineered for pharmaceutical manufacturing and processing.",
     },
     {
       icon: Zap,
@@ -64,7 +64,7 @@ const Industries = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Industries We Serve</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            Delivering specialized flow control solutions across diverse industrial sectors
+            Delivering specialized industrial and measurement solutions across diverse sectors
           </p>
         </div>
       </section>

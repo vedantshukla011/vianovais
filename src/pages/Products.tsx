@@ -149,7 +149,7 @@ const Products = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Products</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            Comprehensive range of industrial valves, steam systems, and flow control solutions
+            Comprehensive range of industrial valves, steam systems, measuring instruments, and engineering solutions
           </p>
         </div>
       </section>
