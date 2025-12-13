@@ -11,6 +11,7 @@ import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
 import autoSparesImage from "@/assets/product-auto-spares.jpg";
 import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
+import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 
 const Home = () => {
   const products = [
@@ -53,6 +54,11 @@ const Home = () => {
       title: "Fault Recognition Devices",
       description: "Advanced diagnostic and monitoring equipment",
       image: faultDevicesImage,
+    },
+    {
+      title: "Measuring Instruments",
+      description: "Precision electronic instruments for testing and analysis",
+      image: measuringInstrumentsImage,
     },
   ];
 
@@ -144,7 +150,7 @@ const Home = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Product Range</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for industrial flow control and management
+              Comprehensive solutions for industrial flow control, precision measurement, and engineering excellence
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
