@@ -9,6 +9,7 @@ import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
 import autoSparesImage from "@/assets/product-auto-spares.jpg";
 import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
+import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 
 const Products = () => {
   const productCategories = [
@@ -100,6 +101,26 @@ const Products = () => {
         "Early fault detection technology",
       ],
     },
+    {
+      title: "Measuring Instruments",
+      image: measuringInstrumentsImage,
+      description: "Precision electronic measuring instruments for testing, measurement, and analysis applications",
+      features: [
+        "Oscilloscopes for waveform analysis",
+        "Professional-grade multimeters",
+        "Signal generators and power supplies",
+        "Spectrum and logic analyzers",
+      ],
+      subCategories: [
+        "Oscilloscopes",
+        "Multimeters",
+        "Signal Generators",
+        "Temperature Sensors",
+        "Power Supplies",
+        "Logic Analyzers",
+        "Spectrum Analyzers",
+      ],
+    },
   ];
 
   const additionalProducts = [
@@ -162,6 +183,21 @@ const Products = () => {
                       </li>
                     ))}
                   </ul>
+                  {product.subCategories && (
+                    <div className="mt-4">
+                      <h4 className="font-semibold text-primary mb-2">Sub Categories:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {product.subCategories.map((sub, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                          >
+                            {sub}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   <Link to="/inquiry">
                     <Button className="bg-accent hover:bg-accent-light mt-4">
                       Request Quote
