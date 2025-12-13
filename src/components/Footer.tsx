@@ -42,6 +42,7 @@ export const Footer = () => {
               <span>Steam Traps & Accessories</span>
               <span>Gaskets & Jointing Sheets</span>
               <span>Industrial Compounds</span>
+              <span>Measuring Instruments</span>
             </div>
             <a 
               href="/DASKM_VIS_Product_Brochure.pdf" 
