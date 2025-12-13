@@ -34,7 +34,7 @@ const About = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About ViaNova Industrial Solutions</h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            A UV TEST SOLUTIONS subsidiary committed to delivering high-quality engineering products for industrial applications
+            A subsidiary of UVTS (UV Test Solutions) and DASKMEI, committed to delivering high-quality engineering and testing products for industrial applications
           </p>
         </div>
       </section>
@@ -45,7 +45,10 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              ViaNova Industrial Solutions combines over 25 years of expertise in industrial valve manufacturing with innovative engineering solutions. As a subsidiary of UV TEST SOLUTIONS, we bring together world-class engineering, manufacturing excellence, and customer-centric service.
+              ViaNova Industrial Solutions is a proud subsidiary of UVTS (UV Test Solutions) and DASKMEI, combining over 25 years of expertise in industrial valve manufacturing, precision measuring instruments, and innovative engineering solutions. We bring together world-class engineering, manufacturing excellence, and customer-centric service from our parent organizations.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              UVTS specializes in advanced testing and measurement solutions, while DASKMEI focuses on industrial engineering products. Together, they empower ViaNova to offer a comprehensive portfolio spanning flow control systems, precision instruments, and industrial components.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Our products serve diverse industries including oil refineries, chemical and petrochemical plants, pharmaceuticals, food and beverage, paper, textiles, and tire manufacturing. We are committed to providing solutions that enhance safety, efficiency, and sustainability in industrial operations across India.
