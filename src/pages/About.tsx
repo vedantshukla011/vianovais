@@ -18,7 +18,7 @@ const About = () => {
     {
       icon: Target,
       title: "Innovation",
-      description: "Continuously advancing our technologies to deliver more efficient, reliable, and safer flow control systems.",
+      description: "Continuously advancing our technologies to deliver more efficient, reliable, and safer industrial systems.",
     },
     {
       icon: Leaf,
