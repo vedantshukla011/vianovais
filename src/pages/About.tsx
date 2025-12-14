@@ -1,53 +1,50 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Award, Users, Target, Leaf } from "lucide-react";
+import { Award, Users, Target, Leaf, ArrowRight } from "lucide-react";
 
 const About = () => {
   const values = [
-    {
-      icon: Award,
-      title: "Quality Excellence",
-      description: "Committed to the highest standards of manufacturing and product quality, certified to international specifications.",
-    },
-    {
-      icon: Users,
-      title: "Customer Focus",
-      description: "Building long-term partnerships through responsive service and customized solutions for unique industrial challenges.",
-    },
-    {
-      icon: Target,
-      title: "Innovation",
-      description: "Continuously advancing our technologies to deliver more efficient, reliable, and safer industrial systems.",
-    },
-    {
-      icon: Leaf,
-      title: "Sustainability",
-      description: "Reducing carbon footprint through energy-efficient solutions that optimize process efficiency and minimize waste.",
-    },
+    { icon: Award, title: "Quality Excellence", description: "Committed to the highest standards of manufacturing and product quality, certified to international specifications." },
+    { icon: Users, title: "Customer Focus", description: "Building long-term partnerships through responsive service and customized solutions for unique industrial challenges." },
+    { icon: Target, title: "Innovation", description: "Continuously advancing our technologies to deliver more efficient, reliable, and safer industrial systems." },
+    { icon: Leaf, title: "Sustainability", description: "Reducing carbon footprint through energy-efficient solutions that optimize process efficiency and minimize waste." },
+  ];
+
+  const stats = [
+    { value: "25+", label: "Years Experience", color: "text-primary" },
+    { value: "15+", label: "Industries Served", color: "text-secondary" },
+    { value: "100+", label: "Product Range", color: "text-accent" },
+    { value: "24/7", label: "Support Available", color: "text-primary-light" },
   ];
 
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
-      <section className="bg-gradient-to-r from-primary via-primary-light to-secondary text-primary-foreground py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About ViaNova Industrial Solutions</h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+      <section className="bg-gradient-hero text-primary-foreground py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="container mx-auto px-4 text-center relative">
+          <span className="inline-block px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
+            About ViaNova
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-5">About ViaNova Industrial Solutions</h1>
+          <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
             A subsidiary of UVTS (UV Test Solutions) and DASKMEI, committed to delivering high-quality engineering and testing products for industrial applications
           </p>
         </div>
       </section>
 
       {/* Company Overview */}
-      <section className="py-16">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Story</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-8 text-foreground">Who We Are</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-5">
               ViaNova Industrial Solutions is a proud subsidiary of UVTS (UV Test Solutions) and DASKMEI, combining over 25 years of expertise in industrial valve manufacturing, precision measuring instruments, and innovative engineering solutions. We bring together world-class engineering, manufacturing excellence, and customer-centric service from our parent organizations.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-5">
               UVTS specializes in advanced testing and measurement solutions, while DASKMEI focuses on industrial engineering products. Together, they empower ViaNova to offer a comprehensive portfolio spanning flow control systems, precision instruments, and industrial components.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -56,51 +53,41 @@ const About = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <Card className="text-center border-none shadow-lg">
-              <CardContent className="pt-8">
-                <p className="text-4xl font-bold text-primary mb-2">25+</p>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-none shadow-lg">
-              <CardContent className="pt-8">
-                <p className="text-4xl font-bold text-secondary mb-2">15+</p>
-                <p className="text-sm text-muted-foreground">Industries Served</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-none shadow-lg">
-              <CardContent className="pt-8">
-                <p className="text-4xl font-bold text-accent mb-2">100+</p>
-                <p className="text-sm text-muted-foreground">Product Range</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-none shadow-lg">
-              <CardContent className="pt-8">
-                <p className="text-4xl font-bold text-primary-light mb-2">24/7</p>
-                <p className="text-sm text-muted-foreground">Support Available</p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {stats.map((stat, index) => (
+              <Card key={index} className="text-center border-none shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 bg-card">
+                <CardContent className="pt-8 pb-6">
+                  <p className={`text-5xl font-bold mb-2 ${stat.color}`}>{stat.value}</p>
+                  <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-muted">
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center mb-14">
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What Drives Us</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">Our Core Values</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-none shadow-lg"
+                className="hover:shadow-hover transition-all duration-500 hover:-translate-y-2 border-none shadow-elegant bg-card group overflow-hidden"
               >
-                <CardContent className="pt-6 text-center">
-                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-8 h-8 text-primary" />
+                <CardContent className="pt-8 pb-8 text-center relative">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-secondary/5 rounded-full -translate-y-1/2 group-hover:scale-150 transition-transform duration-500" />
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-secondary to-secondary-light w-18 h-18 w-[72px] h-[72px] rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-glow">
+                      <value.icon className="w-9 h-9 text-secondary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-foreground">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -109,17 +96,20 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-primary to-primary-light text-primary-foreground border-none shadow-2xl">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Partner With Us</h2>
-              <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+          <Card className="bg-gradient-hero text-primary-foreground border-none shadow-2xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-accent/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/15 rounded-full blur-3xl" />
+            <CardContent className="p-14 text-center relative">
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">Partner With Us</h2>
+              <p className="text-lg mb-10 text-primary-foreground/80 max-w-2xl mx-auto">
                 Let's work together to enhance safety, efficiency, and sustainability in your industrial operations
               </p>
               <Link to="/inquiry">
-                <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground">
+                <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-10 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   Start a Conversation
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </CardContent>
