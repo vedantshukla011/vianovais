@@ -51,7 +51,7 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 animate-fade-in">
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium">Trusted by 500+ Companies Across India</span>
+            <span className="text-sm font-medium">Trusted by 100+ Companies Across India</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight">
             Engineering Excellence
