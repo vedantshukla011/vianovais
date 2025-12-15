@@ -22,7 +22,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <NavLink to="/" className="flex items-center gap-3">
-            <div className="font-bold text-xl md:text-2xl text-gradient-primary">
+            <div className="font-bold text-xl md:text-2xl text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
               ViaNova Industrial Solutions
             </div>
             <span className="text-xs text-muted-foreground hidden lg:block font-medium">
