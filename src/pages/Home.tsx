@@ -58,7 +58,7 @@ const Home = () => {
             <span className="block mt-2 text-accent">for Every Industry</span>
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-primary-foreground/80 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Your complete partner for all industrial engineering requirements — valves, steam systems, gaskets, and beyond
+            Your complete partner for all industrial engineering requirements — valves, steam systems, gaskets, measuring instruments, and beyond
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/inquiry">
