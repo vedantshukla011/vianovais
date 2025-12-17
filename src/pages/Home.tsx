@@ -15,6 +15,7 @@ import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jp
 
 const Home = () => {
   const products = [
+    { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
     { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
@@ -23,7 +24,6 @@ const Home = () => {
     { title: "Auto Spares", description: "Quality automotive spare parts and components", image: autoSparesImage },
     { title: "Service Kits", description: "Complete maintenance and repair kits", image: serviceKitsImage },
     { title: "Fault Recognition Devices", description: "Advanced diagnostic and monitoring equipment", image: faultDevicesImage },
-    { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
   ];
 
   const features = [
