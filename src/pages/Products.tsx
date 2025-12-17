@@ -15,6 +15,13 @@ import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jp
 const Products = () => {
   const productCategories = [
     {
+      title: "Measuring Instruments",
+      image: measuringInstrumentsImage,
+      description: "Precision electronic measuring instruments for testing, measurement, and analysis applications",
+      features: ["Oscilloscopes for waveform analysis", "Professional-grade multimeters", "Signal generators and power supplies", "Spectrum and logic analyzers"],
+      subCategories: ["Oscilloscopes", "Multimeters", "Signal Generators", "Temperature Sensors", "Power Supplies", "Logic Analyzers", "Spectrum Analyzers"],
+    },
+    {
       title: "Piston & Bellow Seal Valves",
       image: valveImage,
       description: "High-performance valves designed for critical control applications",
@@ -61,13 +68,6 @@ const Products = () => {
       image: faultDevicesImage,
       description: "Advanced diagnostic and monitoring equipment for predictive maintenance",
       features: ["Digital multimeters and analyzers", "Vibration and thermal sensors", "Real-time monitoring capabilities", "Early fault detection technology"],
-    },
-    {
-      title: "Measuring Instruments",
-      image: measuringInstrumentsImage,
-      description: "Precision electronic measuring instruments for testing, measurement, and analysis applications",
-      features: ["Oscilloscopes for waveform analysis", "Professional-grade multimeters", "Signal generators and power supplies", "Spectrum and logic analyzers"],
-      subCategories: ["Oscilloscopes", "Multimeters", "Signal Generators", "Temperature Sensors", "Power Supplies", "Logic Analyzers", "Spectrum Analyzers"],
     },
   ];
 
