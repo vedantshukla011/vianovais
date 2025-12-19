@@ -2,7 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Award, Users, Target, Leaf, ArrowRight, Linkedin } from "lucide-react";
-import directorPhoto from "@/assets/director-vedant-shukla.jpg";
+import vedantPhoto from "@/assets/director-vedant-shukla.jpg";
+import vinodPhoto from "@/assets/director-vinod-shukla.jpg";
 
 const About = () => {
   const values = [
@@ -67,29 +68,61 @@ const About = () => {
         </div>
       </section>
 
-      {/* Director Section */}
+      {/* Directors Section */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Leadership</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">Meet Our Director</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">Meet Our Directors</h2>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Vinod Shukla */}
             <Card className="border-none shadow-elegant bg-card overflow-hidden">
               <CardContent className="p-0">
-                <div className="flex flex-col md:flex-row items-center gap-8 p-8">
-                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-glow flex-shrink-0">
+                <div className="flex flex-col items-center gap-6 p-8">
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-glow flex-shrink-0">
                     <img 
-                      src={directorPhoto} 
+                      src={vinodPhoto} 
+                      alt="Vinod Shukla - Director" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Vinod Shukla</h3>
+                    <p className="text-secondary font-semibold text-lg mb-4">Director & Owner, UV Test Solutions</p>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      A seasoned Electrical Engineer with over 25 years of experience in the industrial sector, Vinod is the visionary behind UV Test Solutions. His deep industry knowledge and leadership have been instrumental in building a trusted name in industrial testing and measurement solutions.
+                    </p>
+                    <a 
+                      href="https://www.linkedin.com/in/vinodshuklakeithley" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors font-medium"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      Connect on LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Vedant Shukla */}
+            <Card className="border-none shadow-elegant bg-card overflow-hidden">
+              <CardContent className="p-0">
+                <div className="flex flex-col items-center gap-6 p-8">
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-glow flex-shrink-0">
+                    <img 
+                      src={vedantPhoto} 
                       alt="Vedant Shukla - Director" 
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Vedant Shukla</h3>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Vedant Shukla</h3>
                     <p className="text-secondary font-semibold text-lg mb-4">Director</p>
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      A passionate Mechanical Engineer and alumnus of IIT Dharwad, Vedant brings innovative thinking and technical expertise to lead ViaNova Industrial Solutions. His vision drives our commitment to delivering high-quality engineering products and exceptional service to industries across India.
+                      A passionate Mechanical Engineer and alumnus of IIT Dharwad, Vedant brings innovative thinking and technical expertise to lead ViaNova Industrial Solutions. His vision drives our commitment to delivering high-quality engineering products and exceptional service.
                     </p>
                     <a 
                       href="https://www.linkedin.com/in/vedant-shukla-97b60a18b" 
