@@ -47,13 +47,6 @@ export const Navigation = () => {
               Products
             </NavLink>
             <NavLink
-              to="/industries"
-              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-            >
-              Industries
-            </NavLink>
-            <NavLink
               to="/about"
               className="text-foreground/70 hover:text-foreground transition-colors font-medium"
               activeClassName="text-primary font-semibold"
@@ -94,14 +87,6 @@ export const Navigation = () => {
               onClick={() => setIsOpen(false)}
             >
               Products
-            </NavLink>
-            <NavLink
-              to="/industries"
-              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Industries
             </NavLink>
             <NavLink
               to="/about"
