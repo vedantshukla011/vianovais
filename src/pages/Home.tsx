@@ -125,7 +125,14 @@ const Home = () => {
                     alt={product.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                    <Link to={`/inquiry?product=${encodeURIComponent(product.title)}`}>
+                      <Button size="sm" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        Request Quote
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
                 <CardContent className="pt-6 pb-6">
                   <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-secondary transition-colors">{product.title}</h3>
