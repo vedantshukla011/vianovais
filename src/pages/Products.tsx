@@ -11,6 +11,7 @@ import autoSparesImage from "@/assets/product-auto-spares.jpg";
 import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
+import esdLabImage from "@/assets/product-esd-lab.jpg";
 
 const Products = () => {
   const productCategories = [
@@ -20,6 +21,13 @@ const Products = () => {
       description: "Precision electronic measuring instruments for testing, measurement, and analysis applications",
       features: ["Oscilloscopes for waveform analysis", "Professional-grade multimeters", "Signal generators and power supplies", "Spectrum and logic analyzers"],
       subCategories: ["Oscilloscopes", "Multimeters", "Signal Generators", "Temperature Sensors", "Power Supplies", "Logic Analyzers", "Spectrum Analyzers"],
+    },
+    {
+      title: "ESD Lab Solutions",
+      image: esdLabImage,
+      description: "Customized ESD-safe laboratory furniture and equipment designed to protect sensitive electronics from electrostatic discharge",
+      features: ["Static-dissipative work surfaces", "Grounded furniture with conductive materials", "Customized solutions tailored to your needs", "Complete lab setup and integration services"],
+      subCategories: ["ESD Tables", "ESD Chairs", "ESD Racks", "ESD Flooring", "Grounding Systems", "Ionizers"],
     },
     {
       title: "Piston & Bellow Seal Valves",
