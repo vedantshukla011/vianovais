@@ -78,9 +78,9 @@ const Inquiry = () => {
   };
 
   const contactCards = [
-    { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 20 4102 3000", subContent: "Toll Free: 1800-XXX-XXXX" },
-    { icon: Mail, color: "from-secondary to-secondary-light", title: "Email", content: "info@vianovaengineering.in", subContent: "sales@vianovaengineering.in" },
-    { icon: MapPin, color: "from-accent to-accent-light", title: "Head Office", content: "Hinjawadi Phase 1,", subContent: "Pune, Maharashtra 411057, India" },
+    { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9654109754", subContent: "" },
+    { icon: Mail, color: "from-secondary to-secondary-light", title: "Email", content: "vedant.shukla@vianovaindustrial.solutions", subContent: "" },
+    { icon: MapPin, color: "from-accent to-accent-light", title: "Head Office", content: "Park View Apartment Ph-2 Gandhi Nagar", subContent: "Ghaziabad, Uttar Pradesh 201001, India" },
   ];
 
   return (
