@@ -58,6 +58,7 @@ const Products = () => {
       image: mechanicalToolsImage,
       description: "Professional-grade tools for industrial maintenance and repair",
       features: ["High-quality precision instruments", "Durable construction for heavy-duty use", "Complete tool sets available", "Suitable for various industrial applications"],
+      brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
     },
     {
       title: "Auto Spares",
@@ -70,6 +71,7 @@ const Products = () => {
       image: serviceKitsImage,
       description: "Complete maintenance and repair kits for industrial equipment",
       features: ["All-in-one maintenance solutions", "O-rings, seals, and gaskets included", "Organized carrying cases", "Equipment-specific configurations"],
+      brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
     },
     {
       title: "Fault Recognition Devices",
@@ -146,6 +148,21 @@ const Products = () => {
                             className="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium hover:bg-secondary/20 transition-colors"
                           >
                             {sub}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.brands && (
+                    <div className="pt-4">
+                      <h4 className="font-semibold text-foreground mb-3">Brands We Carry:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {product.brands.map((brand, idx) => (
+                          <span
+                            key={idx}
+                            className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium hover:bg-accent/20 transition-colors"
+                          >
+                            {brand}
                           </span>
                         ))}
                       </div>
