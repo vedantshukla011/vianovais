@@ -3,22 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone, Clock, Send } from "lucide-react";
-import { useState } from "react";
-import { z } from "zod";
-
-const inquirySchema = z.object({
-  name: z.string().trim().min(2, { message: "Name must be at least 2 characters" }).max(100),
-  company: z.string().trim().max(100),
-  email: z.string().trim().email({ message: "Invalid email address" }).max(255),
-  phone: z.string().trim().regex(/^[6-9]\d{9}$/, { message: "Please enter a valid 10-digit Indian mobile number" }),
-  state: z.string().trim().min(1, { message: "Please select your state" }),
-  city: z.string().trim().max(100),
-  industry: z.string().trim().max(100),
-  message: z.string().trim().min(10, { message: "Message must be at least 10 characters" }).max(1000),
-});
 
 const indianStates = [
   "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana",
@@ -28,55 +13,6 @@ const indianStates = [
 ];
 
 const Inquiry = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "", company: "", email: "", phone: "", state: "", city: "", industry: "", message: "",
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      inquirySchema.parse(formData);
-      setErrors({});
-      
-      toast({
-        title: "Inquiry Submitted Successfully",
-        description: "Our team will contact you within 24 hours.",
-      });
-      
-      setFormData({ name: "", company: "", email: "", phone: "", state: "", city: "", industry: "", message: "" });
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const newErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
-          if (err.path[0]) {
-            newErrors[err.path[0].toString()] = err.message;
-          }
-        });
-        setErrors(newErrors);
-        
-        toast({
-          title: "Validation Error",
-          description: "Please check the form for errors and try again.",
-          variant: "destructive",
-        });
-      }
-    }
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[field];
-        return newErrors;
-      });
-    }
-  };
-
   const contactCards = [
     { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9654109754", subContent: "", href: "tel:+919654109754" },
     { icon: Mail, color: "from-secondary to-secondary-light", title: "Email", content: "vedant.shukla@vianovaindustrial.solutions", subContent: "", href: "mailto:vedant.shukla@vianovaindustrial.solutions" },
@@ -151,26 +87,24 @@ const Inquiry = () => {
               <Card className="border-none shadow-2xl bg-card overflow-hidden">
                 <CardContent className="pt-10 pb-10 px-8">
                   <h2 className="text-2xl font-bold text-foreground mb-8">Send Us Your Requirements</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form action="https://formspree.io/f/mpqwvvna" method="POST" className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-foreground font-medium">Full Name *</Label>
                         <Input
                           id="name"
-                          value={formData.name}
-                          onChange={(e) => handleChange("name", e.target.value)}
+                          name="name"
                           placeholder="Rajesh Kumar"
-                          className={`h-12 ${errors.name ? "border-destructive" : "border-border"}`}
+                          required
+                          className="h-12"
                         />
-                        {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="company" className="text-foreground font-medium">Company Name</Label>
                         <Input
                           id="company"
-                          value={formData.company}
-                          onChange={(e) => handleChange("company", e.target.value)}
+                          name="company"
                           placeholder="ABC Industries Pvt. Ltd."
                           className="h-12"
                         />
@@ -183,12 +117,11 @@ const Inquiry = () => {
                         <Input
                           id="email"
                           type="email"
-                          value={formData.email}
-                          onChange={(e) => handleChange("email", e.target.value)}
+                          name="email"
                           placeholder="rajesh@example.com"
-                          className={`h-12 ${errors.email ? "border-destructive" : "border-border"}`}
+                          required
+                          className="h-12"
                         />
-                        {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
                       </div>
 
                       <div className="space-y-2">
@@ -200,38 +133,38 @@ const Inquiry = () => {
                           <Input
                             id="phone"
                             type="tel"
-                            value={formData.phone}
-                            onChange={(e) => handleChange("phone", e.target.value.replace(/\D/g, '').slice(0, 10))}
+                            name="phone"
                             placeholder="9876543210"
-                            className={`rounded-l-none h-12 ${errors.phone ? "border-destructive" : "border-border"}`}
+                            pattern="[6-9][0-9]{9}"
+                            title="Please enter a valid 10-digit Indian mobile number"
+                            required
+                            className="rounded-l-none h-12"
                           />
                         </div>
-                        {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="state" className="text-foreground font-medium">State *</Label>
-                        <Select value={formData.state} onValueChange={(value) => handleChange("state", value)}>
-                          <SelectTrigger className={`h-12 ${errors.state ? "border-destructive" : "border-border"}`}>
-                            <SelectValue placeholder="Select your state" />
-                          </SelectTrigger>
-                          <SelectContent className="bg-popover">
-                            {indianStates.map((state) => (
-                              <SelectItem key={state} value={state}>{state}</SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        {errors.state && <p className="text-xs text-destructive">{errors.state}</p>}
+                        <select
+                          id="state"
+                          name="state"
+                          required
+                          className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <option value="">Select your state</option>
+                          {indianStates.map((state) => (
+                            <option key={state} value={state}>{state}</option>
+                          ))}
+                        </select>
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="city" className="text-foreground font-medium">City</Label>
                         <Input
                           id="city"
-                          value={formData.city}
-                          onChange={(e) => handleChange("city", e.target.value)}
+                          name="city"
                           placeholder="Mumbai"
                           className="h-12"
                         />
@@ -242,8 +175,7 @@ const Inquiry = () => {
                       <Label htmlFor="industry" className="text-foreground font-medium">Industry / Application</Label>
                       <Input
                         id="industry"
-                        value={formData.industry}
-                        onChange={(e) => handleChange("industry", e.target.value)}
+                        name="industry"
                         placeholder="e.g., Oil & Gas, Pharmaceuticals, Chemicals"
                         className="h-12"
                       />
@@ -253,13 +185,12 @@ const Inquiry = () => {
                       <Label htmlFor="message" className="text-foreground font-medium">Your Message / Requirements *</Label>
                       <Textarea
                         id="message"
-                        value={formData.message}
-                        onChange={(e) => handleChange("message", e.target.value)}
+                        name="message"
                         placeholder="Please describe your requirements, specifications, or questions..."
                         rows={6}
-                        className={errors.message ? "border-destructive" : "border-border"}
+                        required
+                        minLength={10}
                       />
-                      {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
                     </div>
 
                     <Button
