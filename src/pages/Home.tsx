@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-industrial.jpg";
 import valveImage from "@/assets/product-valve.jpg";
@@ -15,17 +13,8 @@ import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
-import republicDayGreetingImage from "@/assets/festival-greeting-republic-day.png";
 
 const Home = () => {
-  const [showGreeting, setShowGreeting] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowGreeting(true);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
   const products = [
     { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
@@ -49,23 +38,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Republic Day Greeting Popup */}
-      <Dialog open={showGreeting} onOpenChange={setShowGreeting}>
-        <DialogContent className="sm:max-w-md md:max-w-lg p-0 border-none overflow-hidden bg-transparent shadow-2xl">
-          <button
-            onClick={() => setShowGreeting(false)}
-            className="absolute right-2 top-2 z-10 rounded-full bg-white/90 p-1.5 shadow-lg hover:bg-white transition-colors"
-          >
-            <X className="h-5 w-5 text-gray-700" />
-          </button>
-          <img
-            src={republicDayGreetingImage}
-            alt="Happy Republic Day Greetings from ViaNova Industrial Solutions"
-            className="w-full h-auto rounded-lg"
-          />
-        </DialogContent>
-      </Dialog>
-
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
