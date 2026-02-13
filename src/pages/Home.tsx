@@ -12,6 +12,7 @@ import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
+import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
 
 const Home = () => {
   const products = [
@@ -23,6 +24,7 @@ const Home = () => {
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
     { title: "Ball & Specialty Valves", description: "Durable valves for demanding environments", image: ballImage },
     { title: "Mechanical Tools", description: "Professional-grade tools for industrial maintenance", image: mechanicalToolsImage },
+    { title: "Environmental Sensing Solutions", description: "Temperature, humidity, air quality & gas detection instruments", image: environmentalSensingImage },
     { title: "Fault Recognition Devices", description: "Advanced diagnostic and monitoring equipment", image: faultDevicesImage },
   ];
 

@@ -11,6 +11,7 @@ import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
+import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
 
 const Products = () => {
   const productCategories = [
@@ -65,6 +66,13 @@ const Products = () => {
       description: "Professional-grade tools for industrial maintenance and repair",
       features: ["High-quality precision instruments", "Durable construction for heavy-duty use", "Complete tool sets available", "Suitable for various industrial applications"],
       brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
+    },
+    {
+      title: "Environmental Sensing Solutions",
+      image: environmentalSensingImage,
+      description: "Comprehensive environmental monitoring instruments for temperature, humidity, air quality, and gas detection",
+      features: ["Temperature & humidity sensors and data loggers", "Air quality monitors and gas detectors", "Environmental data logging and analysis", "Weather stations and climate monitoring systems"],
+      subCategories: ["Temperature Sensors", "Humidity Meters", "Air Quality Monitors", "Gas Detectors", "Data Loggers", "Weather Stations"],
     },
     {
       title: "Fault Recognition Devices",
