@@ -10,6 +10,7 @@ import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
+import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 
 const Products = () => {
   const productCategories = [
@@ -57,6 +58,13 @@ const Products = () => {
       description: "Professional-grade tools for industrial maintenance and repair",
       features: ["High-quality precision instruments", "Durable construction for heavy-duty use", "Complete tool sets available", "Suitable for various industrial applications"],
       brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
+    },
+    {
+      title: "Dimensional Measurement Tools",
+      image: dimensionalToolsImage,
+      description: "Precision dimensional measurement instruments for accurate length, distance, and depth measurements",
+      features: ["High-accuracy vernier callipers for precise measurements", "Digital and analog micrometers", "Laser distance meters for quick, contactless measurement", "Depth gauges, height gauges, and dial indicators"],
+      subCategories: ["Vernier Callipers", "Micrometers", "Laser Distance Meters", "Depth Gauges", "Height Gauges", "Dial Indicators", "Bore Gauges"],
     },
     {
       title: "Fault Recognition Devices",

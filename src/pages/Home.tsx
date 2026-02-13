@@ -11,11 +11,13 @@ import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
+import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 
 const Home = () => {
   const products = [
     { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
+    { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
     { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
