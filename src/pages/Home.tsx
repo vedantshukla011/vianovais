@@ -8,8 +8,6 @@ import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
 import ballImage from "@/assets/product-ball.jpg";
 import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
-import autoSparesImage from "@/assets/product-auto-spares.jpg";
-import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
@@ -23,8 +21,6 @@ const Home = () => {
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
     { title: "Ball & Specialty Valves", description: "Durable valves for demanding environments", image: ballImage },
     { title: "Mechanical Tools", description: "Professional-grade tools for industrial maintenance", image: mechanicalToolsImage },
-    { title: "Auto Spares", description: "Quality automotive spare parts and components", image: autoSparesImage },
-    { title: "Service Kits", description: "Complete maintenance and repair kits", image: serviceKitsImage },
     { title: "Fault Recognition Devices", description: "Advanced diagnostic and monitoring equipment", image: faultDevicesImage },
   ];
 
