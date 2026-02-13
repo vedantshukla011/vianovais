@@ -7,8 +7,6 @@ import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
 import ballImage from "@/assets/product-ball.jpg";
 import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
-import autoSparesImage from "@/assets/product-auto-spares.jpg";
-import serviceKitsImage from "@/assets/product-service-kits.jpg";
 import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
@@ -58,19 +56,6 @@ const Products = () => {
       image: mechanicalToolsImage,
       description: "Professional-grade tools for industrial maintenance and repair",
       features: ["High-quality precision instruments", "Durable construction for heavy-duty use", "Complete tool sets available", "Suitable for various industrial applications"],
-      brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
-    },
-    {
-      title: "Auto Spares",
-      image: autoSparesImage,
-      description: "Quality automotive spare parts and components for all vehicles",
-      features: ["OEM and aftermarket options", "Engine and transmission parts", "Bearings, filters, and seals", "Compatible with major vehicle brands"],
-    },
-    {
-      title: "Service Kits",
-      image: serviceKitsImage,
-      description: "Complete maintenance and repair kits for industrial equipment",
-      features: ["All-in-one maintenance solutions", "O-rings, seals, and gaskets included", "Organized carrying cases", "Equipment-specific configurations"],
       brands: ["Bosch", "Taparia Tools", "3M", "Stanley", "Jhalani", "Macmaster", "Torque Master", "INGCO", "Deneers"],
     },
     {
