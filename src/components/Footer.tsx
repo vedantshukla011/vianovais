@@ -74,7 +74,7 @@ export const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span>Park View Apartment Ph-2 Gandhi Nagar Ghaziabad, Uttar Pradesh, 201001</span>
+                <span>123-Aditya High Street, Lal Kuan, Ghaziabad, Uttar Pradesh, India 201001</span>
               </div>
             </div>
           </div>
