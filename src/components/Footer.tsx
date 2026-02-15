@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="space-y-5">
             <img src={logoImage} alt="ViaNova Industrial Solutions" className="h-14 w-auto bg-white p-2 rounded-lg shadow-lg" />
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
-              In collaboration with UVTS and DASKMEI, providing comprehensive engineering products for industrial applications.
+              Providing comprehensive engineering products for industrial applications.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/15 mt-12 pt-8 text-center text-sm text-primary-foreground/50">
-          <p>&copy; {new Date().getFullYear()} ViaNova Industrial Solutions. In collaboration with UVTS and DASKMEI. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ViaNova Industrial Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>
