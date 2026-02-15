@@ -25,9 +25,6 @@ export const Navigation = () => {
             <div className="font-bold text-xl md:text-2xl text-accent">
               ViaNova Industrial Solutions
             </div>
-            <span className="text-xs text-muted-foreground hidden lg:block font-medium">
-              A UVTS and DASKMEI subsidiary
-            </span>
           </NavLink>
 
           {/* Desktop Navigation */}
