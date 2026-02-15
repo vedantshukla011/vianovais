@@ -16,7 +16,7 @@ const Inquiry = () => {
   const contactCards = [
     { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9654109754", subContent: "", href: "tel:+919654109754" },
     { icon: Mail, color: "from-secondary to-secondary-light", title: "Email", content: "vedant.shukla@vianovaindustrial.solutions", subContent: "", href: "mailto:vedant.shukla@vianovaindustrial.solutions" },
-    { icon: MapPin, color: "from-accent to-accent-light", title: "Head Office", content: "Park View Apartment Ph-2 Gandhi Nagar", subContent: "Ghaziabad, Uttar Pradesh 201001, India", href: "" },
+    { icon: MapPin, color: "from-accent to-accent-light", title: "Head Office", content: "123-Aditya High Street, Lal Kuan", subContent: "Ghaziabad, Uttar Pradesh 201001, India", href: "" },
   ];
 
   return (
