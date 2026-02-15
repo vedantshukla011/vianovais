@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import ClientsCarousel from "@/components/ClientsCarousel";
 import heroImage from "@/assets/hero-industrial.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
@@ -153,6 +154,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Clients Carousel */}
+      <ClientsCarousel />
 
       {/* Industries Section */}
       <section className="py-24 bg-gradient-hero text-primary-foreground relative overflow-hidden">
