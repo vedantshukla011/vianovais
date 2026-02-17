@@ -45,7 +45,7 @@ export const Footer = () => {
               <span>Measuring Instruments</span>
             </div>
             <a 
-              href="/DASKM_VIS_Product_Brochure.pdf" 
+              href="/Flow_Solutions_ViaNova.pdf" 
               download 
               className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors mt-3 font-medium"
             >
