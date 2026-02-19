@@ -35,7 +35,7 @@ const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
   const logoUrl = `https://logo.clearbit.com/${domain}`;
 
   return (
-    <div className="flex-shrink-0 mx-6 flex items-center justify-center h-20 w-40 bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="flex-shrink-0 mx-4 flex items-center justify-center h-20 w-40 bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
       {!imgError ? (
         <img
           src={logoUrl}
@@ -54,6 +54,9 @@ const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
 };
 
 const ClientsCarousel = () => {
+  // We need enough copies so the content never runs out during scroll
+  const repeatedClients = [...clients, ...clients, ...clients];
+
   return (
     <section className="py-16 bg-background overflow-hidden">
       <div className="container mx-auto px-4 mb-10 text-center">
@@ -64,8 +67,8 @@ const ClientsCarousel = () => {
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
         
-        <div className="flex animate-scroll-left">
-          {[...clients, ...clients].map((client, i) => (
+        <div className="flex animate-scroll-left" style={{ width: 'max-content' }}>
+          {repeatedClients.map((client, i) => (
             <BrandCard key={i} name={client.name} domain={client.domain} />
           ))}
         </div>
