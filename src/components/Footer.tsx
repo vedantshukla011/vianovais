@@ -38,11 +38,11 @@ export const Footer = () => {
           <div className="space-y-5">
             <h4 className="font-bold text-lg">Our Products</h4>
             <div className="flex flex-col space-y-3 text-sm text-primary-foreground/70">
+              <span>Measuring Instruments</span>
               <span>Valves & Control Systems</span>
               <span>Steam Traps & Accessories</span>
               <span>Gaskets & Jointing Sheets</span>
               <span>Industrial Compounds</span>
-              <span>Measuring Instruments</span>
             </div>
             <a 
               href="/Flow_Solutions_ViaNova.pdf" 
