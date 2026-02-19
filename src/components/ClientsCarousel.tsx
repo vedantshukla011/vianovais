@@ -25,6 +25,9 @@ const clients = [
   { name: "Norsonic", domain: "norsonic.com" },
   { name: "Rion", domain: "rion.co.jp" },
   { name: "Gray Wolf", domain: "graywolfsensing.com" },
+  { name: "ITECH", domain: "itechate.com" },
+  { name: "Hioki", domain: "hioki.com" },
+  { name: "Owon", domain: "owon.com.hk" },
 ];
 
 const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
