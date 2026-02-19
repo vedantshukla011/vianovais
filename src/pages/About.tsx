@@ -44,7 +44,7 @@ const About = () => {
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Story</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-8 text-foreground">Who We Are</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-5">
-              ViaNova Industrial Solutions works in collaboration with UVTS (UV Test Solutions) and DASKMEI, combining over 25 years of expertise in industrial valve manufacturing, precision measuring instruments, and innovative engineering solutions. We bring together world-class engineering, manufacturing excellence, and customer-centric service from our partner organizations.
+              ViaNova Industrial Solutions works in collaboration with UVTS (UV Test Solutions) and DASKMEI, combining over 25 years of expertise in precision measuring instruments, industrial valve manufacturing, and innovative engineering solutions. We bring together world-class engineering, manufacturing excellence, and customer-centric service from our partner organizations.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-5">
               UVTS specializes in advanced testing and measurement solutions, while DASKMEI focuses on industrial engineering products. Together, they empower ViaNova to offer a comprehensive portfolio spanning flow control systems, precision instruments, and industrial components.
