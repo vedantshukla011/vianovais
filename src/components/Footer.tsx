@@ -68,7 +68,7 @@ export const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <a href="mailto:vedant.shukla@vianovaindustrial.solutions" className="hover:text-primary-foreground transition-colors">vedant.shukla@vianovaindustrial.solutions</a>
+                <a href="mailto:sales@vianovaindustrial.solutions" className="hover:text-primary-foreground transition-colors">sales@vianovaindustrial.solutions</a>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
