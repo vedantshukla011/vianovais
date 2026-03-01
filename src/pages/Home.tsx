@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import heroImage from "@/assets/hero-industrial.jpg";
-import holiBanner from "@/assets/festival-greeting-holi.png";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
@@ -40,17 +39,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Holi Greeting Banner */}
-      <section className="w-full bg-background">
-        <div className="container mx-auto px-4 py-4">
-          <img
-            src={holiBanner}
-            alt="Wishing You A Very Happy Holi from ViaNova Industrial Solutions"
-            className="w-full max-w-4xl mx-auto rounded-xl shadow-elegant"
-          />
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
