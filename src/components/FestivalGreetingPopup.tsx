@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
-import holiBanner from "@/assets/festival-greeting-holi.png";
+import { Link } from "react-router-dom";
+import chinaImportBanner from "@/assets/china-import-banner.png";
 
 export const FestivalGreetingPopup = () => {
   const [open, setOpen] = useState(true);
@@ -17,11 +18,13 @@ export const FestivalGreetingPopup = () => {
           >
             <X className="w-5 h-5" />
           </button>
-          <img
-            src={holiBanner}
-            alt="Happy Holi from ViaNova Industrial Solutions"
-            className="w-full rounded-xl shadow-2xl"
-          />
+          <Link to="/inquiry" onClick={() => setOpen(false)}>
+            <img
+              src={chinaImportBanner}
+              alt="Import Electronic Components from China - Get a Quote Today"
+              className="w-full rounded-xl shadow-2xl cursor-pointer hover:opacity-95 transition-opacity"
+            />
+          </Link>
         </div>
       </DialogContent>
     </Dialog>

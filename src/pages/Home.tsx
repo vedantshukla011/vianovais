@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { FestivalGreetingPopup } from "@/components/FestivalGreetingPopup";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
 
