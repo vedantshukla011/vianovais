@@ -84,7 +84,7 @@ const Products = () => {
     },
     {
       title: "Industrial Automation",
-      image: measuringInstrumentsImage,
+      image: industrialAutomationImage,
       description: "Smart automation solutions leveraging RFID, PLC, SCADA, and IoT technologies to streamline manufacturing and industrial processes",
       features: ["RFID-based asset tracking and inventory management", "PLC and SCADA systems for process control", "IoT-enabled sensors and smart devices", "Industrial HMI panels and automation controllers"],
       subCategories: ["RFID Solutions", "PLC Systems", "SCADA", "IoT Sensors", "HMI Panels", "Industrial Controllers"],
