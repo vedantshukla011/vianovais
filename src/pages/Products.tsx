@@ -80,6 +80,20 @@ const Products = () => {
       description: "Advanced diagnostic and monitoring equipment for predictive maintenance",
       features: ["Digital multimeters and analyzers", "Vibration and thermal sensors", "Real-time monitoring capabilities", "Early fault detection technology"],
     },
+    {
+      title: "Industrial Automation",
+      image: measuringInstrumentsImage,
+      description: "Smart automation solutions leveraging RFID, PLC, SCADA, and IoT technologies to streamline manufacturing and industrial processes",
+      features: ["RFID-based asset tracking and inventory management", "PLC and SCADA systems for process control", "IoT-enabled sensors and smart devices", "Industrial HMI panels and automation controllers"],
+      subCategories: ["RFID Solutions", "PLC Systems", "SCADA", "IoT Sensors", "HMI Panels", "Industrial Controllers"],
+    },
+    {
+      title: "Industrial Management Solutions",
+      image: environmentalSensingImage,
+      description: "Comprehensive industrial management systems for operational efficiency, energy monitoring, and plant-wide resource optimization",
+      features: ["Energy management and monitoring systems", "Plant maintenance and asset management tools", "Production planning and workflow optimization", "Safety compliance and audit management"],
+      subCategories: ["Energy Management", "Asset Management", "Production Planning", "Safety Compliance", "Workflow Optimization"],
+    },
   ];
 
   const additionalProducts = [
