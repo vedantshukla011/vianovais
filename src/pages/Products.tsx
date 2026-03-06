@@ -12,6 +12,8 @@ import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jp
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
+import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
+import industrialManagementImage from "@/assets/product-industrial-management.jpg";
 
 const Products = () => {
   const productCategories = [
