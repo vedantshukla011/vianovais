@@ -12,6 +12,8 @@ import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jp
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
+import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
+import industrialManagementImage from "@/assets/product-industrial-management.jpg";
 
 const Products = () => {
   const productCategories = [
@@ -82,14 +84,14 @@ const Products = () => {
     },
     {
       title: "Industrial Automation",
-      image: measuringInstrumentsImage,
+      image: industrialAutomationImage,
       description: "Smart automation solutions leveraging RFID, PLC, SCADA, and IoT technologies to streamline manufacturing and industrial processes",
       features: ["RFID-based asset tracking and inventory management", "PLC and SCADA systems for process control", "IoT-enabled sensors and smart devices", "Industrial HMI panels and automation controllers"],
       subCategories: ["RFID Solutions", "PLC Systems", "SCADA", "IoT Sensors", "HMI Panels", "Industrial Controllers"],
     },
     {
       title: "Industrial Management Solutions",
-      image: environmentalSensingImage,
+      image: industrialManagementImage,
       description: "Comprehensive industrial management systems for operational efficiency, energy monitoring, and plant-wide resource optimization",
       features: ["Energy management and monitoring systems", "Plant maintenance and asset management tools", "Production planning and workflow optimization", "Safety compliance and audit management"],
       subCategories: ["Energy Management", "Asset Management", "Production Planning", "Safety Compliance", "Workflow Optimization"],
