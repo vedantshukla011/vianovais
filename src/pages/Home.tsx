@@ -15,10 +15,12 @@ import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jp
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
+import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
 
 const Home = () => {
   const products = [
     { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
+    { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
     { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
