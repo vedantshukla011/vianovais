@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
-import { FestivalGreetingPopup } from "@/components/FestivalGreetingPopup";
+
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import heroImage from "@/assets/hero-industrial.jpg";
