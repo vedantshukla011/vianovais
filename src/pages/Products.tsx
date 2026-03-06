@@ -91,7 +91,7 @@ const Products = () => {
     },
     {
       title: "Industrial Management Solutions",
-      image: environmentalSensingImage,
+      image: industrialManagementImage,
       description: "Comprehensive industrial management systems for operational efficiency, energy monitoring, and plant-wide resource optimization",
       features: ["Energy management and monitoring systems", "Plant maintenance and asset management tools", "Production planning and workflow optimization", "Safety compliance and audit management"],
       subCategories: ["Energy Management", "Asset Management", "Production Planning", "Safety Compliance", "Workflow Optimization"],
