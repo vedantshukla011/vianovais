@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <FestivalGreetingPopup />
+      
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
