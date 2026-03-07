@@ -100,6 +100,14 @@ export const Navigation = () => {
             >
               About
             </NavLink>
+            <NavLink
+              to="/products-at-gem"
+              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-primary font-semibold"
+              onClick={() => setIsOpen(false)}
+            >
+              Products@GeM
+            </NavLink>
             <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg">
                 Request Quote
