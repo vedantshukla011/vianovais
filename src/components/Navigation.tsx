@@ -50,6 +50,13 @@ export const Navigation = () => {
             >
               About
             </NavLink>
+            <NavLink
+              to="/products-at-gem"
+              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-primary font-semibold"
+            >
+              Products@GeM
+            </NavLink>
             <NavLink to="/inquiry">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 Request Quote
