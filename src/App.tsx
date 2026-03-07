@@ -11,6 +11,7 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Inquiry from "./pages/Inquiry";
 import NotFound from "./pages/NotFound";
+import ProductsAtGem from "./pages/ProductsAtGem";
 
 const queryClient = new QueryClient();
 
