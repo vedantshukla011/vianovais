@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Download } from "lucide-react";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
@@ -168,6 +168,18 @@ const Products = () => {
                           </span>
                         ))}
                       </div>
+                    </div>
+                  )}
+                  {product.title === "ESD Lab Solutions" && (
+                    <div className="pt-2">
+                      <a
+                        href="/ViaNova_ESD_Product_Catalog.xlsx"
+                        download
+                        className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-secondary/80 transition-colors"
+                      >
+                        <Download className="w-5 h-5" />
+                        <span>Download ESD Product Catalog</span>
+                      </a>
                     </div>
                   )}
                   {product.brands && (
