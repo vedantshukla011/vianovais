@@ -170,6 +170,18 @@ const Products = () => {
                       </div>
                     </div>
                   )}
+                  {product.title === "ESD Lab Solutions" && (
+                    <div className="pt-2">
+                      <a
+                        href="/ViaNova_ESD_Product_Catalog.xlsx"
+                        download
+                        className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-secondary/80 transition-colors"
+                      >
+                        <Download className="w-5 h-5" />
+                        <span>Download ESD Product Catalog</span>
+                      </a>
+                    </div>
+                  )}
                   {product.brands && (
                     <div className="pt-4">
                       <h4 className="font-semibold text-foreground mb-3">Brands We Carry:</h4>
