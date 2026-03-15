@@ -52,6 +52,14 @@ export const Footer = () => {
               <Download className="w-4 h-4" />
               <span>Download Product Brochure</span>
             </a>
+            <a 
+              href="/ViaNova_ESD_Product_Catalog.xlsx" 
+              download 
+              className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors mt-2 font-medium"
+            >
+              <Download className="w-4 h-4" />
+              <span>ESD Products</span>
+            </a>
           </div>
 
           {/* Contact */}
