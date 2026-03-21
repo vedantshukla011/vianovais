@@ -211,30 +211,8 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Additional Products Grid */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">More Options</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">Additional Products</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {additionalProducts.map((product, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-hover transition-all duration-500 hover:-translate-y-2 border-none shadow-elegant bg-card group"
-              >
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg text-foreground group-hover:text-secondary transition-colors">{product.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{product.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Full Product Catalog */}
+      <ProductCatalog />
 
       {/* CTA Section */}
       <section className="py-20 bg-background">
