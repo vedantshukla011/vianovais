@@ -17,6 +17,7 @@ import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
 import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
 import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
+import industrialManagementImage from "@/assets/product-industrial-management.jpg";
 
 const Home = () => {
   const products = [
@@ -31,6 +32,7 @@ const Home = () => {
     { title: "Mechanical Tools", description: "Professional-grade tools for industrial maintenance", image: mechanicalToolsImage },
     { title: "Environmental Sensing Solutions", description: "Temperature, humidity, air quality & gas detection instruments", image: environmentalSensingImage },
     { title: "Fault Recognition Devices", description: "Advanced diagnostic and monitoring equipment", image: faultDevicesImage },
+    { title: "Industrial Management Solutions", description: "Energy monitoring, asset management & workflow optimization systems", image: industrialManagementImage },
   ];
 
   const features = [
