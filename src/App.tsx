@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Inquiry from "./pages/Inquiry";
 import NotFound from "./pages/NotFound";
 import ProductsAtGem from "./pages/ProductsAtGem";
+import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
 
