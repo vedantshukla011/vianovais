@@ -75,10 +75,10 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-6 space-y-4 border-t border-border bg-background/95 backdrop-blur-md">
+          <div className="md:hidden py-3 space-y-1 border-t border-border bg-background/95 backdrop-blur-md rounded-b-xl">
             <NavLink
               to="/"
-              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
+              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
               activeClassName="text-primary font-semibold"
               onClick={() => setIsOpen(false)}
             >
@@ -86,7 +86,7 @@ export const Navigation = () => {
             </NavLink>
             <NavLink
               to="/products"
-              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
+              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
               activeClassName="text-primary font-semibold"
               onClick={() => setIsOpen(false)}
             >
@@ -94,7 +94,7 @@ export const Navigation = () => {
             </NavLink>
             <NavLink
               to="/about"
-              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
+              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
               activeClassName="text-primary font-semibold"
               onClick={() => setIsOpen(false)}
             >
@@ -102,17 +102,19 @@ export const Navigation = () => {
             </NavLink>
             <NavLink
               to="/products-at-gem"
-              className="block py-3 text-foreground/70 hover:text-foreground transition-colors font-medium"
+              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
               activeClassName="text-primary font-semibold"
               onClick={() => setIsOpen(false)}
             >
               Products@GeM
             </NavLink>
-            <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg">
-                Request Quote
-              </Button>
-            </NavLink>
+            <div className="px-3 pt-2 pb-1">
+              <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg">
+                  Request Quote
+                </Button>
+              </NavLink>
+            </div>
           </div>
         )}
       </div>
