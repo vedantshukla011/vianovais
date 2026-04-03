@@ -29,34 +29,10 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <NavLink
-              to="/"
-              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/products"
-              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-            >
-              Products
-            </NavLink>
-            <NavLink
-              to="/about"
-              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/products-at-gem"
-              className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-            >
-              Products@GeM
-            </NavLink>
+            <NavLink to="/" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Home</NavLink>
+            <NavLink to="/products" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Products</NavLink>
+            <NavLink to="/about" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">About</NavLink>
+            <NavLink to="/products-at-gem" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Products@GeM</NavLink>
             <NavLink to="/inquiry">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 Request Quote
@@ -72,52 +48,24 @@ export const Navigation = () => {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-3 space-y-1 border-t border-border bg-background/95 backdrop-blur-md rounded-b-xl">
-            <NavLink
-              to="/"
-              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/products"
-              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Products
-            </NavLink>
-            <NavLink
-              to="/about"
-              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/products-at-gem"
-              className="block px-3 py-2.5 text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors font-medium"
-              activeClassName="text-primary font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Products@GeM
-            </NavLink>
-            <div className="px-3 pt-2 pb-1">
-              <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg">
-                  Request Quote
-                </Button>
-              </NavLink>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation - Full width overlay */}
+      {isOpen && (
+        <div className="md:hidden fixed left-0 right-0 top-20 bg-background border-t border-border shadow-lg">
+          <NavLink to="/" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Home</NavLink>
+          <NavLink to="/products" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Products</NavLink>
+          <NavLink to="/about" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>About</NavLink>
+          <NavLink to="/products-at-gem" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Products@GeM</NavLink>
+          <div className="p-4">
+            <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg py-3">
+                Request Quote
+              </Button>
+            </NavLink>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
