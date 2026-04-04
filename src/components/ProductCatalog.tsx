@@ -1,9 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Search, ChevronLeft, ChevronRight, Package, Plus, Check, ShoppingCart } from "lucide-react";
 import { CATALOG_PRODUCTS, CATALOG_CATEGORIES, CATALOG_SUBCATEGORIES } from "@/data/catalogProducts";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
@@ -11,10 +11,23 @@ import { useQuoteCart } from "@/contexts/QuoteCartContext";
 const ITEMS_PER_PAGE = 24;
 
 const ProductCatalog = () => {
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Read URL params for initial category/subcategory selection
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    const sub = searchParams.get("subcategory");
+    if (cat && CATALOG_CATEGORIES.includes(cat as any)) {
+      setSelectedCategory(cat);
+      if (sub && CATALOG_SUBCATEGORIES[cat]?.includes(sub)) {
+        setSelectedSubCategory(sub);
+      }
+    }
+  }, [searchParams]);
   const { items, addItem, removeItem, hasItem } = useQuoteCart();
 
   const filtered = useMemo(() => {
