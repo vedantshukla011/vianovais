@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -12,6 +13,7 @@ import About from "./pages/About";
 import Inquiry from "./pages/Inquiry";
 import NotFound from "./pages/NotFound";
 import ProductsAtGem from "./pages/ProductsAtGem";
+import ScientificLaboratoryInstruments from "./pages/ScientificLaboratoryInstruments";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
@@ -19,24 +21,27 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <QuoteCartProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products-at-gem" element={<ProductsAtGem />} />
-            <Route path="/inquiry" element={<Inquiry />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </TooltipProvider>
+      <HelmetProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <Navigation />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/products-at-gem" element={<ProductsAtGem />} />
+              <Route path="/inquiry" element={<Inquiry />} />
+              <Route path="/scientific-laboratory-instruments" element={<ScientificLaboratoryInstruments />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </TooltipProvider>
+      </HelmetProvider>
     </QuoteCartProvider>
   </QueryClientProvider>
 );
