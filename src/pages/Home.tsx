@@ -16,6 +16,9 @@ import faultDevicesImage from "@/assets/product-fault-devices.jpg";
 import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
 import esdLabImage from "@/assets/product-esd-lab.jpg";
 import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
+import scientificLabImage from "@/assets/product-scientific-lab.jpg";
+import analyticalBalancesImage from "@/assets/product-analytical-balances.jpg";
+import interactiveDisplaysImage from "@/assets/product-interactive-displays.jpg";
 import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
 import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
 import industrialManagementImage from "@/assets/product-industrial-management.jpg";
@@ -26,6 +29,9 @@ const Home = () => {
     { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
     { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
+    { title: "Scientific Laboratory Equipments", description: "Beakers, flasks, centrifuges, microscopes & complete lab setups", image: scientificLabImage },
+    { title: "Analytical Balances", description: "High-precision digital weighing scales for laboratory & industrial use", image: analyticalBalancesImage },
+    { title: "Interactive Displays", description: "Touchscreen panels & digital whiteboards for education & business", image: interactiveDisplaysImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
     { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
