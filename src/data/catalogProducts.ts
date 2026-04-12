@@ -11,6 +11,9 @@ export const CATALOG_CATEGORIES = [
   "Precision Measuring",
   "Soldering",
   "Testing & Diagnostic",
+  "Scientific Laboratory Equipments",
+  "Analytical Balances",
+  "Interactive Displays",
 ] as const;
 
 export const CATALOG_SUBCATEGORIES: Record<string, string[]> = {
@@ -20,6 +23,9 @@ export const CATALOG_SUBCATEGORIES: Record<string, string[]> = {
   "Precision Measuring": ["Bore Gauge", "Depth Gauge", "Depth Micrometer", "Dial Indicator", "Digital Indicator", "Durometer", "Feeler Gauges", "Force Gauge", "Inspection Mirror", "Magnetic Stand", "Measuring & Marking Tools", "Outside Micrometer", "Pin Gauge Set", "Pitch & Radius Gauge", "Precision Micrometer", "Protractors", "Spirit Levels & Inclinometers", "Thickness Gauge", "Vernier Caliper"],
   "Soldering": ["ESD Supplies", "Fume Extractors", "Ionizer", "Kapton Tape", "Microscope & Magnifier", "Precision Tweezer", "Solder Paste (Flux)", "Solder Pot", "Solder Wire", "Soldering Accessories", "Soldering Bits", "Soldering Elements", "Soldering Iron", "Soldering Spares", "Soldering Station"],
   "Testing & Diagnostic": ["Automotive Diagnostic Meters", "Battery Testers", "Clamp Meter", "Component Testing", "DC Electronic Load Tester", "Earth Resistance Tester", "Electrical Tester", "Environment Tester", "Function Generator", "Insulation Tester", "Multimeter", "Network & Cable Tester", "Oscilloscope", "Panel Meter & Controller", "Power Analyzer", "Power Supply", "Sound Meter & Lux Meter", "Spectrum Analyzer", "Tachometer", "Temperature Meter", "Test Probes & Leads", "Thermal Imager", "Water Testing Meters"],
+  "Scientific Laboratory Equipments": ["Lab Glassware", "Centrifuges", "Microscopes", "Lab Consumables", "Heating & Cooling Equipment", "Lab Furniture"],
+  "Analytical Balances": ["Precision Balances", "Micro Balances", "Semi-Micro Balances", "Moisture Analyzers", "Weighing Accessories"],
+  "Interactive Displays": ["Interactive Flat Panels", "Digital Whiteboards", "Touch Monitors", "Display Accessories"],
 };
 
 export const CATALOG_PRODUCTS: CatalogProduct[] = [
