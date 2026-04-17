@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { FestivalGreetingPopup } from "@/components/FestivalGreetingPopup";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
 
@@ -52,7 +51,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <FestivalGreetingPopup />
       
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
