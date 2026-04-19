@@ -47,7 +47,14 @@ const Home = () => {
     { icon: Zap, title: "25+ Years", description: "Decades of expertise in industrial engineering solutions" },
   ];
 
-  const industries = ["Oil & Gas", "Chemical Processing", "Pharmaceuticals", "Power Generation", "Food & Beverage", "Paper & Pulp", "Textiles", "Petrochemicals"];
+  const industries = [
+    { name: "Manufacturing", icon: Factory },
+    { name: "Automobile", icon: Car },
+    { name: "R&D", icon: FlaskConical },
+    { name: "Education", icon: GraduationCap },
+    { name: "Pharmaceuticals", icon: Pill },
+    { name: "Medical", icon: Stethoscope },
+  ];
 
   return (
     <div className="min-h-screen">
