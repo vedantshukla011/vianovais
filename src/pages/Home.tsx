@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, Car, FlaskConical, GraduationCap, Pill, Stethoscope } from "lucide-react";
+import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
@@ -49,7 +49,7 @@ const Home = () => {
 
   const industries = [
     { name: "Manufacturing", icon: Factory },
-    { name: "Automobile", icon: Car },
+    { name: "Automobile", icon: CarFront },
     { name: "R&D", icon: FlaskConical },
     { name: "Education", icon: GraduationCap },
     { name: "Pharmaceuticals", icon: Pill },
