@@ -54,6 +54,8 @@ const Home = () => {
     { name: "Education", icon: GraduationCap },
     { name: "Pharmaceuticals", icon: Pill },
     { name: "Medical", icon: Stethoscope },
+    { name: "QA", icon: ClipboardCheck },
+    { name: "Automation", icon: Bot },
   ];
 
   return (
