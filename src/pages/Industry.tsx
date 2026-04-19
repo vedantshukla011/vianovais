@@ -1,0 +1,131 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { getIndustry, INDUSTRIES } from "@/data/industries";
+
+const Industry = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const industry = slug ? getIndustry(slug) : undefined;
+
+  if (!industry) return <Navigate to="/" replace />;
+
+  const Icon = industry.icon;
+  const canonical = `https://vianovaindustrialsolutions.com/industries/${industry.slug}`;
+
+  return (
+    <div className="min-h-screen bg-background pt-20">
+      <Helmet>
+        <title>{`${industry.name} Solutions | ViaNova Industrial Solutions`}</title>
+        <meta name="description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
+        <link rel="canonical" href={canonical} />
+      </Helmet>
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-3 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-2 mb-5">
+              <Icon className="w-5 h-5 text-accent" />
+              <span className="text-sm font-semibold uppercase tracking-wider">Industries We Serve</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-5">{industry.name}</h1>
+            <p className="text-xl md:text-2xl text-primary-foreground/85 mb-8">{industry.tagline}</p>
+            <p className="text-base md:text-lg text-primary-foreground/75 leading-relaxed mb-8">{industry.intro}</p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/inquiry">
+                <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
+                  Request a Quote <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/products">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Browse Products
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offerings */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Provide</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">
+              Solutions for the {industry.name} sector
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industry.offerings.map((o, i) => (
+              <Card key={i} className="border border-border hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="w-11 h-11 rounded-lg bg-secondary/10 flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-foreground">{o.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{o.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-16 bg-muted/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-foreground">Typical Applications</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {industry.applications.map((a, i) => (
+              <span key={i} className="px-4 py-2 bg-background border border-border rounded-full text-sm font-medium text-foreground">
+                {a}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Other Industries */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-foreground">Explore Other Industries</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {INDUSTRIES.filter((i) => i.slug !== industry.slug).map((i) => {
+              const I = i.icon;
+              return (
+                <Link
+                  key={i.slug}
+                  to={`/industries/${i.slug}`}
+                  className="bg-card border border-border rounded-xl p-5 text-center hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+                >
+                  <I className="w-8 h-8 mx-auto mb-2 text-secondary" />
+                  <p className="font-semibold text-sm text-foreground">{i.name}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-br from-secondary to-secondary-light text-secondary-foreground">
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need a tailored solution for {industry.name}?</h2>
+          <p className="text-lg mb-7 text-secondary-foreground/90">
+            Talk to our experts for a customized proposal aligned to your application.
+          </p>
+          <Link to="/inquiry">
+            <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-8">
+              Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Industry;
