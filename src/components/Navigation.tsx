@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CATALOG_CATEGORIES, CATALOG_SUBCATEGORIES } from "@/data/catalogProducts";
+import { INDUSTRIES } from "@/data/industries";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +13,11 @@ export const Navigation = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileExpandedCat, setMobileExpandedCat] = useState<string | null>(null);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const industriesTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,6 +130,39 @@ export const Navigation = () => {
             </div>
 
             <NavLink to="/about" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">About</NavLink>
+
+            {/* Industries Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => { clearTimeout(industriesTimeoutRef.current); setIndustriesOpen(true); }}
+              onMouseLeave={() => { industriesTimeoutRef.current = setTimeout(() => setIndustriesOpen(false), 200); }}
+            >
+              <button className="text-foreground/70 hover:text-foreground transition-colors font-medium inline-flex items-center gap-1">
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform ${industriesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {industriesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                  <div className="bg-background border border-border rounded-xl shadow-xl p-2 min-w-[240px]">
+                    {INDUSTRIES.map((ind) => {
+                      const Icon = ind.icon;
+                      return (
+                        <Link
+                          key={ind.slug}
+                          to={`/industries/${ind.slug}`}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors"
+                          onClick={() => setIndustriesOpen(false)}
+                        >
+                          <Icon className="w-4 h-4 text-secondary" />
+                          {ind.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <NavLink to="/products-at-gem" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Products@GeM</NavLink>
             <NavLink to="/inquiry">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-6 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -197,6 +234,32 @@ export const Navigation = () => {
           </div>
 
           <NavLink to="/about" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>About</NavLink>
+
+          {/* Mobile Industries */}
+          <div className="border-b border-border/50">
+            <button
+              className="w-full flex items-center justify-between px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium"
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+            >
+              Industries
+              <ChevronDown className={`w-4 h-4 transition-transform ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileIndustriesOpen && (
+              <div className="bg-muted/20">
+                {INDUSTRIES.map((ind) => (
+                  <Link
+                    key={ind.slug}
+                    to={`/industries/${ind.slug}`}
+                    className="block px-8 py-3 text-sm text-foreground/70 hover:text-primary hover:bg-muted transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {ind.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <NavLink to="/products-at-gem" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Products@GeM</NavLink>
           <div className="p-4">
             <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
