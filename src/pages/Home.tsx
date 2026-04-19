@@ -49,7 +49,7 @@ const Home = () => {
 
   const industries = [
     { name: "Manufacturing", icon: Factory },
-    { name: "Automobile", icon: Car },
+    { name: "Automobile", icon: CarFront },
     { name: "R&D", icon: FlaskConical },
     { name: "Education", icon: GraduationCap },
     { name: "Pharmaceuticals", icon: Pill },
