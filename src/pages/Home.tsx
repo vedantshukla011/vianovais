@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, Car, FlaskConical, GraduationCap, Pill, Stethoscope } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
@@ -201,8 +201,8 @@ const Home = () => {
                 key={index}
                 className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-center hover:bg-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 group"
               >
-                <CheckCircle2 className="w-7 h-7 mx-auto mb-3 text-accent group-hover:scale-110 transition-transform" />
-                <p className="font-semibold">{industry}</p>
+                <industry.icon className="w-10 h-10 mx-auto mb-3 text-accent group-hover:scale-110 transition-transform" />
+                <p className="font-semibold">{industry.name}</p>
               </div>
             ))}
           </div>
