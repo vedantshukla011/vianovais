@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, Fla
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import HotSellingProducts from "@/components/HotSellingProducts";
+import NewLaunches from "@/components/NewLaunches";
 import heroImage from "@/assets/hero-industrial.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
@@ -127,6 +128,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* New Launches */}
+      <NewLaunches />
 
       {/* Products Section */}
       <section className="py-24 bg-muted/50">
