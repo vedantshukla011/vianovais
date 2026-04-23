@@ -15,6 +15,8 @@ import NotFound from "./pages/NotFound";
 import ProductsAtGem from "./pages/ProductsAtGem";
 import ScientificLaboratoryInstruments from "./pages/ScientificLaboratoryInstruments";
 import Industry from "./pages/Industry";
+import Blog from "./pages/Blog";
+import BlogDriverTesting from "./pages/BlogDriverTesting";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
               <Route path="/inquiry" element={<Inquiry />} />
               <Route path="/scientific-laboratory-instruments" element={<ScientificLaboratoryInstruments />} />
               <Route path="/industries/:slug" element={<Industry />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/driver-testing-machine" element={<BlogDriverTesting />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
