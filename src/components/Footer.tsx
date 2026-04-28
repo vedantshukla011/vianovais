@@ -31,6 +31,9 @@ export const Footer = () => {
               <NavLink to="/about" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 About Us
               </NavLink>
+              <NavLink to="/blog" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                Blog
+              </NavLink>
             </div>
           </div>
 
