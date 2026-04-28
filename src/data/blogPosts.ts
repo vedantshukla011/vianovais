@@ -11,6 +11,19 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "bulk-email-whatsapp-marketing-tool",
+    title: "Bulk Email & WhatsApp Marketing Tool | Automate Business Outreach",
+    description:
+      "Send bulk emails, WhatsApp messages and automate business outreach with our all-in-one bulk messaging platform. Boost lead generation and conversions.",
+    keywords:
+      "bulk email sender, WhatsApp bulk sender, email marketing tool, bulk messaging software, mass email sender, WhatsApp marketing software, WhatsApp API marketing tool",
+    date: "2026-04-28",
+    readTime: "5 min read",
+    category: "Marketing Automation",
+    excerpt:
+      "All-in-one bulk email sender and WhatsApp marketing software — automate outreach, run multi-channel campaigns and convert more leads.",
+  },
+  {
     slug: "driver-testing-machine",
     title: "Driver Testing Machine for LED Drivers, SMPS, Adapters & UPS",
     description:
