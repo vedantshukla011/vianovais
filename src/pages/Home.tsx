@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import HotSellingProducts from "@/components/HotSellingProducts";
 import NewLaunches from "@/components/NewLaunches";
-import { AutomatePopup } from "@/components/AutomatePopup";
 import heroImage from "@/assets/hero-industrial.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
@@ -62,8 +61,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <AutomatePopup />
-      
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />

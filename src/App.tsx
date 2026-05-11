@@ -17,7 +17,6 @@ import ScientificLaboratoryInstruments from "./pages/ScientificLaboratoryInstrum
 import Industry from "./pages/Industry";
 import Blog from "./pages/Blog";
 import BlogDriverTesting from "./pages/BlogDriverTesting";
-import BlogBulkMessaging from "./pages/BlogBulkMessaging";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
@@ -42,7 +41,6 @@ const App = () => (
               <Route path="/industries/:slug" element={<Industry />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/driver-testing-machine" element={<BlogDriverTesting />} />
-              <Route path="/blog/bulk-email-whatsapp-marketing-tool" element={<BlogBulkMessaging />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
