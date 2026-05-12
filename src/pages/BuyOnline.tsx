@@ -111,22 +111,23 @@ const BuyOnline = () => {
                 </span>
               </p>
             </div>
-            <Button
-              onClick={() => setCartOpen(true)}
-              size="lg"
-              className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold relative self-start md:self-auto"
-            >
-              <ShoppingCart className="w-5 h-5 mr-2" />
-              View Cart
-              {cartCount > 0 && (
-                <span className="ml-2 inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-primary-foreground text-primary text-xs font-bold">
-                  {cartCount}
-                </span>
-              )}
-            </Button>
           </div>
         </div>
       </section>
+
+      {/* Floating cart button */}
+      <button
+        onClick={() => setCartOpen(true)}
+        aria-label="View cart"
+        className="fixed bottom-6 right-6 z-40 bg-accent hover:bg-accent-light text-accent-foreground rounded-full shadow-2xl h-16 w-16 flex items-center justify-center transition-transform hover:scale-105"
+      >
+        <ShoppingCart className="w-6 h-6" />
+        {cartCount > 0 && (
+          <span className="absolute -top-1 -right-1 inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-primary text-primary-foreground text-xs font-bold border-2 border-background">
+            {cartCount}
+          </span>
+        )}
+      </button>
 
       {/* Search + categories */}
       <section className="sticky top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border">
