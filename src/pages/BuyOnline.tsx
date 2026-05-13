@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Search, ShoppingCart, Plus, Minus, Trash2, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { SHOP_PRODUCTS, type ShopProduct } from "@/data/shopProducts";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
+
+const SITE_URL = "https://vianovaindustrial.solutions";
 
 const ALL = "All Categories";
 const TAX_RATE = 0.18;
@@ -19,6 +21,7 @@ interface CartLine { product: ShopProduct; qty: number; }
 
 const BuyOnline = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { clearCart: clearQuote, addItem: addQuoteItem } = useQuoteCart();
 
   const categories = useMemo(() => {
@@ -26,10 +29,22 @@ const BuyOnline = () => {
     return [ALL, ...Array.from(set).sort()];
   }, []);
 
-  const [activeCat, setActiveCat] = useState<string>(ALL);
-  const [query, setQuery] = useState("");
+  const initialCat = searchParams.get("category") || ALL;
+  const initialQuery = searchParams.get("q") || "";
+  const [activeCat, setActiveCat] = useState<string>(
+    categories.includes(initialCat) ? initialCat : ALL,
+  );
+  const [query, setQuery] = useState(initialQuery);
   const [cart, setCart] = useState<Record<number, CartLine>>({});
   const [cartOpen, setCartOpen] = useState(false);
+
+  // Sync filter state into URL for crawlable category pages
+  useEffect(() => {
+    const next = new URLSearchParams();
+    if (activeCat !== ALL) next.set("category", activeCat);
+    if (query.trim()) next.set("q", query.trim());
+    setSearchParams(next, { replace: true });
+  }, [activeCat, query, setSearchParams]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -84,15 +99,89 @@ const BuyOnline = () => {
     navigate("/inquiry");
   };
 
+  // SEO meta and structured data
+  const isCategoryView = activeCat !== ALL;
+  const canonicalUrl = isCategoryView
+    ? `${SITE_URL}/buy-online?category=${encodeURIComponent(activeCat)}`
+    : `${SITE_URL}/buy-online`;
+  const seoTitle = isCategoryView
+    ? `${activeCat} — Buy Online in India | ViaNova Industrial Solutions`
+    : "Buy Industrial & Lab Instruments Online India | Multimeters, Oscilloscopes, Soldering Stations | ViaNova";
+  const seoDescription = isCategoryView
+    ? `Shop ${activeCat.toLowerCase()} online in India. ${filtered.length}+ models with listed prices, GST invoices and pan-India delivery from ViaNova Industrial Solutions.`
+    : `Shop ${SHOP_PRODUCTS.length}+ measuring instruments, oscilloscopes, multimeters, clamp meters, LCR meters, soldering & rework stations, power supplies, electronic loads, environmental testers and lab equipment online. Listed prices, GST invoice, pan-India delivery.`;
+  const seoKeywords = [
+    "buy measuring instruments online India",
+    "industrial test equipment online",
+    "lab instruments online price",
+    ...categories.filter((c) => c !== ALL).map((c) => `${c.toLowerCase()} price India`),
+    "ViaNova Industrial Solutions",
+  ].join(", ");
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: isCategoryView ? `${activeCat} — ViaNova Buy Online` : "ViaNova Buy Online Catalogue",
+    itemListElement: filtered.slice(0, 100).map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: p.name,
+        image: p.image,
+        category: p.category,
+        brand: { "@type": "Brand", name: "ViaNova Industrial Solutions" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "INR",
+          price: p.price.toFixed(2),
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/buy-online?category=${encodeURIComponent(p.category)}`,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: p.price.toFixed(2),
+            priceCurrency: "INR",
+            valueAddedTaxIncluded: false,
+          },
+        },
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Buy Online", item: `${SITE_URL}/buy-online` },
+      ...(isCategoryView
+        ? [{ "@type": "ListItem", position: 3, name: activeCat, item: canonicalUrl }]
+        : []),
+    ],
+  };
+
   return (
     <>
       <Helmet>
-        <title>Buy Online | Shop Industrial & Lab Instruments</title>
-        <meta
-          name="description"
-          content="Shop measuring instruments, soldering stations, multimeters, lab and electrical testing equipment online. Prices exclusive of taxes."
-        />
-        <link rel="canonical" href="https://vianovaindustrial.solutions/buy-online" />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta name="keywords" content={seoKeywords} />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href={canonicalUrl} />
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ViaNova Industrial Solutions" />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_IN" />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        {/* Structured data */}
+        <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       </Helmet>
 
       {/* Header */}
@@ -103,9 +192,13 @@ const BuyOnline = () => {
               <span className="inline-block px-3 py-1 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-xs font-medium mb-3">
                 Online Store
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold mb-3">Buy Online</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-3">
+                {isCategoryView ? `Buy ${activeCat} Online` : "Buy Industrial & Lab Instruments Online"}
+              </h1>
               <p className="text-primary-foreground/80 max-w-2xl">
-                Browse our complete catalog of measuring instruments and electronic test equipment.
+                {isCategoryView
+                  ? `Browse genuine ${activeCat.toLowerCase()} with listed prices, GST invoice and pan-India delivery from ViaNova Industrial Solutions.`
+                  : "Browse our complete catalogue of measuring instruments, oscilloscopes, multimeters, soldering stations, power supplies and electronic test equipment."}
                 <span className="block text-sm mt-1 text-primary-foreground/70">
                   All listed prices are <strong>exclusive of taxes</strong>. 18% GST applied at checkout summary.
                 </span>
