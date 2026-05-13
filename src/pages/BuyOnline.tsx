@@ -192,9 +192,13 @@ const BuyOnline = () => {
               <span className="inline-block px-3 py-1 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-xs font-medium mb-3">
                 Online Store
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold mb-3">Buy Online</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-3">
+                {isCategoryView ? `Buy ${activeCat} Online` : "Buy Industrial & Lab Instruments Online"}
+              </h1>
               <p className="text-primary-foreground/80 max-w-2xl">
-                Browse our complete catalog of measuring instruments and electronic test equipment.
+                {isCategoryView
+                  ? `Browse genuine ${activeCat.toLowerCase()} with listed prices, GST invoice and pan-India delivery from ViaNova Industrial Solutions.`
+                  : "Browse our complete catalogue of measuring instruments, oscilloscopes, multimeters, soldering stations, power supplies and electronic test equipment."}
                 <span className="block text-sm mt-1 text-primary-foreground/70">
                   All listed prices are <strong>exclusive of taxes</strong>. 18% GST applied at checkout summary.
                 </span>
