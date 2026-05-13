@@ -53,7 +53,7 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <NavLink to="/" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Home</NavLink>
+            <NavLink to="/" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Home</NavLink>
             
             {/* Products with Mega Menu */}
             <div
@@ -62,7 +62,7 @@ export const Navigation = () => {
               onMouseLeave={handleMouseLeave}
               ref={dropdownRef}
             >
-              <NavLink to="/products" className="text-foreground/70 hover:text-foreground transition-colors font-medium inline-flex items-center gap-1" activeClassName="text-primary font-semibold">
+              <NavLink to="/products" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium inline-flex items-center gap-1`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>
                 Products
                 <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
               </NavLink>
@@ -129,7 +129,7 @@ export const Navigation = () => {
               )}
             </div>
 
-            <NavLink to="/about" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">About</NavLink>
+            <NavLink to="/about" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>About</NavLink>
 
             {/* Industries Dropdown */}
             <div
@@ -137,7 +137,7 @@ export const Navigation = () => {
               onMouseEnter={() => { clearTimeout(industriesTimeoutRef.current); setIndustriesOpen(true); }}
               onMouseLeave={() => { industriesTimeoutRef.current = setTimeout(() => setIndustriesOpen(false), 200); }}
             >
-              <button className="text-foreground/70 hover:text-foreground transition-colors font-medium inline-flex items-center gap-1">
+              <button className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium inline-flex items-center gap-1`}>
                 Industries
                 <ChevronDown className={`w-4 h-4 transition-transform ${industriesOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -163,8 +163,8 @@ export const Navigation = () => {
               )}
             </div>
 
-            <NavLink to="/products-at-gem" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Products@GeM</NavLink>
-            <NavLink to="/buy-online" className="text-foreground/70 hover:text-foreground transition-colors font-medium" activeClassName="text-primary font-semibold">Buy Online</NavLink>
+            <NavLink to="/products-at-gem" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Products@GeM</NavLink>
+            <NavLink to="/buy-online" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Buy Online</NavLink>
             <NavLink to="/inquiry">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 Request Quote
@@ -174,10 +174,10 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:bg-muted rounded-xl transition-colors"
+            className={`md:hidden p-2 rounded-xl transition-colors ${scrolled ? 'hover:bg-muted' : 'hover:bg-white/10'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className={`w-6 h-6 ${scrolled ? '' : 'text-white'}`} /> : <Menu className={`w-6 h-6 ${scrolled ? '' : 'text-white'}`} />}
           </button>
         </div>
       </div>
