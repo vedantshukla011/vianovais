@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Search, ShoppingCart, Plus, Minus, Trash2, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { SHOP_PRODUCTS, type ShopProduct } from "@/data/shopProducts";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
+
+const SITE_URL = "https://vianovaindustrial.solutions";
 
 const ALL = "All Categories";
 const TAX_RATE = 0.18;
@@ -19,6 +21,7 @@ interface CartLine { product: ShopProduct; qty: number; }
 
 const BuyOnline = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { clearCart: clearQuote, addItem: addQuoteItem } = useQuoteCart();
 
   const categories = useMemo(() => {
@@ -26,10 +29,22 @@ const BuyOnline = () => {
     return [ALL, ...Array.from(set).sort()];
   }, []);
 
-  const [activeCat, setActiveCat] = useState<string>(ALL);
-  const [query, setQuery] = useState("");
+  const initialCat = searchParams.get("category") || ALL;
+  const initialQuery = searchParams.get("q") || "";
+  const [activeCat, setActiveCat] = useState<string>(
+    categories.includes(initialCat) ? initialCat : ALL,
+  );
+  const [query, setQuery] = useState(initialQuery);
   const [cart, setCart] = useState<Record<number, CartLine>>({});
   const [cartOpen, setCartOpen] = useState(false);
+
+  // Sync filter state into URL for crawlable category pages
+  useEffect(() => {
+    const next = new URLSearchParams();
+    if (activeCat !== ALL) next.set("category", activeCat);
+    if (query.trim()) next.set("q", query.trim());
+    setSearchParams(next, { replace: true });
+  }, [activeCat, query, setSearchParams]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
