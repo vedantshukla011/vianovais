@@ -1,9 +1,13 @@
+import { useMemo, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowRight, CheckCircle2, Search, Plus, Check } from "lucide-react";
 import { getIndustry, INDUSTRIES } from "@/data/industries";
+import { MEDICAL_PRODUCTS } from "@/data/medicalProducts";
+import { useQuoteCart } from "@/contexts/QuoteCartContext";
 
 const Industry = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -87,6 +91,9 @@ const Industry = () => {
           </div>
         </div>
       </section>
+
+      {/* Medical-only: product & pricing catalogue */}
+      {industry.slug === "medical" && <MedicalCatalogue />}
 
       {/* Other Industries */}
       <section className="py-20 bg-background">
