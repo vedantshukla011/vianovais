@@ -1,9 +1,13 @@
+import { useMemo, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowRight, CheckCircle2, Search, Plus, Check } from "lucide-react";
 import { getIndustry, INDUSTRIES } from "@/data/industries";
+import { MEDICAL_PRODUCTS } from "@/data/medicalProducts";
+import { useQuoteCart } from "@/contexts/QuoteCartContext";
 
 const Industry = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -88,6 +92,9 @@ const Industry = () => {
         </div>
       </section>
 
+      {/* Medical-only: product & pricing catalogue */}
+      {industry.slug === "medical" && <MedicalCatalogue />}
+
       {/* Other Industries */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -129,3 +136,139 @@ const Industry = () => {
 };
 
 export default Industry;
+
+const formatINR = (n: number) =>
+  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
+
+const ALL = "All Categories";
+
+const MedicalCatalogue = () => {
+  const { addItem, hasItem } = useQuoteCart();
+  const [query, setQuery] = useState("");
+  const [activeCat, setActiveCat] = useState<string>(ALL);
+
+  const categories = useMemo(() => {
+    const set = new Set(MEDICAL_PRODUCTS.map((p) => p.category));
+    return [ALL, ...Array.from(set).sort()];
+  }, []);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return MEDICAL_PRODUCTS.filter((p) => {
+      if (activeCat !== ALL && p.category !== activeCat) return false;
+      if (q && !p.name.toLowerCase().includes(q) && !p.category.toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }, [query, activeCat]);
+
+  return (
+    <section className="py-20 bg-background border-t border-border">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Medical Catalogue</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-3 text-foreground">
+            Medical Equipment & Supplies — Indicative Pricing
+          </h2>
+          <p className="text-muted-foreground mt-3">
+            Listed prices are indicative and exclusive of taxes. Add items to your inquiry for a formal quotation.
+          </p>
+        </div>
+
+        {/* Search + categories */}
+        <div className="max-w-5xl mx-auto mb-6">
+          <div className="relative mb-4">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search medical products…"
+              className="pl-10"
+              aria-label="Search medical products"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {categories.map((c) => (
+              <button
+                key={c}
+                onClick={() => setActiveCat(c)}
+                className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
+                  activeCat === c
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-background text-foreground border-border hover:bg-muted"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Table */}
+        <div className="max-w-5xl mx-auto overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
+          <table className="w-full text-sm">
+            <thead className="bg-muted/50">
+              <tr className="text-left text-foreground">
+                <th className="px-4 py-3 font-semibold">Product</th>
+                <th className="px-4 py-3 font-semibold hidden md:table-cell">Category</th>
+                <th className="px-4 py-3 font-semibold text-right whitespace-nowrap">Price (excl. tax)</th>
+                <th className="px-4 py-3 font-semibold text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((p) => {
+                const cartLabel = `${p.name} — Listed: ${formatINR(p.price)} (excl. tax)`;
+                const inCart = hasItem(cartLabel);
+                return (
+                  <tr key={p.name} className="border-t border-border hover:bg-muted/30">
+                    <td className="px-4 py-3 text-foreground">
+                      {p.name}
+                      <div className="md:hidden text-xs text-muted-foreground mt-1">{p.category}</div>
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground hidden md:table-cell">{p.category}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-foreground whitespace-nowrap">
+                      {formatINR(p.price)}
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <Button
+                        size="sm"
+                        variant={inCart ? "secondary" : "default"}
+                        onClick={() => addItem(cartLabel)}
+                        disabled={inCart}
+                      >
+                        {inCart ? (
+                          <><Check className="w-4 h-4 mr-1" /> Added</>
+                        ) : (
+                          <><Plus className="w-4 h-4 mr-1" /> Inquire</>
+                        )}
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+              {filtered.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="px-4 py-10 text-center text-muted-foreground">
+                    No products match your search.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-xs text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
+          Prices shown are indicative MRP and exclusive of GST and applicable taxes. Final pricing is confirmed on quotation.
+        </p>
+
+        <div className="text-center mt-8">
+          <Link to="/inquiry">
+            <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
+              Review Inquiry & Request Best Price <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
