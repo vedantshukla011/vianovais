@@ -109,6 +109,15 @@ const Products = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Products | Measuring Instruments & Industrial Engineering</title>
+        <meta name="description" content="Explore ViaNova's product portfolio — measuring instruments, ESD lab solutions, dimensional tools, valves, steam systems, gaskets and engineering products." />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/products" />
+        <meta property="og:title" content="Products | ViaNova Industrial Solutions" />
+        <meta property="og:description" content="Comprehensive range of measuring instruments, industrial valves, steam systems and engineering solutions." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/products" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Header */}
       <section className="bg-gradient-to-br from-primary via-primary-light to-secondary text-primary-foreground py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />

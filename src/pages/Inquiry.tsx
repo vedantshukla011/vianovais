@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -34,6 +35,15 @@ const Inquiry = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Contact Us | Request a Quote — ViaNova Industrial</title>
+        <meta name="description" content="Reach out to ViaNova Industrial Solutions for quotations on measuring instruments, lab equipment, valves and engineering products. Pan-India delivery." />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/inquiry" />
+        <meta property="og:title" content="Contact ViaNova Industrial Solutions" />
+        <meta property="og:description" content="Request quotations and best prices on measuring instruments and engineering products." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/inquiry" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Header */}
       <section className="bg-gradient-to-br from-accent via-accent to-accent-light text-accent-foreground py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
