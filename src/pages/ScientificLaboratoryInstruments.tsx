@@ -49,22 +49,19 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      name: "ViaNova Industrial Solutions",
-      url: "https://vianovaindustrial.solutions",
-      logo: "https://vianovaindustrial.solutions/favicon.jpg",
-      description:
-        "Supplier of scientific laboratory instruments, pharmacy lab equipment, and analytical solutions in India.",
-      address: { "@type": "PostalAddress", addressCountry: "IN" },
-      sameAs: ["https://www.linkedin.com/company/vianova-industrial-solutions"],
-    },
-    {
       "@type": "WebPage",
       name: "Scientific Laboratory Instruments",
       url: "https://vianovaindustrial.solutions/scientific-laboratory-instruments",
       description:
         "Comprehensive range of laboratory instruments for pharmaceutical, research, and industrial applications.",
       inLanguage: "en",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://vianovaindustrial.solutions/" },
+        { "@type": "ListItem", position: 2, name: "Scientific Laboratory Instruments", item: "https://vianovaindustrial.solutions/scientific-laboratory-instruments" },
+      ],
     },
     {
       "@type": "ItemList",
