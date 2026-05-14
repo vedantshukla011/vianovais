@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -22,6 +23,15 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>About ViaNova Industrial Solutions | Our Story</title>
+        <meta name="description" content="Learn about ViaNova Industrial Solutions — 25+ years delivering precision measuring instruments and engineering products to 15+ industries across India." />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/about" />
+        <meta property="og:title" content="About ViaNova Industrial Solutions" />
+        <meta property="og:description" content="25+ years of engineering excellence serving 15+ industries across India." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/about" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Header */}
       <section className="bg-gradient-hero text-primary-foreground py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
