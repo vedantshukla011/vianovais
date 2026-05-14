@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
+
 const categories = [
   {
     title: "Analytical & Measurement Instruments",
@@ -48,22 +49,19 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      name: "ViaNova Industrial Solutions",
-      url: "https://vianovaindustrial.solutions",
-      logo: "https://vianovaindustrial.solutions/favicon.jpg",
-      description:
-        "Supplier of scientific laboratory instruments, pharmacy lab equipment, and analytical solutions in India.",
-      address: { "@type": "PostalAddress", addressCountry: "IN" },
-      sameAs: ["https://www.linkedin.com/company/vianova-industrial-solutions"],
-    },
-    {
       "@type": "WebPage",
       name: "Scientific Laboratory Instruments",
       url: "https://vianovaindustrial.solutions/scientific-laboratory-instruments",
       description:
         "Comprehensive range of laboratory instruments for pharmaceutical, research, and industrial applications.",
       inLanguage: "en",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://vianovaindustrial.solutions/" },
+        { "@type": "ListItem", position: 2, name: "Scientific Laboratory Instruments", item: "https://vianovaindustrial.solutions/scientific-laboratory-instruments" },
+      ],
     },
     {
       "@type": "ItemList",
@@ -87,11 +85,15 @@ const ScientificLaboratoryInstruments = () => {
   return (
     <>
       <Helmet>
-        <title>Scientific Laboratory Instruments | ViaNova Industrial Solutions</title>
+        <title>Scientific Laboratory Instruments | ViaNova</title>
         <meta
           name="description"
-          content="Explore a complete range of scientific laboratory instruments, pharmacy lab equipment, analytical devices, and research tools from ViaNova Industrial Solutions."
+          content="Pharmacy lab equipment, analytical instruments and research tools — pH meters, spectrophotometers, autoclaves, dissolution testers and more."
         />
+        <meta property="og:title" content="Scientific Laboratory Instruments | ViaNova" />
+        <meta property="og:description" content="Pharmacy lab equipment, analytical instruments and research tools from ViaNova Industrial Solutions." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/scientific-laboratory-instruments" />
+        <meta property="og:type" content="website" />
         <meta
           name="keywords"
           content="scientific laboratory instruments, pharmacy lab equipment, analytical instruments India, microbiology lab equipment, spectrophotometer supplier, tablet testing equipment, laboratory instruments supplier India"

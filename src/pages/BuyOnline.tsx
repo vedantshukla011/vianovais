@@ -105,11 +105,11 @@ const BuyOnline = () => {
     ? `${SITE_URL}/buy-online?category=${encodeURIComponent(activeCat)}`
     : `${SITE_URL}/buy-online`;
   const seoTitle = isCategoryView
-    ? `${activeCat} — Buy Online in India | ViaNova Industrial Solutions`
-    : "Buy Industrial & Lab Instruments Online India | Multimeters, Oscilloscopes, Soldering Stations | ViaNova";
+    ? `Buy ${activeCat} Online India | ViaNova`.slice(0, 60)
+    : "Buy Lab & Industrial Instruments Online India | ViaNova";
   const seoDescription = isCategoryView
-    ? `Shop ${activeCat.toLowerCase()} online in India. ${filtered.length}+ models with listed prices, GST invoices and pan-India delivery from ViaNova Industrial Solutions.`
-    : `Shop ${SHOP_PRODUCTS.length}+ measuring instruments, oscilloscopes, multimeters, clamp meters, LCR meters, soldering & rework stations, power supplies, electronic loads, environmental testers and lab equipment online. Listed prices, GST invoice, pan-India delivery.`;
+    ? `Shop ${activeCat.toLowerCase()} online in India with listed prices, GST invoice and pan-India delivery from ViaNova Industrial Solutions.`.slice(0, 160)
+    : "Shop measuring instruments, oscilloscopes, multimeters, soldering stations, power supplies & lab equipment online. GST invoice, pan-India delivery.";
   const seoKeywords = [
     "buy measuring instruments online India",
     "industrial test equipment online",

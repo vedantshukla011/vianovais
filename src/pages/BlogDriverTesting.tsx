@@ -55,15 +55,15 @@ const benefits = [
 
 const BlogDriverTesting = () => {
   const canonical =
-    "https://vianovaindustrial.com/blog/driver-testing-machine";
+    "https://vianovaindustrial.solutions/blog/driver-testing-machine";
 
   return (
     <>
       <Helmet>
-        <title>Driver Testing Machine for LED Drivers, SMPS, Adapters & UPS</title>
+        <title>Driver Testing Machine for LED, SMPS, Adapters & UPS</title>
         <meta
           name="description"
-          content="High-precision driver testing machine for LED drivers, SMPS, power adapters, and UPS systems. Automate testing, improve reliability, and ensure compliance. Request a demo today."
+          content="Automated driver testing machine for LED drivers, SMPS, power adapters and UPS — high precision, SCPI/PLC integration and full traceability."
         />
         <meta
           name="keywords"

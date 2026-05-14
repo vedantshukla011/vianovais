@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search } from "lucide-react";
@@ -61,6 +62,15 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>ViaNova Industrial Solutions | Measuring Instruments India</title>
+        <meta name="description" content="India's trusted partner for measuring instruments, ESD lab solutions, industrial valves, steam systems, gaskets and engineering products across 15+ industries." />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/" />
+        <meta property="og:title" content="ViaNova Industrial Solutions | Measuring Instruments" />
+        <meta property="og:description" content="Engineering excellence for every industry — measuring instruments, valves, steam systems, gaskets and more." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />

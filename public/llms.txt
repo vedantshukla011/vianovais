@@ -1,0 +1,29 @@
+# ViaNova Industrial Solutions
+
+> India's trusted supplier of measuring instruments, oscilloscopes, multimeters, ESD lab solutions, scientific laboratory equipment, industrial valves, steam traps, gaskets and engineering products serving 15+ industries.
+
+## Pages
+
+- [Home](/): Overview of ViaNova Industrial Solutions and our product portfolio.
+- [Products](/products): Complete catalogue of measuring instruments, lab equipment and industrial engineering products.
+- [Buy Online](/buy-online): E-commerce catalogue with listed prices for measuring instruments, oscilloscopes, multimeters, soldering stations, power supplies and lab equipment.
+- [Scientific Laboratory Instruments](/scientific-laboratory-instruments): Pharmaceutical, microbiology and analytical lab equipment.
+- [Products @ GeM](/products-at-gem): Government e-Marketplace listings for public-sector buyers.
+- [About](/about): Company background, leadership, values and capabilities.
+- [Contact / Inquiry](/inquiry): Reach out for quotations and best prices.
+- [Blog](/blog): Insights on precision testing, measurement and industrial automation.
+
+## Industries
+
+- [Manufacturing](/industries/manufacturing)
+- [Automobile](/industries/automobile)
+- [R&D](/industries/rd)
+- [Education](/industries/education)
+- [Pharmaceuticals](/industries/pharmaceuticals)
+- [Medical](/industries/medical)
+- [Quality Assurance](/industries/qa)
+- [Automation](/industries/automation)
+
+## Optional
+
+- [Driver Testing Machine Blog](/blog/driver-testing-machine): Guide to LED driver, SMPS, adapter and UPS testing.
