@@ -85,11 +85,15 @@ const ScientificLaboratoryInstruments = () => {
   return (
     <>
       <Helmet>
-        <title>Scientific Laboratory Instruments | ViaNova Industrial Solutions</title>
+        <title>Scientific Laboratory Instruments | ViaNova</title>
         <meta
           name="description"
-          content="Explore a complete range of scientific laboratory instruments, pharmacy lab equipment, analytical devices, and research tools from ViaNova Industrial Solutions."
+          content="Pharmacy lab equipment, analytical instruments and research tools — pH meters, spectrophotometers, autoclaves, dissolution testers and more."
         />
+        <meta property="og:title" content="Scientific Laboratory Instruments | ViaNova" />
+        <meta property="og:description" content="Pharmacy lab equipment, analytical instruments and research tools from ViaNova Industrial Solutions." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/scientific-laboratory-instruments" />
+        <meta property="og:type" content="website" />
         <meta
           name="keywords"
           content="scientific laboratory instruments, pharmacy lab equipment, analytical instruments India, microbiology lab equipment, spectrophotometer supplier, tablet testing equipment, laboratory instruments supplier India"
