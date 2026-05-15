@@ -112,9 +112,10 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background relative">
+      <section className="py-24 bg-background relative" aria-labelledby="why-choose-vianova">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative">
+          <h2 id="why-choose-vianova" className="sr-only">Why choose ViaNova Industrial Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card

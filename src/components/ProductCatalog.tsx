@@ -91,6 +91,7 @@ const ProductCatalog = () => {
         <div className="max-w-xl mx-auto mb-8 relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
+            aria-label="Search products, models and brands"
             placeholder="Search products, models, brands…"
             value={search}
             onChange={(e) => handleSearchChange(e.target.value)}

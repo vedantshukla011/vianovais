@@ -176,6 +176,8 @@ export const Navigation = () => {
           <button
             className={`md:hidden p-2 rounded-xl transition-colors ${scrolled ? 'hover:bg-muted' : 'hover:bg-white/10'}`}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className={`w-6 h-6 ${scrolled ? '' : 'text-white'}`} /> : <Menu className={`w-6 h-6 ${scrolled ? '' : 'text-white'}`} />}
           </button>
