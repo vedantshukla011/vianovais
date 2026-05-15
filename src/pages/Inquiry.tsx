@@ -124,7 +124,7 @@ const Inquiry = () => {
                         {items.map((item) => (
                           <Badge key={item} variant="secondary" className="pl-3 pr-1 py-1 text-xs gap-1">
                             {item.length > 40 ? item.slice(0, 40) + "…" : item}
-                            <button onClick={() => removeItem(item)} className="ml-1 hover:bg-secondary/20 rounded-full p-0.5">
+                            <button onClick={() => removeItem(item)} aria-label={`Remove ${item} from inquiry`} className="ml-1 hover:bg-secondary/20 rounded-full p-0.5">
                               <X className="w-3 h-3" />
                             </button>
                           </Badge>

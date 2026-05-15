@@ -168,7 +168,7 @@ const Products = () => {
                   </ul>
                   {product.subCategories && (
                     <div className="pt-4">
-                      <h4 className="font-semibold text-foreground mb-3">Sub Categories:</h4>
+                      <h3 className="font-semibold text-foreground mb-3 text-base">Sub Categories:</h3>
                       <div className="flex flex-wrap gap-2">
                         {product.subCategories.map((sub, idx) => (
                           <span
@@ -195,7 +195,7 @@ const Products = () => {
                   )}
                   {product.brands && (
                     <div className="pt-4">
-                      <h4 className="font-semibold text-foreground mb-3">Brands We Carry:</h4>
+                      <h3 className="font-semibold text-foreground mb-3 text-base">Brands We Carry:</h3>
                       <div className="flex flex-wrap gap-2">
                         {product.brands.map((brand, idx) => (
                           <span
