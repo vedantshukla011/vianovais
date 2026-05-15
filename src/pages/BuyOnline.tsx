@@ -228,6 +228,7 @@ const BuyOnline = () => {
           <div className="relative max-w-2xl">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <Input
+              aria-label="Search products by name or category"
               placeholder="Search products by name or category..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -292,11 +293,11 @@ const BuyOnline = () => {
                           </Button>
                         ) : (
                           <div className="flex items-center justify-between bg-muted rounded-md">
-                            <Button size="sm" variant="ghost" className="h-9 w-9 p-0" onClick={() => updateQty(p.id, -1)}>
+                            <Button size="sm" variant="ghost" aria-label={`Decrease ${p.name} quantity`} className="h-9 w-9 p-0" onClick={() => updateQty(p.id, -1)}>
                               <Minus className="w-3.5 h-3.5" />
                             </Button>
                             <span className="text-sm font-semibold">{inCart}</span>
-                            <Button size="sm" variant="ghost" className="h-9 w-9 p-0" onClick={() => updateQty(p.id, 1)}>
+                            <Button size="sm" variant="ghost" aria-label={`Increase ${p.name} quantity`} className="h-9 w-9 p-0" onClick={() => updateQty(p.id, 1)}>
                               <Plus className="w-3.5 h-3.5" />
                             </Button>
                           </div>
@@ -320,7 +321,7 @@ const BuyOnline = () => {
               <h2 className="text-lg font-bold flex items-center gap-2">
                 <ShoppingCart className="w-5 h-5" /> Your Cart ({cartCount})
               </h2>
-              <button onClick={() => setCartOpen(false)} className="p-2 hover:bg-muted rounded-md">
+              <button onClick={() => setCartOpen(false)} aria-label="Close cart" className="p-2 hover:bg-muted rounded-md">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -345,16 +346,17 @@ const BuyOnline = () => {
                       <p className="text-xs text-muted-foreground mb-1">{formatINR(l.product.price)} each</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1 bg-muted rounded">
-                          <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => updateQty(l.product.id, -1)}>
+                          <Button size="sm" variant="ghost" aria-label={`Decrease ${l.product.name} quantity`} className="h-7 w-7 p-0" onClick={() => updateQty(l.product.id, -1)}>
                             <Minus className="w-3 h-3" />
                           </Button>
                           <span className="text-xs font-semibold w-5 text-center">{l.qty}</span>
-                          <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={() => updateQty(l.product.id, 1)}>
+                          <Button size="sm" variant="ghost" aria-label={`Increase ${l.product.name} quantity`} className="h-7 w-7 p-0" onClick={() => updateQty(l.product.id, 1)}>
                             <Plus className="w-3 h-3" />
                           </Button>
                         </div>
                         <button
                           onClick={() => removeFromCart(l.product.id)}
+                          aria-label={`Remove ${l.product.name} from cart`}
                           className="text-destructive hover:text-destructive/80 p-1"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
