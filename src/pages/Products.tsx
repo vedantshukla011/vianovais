@@ -110,11 +110,12 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Products | Measuring Instruments & Industrial Engineering</title>
-        <meta name="description" content="Explore ViaNova's product portfolio — measuring instruments, ESD lab solutions, dimensional tools, valves, steam systems, gaskets and engineering products." />
+        <title>Industrial Measuring Instruments & Test Equipment | ViaNova</title>
+        <meta name="description" content="Full portfolio of measuring instruments, oscilloscopes, multimeters, signal generators, spectrum analyzers, ESD workstations, dimensional tools, valves and industrial automation products — supplied across India." />
+        <meta name="keywords" content="industrial measuring instruments supplier, digital measuring instruments distributor, electronic test instruments supplier, precision measuring instruments supplier, electrical measuring instruments dealer, buy oscilloscope online India, digital oscilloscope price India, Siglent oscilloscope dealer India, Rigol oscilloscope distributor, mixed signal oscilloscope supplier, USB oscilloscope supplier, high bandwidth oscilloscope India, spectrum analyzer distributor, signal generator supplier, power analyzer supplier India, LCR meter distributor, clamp meter supplier, insulation tester dealer, thermal camera supplier India, data logger supplier India, FFT analyzer supplier, vibration analyzer supplier India, condition monitoring equipment India, ESD workstation supplier, anti static table manufacturer, ESD safe products supplier, dimensional measurement tools, industrial calibration instruments, OEM industrial equipment supplier, authorized distributor industrial instruments, instrumentation company India" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/products" />
-        <meta property="og:title" content="Products | ViaNova Industrial Solutions" />
-        <meta property="og:description" content="Comprehensive range of measuring instruments, industrial valves, steam systems and engineering solutions." />
+        <meta property="og:title" content="Industrial Measuring Instruments & Test Equipment | ViaNova" />
+        <meta property="og:description" content="Oscilloscopes, multimeters, spectrum analyzers, ESD workstations, dimensional tools, valves and automation — one-stop industrial portfolio." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/products" />
         <meta property="og:type" content="website" />
       </Helmet>
