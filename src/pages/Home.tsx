@@ -63,11 +63,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>ViaNova Industrial Solutions | Measuring Instruments India</title>
-        <meta name="description" content="India's trusted partner for measuring instruments, ESD lab solutions, industrial valves, steam systems, gaskets and engineering products across 15+ industries." />
+        <title>Buy Measuring Instruments Online India | ViaNova Industrial</title>
+        <meta name="description" content="India's one-stop supplier for measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV testing equipment, vibration analyzers & industrial automation. Delhi NCR based, GST invoice, pan-India delivery." />
+        <meta name="keywords" content="buy measuring instruments online, industrial measuring instruments supplier, test and measuring instruments India, measuring instruments supplier Delhi, industrial instrumentation supplier Delhi, buy oscilloscope online India, buy multimeter online, ESD lab setup India, EV lab setup for engineering colleges, vibration analyzer supplier India, industrial automation company Delhi, one stop solution for industrial instruments, OEM industrial equipment supplier, calibration instruments supplier Delhi" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="ViaNova Industrial Solutions | Measuring Instruments" />
-        <meta property="og:description" content="Engineering excellence for every industry — measuring instruments, valves, steam systems, gaskets and more." />
+        <meta property="og:title" content="Buy Measuring Instruments Online India | ViaNova Industrial" />
+        <meta property="og:description" content="Measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches, vibration analyzers & industrial automation — supplied across India." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
       </Helmet>

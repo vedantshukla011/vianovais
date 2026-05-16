@@ -96,7 +96,7 @@ const ScientificLaboratoryInstruments = () => {
         <meta property="og:type" content="website" />
         <meta
           name="keywords"
-          content="scientific laboratory instruments, pharmacy lab equipment, analytical instruments India, microbiology lab equipment, spectrophotometer supplier, tablet testing equipment, laboratory instruments supplier India"
+          content="scientific laboratory instruments, laboratory measuring instruments online, pharmacy lab equipment, analytical instruments India, microbiology lab equipment, spectrophotometer supplier, tablet testing equipment, laboratory instruments supplier India, engineering lab equipment supplier Delhi, complete electronics lab setup supplier, supplier for engineering college lab equipment, industrial instruments with calibration certificate, turnkey automation lab setup provider, one stop solution for industrial instruments"
         />
         <link rel="canonical" href="https://vianovaindustrial.solutions/scientific-laboratory-instruments" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

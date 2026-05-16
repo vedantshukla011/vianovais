@@ -91,7 +91,46 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/15 mt-12 pt-8 text-center text-sm text-primary-foreground/50">
+        {/* Popular searches — sitewide SEO anchors */}
+        <div className="border-t border-primary-foreground/15 mt-12 pt-8">
+          <h4 className="font-bold text-sm uppercase tracking-wider text-primary-foreground/90 mb-4">Popular Searches</h4>
+          <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs text-primary-foreground/60">
+            {[
+              { label: "Buy measuring instruments online India", to: "/buy-online" },
+              { label: "Buy oscilloscope online India", to: "/buy-online?q=oscilloscope" },
+              { label: "Buy multimeter online", to: "/buy-online?q=multimeter" },
+              { label: "Digital storage oscilloscope price", to: "/buy-online?q=oscilloscope" },
+              { label: "Signal generator supplier", to: "/buy-online?q=signal+generator" },
+              { label: "Spectrum analyzer distributor", to: "/buy-online?q=spectrum" },
+              { label: "Clamp meter supplier", to: "/buy-online?q=clamp" },
+              { label: "LCR meter distributor", to: "/buy-online?q=lcr" },
+              { label: "Thermal camera supplier India", to: "/buy-online?q=thermal" },
+              { label: "Data logger supplier India", to: "/buy-online?q=data+logger" },
+              { label: "ESD workstation supplier", to: "/products" },
+              { label: "ESD lab setup India", to: "/products" },
+              { label: "Anti static table manufacturer", to: "/products" },
+              { label: "Buy ESD mat online", to: "/buy-online?q=esd" },
+              { label: "EV lab setup for engineering colleges", to: "/industries/education" },
+              { label: "EV charger test bench supplier", to: "/industries/automobile" },
+              { label: "EV battery testing lab setup", to: "/industries/automobile" },
+              { label: "Electric vehicle trainer kits", to: "/industries/education" },
+              { label: "Vibration analyzer supplier India", to: "/products" },
+              { label: "FFT analyzer supplier", to: "/products" },
+              { label: "Condition monitoring equipment India", to: "/products" },
+              { label: "Industrial automation company Delhi", to: "/industries/automation" },
+              { label: "Calibration instruments supplier Delhi", to: "/products" },
+              { label: "Engineering lab equipment supplier Delhi", to: "/scientific-laboratory-instruments" },
+              { label: "Pharmacy lab equipment", to: "/scientific-laboratory-instruments" },
+              { label: "One stop solution for industrial instruments", to: "/products" },
+            ].map((k) => (
+              <a key={k.label} href={k.to} className="hover:text-primary-foreground/90 transition-colors">
+                {k.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/15 mt-8 pt-8 text-center text-sm text-primary-foreground/50">
           <p>&copy; {new Date().getFullYear()} ViaNova Industrial Solutions. All rights reserved.</p>
         </div>
       </div>

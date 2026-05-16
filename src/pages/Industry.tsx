@@ -18,11 +18,24 @@ const Industry = () => {
   const Icon = industry.icon;
   const canonical = `https://vianovaindustrialsolutions.com/industries/${industry.slug}`;
 
+  const industryKeywords: Record<string, string> = {
+    manufacturing: "industrial equipment supplier India, OEM industrial equipment supplier, industrial automation company Delhi, calibration instruments supplier Delhi, turnkey automation lab setup provider",
+    automobile: "EV charger test bench supplier, EV motor test setup India, EV battery testing lab setup, electric vehicle lab equipment, EV power analyzer supplier, automotive electronics lab setup, EV motor dynamometer setup",
+    education: "EV lab setup for engineering colleges, BTech EV lab setup supplier, electric vehicle trainer kits, oscilloscope for engineering college, engineering lab equipment supplier Delhi, supplier for engineering college lab equipment, complete electronics lab setup supplier",
+    "r-and-d": "EV research lab instruments, renewable energy lab setup, FFT analyzer supplier, vibration analyzer supplier India, condition monitoring equipment India, NVH testing equipment India",
+    pharmaceuticals: "laboratory measuring instruments online, pharmacy lab equipment, spectrophotometer supplier, tablet testing equipment, industrial instruments with calibration certificate",
+    medical: "medical lab equipment supplier India, ECG machine supplier, pulse oximeter distributor, anesthesia machine supplier, hospital equipment supplier Delhi",
+    qa: "industrial calibration instruments, calibration instruments supplier Delhi, industrial instruments with calibration certificate, ESD audit equipment supplier, ESD compliance solutions",
+    automation: "industrial automation company Delhi, automation products supplier Gurgaon, PLC SCADA supplier India, RFID IoT sensors supplier, turnkey automation lab setup provider",
+  };
+  const kw = industryKeywords[industry.slug] ?? "industrial equipment supplier India, instrumentation company India, one stop solution for industrial instruments";
+
   return (
     <div className="min-h-screen bg-background pt-20">
       <Helmet>
         <title>{`${industry.name} Solutions | ViaNova Industrial Solutions`}</title>
         <meta name="description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
+        <meta name="keywords" content={kw} />
         <link rel="canonical" href={canonical} />
       </Helmet>
 
