@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
 
 import NewLaunches from "@/components/NewLaunches";
+import HeroCarousel from "@/components/HeroCarousel";
 import heroImage from "@/assets/hero-industrial.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
