@@ -5,9 +5,9 @@ import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, Fla
 
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
+import HeroCarousel from "@/components/HeroCarousel";
 
 import NewLaunches from "@/components/NewLaunches";
-import heroImage from "@/assets/hero-test-measurement.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
@@ -73,43 +73,7 @@ const Home = () => {
         <meta property="og:type" content="website" />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <img
-          src={heroImage}
-          alt="Industrial test and measurement laboratory with oscilloscope, multimeter and precision instruments"
-          className="absolute inset-0 w-full h-full object-cover opacity-25"
-        />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-
-        <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium">Turnkey Test & Measurement Solutions Provider</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight">
-            One Partner.
-            <span className="block mt-2 text-accent">Every Measurement.</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-10 text-primary-foreground/80 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            End-to-end turnkey solutions in test, measurement and calibration — from instrument supply and complete lab setup to integration, training and after-sales support.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Link to="/inquiry">
-              <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                Request a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/products">
-              <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg transition-all duration-300">
-                Explore Products
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroCarousel />
 
 
 
