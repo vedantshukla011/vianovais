@@ -5,9 +5,9 @@ import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, Fla
 
 import { Link } from "react-router-dom";
 import ClientsCarousel from "@/components/ClientsCarousel";
+import HeroCarousel from "@/components/HeroCarousel";
 
 import NewLaunches from "@/components/NewLaunches";
-import heroImage from "@/assets/hero-test-measurement.jpg";
 import valveImage from "@/assets/product-valve.jpg";
 import steamImage from "@/assets/product-steam.jpg";
 import gasketsImage from "@/assets/product-gaskets.jpg";
