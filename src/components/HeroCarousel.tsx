@@ -36,8 +36,8 @@ const slides: Slide[] = [
     titleBottom: "Powered by Bright AI.",
     description:
       "Optical touch interactive flat panel with AI lesson, quiz and PPT generation — built for NEP 2020 compliant smart classrooms and modern boardrooms.",
-    primaryCta: { label: "Enquire Now", to: "/inquiry" },
-    secondaryCta: { label: "View Interactive Displays", to: "/products" },
+    primaryCta: { label: "Explore EyeRIS A10", to: "/interactive-panel" },
+    secondaryCta: { label: "Download Datasheet", to: "/interactive-panel" },
   },
 ];
 

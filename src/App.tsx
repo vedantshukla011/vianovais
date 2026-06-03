@@ -18,6 +18,7 @@ import Industry from "./pages/Industry";
 import Blog from "./pages/Blog";
 import BlogDriverTesting from "./pages/BlogDriverTesting";
 import BuyOnline from "./pages/BuyOnline";
+import InteractivePanel from "./pages/InteractivePanel";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/driver-testing-machine" element={<BlogDriverTesting />} />
               <Route path="/buy-online" element={<BuyOnline />} />
+              <Route path="/interactive-panel" element={<InteractivePanel />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
