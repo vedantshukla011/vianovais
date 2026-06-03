@@ -75,6 +75,7 @@ const BlogDriverTesting = () => {
           content="Automated testing for LED drivers, SMPS, adapters & UPS systems."
         />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonical} />
         <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

@@ -12,7 +12,11 @@ const Blog = () => {
           name="description"
           content="Insights, guides and articles on precision measurement, power electronics testing and turnkey industrial automation solutions."
         />
-        <link rel="canonical" href="https://vianovaindustrial.com/blog" />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/blog" />
+        <meta property="og:title" content="ViaNova Blog — Measurement, Testing & Automation Insights" />
+        <meta property="og:description" content="Practical insights on precision testing, measurement and industrial automation from ViaNova." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/blog" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <main className="pt-32 pb-20 bg-gradient-subtle min-h-screen">
