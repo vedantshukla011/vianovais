@@ -16,7 +16,7 @@ const Industry = () => {
   if (!industry) return <Navigate to="/" replace />;
 
   const Icon = industry.icon;
-  const canonical = `https://vianovaindustrialsolutions.com/industries/${industry.slug}`;
+  const canonical = `https://vianovaindustrial.solutions/industries/${industry.slug}`;
 
   const industryKeywords: Record<string, string> = {
     manufacturing: "industrial equipment supplier India, OEM industrial equipment supplier, industrial automation company Delhi, calibration instruments supplier Delhi, turnkey automation lab setup provider",
@@ -37,6 +37,10 @@ const Industry = () => {
         <meta name="description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
         <meta name="keywords" content={kw} />
         <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={`${industry.name} Solutions | ViaNova Industrial Solutions`} />
+        <meta property="og:description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       {/* Hero */}

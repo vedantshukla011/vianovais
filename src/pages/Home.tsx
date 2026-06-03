@@ -64,7 +64,7 @@ const Home = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Buy Measuring Instruments Online India | ViaNova Industrial</title>
-        <meta name="description" content="India's one-stop supplier for measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV testing equipment, vibration analyzers & industrial automation. Delhi NCR based, GST invoice, pan-India delivery." />
+        <meta name="description" content="India's one-stop supplier of measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches & industrial automation." />
         <meta name="keywords" content="buy measuring instruments online, industrial measuring instruments supplier, test and measuring instruments India, measuring instruments supplier Delhi, industrial instrumentation supplier Delhi, buy oscilloscope online India, buy multimeter online, ESD lab setup India, EV lab setup for engineering colleges, vibration analyzer supplier India, industrial automation company Delhi, one stop solution for industrial instruments, OEM industrial equipment supplier, calibration instruments supplier Delhi" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
         <meta property="og:title" content="Buy Measuring Instruments Online India | ViaNova Industrial" />
