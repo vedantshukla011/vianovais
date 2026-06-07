@@ -113,9 +113,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">Our Product Range</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">Test, Measurement & Interactive Display Solutions</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for industrial flow control, precision measurement, and engineering excellence
+              From oscilloscopes, multimeters and ESD lab setups to GenAI interactive flat panels — sourced, integrated and supported across India.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
