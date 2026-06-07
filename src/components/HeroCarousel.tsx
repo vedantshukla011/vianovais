@@ -20,22 +20,22 @@ const slides: Slide[] = [
   {
     image: heroTestMeasurement,
     alt: "Industrial test and measurement laboratory with oscilloscope, multimeter and precision instruments",
-    badge: "Turnkey Test & Measurement Solutions Provider",
+    badge: "Turnkey Test & Measurement Solutions Provider in India",
     titleTop: "One Partner.",
     titleBottom: "Every Measurement.",
     description:
-      "End-to-end turnkey solutions in test, measurement and calibration — from instrument supply and complete lab setup to integration, training and after-sales support.",
-    primaryCta: { label: "Request a Quote", to: "/inquiry" },
+      "Oscilloscopes, multimeters, power & spectrum analyzers, ESD labs, EV test benches and calibration solutions — supplied, integrated and supported across India with GST invoice and pan-India delivery.",
+    primaryCta: { label: "Request Best Price", to: "/inquiry" },
     secondaryCta: { label: "Explore Products", to: "/products" },
   },
   {
     image: heroEyerisA10,
-    alt: "EyeRIS A10 GenAI powered interactive flat panel display for modern classrooms",
+    alt: "EyeRIS A10 GenAI powered 86 inch interactive flat panel display for smart classrooms and boardrooms in India",
     badge: "Industry's First GenAI Powered Interactive Flat Panel",
     titleTop: "EyeRIS A10.",
     titleBottom: "Powered by Bright AI.",
     description:
-      "Optical touch interactive flat panel with AI lesson, quiz and PPT generation — built for NEP 2020 compliant smart classrooms and modern boardrooms.",
+      "65\"/75\"/86\" 4K interactive flat panel displays with optical touch and AI lesson, quiz & PPT generation — built for NEP 2020 smart classrooms, training rooms and modern boardrooms across India.",
     primaryCta: { label: "Explore EyeRIS A10", to: "/interactive-panel" },
     secondaryCta: { label: "Download Datasheet", to: "/interactive-panel" },
   },

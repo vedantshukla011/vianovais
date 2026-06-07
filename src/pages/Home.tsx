@@ -26,13 +26,13 @@ import industrialManagementImage from "@/assets/product-industrial-management.jp
 
 const Home = () => {
   const products = [
-    { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
+    { title: "Measuring Instruments", description: "Oscilloscopes, multimeters, power & spectrum analyzers, LCR meters and calibration instruments", image: measuringInstrumentsImage },
     { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
     { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
     { title: "Scientific Laboratory Equipments", description: "Beakers, flasks, centrifuges, microscopes & complete lab setups", image: scientificLabImage },
     { title: "Analytical Balances", description: "High-precision digital weighing scales for laboratory & industrial use", image: analyticalBalancesImage },
-    { title: "Interactive Displays", description: "Touchscreen panels & digital whiteboards for education & business", image: interactiveDisplaysImage },
+    { title: "Interactive Displays", description: "GenAI-powered interactive flat panels (65\"/75\"/86\") for smart classrooms & boardrooms", image: interactiveDisplaysImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
     { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
@@ -63,12 +63,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Buy Measuring Instruments Online India | ViaNova Industrial</title>
-        <meta name="description" content="India's one-stop supplier of measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches & industrial automation." />
-        <meta name="keywords" content="buy measuring instruments online, industrial measuring instruments supplier, test and measuring instruments India, measuring instruments supplier Delhi, industrial instrumentation supplier Delhi, buy oscilloscope online India, buy multimeter online, ESD lab setup India, EV lab setup for engineering colleges, vibration analyzer supplier India, industrial automation company Delhi, one stop solution for industrial instruments, OEM industrial equipment supplier, calibration instruments supplier Delhi" />
+        <title>Test & Measurement Instruments & Interactive Displays India | ViaNova</title>
+        <meta name="description" content="Buy test & measurement instruments, oscilloscopes, multimeters, ESD lab setups & GenAI interactive flat panel displays online in India. Best price, GST invoice, pan-India delivery." />
+        <meta name="keywords" content="test and measurement instruments India, buy measuring instruments online, oscilloscope supplier India, digital multimeter dealer, power analyzer supplier, spectrum analyzer distributor, LCR meter supplier, ESD lab setup, EV test bench India, calibration instruments supplier, interactive flat panel India, interactive display for classroom, GenAI interactive panel, 86 inch interactive panel price, smart classroom solutions, digital whiteboard supplier, EyeRIS A10, NEP 2020 smart classroom, interactive panel for boardroom, IFPD supplier India" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Buy Measuring Instruments Online India | ViaNova Industrial" />
-        <meta property="og:description" content="Measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches, vibration analyzers & industrial automation — supplied across India." />
+        <meta property="og:title" content="Test & Measurement Instruments & Interactive Displays India | ViaNova" />
+        <meta property="og:description" content="One-stop supplier of test & measurement instruments, oscilloscopes, multimeters, ESD labs and GenAI interactive flat panel displays across India." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -113,9 +113,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">Our Product Range</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">Test, Measurement & Interactive Display Solutions</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for industrial flow control, precision measurement, and engineering excellence
+              From oscilloscopes, multimeters and ESD lab setups to GenAI interactive flat panels — sourced, integrated and supported across India.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
