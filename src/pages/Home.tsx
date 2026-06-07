@@ -63,12 +63,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Buy Measuring Instruments Online India | ViaNova Industrial</title>
-        <meta name="description" content="India's one-stop supplier of measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches & industrial automation." />
-        <meta name="keywords" content="buy measuring instruments online, industrial measuring instruments supplier, test and measuring instruments India, measuring instruments supplier Delhi, industrial instrumentation supplier Delhi, buy oscilloscope online India, buy multimeter online, ESD lab setup India, EV lab setup for engineering colleges, vibration analyzer supplier India, industrial automation company Delhi, one stop solution for industrial instruments, OEM industrial equipment supplier, calibration instruments supplier Delhi" />
+        <title>Test & Measurement Instruments & Interactive Displays India | ViaNova</title>
+        <meta name="description" content="Buy test & measurement instruments, oscilloscopes, multimeters, ESD lab setups & GenAI interactive flat panel displays online in India. Best price, GST invoice, pan-India delivery." />
+        <meta name="keywords" content="test and measurement instruments India, buy measuring instruments online, oscilloscope supplier India, digital multimeter dealer, power analyzer supplier, spectrum analyzer distributor, LCR meter supplier, ESD lab setup, EV test bench India, calibration instruments supplier, interactive flat panel India, interactive display for classroom, GenAI interactive panel, 86 inch interactive panel price, smart classroom solutions, digital whiteboard supplier, EyeRIS A10, NEP 2020 smart classroom, interactive panel for boardroom, IFPD supplier India" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Buy Measuring Instruments Online India | ViaNova Industrial" />
-        <meta property="og:description" content="Measuring instruments, oscilloscopes, multimeters, ESD lab setups, EV test benches, vibration analyzers & industrial automation — supplied across India." />
+        <meta property="og:title" content="Test & Measurement Instruments & Interactive Displays India | ViaNova" />
+        <meta property="og:description" content="One-stop supplier of test & measurement instruments, oscilloscopes, multimeters, ESD labs and GenAI interactive flat panel displays across India." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
       </Helmet>
