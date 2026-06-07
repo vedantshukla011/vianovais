@@ -26,13 +26,13 @@ import industrialManagementImage from "@/assets/product-industrial-management.jp
 
 const Home = () => {
   const products = [
-    { title: "Measuring Instruments", description: "Precision electronic instruments for testing and analysis", image: measuringInstrumentsImage },
+    { title: "Measuring Instruments", description: "Oscilloscopes, multimeters, power & spectrum analyzers, LCR meters and calibration instruments", image: measuringInstrumentsImage },
     { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
     { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
     { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
     { title: "Scientific Laboratory Equipments", description: "Beakers, flasks, centrifuges, microscopes & complete lab setups", image: scientificLabImage },
     { title: "Analytical Balances", description: "High-precision digital weighing scales for laboratory & industrial use", image: analyticalBalancesImage },
-    { title: "Interactive Displays", description: "Touchscreen panels & digital whiteboards for education & business", image: interactiveDisplaysImage },
+    { title: "Interactive Displays", description: "GenAI-powered interactive flat panels (65\"/75\"/86\") for smart classrooms & boardrooms", image: interactiveDisplaysImage },
     { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
     { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
     { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
