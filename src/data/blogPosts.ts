@@ -11,6 +11,20 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "digital-storage-oscilloscope-pcb-testing",
+    title:
+      "Digital Storage Oscilloscopes (DSOs): The Essential Tool for PCB Design, Debugging and Failure Diagnosis",
+    description:
+      "Complete guide to Digital Storage Oscilloscopes — working principles, key features, signal integrity testing, protocol decoding (I²C, SPI, CAN), and PCB failure diagnosis.",
+    keywords:
+      "Digital Storage Oscilloscope, DSO, Oscilloscope for PCB Testing, PCB Failure Analysis, PCB Debugging, Signal Integrity Testing, Electronic Test Equipment, Oscilloscope Applications, PCB Design Validation, Electronics Troubleshooting, Test and Measurement Instruments, Digital Oscilloscope India",
+    date: "2026-06-14",
+    readTime: "9 min read",
+    category: "Test & Measurement Instruments",
+    excerpt:
+      "How a modern DSO helps validate PCB designs, decode communication protocols and diagnose power, signal and component-level failures.",
+  },
+  {
     slug: "oscilloscope-multimeter-automotive-debugging",
     title: "How to Use an Oscilloscope & Multimeter for Automotive Debugging",
     description:

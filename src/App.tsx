@@ -18,6 +18,7 @@ import Industry from "./pages/Industry";
 import Blog from "./pages/Blog";
 import BlogDriverTesting from "./pages/BlogDriverTesting";
 import BlogAutomotiveDebugging from "./pages/BlogAutomotiveDebugging";
+import BlogDSOPCBTesting from "./pages/BlogDSOPCBTesting";
 import BuyOnline from "./pages/BuyOnline";
 import InteractivePanel from "./pages/InteractivePanel";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/driver-testing-machine" element={<BlogDriverTesting />} />
               <Route path="/blog/oscilloscope-multimeter-automotive-debugging" element={<BlogAutomotiveDebugging />} />
+              <Route path="/blog/digital-storage-oscilloscope-pcb-testing" element={<BlogDSOPCBTesting />} />
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
