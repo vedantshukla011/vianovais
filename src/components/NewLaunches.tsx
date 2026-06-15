@@ -6,8 +6,10 @@ import podiumImg from "@/assets/launch-smart-podium.png";
 import printerImg from "@/assets/launch-multifunction-printer.png";
 import displayImg from "@/assets/launch-interactive-display.png";
 import batteryImg from "@/assets/launch-battery-simulator.png";
+import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
 
-const launches = [
+const launches: { title: string; tag: string; image: string; href?: string; cta?: string }[] = [
+  { title: "Weller WE1010 Soldering Station, 70W", tag: "Soldering • ₹15,500 + GST", image: wellerImg.url, href: "/products/weller-we1010", cta: "View Details" },
   { title: "Driver Testing Machine (DTM)", tag: "Power Electronics", image: dtmImg },
   { title: "Smart Podiums", tag: "Education Tech", image: podiumImg },
   { title: "Multifunction Printers", tag: "Office Solutions", image: printerImg },
@@ -53,10 +55,10 @@ const NewLaunches = () => {
                     {item.title}
                   </h3>
                   <Link
-                    to={`/inquiry?product=${encodeURIComponent(item.title)}`}
+                    to={item.href ?? `/inquiry?product=${encodeURIComponent(item.title)}`}
                     className="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-accent hover:text-accent-light transition-colors"
                   >
-                    Request Quote
+                    {item.cta ?? "Request Quote"}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
