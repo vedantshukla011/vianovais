@@ -40,6 +40,17 @@ const slides: Slide[] = [
     primaryCta: { label: "Explore EyeRIS A10", to: "/interactive-panel" },
     secondaryCta: { label: "Download Datasheet", to: "/interactive-panel" },
   },
+  {
+    image: wellerWE1010Hero.url,
+    alt: "Weller WE1010 70W digital soldering station with WEP 70 soldering iron and PH 70 safety rest",
+    badge: "New Arrival — Weller WE Line Soldering Station",
+    titleTop: "Weller WE1010.",
+    titleBottom: "Precision Soldering, 70W.",
+    description:
+      "70W digital soldering station with ergonomic WEP 70 iron, toolless tip change, ESD-safe design, standby/auto setback and 100–450°C range. Ideal for electronics assembly, R&D labs and service benches across India.",
+    primaryCta: { label: "View Product Details", to: "/products/weller-we1010" },
+    secondaryCta: { label: "Request Best Price", to: "/inquiry" },
+  },
 ];
 
 const HeroCarousel = () => {
