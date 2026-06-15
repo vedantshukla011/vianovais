@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroTestMeasurement from "@/assets/hero-test-measurement.jpg";
 import heroEyerisA10 from "@/assets/hero-eyeris-a10.jpg";
+import wellerWE1010Hero from "@/assets/weller-we1010-hero.png.asset.json";
 
 type Slide = {
   image: string;
