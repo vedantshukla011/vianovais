@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroTestMeasurement from "@/assets/hero-test-measurement.jpg";
 import heroEyerisA10 from "@/assets/hero-eyeris-a10.jpg";
+import wellerWE1010Hero from "@/assets/weller-we1010-hero.png.asset.json";
 
 type Slide = {
   image: string;
@@ -38,6 +39,17 @@ const slides: Slide[] = [
       "65\"/75\"/86\" 4K interactive flat panel displays with optical touch and AI lesson, quiz & PPT generation — built for NEP 2020 smart classrooms, training rooms and modern boardrooms across India.",
     primaryCta: { label: "Explore EyeRIS A10", to: "/interactive-panel" },
     secondaryCta: { label: "Download Datasheet", to: "/interactive-panel" },
+  },
+  {
+    image: wellerWE1010Hero.url,
+    alt: "Weller WE1010 70W digital soldering station with WEP 70 soldering iron and PH 70 safety rest",
+    badge: "New Arrival — Weller WE Line Soldering Station",
+    titleTop: "Weller WE1010.",
+    titleBottom: "Precision Soldering, 70W.",
+    description:
+      "70W digital soldering station with ergonomic WEP 70 iron, toolless tip change, ESD-safe design, standby/auto setback and 100–450°C range. Ideal for electronics assembly, R&D labs and service benches across India.",
+    primaryCta: { label: "View Product Details", to: "/products/weller-we1010" },
+    secondaryCta: { label: "Request Best Price", to: "/inquiry" },
   },
 ];
 
