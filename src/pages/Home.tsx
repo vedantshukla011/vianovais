@@ -245,6 +245,59 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Latest from the Blog */}
+      <section className="py-24 bg-muted/50" aria-labelledby="latest-blog">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-secondary font-semibold text-sm uppercase tracking-wider">
+              <BookOpen className="w-4 h-4" /> Insights & Articles
+            </span>
+            <h2 id="latest-blog" className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">
+              Latest from the ViaNova Blog
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Practical guides on precision measurement, power electronics testing and industrial automation.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="group bg-card border border-border rounded-2xl p-6 shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              >
+                <span className="inline-block self-start px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+                  {post.category}
+                </span>
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 flex-1">{post.excerpt}</p>
+                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" /> {post.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" /> {post.readTime}
+                  </span>
+                </div>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                  Read article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link to="/blog">
+              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold">
+                View All Articles
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
