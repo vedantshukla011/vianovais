@@ -685,6 +685,50 @@ const BlogDCElectronicLoad = () => {
           </div>
         </section>
 
+        {/* Featured Products */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+              Featured DC Electronic Loads
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Programmable DC electronic loads from leading brands — UNI-T, Owon and Hantek —
+              available with demo, calibration and pan-India delivery.
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {productCards.map((p) => (
+                <article
+                  key={p.title}
+                  className="bg-card border border-border rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-all flex flex-col"
+                >
+                  <div className="aspect-square bg-muted/40 flex items-center justify-center p-4 overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="inline-block self-start px-2.5 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold mb-2">
+                      {p.brand}
+                    </span>
+                    <h3 className="text-sm font-bold text-foreground mb-4 flex-1 leading-snug">
+                      {p.title}
+                    </h3>
+                    <Link to={`/inquiry?product=${encodeURIComponent(p.title)}`}>
+                      <Button size="sm" className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
+                        Request Quote
+                        <ArrowRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQs */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
