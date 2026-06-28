@@ -231,6 +231,22 @@ const faqs = [
   },
 ];
 
+const productCards = [
+  { img: "https://www.toolworld.in/storage/media/product/1727423190.jpg", title: "UTL8513A+ DC Electronic Load, 150V 120A 600W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1778744958.png", title: "OEL1530TV Series DC Electronic Load — 150V, 30A, 300W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1730557604.png", title: "UTL8512+ DC Electronic Load — 150V 30A 300W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1736753784.jpg", title: "OEL8511 DC Electronic Load, 200W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1763376837.jpg", title: "HDL2513B+ DC Electronic Load 500V, 30A, 600W", brand: "Hantek" },
+  { img: "https://www.toolworld.in/storage/media/product/1764246973.jpg", title: "UTL8514C+ DC Electronic Load, 150V 240A 1500W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1695809885.jpg", title: "UTL8211+ High-Precision Compact DC Electronic Load", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1701668051.jpg", title: "UTL8212+ Electronic Load — Dual Channel", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1725619923.jpg", title: "UTL8512B+ DC Electronic Load, 500V 30A", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1736753742.jpg", title: "OEL8512 DC Electronic Load, 400W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1751627777.jpg", title: "UTL8511+ DC Electronic Load — 150V 30A 150W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1763371295.jpg", title: "HDL2513C+ DC Electronic Load 120V 120A 600W", brand: "Hantek" },
+  { img: "https://www.toolworld.in/storage/media/product/1764247253.jpg", title: "UTL8514B+ DC Electronic Load, 500V 120A 1500W", brand: "UNI-T" },
+];
+
 const BlogDCElectronicLoad = () => {
   const canonical =
     "https://vianovaindustrial.solutions/blog/dc-electronic-load-power-electronics-manufacturing";
