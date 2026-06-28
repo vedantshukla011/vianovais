@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search } from "lucide-react";
+import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search, Calendar, Clock, BookOpen } from "lucide-react";
 
 import { Link } from "react-router-dom";
+import { BLOG_POSTS } from "@/data/blogPosts";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import HeroCarousel from "@/components/HeroCarousel";
 
