@@ -11,6 +11,19 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "dc-electronic-load-power-electronics-manufacturing",
+    title: "DC Electronic Load: The Backbone of Power Electronics Manufacturing & Testing",
+    description:
+      "Discover how DC electronic loads improve testing accuracy for SMPS, battery, EV charger, adapter and power supply manufacturers. Includes buying guide and key features.",
+    keywords:
+      "DC Electronic Load, Programmable Electronic Load, Electronic Load Tester, DC Load Bank, Battery Load Tester, Power Supply Testing, SMPS Testing Equipment, EV Charger Testing, Electronic Load for Manufacturing",
+    date: "2026-06-28",
+    readTime: "10 min read",
+    category: "Power Electronics Testing",
+    excerpt:
+      "Complete buying guide for DC electronic loads — applications, operating modes, features and selection criteria for power electronics manufacturing.",
+  },
+  {
     slug: "digital-storage-oscilloscope-pcb-testing",
     title:
       "Digital Storage Oscilloscopes (DSOs): The Essential Tool for PCB Design, Debugging and Failure Diagnosis",
