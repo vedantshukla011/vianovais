@@ -231,6 +231,22 @@ const faqs = [
   },
 ];
 
+const productCards = [
+  { img: "https://www.toolworld.in/storage/media/product/1727423190.jpg", title: "UTL8513A+ DC Electronic Load, 150V 120A 600W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1778744958.png", title: "OEL1530TV Series DC Electronic Load — 150V, 30A, 300W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1730557604.png", title: "UTL8512+ DC Electronic Load — 150V 30A 300W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1736753784.jpg", title: "OEL8511 DC Electronic Load, 200W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1763376837.jpg", title: "HDL2513B+ DC Electronic Load 500V, 30A, 600W", brand: "Hantek" },
+  { img: "https://www.toolworld.in/storage/media/product/1764246973.jpg", title: "UTL8514C+ DC Electronic Load, 150V 240A 1500W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1695809885.jpg", title: "UTL8211+ High-Precision Compact DC Electronic Load", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1701668051.jpg", title: "UTL8212+ Electronic Load — Dual Channel", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1725619923.jpg", title: "UTL8512B+ DC Electronic Load, 500V 30A", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1736753742.jpg", title: "OEL8512 DC Electronic Load, 400W", brand: "Owon" },
+  { img: "https://www.toolworld.in/storage/media/product/1751627777.jpg", title: "UTL8511+ DC Electronic Load — 150V 30A 150W", brand: "UNI-T" },
+  { img: "https://www.toolworld.in/storage/media/product/1763371295.jpg", title: "HDL2513C+ DC Electronic Load 120V 120A 600W", brand: "Hantek" },
+  { img: "https://www.toolworld.in/storage/media/product/1764247253.jpg", title: "UTL8514B+ DC Electronic Load, 500V 120A 1500W", brand: "UNI-T" },
+];
+
 const BlogDCElectronicLoad = () => {
   const canonical =
     "https://vianovaindustrial.solutions/blog/dc-electronic-load-power-electronics-manufacturing";
@@ -666,6 +682,50 @@ const BlogDCElectronicLoad = () => {
               equipment or industrial power supplies, investing in the right electronic load
               enhances product quality while reducing manufacturing costs and field failures.
             </p>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+              Featured DC Electronic Loads
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Programmable DC electronic loads from leading brands — UNI-T, Owon and Hantek —
+              available with demo, calibration and pan-India delivery.
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {productCards.map((p) => (
+                <article
+                  key={p.title}
+                  className="bg-card border border-border rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-all flex flex-col"
+                >
+                  <div className="aspect-square bg-muted/40 flex items-center justify-center p-4 overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="inline-block self-start px-2.5 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold mb-2">
+                      {p.brand}
+                    </span>
+                    <h3 className="text-sm font-bold text-foreground mb-4 flex-1 leading-snug">
+                      {p.title}
+                    </h3>
+                    <Link to={`/inquiry?product=${encodeURIComponent(p.title)}`}>
+                      <Button size="sm" className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
+                        Request Quote
+                        <ArrowRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
