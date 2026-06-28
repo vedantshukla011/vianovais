@@ -19,6 +19,7 @@ import Blog from "./pages/Blog";
 import BlogDriverTesting from "./pages/BlogDriverTesting";
 import BlogAutomotiveDebugging from "./pages/BlogAutomotiveDebugging";
 import BlogDSOPCBTesting from "./pages/BlogDSOPCBTesting";
+import BlogDCElectronicLoad from "./pages/BlogDCElectronicLoad";
 import BuyOnline from "./pages/BuyOnline";
 import InteractivePanel from "./pages/InteractivePanel";
 import ProductWellerWE1010 from "./pages/ProductWellerWE1010";
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/blog/driver-testing-machine" element={<BlogDriverTesting />} />
               <Route path="/blog/oscilloscope-multimeter-automotive-debugging" element={<BlogAutomotiveDebugging />} />
               <Route path="/blog/digital-storage-oscilloscope-pcb-testing" element={<BlogDSOPCBTesting />} />
+              <Route path="/blog/dc-electronic-load-power-electronics-manufacturing" element={<BlogDCElectronicLoad />} />
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               <Route path="/products/weller-we1010" element={<ProductWellerWE1010 />} />
