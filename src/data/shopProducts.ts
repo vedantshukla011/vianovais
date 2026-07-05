@@ -3787,6 +3787,35 @@ export const SHOP_PRODUCTS: ShopProduct[] = [
   {"id": 639, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDS1204XE4.jpg", "name": "Siglent SDS1104X-E Digital Storage Oscilloscope - 100MHz, 4 Ch", "price": 54280, "category": "Oscilloscopes"},
   {"id": 640, "image": "https://siglentna.com/wp-content/uploads/2020/11/SDS1000XU_2-1024x744.png", "name": "Siglent SDS1104X-U Digital Storage Oscilloscope - 100MHz, 4 Ch", "price": 42480, "category": "Oscilloscopes"},
   {"id": 641, "image": "https://www.siglenteu.com/wp-content/uploads/2017/10/SDS1072CML-front.png", "name": "Siglent SDS1102CML+ Digital Storage Oscilloscope - 100MHz, 2 Ch", "price": 33040, "category": "Oscilloscopes"},
-  {"id": 642, "image": "https://www.siglenteu.com/wp-content/uploads/2017/10/1052DL-front.png", "name": "Siglent SDS1052DL+ Digital Storage Oscilloscope - 50MHz, 2 Ch", "price": 27730, "category": "Oscilloscopes"}
+  {"id": 642, "image": "https://www.siglenteu.com/wp-content/uploads/2017/10/1052DL-front.png", "name": "Siglent SDS1052DL+ Digital Storage Oscilloscope - 50MHz, 2 Ch", "price": 27730, "category": "Oscilloscopes"},
+
+  {"id": 643, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDG2000Xa.png", "name": "Siglent SDG2042X Arbitrary Function Generator - 40MHz, 2 Ch", "price": 56640, "category": "Function Generator"},
+  {"id": 644, "image": "https://siglentna.com/wp-content/uploads/2017/09/713839551390.MAIN_.jpg", "name": "Siglent SDG1032X Arbitrary Function Generator - 30MHz, 2 Ch", "price": 42480, "category": "Function Generator"},
+  {"id": 645, "image": "https://siglentna.com/wp-content/uploads/2017/09/SDG800a.png", "name": "Siglent SDG830 Arbitrary Function Generator - 30MHz, 1 Ch", "price": 28320, "category": "Function Generator"},
+  {"id": 646, "image": "https://siglentna.com/wp-content/uploads/2017/09/SDG800a.png", "name": "Siglent SDG810 Arbitrary Function Generator - 10MHz, 1 Ch", "price": 27140, "category": "Function Generator"},
+  {"id": 647, "image": "https://siglentna.com/wp-content/uploads/2019/06/SSG3000X.jpg", "name": "Siglent SSG3032X RF Signal Generator - 9kHz to 3.2GHz", "price": 389400, "category": "Function Generator"},
+
+  {"id": 648, "image": "https://siglentna.com/wp-content/uploads/2021/07/SPS5045X.png", "name": "Siglent SPS5045X Programmable DC Power Supply - Triple Output 0-40V/30A", "price": 214760, "category": "Power Supply"},
+  {"id": 649, "image": "https://siglentna.com/wp-content/uploads/2021/07/SPS5000.png", "name": "Siglent SPS5082X Programmable DC Power Supply - Single Output 0-80V/30A", "price": 141600, "category": "Power Supply"},
+  {"id": 650, "image": "https://siglentna.com/wp-content/uploads/2021/07/480.png", "name": "Siglent SPS5043X Programmable DC Power Supply - Single Output 0-40V/90A", "price": 177000, "category": "Power Supply"},
+  {"id": 651, "image": "https://siglentna.com/wp-content/uploads/2019/06/SPD3000X-1.jpg", "name": "Siglent SPD3303X Programmable DC Power Supply - Triple Output", "price": 57820, "category": "Power Supply"},
+  {"id": 652, "image": "https://siglentna.com/wp-content/uploads/2019/06/SPD3303X-E.jpg", "name": "Siglent SPD3303X-E Programmable DC Power Supply - Triple Output", "price": 42480, "category": "Power Supply"},
+  {"id": 653, "image": "https://siglentna.com/wp-content/uploads/2017/09/SPD3303Ca.png", "name": "Siglent SPD3303C Programmable DC Power Supply - Triple Output", "price": 27140, "category": "Power Supply"},
+  {"id": 654, "image": "https://siglentna.com/wp-content/uploads/2019/06/Front-5168.jpg", "name": "Siglent SPD1305X Programmable DC Power Supply - Single Output 0-30V/5A", "price": 29500, "category": "Power Supply"},
+  {"id": 655, "image": "https://siglentna.com/wp-content/uploads/2019/06/Front-5168.jpg", "name": "Siglent SPD1168X Programmable DC Power Supply - Single Output 0-16V/8A", "price": 27140, "category": "Power Supply"},
+
+  {"id": 656, "image": "https://siglentna.com/wp-content/uploads/2025/04/4065-1.png", "name": "Siglent SDM4065A Bench Top Digital Multimeter - 6.5 Digit", "price": 100300, "category": "Multimeter"},
+  {"id": 657, "image": "https://siglentna.com/wp-content/uploads/2025/04/4055-1.png", "name": "Siglent SDM4055A-SC Bench Top Digital Multimeter - 5.5 Digit with Scanner", "price": 100300, "category": "Multimeter"},
+  {"id": 658, "image": "https://siglentna.com/wp-content/uploads/2025/04/4055-1.png", "name": "Siglent SDM4055A Bench Top Digital Multimeter - 5.5 Digit", "price": 80240, "category": "Multimeter"},
+  {"id": 659, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDM3065X.jpg", "name": "Siglent SDM3065X Bench Top Digital Multimeter - 6.5 Digit", "price": 80240, "category": "Multimeter"},
+  {"id": 660, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDM3055a.png", "name": "Siglent SDM3055 Bench Top Digital Multimeter - 5.5 Digit", "price": 55460, "category": "Multimeter"},
+  {"id": 661, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDM3045X-front.jpg", "name": "Siglent SDM3045X Bench Top Digital Multimeter - 4.5 Digit", "price": 43660, "category": "Multimeter"},
+
+  {"id": 662, "image": "https://siglentna.com/wp-content/uploads/2019/08/SDL1030X-front-WEB.png", "name": "Siglent SDL1030X Programmable DC Electronic Load - 300W/150V/30A", "price": 118000, "category": "DC Electronic Load"},
+  {"id": 663, "image": "https://siglentna.com/wp-content/uploads/2019/08/SDL1020X-front.png", "name": "Siglent SDL1020X Programmable DC Electronic Load - 200W/150V/30A", "price": 73160, "category": "DC Electronic Load"},
+  {"id": 664, "image": "https://siglentna.com/wp-content/uploads/2019/08/SDL1020X-E-WEB.png", "name": "Siglent SDL1020X-E Programmable DC Electronic Load - 200W/150V/30A", "price": 53100, "category": "DC Electronic Load"},
+
+  {"id": 665, "image": "https://siglentna.com/wp-content/uploads/2017/09/SSA3000Xa.png", "name": "Siglent SSA3075X Plus Spectrum Analyzer - 9kHz to 7.5GHz", "price": 743400, "category": "Spectrum Analyzer"},
+  {"id": 666, "image": "https://siglentna.com/wp-content/uploads/2017/09/SSA3000Xa.png", "name": "Siglent SSA3032X Plus Spectrum Analyzer - 9kHz to 3.2GHz", "price": 295000, "category": "Spectrum Analyzer"}
 ];
 
