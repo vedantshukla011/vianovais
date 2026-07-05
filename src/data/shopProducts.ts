@@ -3777,5 +3777,16 @@ export const SHOP_PRODUCTS: ShopProduct[] = [
   {"id": 629, "image": "https://www.toolworld.in/storage/media/product/1747295172.jpg", "name": "GLL 50-15 XG Line Laser", "price": 9744.92, "category": "Distance, Level and Laser line"},
   {"id": 630, "image": "https://www.toolworld.in/storage/media/product/GLL315-1.jpg", "name": "GLL 3-15X Professional 3-Line Laser", "price": 6288.14, "category": "Distance, Level and Laser line"},
   {"id": 631, "image": "https://www.toolworld.in/storage/media/product/1642427007.jpg", "name": "GLM50-23 G Professional Distance Meter- 50M", "price": 5254.24, "category": "Distance, Level and Laser line"},
-  {"id": 632, "image": "https://www.toolworld.in/storage/media/product/Bosch420-1.jpg", "name": "GLM 400 Professional Digital Laser Measure", "price": 3872.88, "category": "Distance, Level and Laser line"}
+  {"id": 632, "image": "https://www.toolworld.in/storage/media/product/Bosch420-1.jpg", "name": "GLM 400 Professional Digital Laser Measure", "price": 3872.88, "category": "Distance, Level and Laser line"},
+  {"id": 633, "image": "https://siglentna.com/wp-content/uploads/2020/01/SDS2000XPhmoecover.png", "name": "Siglent SDS2354X Plus Digital Storage Oscilloscope - 350MHz, 4 Ch, 2GSa/s, 200Mpts, 10.1\" Touch", "price": 283200, "category": "Oscilloscopes"},
+  {"id": 634, "image": "https://siglentna.com/wp-content/uploads/2024/02/SDS824X-HD-1024x670.png", "name": "Siglent SDS824X HD Digital Storage Oscilloscope - 200MHz, 4 Ch, 12-bit HD", "price": 88500, "category": "Oscilloscopes"},
+  {"id": 635, "image": "https://siglentna.com/wp-content/uploads/2024/02/SDS814X-HD-1024x670.png", "name": "Siglent SDS814X HD Digital Storage Oscilloscope - 100MHz, 4 Ch, 12-bit HD", "price": 56640, "category": "Oscilloscopes"},
+  {"id": 636, "image": "https://siglentna.com/wp-content/uploads/2024/02/SDS812X-HD-1024x670.png", "name": "Siglent SDS812X HD Digital Storage Oscilloscope - 100MHz, 2 Ch, 12-bit HD", "price": 44840, "category": "Oscilloscopes"},
+  {"id": 637, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDS1202X-1.jpg", "name": "Siglent SDS1202X-E Digital Storage Oscilloscope - 200MHz, 2 Ch", "price": 40120, "category": "Oscilloscopes"},
+  {"id": 638, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDS1204XE4.jpg", "name": "Siglent SDS1204X-E Digital Storage Oscilloscope - 200MHz, 4 Ch", "price": 80240, "category": "Oscilloscopes"},
+  {"id": 639, "image": "https://siglentna.com/wp-content/uploads/2019/06/SDS1204XE4.jpg", "name": "Siglent SDS1104X-E Digital Storage Oscilloscope - 100MHz, 4 Ch", "price": 54280, "category": "Oscilloscopes"},
+  {"id": 640, "image": "https://siglentna.com/wp-content/uploads/2020/11/SDS1000XU_2-1024x744.png", "name": "Siglent SDS1104X-U Digital Storage Oscilloscope - 100MHz, 4 Ch", "price": 42480, "category": "Oscilloscopes"},
+  {"id": 641, "image": "https://www.siglenteu.com/wp-content/uploads/2017/10/SDS1072CML-front.png", "name": "Siglent SDS1102CML+ Digital Storage Oscilloscope - 100MHz, 2 Ch", "price": 33040, "category": "Oscilloscopes"},
+  {"id": 642, "image": "https://www.siglenteu.com/wp-content/uploads/2017/10/1052DL-front.png", "name": "Siglent SDS1052DL+ Digital Storage Oscilloscope - 50MHz, 2 Ch", "price": 27730, "category": "Oscilloscopes"}
 ];
+
