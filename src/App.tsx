@@ -20,6 +20,8 @@ import BlogDriverTesting from "./pages/BlogDriverTesting";
 import BlogAutomotiveDebugging from "./pages/BlogAutomotiveDebugging";
 import BlogDSOPCBTesting from "./pages/BlogDSOPCBTesting";
 import BlogDCElectronicLoad from "./pages/BlogDCElectronicLoad";
+import BlogDCPowerSupply from "./pages/BlogDCPowerSupply";
+
 import BuyOnline from "./pages/BuyOnline";
 import InteractivePanel from "./pages/InteractivePanel";
 import ProductWellerWE1010 from "./pages/ProductWellerWE1010";

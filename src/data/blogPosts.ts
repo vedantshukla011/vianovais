@@ -11,6 +11,21 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "dc-power-supply-types-applications-buying-guide",
+    title:
+      "DC Power Supplies: A Complete Guide to Types, Applications and Choosing the Right Power Supply",
+    description:
+      "Complete guide to DC power supplies — linear vs switching, programmable, bidirectional, high voltage and modular types, key specifications and buying advice.",
+    keywords:
+      "DC Power Supply, Programmable DC Power Supply, Linear Power Supply, Switching Power Supply, Bench DC Power Supply, Laboratory Power Supply, Industrial DC Power Supply, High Voltage DC Supply, High Current Power Supply, Multi-Channel Power Supply, SCPI Power Supply, Battery Testing Power Supply, EV Testing Equipment",
+    date: "2026-07-26",
+    readTime: "11 min read",
+    category: "Power Electronics Testing",
+    excerpt:
+      "Linear vs switching, single to multi-channel, programmable, bidirectional and high-voltage supplies — how to pick the right DC source for your lab or line.",
+  },
+  {
+
     slug: "dc-electronic-load-power-electronics-manufacturing",
     title: "DC Electronic Load: The Backbone of Power Electronics Manufacturing & Testing",
     description:
