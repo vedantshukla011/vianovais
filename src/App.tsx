@@ -52,6 +52,8 @@ const App = () => (
               <Route path="/blog/oscilloscope-multimeter-automotive-debugging" element={<BlogAutomotiveDebugging />} />
               <Route path="/blog/digital-storage-oscilloscope-pcb-testing" element={<BlogDSOPCBTesting />} />
               <Route path="/blog/dc-electronic-load-power-electronics-manufacturing" element={<BlogDCElectronicLoad />} />
+              <Route path="/blog/dc-power-supply-types-applications-buying-guide" element={<BlogDCPowerSupply />} />
+
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               <Route path="/products/weller-we1010" element={<ProductWellerWE1010 />} />
