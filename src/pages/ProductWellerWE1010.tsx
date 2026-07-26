@@ -85,10 +85,10 @@ const ProductWellerWE1010 = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Weller WE1010 Soldering Station, 70W | Price ₹15,500 + GST | ViaNova</title>
+        <title>Weller WE1010 70W Soldering Station | ₹15,500 + GST</title>
         <meta
           name="description"
-          content="Buy the Weller WE1010 70W digital soldering station — WEP 70 iron, PH 70 safety rest, ESD safe, UL & CE certified. Price ₹15,500 + GST. Trusted by professionals across India."
+          content="Weller WE1010 70W digital soldering station with WEP 70 iron and PH 70 safety rest. ESD safe, UL & CE certified. ₹15,500 + GST, pan-India delivery."
         />
         <link rel="canonical" href="https://vianovaindustrial.solutions/products/weller-we1010" />
         <meta property="og:title" content="Weller WE1010 Soldering Station, 70W — Premium Quality, Affordable Price" />

@@ -95,10 +95,18 @@ const HeroCarousel = () => {
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium">{slide.badge}</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              {slide.titleTop}
-              <span className="block mt-2 text-accent">{slide.titleBottom}</span>
-            </h1>
+            {i === active ? (
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                {slide.titleTop}
+                <span className="block mt-2 text-accent">{slide.titleBottom}</span>
+              </h1>
+            ) : (
+              <p className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                {slide.titleTop}
+                <span className="block mt-2 text-accent">{slide.titleBottom}</span>
+              </p>
+            )}
+
             <p className="text-xl md:text-2xl mb-10 text-primary-foreground/80 max-w-3xl mx-auto">
               {slide.description}
             </p>

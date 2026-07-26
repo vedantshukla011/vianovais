@@ -41,6 +41,26 @@ const Industry = () => {
         <meta property="og:description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: `${industry.name} — Test, Measurement & Industrial Equipment Solutions`,
+            description: `${industry.tagline}. ${industry.intro.slice(0, 160)}`,
+            url: canonical,
+            about: {
+              "@type": "Service",
+              serviceType: `${industry.name} test, measurement and industrial automation solutions`,
+              areaServed: "IN",
+              provider: {
+                "@type": "Organization",
+                name: "ViaNova Industrial Solutions",
+                url: "https://vianovaindustrial.solutions/",
+              },
+            },
+          })}
+        </script>
+
       </Helmet>
 
       {/* Hero */}
@@ -51,7 +71,10 @@ const Industry = () => {
               <Icon className="w-5 h-5 text-accent" />
               <span className="text-sm font-semibold uppercase tracking-wider">Industries We Serve</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-5">{industry.name}</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-5">
+              {industry.name} — Test, Measurement &amp; Industrial Equipment Solutions
+            </h1>
+
             <p className="text-xl md:text-2xl text-primary-foreground/85 mb-8">{industry.tagline}</p>
             <p className="text-base md:text-lg text-primary-foreground/75 leading-relaxed mb-8">{industry.intro}</p>
             <div className="flex flex-wrap gap-3">

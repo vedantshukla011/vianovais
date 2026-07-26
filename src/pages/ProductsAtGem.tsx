@@ -39,9 +39,13 @@ const ProductsAtGem = () => {
                 <span className="text-sm font-medium">Registered Supplier on GeM</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Products
-                <span className="text-accent">@GeM</span>
+                Test &amp; Measurement Instruments on
+                <span className="text-accent"> GeM</span>
+                <span className="block mt-2 text-2xl md:text-3xl font-semibold text-primary-foreground/90">
+                  Government e-Marketplace Supplier — ViaNova Industrial Solutions
+                </span>
               </h1>
+
               <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl">
                 ViaNova Industrial Solutions is a proud registered supplier on the 
                 <strong> Government e-Marketplace (GeM)</strong> — India's official online procurement platform for government buyers.

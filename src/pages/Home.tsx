@@ -64,11 +64,11 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Test & Measurement Instruments & Interactive Displays India | ViaNova</title>
-        <meta name="description" content="Buy test & measurement instruments, oscilloscopes, multimeters, ESD lab setups & GenAI interactive flat panel displays online in India. Best price, GST invoice, pan-India delivery." />
+        <title>Test & Measurement Instruments India | ViaNova</title>
+        <meta name="description" content="Buy oscilloscopes, multimeters, ESD lab setups and GenAI interactive flat panel displays online in India. GST invoice, pan-India delivery." />
         <meta name="keywords" content="test and measurement instruments India, buy measuring instruments online, oscilloscope supplier India, digital multimeter dealer, power analyzer supplier, spectrum analyzer distributor, LCR meter supplier, ESD lab setup, EV test bench India, calibration instruments supplier, interactive flat panel India, interactive display for classroom, GenAI interactive panel, 86 inch interactive panel price, smart classroom solutions, digital whiteboard supplier, EyeRIS A10, NEP 2020 smart classroom, interactive panel for boardroom, IFPD supplier India" />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Test & Measurement Instruments & Interactive Displays India | ViaNova" />
+        <meta property="og:title" content="Test & Measurement Instruments India | ViaNova" />
         <meta property="og:description" content="One-stop supplier of test & measurement instruments, oscilloscopes, multimeters, ESD labs and GenAI interactive flat panel displays across India." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
