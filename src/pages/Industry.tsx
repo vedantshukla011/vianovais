@@ -30,15 +30,21 @@ const Industry = () => {
   };
   const kw = industryKeywords[industry.slug] ?? "industrial equipment supplier India, instrumentation company India, one stop solution for industrial instruments";
 
+  const rawDescription = `${industry.tagline}. ${industry.intro}`;
+  const metaDescription =
+    rawDescription.length > 155
+      ? `${rawDescription.slice(0, 152).replace(/[\s,.;:-]+$/, "")}...`
+      : rawDescription;
+
   return (
     <div className="min-h-screen bg-background pt-20">
       <Helmet>
         <title>{`${industry.name} Solutions | ViaNova Industrial Solutions`}</title>
-        <meta name="description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
+        <meta name="description" content={metaDescription} />
         <meta name="keywords" content={kw} />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content={`${industry.name} Solutions | ViaNova Industrial Solutions`} />
-        <meta property="og:description" content={`${industry.tagline}. ${industry.intro.slice(0, 110)}`} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
