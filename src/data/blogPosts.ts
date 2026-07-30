@@ -11,6 +11,20 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "lcr-meter-guide-inductance-capacitance-resistance-measurement",
+    title:
+      "LCR Meter: The Ultimate Guide to Precision Inductance, Capacitance & Resistance Measurement",
+    description:
+      "LCR meter guide: working principle, measured parameters, test frequency, Kelvin measurement, applications, automation and buying tips for benchtop and handheld meters.",
+    keywords:
+      "LCR Meter, Buy LCR Meter India, Benchtop LCR Meter, Precision LCR Meter, Digital LCR Meter, LCR Meter Supplier India, Inductance Meter, Capacitance Meter, Resistance Meter, ESR Measurement, Impedance Analyzer, Kelvin Measurement, Transformer Testing, Coil Testing, PCB Testing, Component Testing, LabVIEW Compatible LCR Meter, SCPI LCR Meter, Keysight LCR Meter, Hioki LCR Meter, GW Instek LCR Meter, Tonghui LCR Meter, UNI-T LCR Meter, OWON LCR Meter",
+    date: "2026-07-30",
+    readTime: "10 min read",
+    category: "Test & Measurement Instruments",
+    excerpt:
+      "Working principle, measured parameters, test frequency, Kelvin measurement, applications, automation and a practical buying guide for LCR meters.",
+  },
+  {
     slug: "dc-power-supply-types-applications-buying-guide",
     title:
       "DC Power Supplies: A Complete Guide to Types, Applications and Choosing the Right Power Supply",
