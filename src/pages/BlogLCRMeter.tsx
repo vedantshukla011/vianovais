@@ -611,7 +611,7 @@ const BlogLCRMeter = () => {
                   setup for your lab or production line.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <Button asChild variant="hero">
+                  <Button asChild variant="default">
                     <Link to="/inquiry">
                       Request a Quote <ArrowRight className="w-4 h-4" />
                     </Link>
