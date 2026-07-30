@@ -66,6 +66,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/blog/lcr-meter-guide-inductance-capacitance-resistance-measurement</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
     <loc>https://vianovaindustrial.solutions/scientific-laboratory-instruments</loc>
