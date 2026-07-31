@@ -23,6 +23,8 @@ import BlogDSOPCBTesting from "./pages/BlogDSOPCBTesting";
 import BlogDCElectronicLoad from "./pages/BlogDCElectronicLoad";
 import BlogDCPowerSupply from "./pages/BlogDCPowerSupply";
 import BlogLCRMeter from "./pages/BlogLCRMeter";
+import BlogOscilloscopeAutomotiveEV from "./pages/BlogOscilloscopeAutomotiveEV";
+
 
 import BuyOnline from "./pages/BuyOnline";
 import InteractivePanel from "./pages/InteractivePanel";
