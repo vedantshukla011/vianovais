@@ -23,6 +23,8 @@ import BlogDSOPCBTesting from "./pages/BlogDSOPCBTesting";
 import BlogDCElectronicLoad from "./pages/BlogDCElectronicLoad";
 import BlogDCPowerSupply from "./pages/BlogDCPowerSupply";
 import BlogLCRMeter from "./pages/BlogLCRMeter";
+import BlogOscilloscopeAutomotiveEV from "./pages/BlogOscilloscopeAutomotiveEV";
+
 
 import BuyOnline from "./pages/BuyOnline";
 import InteractivePanel from "./pages/InteractivePanel";
@@ -56,6 +58,8 @@ const App = () => (
               <Route path="/blog/dc-electronic-load-power-electronics-manufacturing" element={<BlogDCElectronicLoad />} />
               <Route path="/blog/dc-power-supply-types-applications-buying-guide" element={<BlogDCPowerSupply />} />
               <Route path="/blog/lcr-meter-guide-inductance-capacitance-resistance-measurement" element={<BlogLCRMeter />} />
+              <Route path="/blog/oscilloscope-guide-automotive-ev-manufacturing" element={<BlogOscilloscopeAutomotiveEV />} />
+
 
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
