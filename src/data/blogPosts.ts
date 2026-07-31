@@ -11,6 +11,21 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "oscilloscope-guide-automotive-ev-manufacturing",
+    title:
+      "Oscilloscopes: The Ultimate Guide to Signal Analysis and Debugging in Automotive & EV Manufacturing",
+    description:
+      "How oscilloscopes are used in automotive and EV manufacturing — ECU debugging, BMS testing, inverter analysis, CAN bus decoding and power electronics.",
+    keywords:
+      "Oscilloscope, Digital Storage Oscilloscope, Automotive Oscilloscope, EV Oscilloscope, Buy Oscilloscope India, Oscilloscope Supplier India, ECU Debugging, CAN Bus Oscilloscope, BMS Testing, EV Inverter Testing, Automotive Electronics Testing, Mixed Signal Oscilloscope, Keysight Oscilloscope, Tektronix Oscilloscope, Yokogawa Oscilloscope, Rigol Oscilloscope, Siglent Oscilloscope, UNI-T Oscilloscope, Hantek Oscilloscope, OWON Oscilloscope, GW Instek Oscilloscope",
+    date: "2026-07-31",
+    readTime: "12 min read",
+    category: "Automotive Test & Measurement",
+    excerpt:
+      "ECU debugging, BMS validation, inverter and OBC analysis, CAN/LIN decoding, bandwidth selection and hot-selling oscilloscope models from leading brands.",
+  },
+  {
+
     slug: "lcr-meter-guide-inductance-capacitance-resistance-measurement",
     title:
       "LCR Meter: The Ultimate Guide to Precision Inductance, Capacitance & Resistance Measurement",
