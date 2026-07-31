@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { WhatsAppFloatingButton } from "./components/WhatsAppFloatingButton";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import About from "./pages/About";
