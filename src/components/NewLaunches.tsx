@@ -2,11 +2,6 @@ import { Link } from "react-router-dom";
 import { Sparkles, ArrowRight, Check, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
-import dtmImg from "@/assets/launch-driver-testing-machine.png";
-import podiumImg from "@/assets/launch-smart-podium.png";
-import printerImg from "@/assets/launch-multifunction-printer.png";
-import displayImg from "@/assets/launch-interactive-display.png";
-import batteryImg from "@/assets/launch-battery-simulator.png";
 import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
 
 type Launch = {
@@ -22,93 +17,136 @@ type Launch = {
 
 const launches: Launch[] = [
   {
-    title: "Weller WE1010 Soldering Station, 70W",
+    title: "UNI-T UAP1000A AC Power Source (1000VA Programmable AC Source)",
+    brand: "UNI-T",
+    model: "UAP1000A",
+    category: "AC Power Sources",
+    image: "https://www.uvtestsolutions.com/assets/unit-uap1000a-Bh_INNOX.jpg",
+    description:
+      "1000 VA single-phase programmable AC power source with dual voltage ranges (150 V / 300 V), current up to 8.4 A, 0.01 V / 0.001 A resolution and RS-232C remote control in a compact 3U chassis — built for mains simulation, appliance and adapter testing.",
+    specs: [
+      "Output capacity 1000 VA",
+      "Voltage range L: 150 V / H: 300 V",
+      "Current range L: 8.4 A / H: 4.2 A",
+      "Resolution 0.01 V / 0.001 A",
+      "RS-232C interface, 3U rack size",
+    ],
+  },
+  {
+    title: "UNI-T UTR2830E LCR Meter (100 kHz Digital LCR Bridge)",
+    brand: "UNI-T",
+    model: "UTR2830E",
+    category: "LCR Meters",
+    image: "https://www.uvtestsolutions.com/assets/unit-utr2830e-B4Z_1lrd.jpg",
+    description:
+      "New generation 100 kHz digital LCR bridge with 0.05% LCRZ / 0.1% DCR accuracy, 6-bit display count and up to 80 readings per second, with a 4.3-inch TFT LCD dual parameter readout for production QA and automated testing.",
+    specs: [
+      "Max test frequency 100 kHz",
+      "Accuracy LCRZ 0.05%, DCR 0.1%",
+      "6-bit display count, 80 rdgs/s",
+      '4.3" TFT LCD, dual parameter readout',
+      "RS232, HANDLER, LAN, USB Host/Device",
+    ],
+  },
+  {
+    title: "Hantek APE11L1000 AC Power Source (1KVA, 110V/220V)",
+    brand: "Hantek",
+    model: "APE11L1000",
+    category: "AC Power Sources",
+    image: "https://www.uvtestsolutions.com/assets/hantek-ape11l1000-_Y6AASU-.jpg",
+    description:
+      "1KVA single-phase programmable AC power source with 110 V / 220 V rated voltage, 9.1 A / 4.5 A rated current and 0–300 V adjustable output. Built-in isolation transformer and 4.3-inch colour LCD with waveform recording.",
+    specs: [
+      "Output power 1KVA, rated 110V/220V",
+      "Rated current 9.1 A / 4.5 A",
+      "Output 0–300 V, 45–65 Hz",
+      "4.3-inch colour LCD, 30-day waveform recording",
+      "Isolation transformer, OVP/OCP/OTP/OPP",
+    ],
+  },
+  {
+    title: "Jartul JT6311A DC Electronic Load (150W/150V/30A)",
+    brand: "Jartul",
+    model: "JT6311A",
+    category: "DC Electronic Loads",
+    image: "https://www.uvtestsolutions.com/assets/jartul-jt6311a-GDUyUsyL.png",
+    description:
+      "150W / 30A / 150V programmable DC electronic load with 10µS full-range current rising time and 500KHz synchronized sampling. Ideal for testing switching power supplies, LED drivers, ATE systems, fuses, batteries and adapters.",
+    specs: [
+      "150W / 150V / 30A range",
+      "10µS full-range current rise time",
+      "500KHz synchronized sampling",
+      "CC / CV / CR / CP modes",
+      "Dynamic, list, battery & short test",
+    ],
+  },
+  {
+    title: "Metrel MI 3108 EurotestPV Photovoltaic & Installation Tester",
+    brand: "Metrel",
+    model: "MI 3108",
+    category: "Electrical Safety Testing",
+    image: "https://www.uvtestsolutions.com/assets/metrel-mi3108-eurotestpv-B1DPGlkf.jpg",
+    description:
+      "Combined photovoltaic and electrical installation safety tester. Performs complete EN 61557 installation tests plus EN 62446 PV tests, I-V curve tracing, STC calculation (EN 61829) and DC/AC inverter power measurements up to 1000 V / 15 A DC.",
+    specs: [
+      "I-V curve tracing up to 1000 V / 15 A",
+      "STC recalculation per EN 61829",
+      "RCD (AC/A/B), loop, line, insulation, earth",
+      "Simultaneous AC & DC power / efficiency",
+      "PV Safety Probe for safe disconnection",
+    ],
+  },
+  {
+    title: "Metrel MI 3132 EV Tester (Electric Vehicle Insulation Tester)",
+    brand: "Metrel",
+    model: "MI 3132",
+    category: "EV Testing",
+    image: "https://www.uvtestsolutions.com/assets/metrel-mi3132-evtester-RJt1w-xG.jpg",
+    description:
+      "Portable EV insulation and bonding tester compliant with UN ECE R100 Annex 4A/4B and ISO 6469-3. Insulation up to 1500 V, 4-wire micro-ohm measurement at 2 A DC, 4.3″ colour touchscreen and Li-Ion battery operation for field use.",
+    specs: [
+      "Insulation test 50 V – 1500 V, up to 3 GΩ",
+      "4-wire Micro Ohm with 2 A DC current",
+      "Compliant with UN ECE R100 & ISO 6469-3",
+      "4.3″ colour touchscreen, AUTO SEQUENCE",
+      "CAT III 1000 V, Li-Ion battery powered",
+    ],
+  },
+  {
+    title: "Orion EE Phase Sync — IEC 62271-215:2021 Phase Comparator",
+    brand: "Orion EE",
+    model: "Phase Sync",
+    category: "Medium Voltage Testing",
+    image: "https://www.uvtestsolutions.com/assets/orion-phase-sync-DCfKYene.jpg",
+    description:
+      "Class A capacitive phase comparator for medium voltage equipment with IEC 62271-215:2021 measuring points. LCD + LED indication of phase coincidence, voltage presence and frequency, with Type-C rechargeable Li-ion battery.",
+    specs: [
+      "IEC 62271-215:2021 Class A compliant",
+      "Phase, voltage presence & frequency on LCD",
+      "Single-earth simultaneous connected operation",
+      "50/60 Hz, threshold 10%–45% Un",
+      "Type-C rechargeable, IP 2X / IK 07, 250 g",
+    ],
+  },
+  {
+    title: "Weller WE 1010 70W Digital Soldering Station (WEP 70 + PH 70)",
     brand: "Weller",
-    model: "WE1010",
+    model: "WE 1010",
     category: "Soldering & Rework",
     image: wellerImg.url,
     description:
-      "70 W digital soldering station with precise temperature control, fast heat-up and a robust safety rest — built for electronics production, rework and lab benches. Priced at ₹15,500 + GST.",
+      "1-channel 70W digital soldering station with WEP 70 iron and PH 70 safety rest — the most powerful station in its class with 40% more power than WES / WESD. ESD safe, UL & CE certified, with toolless ET tip change. Priced at ₹15,500 + GST.",
     specs: [
-      "70 W power, 200–450 °C range",
-      "Digital temperature display & lock",
-      "Fast heat-up, stable recovery",
-      "ESD-safe design with safety rest",
+      "70 W, 230 V, 100 °C – 450 °C range",
+      "Digital LC display, standby & auto setback",
+      "ESD safe iron, heat-resistant silicon cable",
+      "Toolless tip change — Weller ET tips",
+      "Password-protected settings, UL & CE certified",
     ],
     href: "/products/weller-we1010",
   },
-  {
-    title: "Driver Testing Machine (DTM)",
-    brand: "ViaNova",
-    category: "Power Electronics",
-    image: dtmImg,
-    description:
-      "Turnkey test system for LED drivers, SMPS, adapters and UPS units — automating electrical safety, load and performance checks on the production line.",
-    specs: [
-      "LED driver, SMPS & adapter testing",
-      "Programmable load sequences",
-      "Automated pass/fail reporting",
-      "Customisable to your product mix",
-    ],
-  },
-  {
-    title: "Smart Podiums",
-    brand: "ViaNova",
-    category: "Education Technology",
-    image: podiumImg,
-    description:
-      "All-in-one interactive teaching podiums combining touch display, PC, audio and control in a single lectern for classrooms, training rooms and auditoriums.",
-    specs: [
-      "Integrated touch display & PC",
-      "Central AV source control",
-      "Built-in audio and connectivity",
-      "Ready for hybrid classrooms",
-    ],
-  },
-  {
-    title: "Interactive Displays",
-    brand: "EyeRIS",
-    category: "Collaboration",
-    image: displayImg,
-    description:
-      "GenAI-ready interactive flat panels for classrooms and meeting rooms with multi-touch writing, wireless casting and built-in collaboration tools.",
-    specs: [
-      "4K UHD multi-touch panel",
-      "Wireless screen sharing",
-      "Built-in whiteboard & AI tools",
-      "Android + OPS PC options",
-    ],
-    href: "/interactive-panel",
-  },
-  {
-    title: "Battery Simulators",
-    brand: "ViaNova",
-    category: "EV & Energy",
-    image: batteryImg,
-    description:
-      "Bidirectional battery simulation for BMS, EV charger and inverter validation — emulate pack behaviour safely without a physical battery on the bench.",
-    specs: [
-      "Charge & discharge emulation",
-      "Programmable SoC / SoH profiles",
-      "Fast dynamic response",
-      "Ideal for BMS and EV test labs",
-    ],
-  },
-  {
-    title: "Multifunction Printers",
-    brand: "ViaNova",
-    category: "Office Solutions",
-    image: printerImg,
-    description:
-      "Print, scan, copy and network-managed document workflows for offices, labs and institutions, with service and consumables support across India.",
-    specs: [
-      "Print, scan, copy & network",
-      "Mono and colour options",
-      "Secure user access control",
-      "AMC and consumables support",
-    ],
-  },
 ];
+
 
 const NewLaunches = () => {
   const { addItem, hasItem } = useQuoteCart();
