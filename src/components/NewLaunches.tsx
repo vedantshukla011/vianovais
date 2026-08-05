@@ -3,6 +3,7 @@ import { Sparkles, ArrowRight, Check, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
+import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 
 type Launch = {
   title: string;
