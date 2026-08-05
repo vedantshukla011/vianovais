@@ -27,6 +27,7 @@ import BlogOscilloscopeAutomotiveEV from "./pages/BlogOscilloscopeAutomotiveEV";
 
 
 import BuyOnline from "./pages/BuyOnline";
+import Brands from "./pages/Brands";
 import InteractivePanel from "./pages/InteractivePanel";
 import ProductWellerWE1010 from "./pages/ProductWellerWE1010";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
@@ -62,6 +63,7 @@ const App = () => (
 
 
               <Route path="/buy-online" element={<BuyOnline />} />
+              <Route path="/brands" element={<Brands />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               <Route path="/products/weller-we1010" element={<ProductWellerWE1010 />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

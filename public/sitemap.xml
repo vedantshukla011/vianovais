@@ -99,6 +99,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vianovais.lovable.app/brands</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vianovais.lovable.app/products-at-gem</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
