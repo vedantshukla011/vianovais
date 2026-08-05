@@ -33,7 +33,7 @@ const launches: Launch[] = [
       "OVP / UVP / OCP / OPP / OTP protection",
     ],
   },
-
+  {
     title: "UNI-T UAP1000A AC Power Source (1000VA Programmable AC Source)",
     brand: "UNI-T",
     model: "UAP1000A",
