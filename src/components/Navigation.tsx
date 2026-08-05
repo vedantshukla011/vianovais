@@ -164,7 +164,6 @@ export const Navigation = () => {
             </div>
 
             <NavLink to="/products-at-gem" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Products@GeM</NavLink>
-            <NavLink to="/buy-online" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Buy Online</NavLink>
             <NavLink to="/inquiry">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 Request Quote
@@ -264,7 +263,6 @@ export const Navigation = () => {
           </div>
 
           <NavLink to="/products-at-gem" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Products@GeM</NavLink>
-          <NavLink to="/buy-online" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Buy Online</NavLink>
           <div className="p-4">
             <NavLink to="/inquiry" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg py-3">
