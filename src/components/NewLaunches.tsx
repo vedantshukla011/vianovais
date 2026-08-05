@@ -18,6 +18,22 @@ type Launch = {
 
 const launches: Launch[] = [
   {
+    title: "UNI-T UTL8211+ High-Precision Compact DC Electronic Load (400W/150V/40A)",
+    brand: "UNI-T",
+    model: "UTL8211+",
+    category: "DC Electronic Loads",
+    image: utl8211Img.url,
+    description:
+      "Single-channel 400 W programmable DC electronic load with 150 V / 40 A input range and 4.8 MHz synchronous voltage-current ADC sampling. Offers CC, CV, CR and CP modes with full protection suite — ideal for testing power supplies, batteries, adapters, LED drivers and chargers.",
+    specs: [
+      "400 W max power, 150 V / 40 A input",
+      "4.8 MHz current-voltage synchronous ADC sampling",
+      "CC, CV, CR, CP basic operation modes",
+      "Min operating voltage 2.0 V at 40 A",
+      "OVP / UVP / OCP / OPP / OTP protection",
+    ],
+  },
+
     title: "UNI-T UAP1000A AC Power Source (1000VA Programmable AC Source)",
     brand: "UNI-T",
     model: "UAP1000A",
