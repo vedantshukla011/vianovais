@@ -130,6 +130,7 @@ export const Navigation = () => {
             </div>
 
             <NavLink to="/about" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>About</NavLink>
+            <NavLink to="/brands" className={`${scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'} transition-colors font-medium`} activeClassName={`${scrolled ? 'text-primary' : 'text-white'} font-semibold`}>Brands</NavLink>
 
             {/* Industries Dropdown */}
             <div
@@ -236,6 +237,7 @@ export const Navigation = () => {
           </div>
 
           <NavLink to="/about" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>About</NavLink>
+          <NavLink to="/brands" className="block px-6 py-4 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors font-medium border-b border-border/50" activeClassName="text-primary font-semibold bg-muted/50" onClick={() => setIsOpen(false)}>Brands</NavLink>
 
           {/* Mobile Industries */}
           <div className="border-b border-border/50">
