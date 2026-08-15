@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,7 @@ import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
 interface Brand {
   name: string;
   initials: string;
+  domain: string;
   description: string;
   category: string;
   accentColor: string;
@@ -16,6 +18,7 @@ const brands: Brand[] = [
   {
     name: "Keysight Technologies",
     initials: "KT",
+    domain: "keysight.com",
     description: "Premium electronic test & measurement solutions including oscilloscopes, network analyzers, and RF instruments for R&D and manufacturing.",
     category: "Test & Measurement",
     accentColor: "bg-primary/10 text-primary",
@@ -23,6 +26,7 @@ const brands: Brand[] = [
   {
     name: "Keithley",
     initials: "KE",
+    domain: "tek.com",
     description: "Precision DC instruments, source measure units (SMUs), and low-level measurement solutions for research and characterization.",
     category: "Precision Instruments",
     accentColor: "bg-secondary/10 text-secondary",
@@ -30,6 +34,7 @@ const brands: Brand[] = [
   {
     name: "Tektronix",
     initials: "TX",
+    domain: "tektronix.com",
     description: "Industry-leading oscilloscopes, probes, and test equipment trusted by engineers worldwide for signal analysis and debugging.",
     category: "Oscilloscopes",
     accentColor: "bg-accent/10 text-accent-foreground",
@@ -37,6 +42,7 @@ const brands: Brand[] = [
   {
     name: "Fluke",
     initials: "FL",
+    domain: "fluke.com",
     description: "Rugged industrial test & measurement tools including digital multimeters, thermal imagers, and calibration equipment.",
     category: "Industrial Tools",
     accentColor: "bg-primary/10 text-primary",
@@ -44,6 +50,7 @@ const brands: Brand[] = [
   {
     name: "Testo",
     initials: "TE",
+    domain: "testo.com",
     description: "Specialists in temperature, humidity, HVAC, and environmental measurement instruments for industrial and commercial applications.",
     category: "Environmental Testing",
     accentColor: "bg-secondary/10 text-secondary",
@@ -51,6 +58,7 @@ const brands: Brand[] = [
   {
     name: "UNI-T",
     initials: "UT",
+    domain: "uni-trend.com",
     description: "Cost-effective, reliable test & measurement instruments including multimeters, clamp meters, and oscilloscopes for professionals.",
     category: "Test & Measurement",
     accentColor: "bg-accent/10 text-accent-foreground",
@@ -58,6 +66,7 @@ const brands: Brand[] = [
   {
     name: "National Instruments (NI)",
     initials: "NI",
+    domain: "ni.com",
     description: "Automated test, data acquisition, and control systems that power research labs and production test floors globally.",
     category: "Automated Test",
     accentColor: "bg-primary/10 text-primary",
@@ -65,6 +74,7 @@ const brands: Brand[] = [
   {
     name: "Weller",
     initials: "WE",
+    domain: "weller-tools.com",
     description: "Professional soldering stations, desoldering tools, and accessories for electronics manufacturing and repair workflows.",
     category: "Soldering Solutions",
     accentColor: "bg-secondary/10 text-secondary",
@@ -72,6 +82,7 @@ const brands: Brand[] = [
   {
     name: "Hantek",
     initials: "HA",
+    domain: "hantek.com",
     description: "Affordable oscilloscopes, automotive diagnostic tools, and USB-based test instruments for education and field service.",
     category: "Oscilloscopes",
     accentColor: "bg-accent/10 text-accent-foreground",
@@ -79,6 +90,7 @@ const brands: Brand[] = [
   {
     name: "Rigol",
     initials: "RI",
+    domain: "rigol.com",
     description: "High-performance oscilloscopes, spectrum analyzers, signal generators, and programmable DC power supplies.",
     category: "Test & Measurement",
     accentColor: "bg-primary/10 text-primary",
@@ -102,6 +114,33 @@ const valueProps = [
     description: "Get responsive pre-sales consultation, calibration assistance, and after-sales support across India.",
   },
 ];
+
+
+const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; domain: string; initials: string; accentColor: string }) => {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div
+        className={`w-20 h-20 rounded-2xl ${accentColor} flex items-center justify-center text-2xl font-bold mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300`}
+      >
+        {initials}
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-20 h-20 rounded-2xl bg-card border border-border/60 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2">
+      <img
+        src={`https://logo.clearbit.com/${domain}`}
+        alt={`${name} logo`}
+        className="max-h-14 max-w-full object-contain"
+        loading="lazy"
+        onError={() => setFailed(true)}
+      />
+    </div>
+  );
+};
 
 const Brands = () => {
   return (
@@ -163,12 +202,12 @@ const Brands = () => {
                 className="group border border-border/60 shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 bg-card overflow-hidden"
               >
                 <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                  <div
-                    className={`w-20 h-20 rounded-2xl ${brand.accentColor} flex items-center justify-center text-2xl font-bold mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300`}
-                    aria-label={`${brand.name} logo placeholder`}
-                  >
-                    {brand.initials}
-                  </div>
+                  <BrandLogo
+                    name={brand.name}
+                    domain={brand.domain}
+                    initials={brand.initials}
+                    accentColor={brand.accentColor}
+                  />
                   <h3 className="text-lg font-bold text-foreground mb-2">{brand.name}</h3>
                   <span className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full mb-4">
                     {brand.category}
