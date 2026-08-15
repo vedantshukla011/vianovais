@@ -116,13 +116,21 @@ const valueProps = [
 ];
 
 
-const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; domain: string; initials: string; accentColor: string }) => {
-  const [failed, setFailed] = useState(false);
+const logoSources = (domain: string) => [
+  `https://www.google.com/s2/favicons?domain=${domain}&sz=256`,
+  `https://unavatar.io/${domain}?fallback=false`,
+];
 
-  if (failed) {
+const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; domain: string; initials: string; accentColor: string }) => {
+  const sources = logoSources(domain);
+  const [index, setIndex] = useState(0);
+
+  if (index >= sources.length) {
     return (
       <div
         className={`w-20 h-20 rounded-2xl ${accentColor} flex items-center justify-center text-2xl font-bold mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300`}
+        aria-label={`${name} logo placeholder`}
+        role="img"
       >
         {initials}
       </div>
@@ -130,17 +138,23 @@ const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; doma
   }
 
   return (
-    <div className="w-20 h-20 rounded-2xl bg-card border border-border/60 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2">
+    <div className="w-20 h-20 rounded-2xl bg-card border border-border/60 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden p-3">
       <img
-        src={`https://logo.clearbit.com/${domain}`}
+        key={sources[index]}
+        src={sources[index]}
         alt={`${name} logo`}
         className="max-h-14 max-w-full object-contain"
         loading="lazy"
-        onError={() => setFailed(true)}
+        referrerPolicy="no-referrer"
+        onError={() => setIndex((i) => i + 1)}
+        onLoad={(e) => {
+          if (e.currentTarget.naturalWidth < 12) setIndex((i) => i + 1);
+        }}
       />
     </div>
   );
 };
+
 
 const Brands = () => {
   return (
