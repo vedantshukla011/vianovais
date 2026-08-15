@@ -31,17 +31,25 @@ const clients = [
 ];
 
 const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
-  const [imgError, setImgError] = useState(false);
-  const logoUrl = `https://logo.clearbit.com/${domain}`;
+  const sources = [
+    `https://www.google.com/s2/favicons?domain=${domain}&sz=256`,
+    `https://unavatar.io/${domain}?fallback=false`,
+  ];
+  const [index, setIndex] = useState(0);
 
   return (
     <div className="flex-shrink-0 mx-4 flex items-center justify-center h-20 w-40 bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
-      {!imgError ? (
+      {index < sources.length ? (
         <img
-          src={logoUrl}
+          key={sources[index]}
+          src={sources[index]}
           alt={`${name} logo`}
           className="max-h-12 max-w-[120px] object-contain"
-          onError={() => setImgError(true)}
+          referrerPolicy="no-referrer"
+          onError={() => setIndex((i) => i + 1)}
+          onLoad={(e) => {
+            if (e.currentTarget.naturalWidth < 12) setIndex((i) => i + 1);
+          }}
           loading="lazy"
         />
       ) : (
@@ -52,6 +60,7 @@ const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
     </div>
   );
 };
+
 
 const ClientsCarousel = () => {
   // We need enough copies so the content never runs out during scroll
