@@ -48,7 +48,7 @@ const BrandCard = ({ name, domain }: { name: string; domain: string }) => {
           referrerPolicy="no-referrer"
           onError={() => setIndex((i) => i + 1)}
           onLoad={(e) => {
-            if (e.currentTarget.naturalWidth < 12) setIndex((i) => i + 1);
+            if (e.currentTarget.naturalWidth < 24) setIndex((i) => i + 1);
           }}
           loading="lazy"
         />

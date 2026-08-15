@@ -148,7 +148,7 @@ const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; doma
         referrerPolicy="no-referrer"
         onError={() => setIndex((i) => i + 1)}
         onLoad={(e) => {
-          if (e.currentTarget.naturalWidth < 12) setIndex((i) => i + 1);
+          if (e.currentTarget.naturalWidth < 24) setIndex((i) => i + 1);
         }}
       />
     </div>
