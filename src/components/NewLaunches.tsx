@@ -18,6 +18,24 @@ type Launch = {
 
 const launches: Launch[] = [
   {
+    title: "Testo 883-1 Thermal Imager (320 x 240 px, Manual Focus, App & Laser)",
+    brand: "Testo",
+    model: "883-1",
+    category: "Thermal Imaging Cameras",
+    image:
+      "https://static.testo.com/image/upload/c_pad,h_600,w_920,f_auto,q_auto/t_aig/HQ/testo-883-thermal-imager-front.jpg",
+    description:
+      "Professional thermal imager with 320 x 240 pixel IR resolution (640 x 480 with SuperResolution) and NETD < 40 mK. Features testo SiteRecognition, ScaleAssist, manual focus and interchangeable lenses for electrical, industrial and building thermography. Offer price ₹5,80,000 + GST.",
+    specs: [
+      "320 x 240 px IR (640 x 480 SuperResolution)",
+      "Thermal sensitivity NETD < 40 mK",
+      "testo SiteRecognition & ScaleAssist",
+      "Manual focus, interchangeable 12° telephoto lens",
+      "Touchscreen + joystick, Bluetooth® & app control",
+    ],
+    href: "/products/testo-883-1",
+  },
+  {
     title: "UNI-T UTL8211+ High-Precision Compact DC Electronic Load (400W/150V/40A)",
     brand: "UNI-T",
     model: "UTL8211+",
