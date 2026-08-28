@@ -31,6 +31,7 @@ import Brands from "./pages/Brands";
 import InteractivePanel from "./pages/InteractivePanel";
 import ProductWellerWE1010 from "./pages/ProductWellerWE1010";
 import ProductTesto883 from "./pages/ProductTesto883";
+import ProductUTi260B from "./pages/ProductUTi260B";
 import { QuoteCartProvider } from "./contexts/QuoteCartContext";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               <Route path="/products/weller-we1010" element={<ProductWellerWE1010 />} />
               <Route path="/products/testo-883-1" element={<ProductTesto883 />} />
+              <Route path="/products/unit-uti260b" element={<ProductUTi260B />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

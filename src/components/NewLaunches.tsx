@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
+import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
 
 type Launch = {
   title: string;
@@ -17,6 +18,23 @@ type Launch = {
 };
 
 const launches: Launch[] = [
+  {
+    title: "UNI-T UTi260B Thermal Imager (256 x 192 IR, -20°C to 550°C, IP65)",
+    brand: "UNI-T",
+    model: "UTi260B",
+    category: "Thermal Imaging Cameras",
+    image: uti260bImg.url,
+    description:
+      "Heavy-duty thermal camera with 256 x 192 IR resolution, wide -20°C to 550°C range, 7 colour palettes and four display modes (thermal, visual, fusion, PiP). Rugged IP65 body tested to a 2 m drop. Price ₹30,500 incl. GST 18% (MRP ₹39,160).",
+    specs: [
+      "256 x 192 px IR, 2.8\" LCD display",
+      "Temperature range -20°C to 550°C, NETD 50 mK",
+      "7 palettes, 4 image modes incl. PiP",
+      "3-point analysis, hot/cold spot auto tracking",
+      "IP65, 2 m drop proof, 6-hour Li-ion battery",
+    ],
+    href: "/products/unit-uti260b",
+  },
   {
     title: "Testo 883-1 Thermal Imager (320 x 240 px, Manual Focus, App & Laser)",
     brand: "Testo",
