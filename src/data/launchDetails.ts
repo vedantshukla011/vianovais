@@ -1,3 +1,5 @@
+import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
+
 export type LaunchDetail = {
   slug: string;
   title: string;
@@ -20,7 +22,7 @@ export const launchDetails: LaunchDetail[] = [
     brand: "UNI-T",
     model: "UTL8211+",
     category: "DC Electronic Loads",
-    image: "",
+    image: utl8211Img.url,
     description:
       "Single-channel 400 W programmable DC electronic load with 150 V / 40 A input range and 4.8 MHz synchronous voltage-current ADC sampling. Offers CC, CV, CR and CP modes with a full protection suite — ideal for testing power supplies, batteries, adapters, LED drivers and chargers.",
     highlights: [
