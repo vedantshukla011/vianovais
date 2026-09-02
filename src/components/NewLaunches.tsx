@@ -68,6 +68,7 @@ const launches: Launch[] = [
       "Min operating voltage 2.0 V at 40 A",
       "OVP / UVP / OCP / OPP / OTP protection",
     ],
+    href: "/products/unit-utl8211plus",
   },
   {
     title: "UNI-T UAP1000A AC Power Source (1000VA Programmable AC Source)",
@@ -84,6 +85,7 @@ const launches: Launch[] = [
       "Resolution 0.01 V / 0.001 A",
       "RS-232C interface, 3U rack size",
     ],
+    href: "/products/unit-uap1000a",
   },
   {
     title: "UNI-T UTR2830E LCR Meter (100 kHz Digital LCR Bridge)",
@@ -100,6 +102,7 @@ const launches: Launch[] = [
       '4.3" TFT LCD, dual parameter readout',
       "RS232, HANDLER, LAN, USB Host/Device",
     ],
+    href: "/products/unit-utr2830e",
   },
   {
     title: "Hantek APE11L1000 AC Power Source (1KVA, 110V/220V)",
@@ -116,6 +119,7 @@ const launches: Launch[] = [
       "4.3-inch colour LCD, 30-day waveform recording",
       "Isolation transformer, OVP/OCP/OTP/OPP",
     ],
+    href: "/products/hantek-ape11l1000",
   },
   {
     title: "Jartul JT6311A DC Electronic Load (150W/150V/30A)",
@@ -132,6 +136,7 @@ const launches: Launch[] = [
       "CC / CV / CR / CP modes",
       "Dynamic, list, battery & short test",
     ],
+    href: "/products/jartul-jt6311a",
   },
   {
     title: "Metrel MI 3108 EurotestPV Photovoltaic & Installation Tester",
@@ -148,6 +153,7 @@ const launches: Launch[] = [
       "Simultaneous AC & DC power / efficiency",
       "PV Safety Probe for safe disconnection",
     ],
+    href: "/products/metrel-mi3108",
   },
   {
     title: "Metrel MI 3132 EV Tester (Electric Vehicle Insulation Tester)",
@@ -164,6 +170,7 @@ const launches: Launch[] = [
       "4.3″ colour touchscreen, AUTO SEQUENCE",
       "CAT III 1000 V, Li-Ion battery powered",
     ],
+    href: "/products/metrel-mi3132",
   },
   {
     title: "Orion EE Phase Sync — IEC 62271-215:2021 Phase Comparator",
@@ -180,6 +187,7 @@ const launches: Launch[] = [
       "50/60 Hz, threshold 10%–45% Un",
       "Type-C rechargeable, IP 2X / IK 07, 250 g",
     ],
+    href: "/products/orion-phase-sync",
   },
   {
     title: "Weller WE 1010 70W Digital Soldering Station (WEP 70 + PH 70)",
