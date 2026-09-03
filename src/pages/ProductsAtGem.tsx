@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, ExternalLink, ShieldCheck, BadgeCheck, Store } from "lucide-react";
@@ -27,6 +28,22 @@ const ProductsAtGem = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      <Helmet>
+        <title>Products on GeM | ViaNova Industrial Solutions</title>
+        <meta
+          name="description"
+          content="ViaNova Industrial Solutions is a registered GeM seller supplying measuring instruments, valves, steam traps, gaskets and ESD lab solutions to government buyers across India."
+        />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/products-at-gem" />
+        <meta property="og:title" content="Products on GeM | ViaNova Industrial Solutions" />
+        <meta
+          property="og:description"
+          content="Registered GeM seller for measuring instruments, industrial valves, steam traps and ESD lab solutions."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/products-at-gem" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-primary-foreground relative overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
