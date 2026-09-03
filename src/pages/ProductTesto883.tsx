@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const HERO_IMAGE =
-  "https://static.testo.com/image/upload/c_pad,h_600,w_920,f_auto,q_auto/t_aig/HQ/testo-883-thermal-imager-front.jpg";
+  "/__l5e/assets-v1/06b156de-a5f5-40c6-86f8-dd8291fdff7f/testo-883.jpg";
 
 const features = [
   { icon: Camera, title: "Best-in-Class Image Quality", desc: "320 x 240 pixel IR resolution (640 x 480 with SuperResolution) and NETD < 40 mK reveal the smallest thermal anomalies." },
