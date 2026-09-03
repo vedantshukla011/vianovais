@@ -78,7 +78,7 @@ const InteractivePanel = () => {
           name="description"
           content="EyeRIS A10 — Industry's first GenAI powered interactive flat panel with Bright AI, optical touch, 4K UHD display and NEP 2020 compliance. 65/75/86/98 inch sizes. Download the datasheet."
         />
-        <link rel="canonical" href="https://vianovaindustrial.com/interactive-panel" />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/interactive-panel" />
       </Helmet>
 
       {/* Hero */}
