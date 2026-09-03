@@ -20,6 +20,23 @@ type Launch = {
 
 const launches: Launch[] = [
   {
+    title: "Hantek HDM3065 Digital Multimeter (6½ Digit Bench Multimeter)",
+    brand: "Hantek",
+    model: "HDM3065",
+    category: "Digital Multimeters",
+    image: hdm3065Img.url,
+    description:
+      "True 6½ digit benchtop digital multimeter with 35 ppm DCV basic accuracy, up to 30,000 readings/s, dual display and 13 measurement functions including 4-wire resistance and 10 A current. 4.3-inch 64K colour LCD with trend, histogram and bar graph views. Price ₹73,995 incl. GST 18% (MRP ₹78,100).",
+    specs: [
+      "True 6½ digit resolution, 35 ppm DCV accuracy",
+      "Up to 30,000 rdgs/s, 10,000 reading memory",
+      "13 functions incl. 4-wire resistance & 10 A current",
+      "4.3\" 64K LCD with trend, histogram & bar graph",
+      "SCPI remote control, USB Device/Host, RS232/485",
+    ],
+    href: "/products/hantek-hdm3065",
+  },
+  {
     title: "UNI-T UTi260B Thermal Imager (256 x 192 IR, -20°C to 550°C, IP65)",
     brand: "UNI-T",
     model: "UTi260B",
