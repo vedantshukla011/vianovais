@@ -41,7 +41,7 @@ const launches: Launch[] = [
     model: "883-1",
     category: "Thermal Imaging Cameras",
     image:
-      "https://static.testo.com/image/upload/c_pad,h_600,w_920,f_auto,q_auto/t_aig/HQ/testo-883-thermal-imager-front.jpg",
+      "/__l5e/assets-v1/06b156de-a5f5-40c6-86f8-dd8291fdff7f/testo-883.jpg",
     description:
       "Professional thermal imager with 320 x 240 pixel IR resolution (640 x 480 with SuperResolution) and NETD < 40 mK. Features testo SiteRecognition, ScaleAssist, manual focus and interchangeable lenses for electrical, industrial and building thermography. Offer price ₹5,80,000 + GST.",
     specs: [
