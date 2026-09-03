@@ -1,4 +1,5 @@
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
+import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 
 export type LaunchDetail = {
   slug: string;
