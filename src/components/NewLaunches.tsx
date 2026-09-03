@@ -5,6 +5,7 @@ import { useQuoteCart } from "@/contexts/QuoteCartContext";
 import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
+import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 
 type Launch = {
   title: string;
