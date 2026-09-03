@@ -17,6 +17,46 @@ export type LaunchDetail = {
 
 export const launchDetails: LaunchDetail[] = [
   {
+    slug: "hantek-hdm3065",
+    title: "Hantek HDM3065 6½ Digit Digital Multimeter (Benchtop DMM)",
+    shortTitle: "Hantek HDM3065 6½ Digit Multimeter",
+    brand: "Hantek",
+    model: "HDM3065",
+    category: "Digital Multimeters",
+    image: hdm3065Img.url,
+    description:
+      "True 6½ digit benchtop digital multimeter with 35 ppm DCV basic accuracy, reading rates up to 30,000 rdgs/s and 13 measurement functions including 4-wire resistance, capacitance, frequency and 10 A current. Dual display, trend/histogram/bar graph recording and SCPI remote control make it ideal for R&D, calibration and production test. Price ₹73,995 inclusive of 18% GST (MRP ₹78,100).",
+    highlights: [
+      "True 6 1/2 digit reading resolution, 0.1 µV",
+      "Up to 30,000 readings/s with 10,000 reading memory",
+      "Dual display — two signal parameters at once",
+      "True RMS AC voltage and AC current measurement",
+      "Graph display: trend, histogram and bar graph recording",
+      "SCPI remote control with PC software support",
+    ],
+    specs: [
+      { label: "Model", value: "HDM3065" },
+      { label: "Resolution", value: "6 1/2 digit" },
+      { label: "DCV Basic Accuracy", value: "35 ppm" },
+      { label: "Max Reading Rate", value: "30,000 rdgs/s" },
+      { label: "Memory", value: "10,000 readings" },
+      { label: "Functions", value: "13 — DCV, ACV, DCI, ACI, 2/4-wire resistance, capacitance, diode, continuity, frequency, period, 10 A range" },
+      { label: "DC Voltage Ranges", value: "100 mV / 1 V / 10 V / 100 V / 1000 V" },
+      { label: "AC Voltage Ranges", value: "100 mV / 1 V / 10 V / 100 V / 750 V (True RMS)" },
+      { label: "Display", value: "4.3-inch 64K colour LCD, dual display" },
+      { label: "Interfaces", value: "USB Device, USB Host, RS232/485" },
+      { label: "Safety Standard", value: "CAT II 300 V" },
+      { label: "Warranty", value: "1 Year" },
+      { label: "Price", value: "₹73,995 incl. 18% GST (MRP ₹78,100)" },
+    ],
+    applications: [
+      "High-precision R&D bench measurement",
+      "Calibration and metrology laboratories",
+      "Automated production test via SCPI/USB",
+      "Component and power supply characterisation",
+    ],
+  },
+  {
     slug: "unit-utl8211plus",
     title: "UNI-T UTL8211+ High-Precision Compact DC Electronic Load (400W / 150V / 40A)",
     shortTitle: "UNI-T UTL8211+ DC Electronic Load",
