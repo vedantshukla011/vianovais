@@ -41,7 +41,7 @@ const launches: Launch[] = [
     model: "883-1",
     category: "Thermal Imaging Cameras",
     image:
-      "https://static.testo.com/image/upload/c_pad,h_600,w_920,f_auto,q_auto/t_aig/HQ/testo-883-thermal-imager-front.jpg",
+      "/__l5e/assets-v1/06b156de-a5f5-40c6-86f8-dd8291fdff7f/testo-883.jpg",
     description:
       "Professional thermal imager with 320 x 240 pixel IR resolution (640 x 480 with SuperResolution) and NETD < 40 mK. Features testo SiteRecognition, ScaleAssist, manual focus and interchangeable lenses for electrical, industrial and building thermography. Offer price ₹5,80,000 + GST.",
     specs: [
@@ -75,7 +75,7 @@ const launches: Launch[] = [
     brand: "UNI-T",
     model: "UAP1000A",
     category: "AC Power Sources",
-    image: "https://www.uvtestsolutions.com/assets/unit-uap1000a-Bh_INNOX.jpg",
+    image: "/__l5e/assets-v1/11ed2c04-f893-42a2-91ba-2f05ff4ac6b4/unit-uap1000a.jpg",
     description:
       "1000 VA single-phase programmable AC power source with dual voltage ranges (150 V / 300 V), current up to 8.4 A, 0.01 V / 0.001 A resolution and RS-232C remote control in a compact 3U chassis — built for mains simulation, appliance and adapter testing.",
     specs: [
@@ -92,7 +92,7 @@ const launches: Launch[] = [
     brand: "UNI-T",
     model: "UTR2830E",
     category: "LCR Meters",
-    image: "https://www.uvtestsolutions.com/assets/unit-utr2830e-B4Z_1lrd.jpg",
+    image: "/__l5e/assets-v1/6056949f-0723-4377-9f7e-ace217c48d8d/unit-utr2830e.jpg",
     description:
       "New generation 100 kHz digital LCR bridge with 0.05% LCRZ / 0.1% DCR accuracy, 6-bit display count and up to 80 readings per second, with a 4.3-inch TFT LCD dual parameter readout for production QA and automated testing.",
     specs: [
@@ -109,7 +109,7 @@ const launches: Launch[] = [
     brand: "Hantek",
     model: "APE11L1000",
     category: "AC Power Sources",
-    image: "https://www.uvtestsolutions.com/assets/hantek-ape11l1000-_Y6AASU-.jpg",
+    image: "/__l5e/assets-v1/bf71d2e7-28d6-4f77-b637-a09eb4b8a91b/hantek-ape11l1000.jpg",
     description:
       "1KVA single-phase programmable AC power source with 110 V / 220 V rated voltage, 9.1 A / 4.5 A rated current and 0–300 V adjustable output. Built-in isolation transformer and 4.3-inch colour LCD with waveform recording.",
     specs: [
@@ -126,7 +126,7 @@ const launches: Launch[] = [
     brand: "Jartul",
     model: "JT6311A",
     category: "DC Electronic Loads",
-    image: "https://www.uvtestsolutions.com/assets/jartul-jt6311a-GDUyUsyL.png",
+    image: "/__l5e/assets-v1/36665805-8730-4a7f-98b5-5d85af0e023c/jartul-jt6311a.png",
     description:
       "150W / 30A / 150V programmable DC electronic load with 10µS full-range current rising time and 500KHz synchronized sampling. Ideal for testing switching power supplies, LED drivers, ATE systems, fuses, batteries and adapters.",
     specs: [
@@ -143,7 +143,7 @@ const launches: Launch[] = [
     brand: "Metrel",
     model: "MI 3108",
     category: "Electrical Safety Testing",
-    image: "https://www.uvtestsolutions.com/assets/metrel-mi3108-eurotestpv-B1DPGlkf.jpg",
+    image: "/__l5e/assets-v1/d9e9ac3a-7f7b-4637-9ffa-d7be100cbf47/metrel-mi3108.jpg",
     description:
       "Combined photovoltaic and electrical installation safety tester. Performs complete EN 61557 installation tests plus EN 62446 PV tests, I-V curve tracing, STC calculation (EN 61829) and DC/AC inverter power measurements up to 1000 V / 15 A DC.",
     specs: [
@@ -160,7 +160,7 @@ const launches: Launch[] = [
     brand: "Metrel",
     model: "MI 3132",
     category: "EV Testing",
-    image: "https://www.uvtestsolutions.com/assets/metrel-mi3132-evtester-RJt1w-xG.jpg",
+    image: "/__l5e/assets-v1/e0b0fd7b-082b-4a26-a7b9-2265e9f44126/metrel-mi3132.jpg",
     description:
       "Portable EV insulation and bonding tester compliant with UN ECE R100 Annex 4A/4B and ISO 6469-3. Insulation up to 1500 V, 4-wire micro-ohm measurement at 2 A DC, 4.3″ colour touchscreen and Li-Ion battery operation for field use.",
     specs: [
@@ -177,7 +177,7 @@ const launches: Launch[] = [
     brand: "Orion EE",
     model: "Phase Sync",
     category: "Medium Voltage Testing",
-    image: "https://www.uvtestsolutions.com/assets/orion-phase-sync-DCfKYene.jpg",
+    image: "/__l5e/assets-v1/5c3e9385-aa4c-442e-92e0-b900586cd9f8/orion-phase-sync.jpg",
     description:
       "Class A capacitive phase comparator for medium voltage equipment with IEC 62271-215:2021 measuring points. LCD + LED indication of phase coincidence, voltage presence and frequency, with Type-C rechargeable Li-ion battery.",
     specs: [
