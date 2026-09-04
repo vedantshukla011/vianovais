@@ -1,357 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vianovais.lovable.app/</loc>
+    <loc>https://vianovaindustrial.solutions/</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products</loc>
+    <loc>https://vianovaindustrial.solutions/products</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/buy-online</loc>
+    <loc>https://vianovaindustrial.solutions/buy-online</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/about</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/inquiry</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/driver-testing-machine</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/oscilloscope-multimeter-automotive-debugging</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/digital-storage-oscilloscope-pcb-testing</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/dc-electronic-load-power-electronics-manufacturing</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/dc-power-supply-types-applications-buying-guide</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/lcr-meter-guide-inductance-capacitance-resistance-measurement</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/blog/oscilloscope-guide-automotive-ev-manufacturing</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://vianovais.lovable.app/scientific-laboratory-instruments</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/products/weller-we1010</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/products/testo-883-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/products/unit-uti260b</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/interactive-panel</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/brands</loc>
+    <loc>https://vianovaindustrial.solutions/brands</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products-at-gem</loc>
+    <loc>https://vianovaindustrial.solutions/about</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/inquiry</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/interactive-panel</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/scientific-laboratory-instruments</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/products-at-gem</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/manufacturing</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/blog/oscilloscope-guide-automotive-ev-manufacturing</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/automobile</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/lcr-meter-guide-inductance-capacitance-resistance-measurement</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/rd</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/dc-power-supply-types-applications-buying-guide</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/education</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/dc-electronic-load-power-electronics-manufacturing</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/pharmaceuticals</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/digital-storage-oscilloscope-pcb-testing</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/medical</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/oscilloscope-multimeter-automotive-debugging</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/qa</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/blog/driver-testing-machine</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/industries/automation</loc>
-    <lastmod>2026-04-25</lastmod>
+    <loc>https://vianovaindustrial.solutions/products/weller-we1010</loc>
+    <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Battery%20Tester</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://vianovaindustrial.solutions/products/testo-883-1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Clamp%20Meter</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://vianovaindustrial.solutions/products/unit-uti260b</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Coating%20Thickness%20Gauge</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=DC%20Electronic%20Load</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Distance%2C%20Level%20and%20Laser%20line</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Earth%20Tester</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Electric%20screwdrivers</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Environmental%20Testing</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Function%20Generator</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Hipot%20Tester</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Insulation%20Tester</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Ionizer</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=LCR%20Meter</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Lux%20Meter%20and%20Sound%20Meter</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Multimeter</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Oscilloscopes</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Panel%20Meters%20and%20Controllers</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Power%20Supply</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Soldering%20stations%20and%20bits</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Temprature%20and%20Humidity%20Testing</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Test%20Leads%20and%20Probes</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/buy-online?category=Torque%20Testers</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vianovais.lovable.app/products/hantek-hdm3065</loc>
+    <loc>https://vianovaindustrial.solutions/products/hantek-hdm3065</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/unit-utl8211plus</loc>
+    <loc>https://vianovaindustrial.solutions/products/unit-utl8211plus</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/unit-uap1000a</loc>
+    <loc>https://vianovaindustrial.solutions/products/unit-uap1000a</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/unit-utr2830e</loc>
+    <loc>https://vianovaindustrial.solutions/products/unit-utr2830e</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/hantek-ape11l1000</loc>
+    <loc>https://vianovaindustrial.solutions/products/hantek-ape11l1000</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/jartul-jt6311a</loc>
+    <loc>https://vianovaindustrial.solutions/products/jartul-jt6311a</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/metrel-mi3108</loc>
+    <loc>https://vianovaindustrial.solutions/products/metrel-mi3108</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/metrel-mi3132</loc>
+    <loc>https://vianovaindustrial.solutions/products/metrel-mi3132</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vianovais.lovable.app/products/orion-phase-sync</loc>
+    <loc>https://vianovaindustrial.solutions/products/orion-phase-sync</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/manufacturing</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/automobile</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/rd</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/education</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/pharmaceuticals</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/medical</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/qa</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/industries/automation</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Battery%20Tester</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Clamp%20Meter</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Coating%20Thickness%20Gauge</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=DC%20Electronic%20Load</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Distance%2C%20Level%20and%20Laser%20line</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Earth%20Tester</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Electric%20screwdrivers</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Environmental%20Testing</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Function%20Generator</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Hipot%20Tester</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Insulation%20Tester</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Ionizer</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=LCR%20Meter</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Lux%20Meter%20and%20Sound%20Meter</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Multimeter</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Oscilloscopes</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Panel%20Meters%20and%20Controllers</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Power%20Supply</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Soldering%20stations%20and%20bits</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Temprature%20and%20Humidity%20Testing</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Test%20Leads%20and%20Probes</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vianovaindustrial.solutions/buy-online?category=Torque%20Testers</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
