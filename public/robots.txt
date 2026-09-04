@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://vianovais.lovable.app/sitemap.xml
+Sitemap: https://vianovaindustrial.solutions/sitemap.xml
