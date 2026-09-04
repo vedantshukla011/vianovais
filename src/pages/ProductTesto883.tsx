@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const HERO_IMAGE =
-  "/__l5e/assets-v1/06b156de-a5f5-40c6-86f8-dd8291fdff7f/testo-883.jpg";
+  "https://vianovais.lovable.app/__l5e/assets-v1/06b156de-a5f5-40c6-86f8-dd8291fdff7f/testo-883.jpg";
 
 const features = [
   { icon: Camera, title: "Best-in-Class Image Quality", desc: "320 x 240 pixel IR resolution (640 x 480 with SuperResolution) and NETD < 40 mK reveal the smallest thermal anomalies." },
