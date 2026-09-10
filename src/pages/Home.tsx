@@ -26,6 +26,30 @@ import industrialAutomationImage from "@/assets/product-industrial-automation.jp
 import industrialManagementImage from "@/assets/product-industrial-management.jpg";
 
 const Home = () => {
+  const owonPowerSupplySchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "OWON MetroQ Linear DC Regulated Power Supplies",
+    url: "https://vianovais.lovable.app/buy-online?category=Power%20Supply",
+    itemListElement: [
+      { model: "MTQ32051", output: "32V, 5A, 150W" },
+      { model: "MTQ32103", output: "32V, 10A, 300W" },
+      { model: "MTQ64103", output: "64V, 10A, 300W" },
+      { model: "MTQ64106", output: "64V, 10A, 600W" },
+    ].map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: `OWON MetroQ ${product.model} Linear DC Regulated Power Supply`,
+        model: product.model,
+        description: `${product.output} wide-range linear DC regulated power supply with 10mV/1mA adjustment, CC/CV switching and OVP/OCP/OTP protection.`,
+        brand: { "@type": "Brand", name: "OWON" },
+        category: "Laboratory DC Power Supply",
+      },
+    })),
+  };
+
   const products = [
     { title: "Measuring Instruments", description: "Oscilloscopes, multimeters, power & spectrum analyzers, LCR meters and calibration instruments", image: measuringInstrumentsImage },
     { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
@@ -64,14 +88,15 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Test & Measurement Instruments India | ViaNova</title>
-        <meta name="description" content="Buy oscilloscopes, multimeters, ESD lab setups and GenAI interactive flat panel displays online in India. GST invoice, pan-India delivery." />
-        <meta name="keywords" content="test and measurement instruments India, buy measuring instruments online, oscilloscope supplier India, digital multimeter dealer, power analyzer supplier, spectrum analyzer distributor, LCR meter supplier, ESD lab setup, EV test bench India, calibration instruments supplier, interactive flat panel India, interactive display for classroom, GenAI interactive panel, 86 inch interactive panel price, smart classroom solutions, digital whiteboard supplier, EyeRIS A10, NEP 2020 smart classroom, interactive panel for boardroom, IFPD supplier India" />
-        <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Test & Measurement Instruments India | ViaNova" />
-        <meta property="og:description" content="One-stop supplier of test & measurement instruments, oscilloscopes, multimeters, ESD labs and GenAI interactive flat panel displays across India." />
-        <meta property="og:url" content="https://vianovaindustrial.solutions/" />
+        <title>Test Instruments & DC Power Supplies India | ViaNova</title>
+        <meta name="description" content="Buy test instruments and OWON MetroQ linear DC power supplies, including MTQ32051, MTQ32103, MTQ64103 and MTQ64106, with delivery across India." />
+        <meta name="keywords" content="test and measurement instruments India, OWON power supply India, OWON MetroQ, MTQ32051, MTQ32103, MTQ64103, MTQ64106, linear DC regulated power supply, 600W DC power supply, laboratory power supply, oscilloscope supplier India, digital multimeter dealer, ESD lab setup, interactive flat panel India" />
+        <link rel="canonical" href="https://vianovais.lovable.app/" />
+        <meta property="og:title" content="Test Instruments & OWON DC Power Supplies | ViaNova" />
+        <meta property="og:description" content="Explore OWON MetroQ 32V and 64V linear DC power supplies from 150W to 600W, plus test and measurement solutions across India." />
+        <meta property="og:url" content="https://vianovais.lovable.app/" />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify(owonPowerSupplySchema)}</script>
       </Helmet>
       {/* Hero Section */}
       <HeroCarousel />
