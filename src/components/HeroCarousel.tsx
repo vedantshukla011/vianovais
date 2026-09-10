@@ -64,7 +64,10 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-[700px] flex items-center justify-center overflow-hidden"
+      aria-label="Featured test instruments and OWON MetroQ DC power supplies"
+    >
       <div className="absolute inset-0 bg-gradient-hero" />
 
       {slides.map((slide, i) => (
@@ -73,6 +76,7 @@ const HeroCarousel = () => {
           src={slide.image}
           alt={slide.alt}
           loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             i === active ? "opacity-25" : "opacity-0"
           }`}
