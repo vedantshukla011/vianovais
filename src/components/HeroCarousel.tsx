@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroTestMeasurement from "@/assets/hero-test-measurement.jpg";
 import heroEyerisA10 from "@/assets/hero-eyeris-a10.jpg";
-import wellerWE1010Hero from "@/assets/weller-we1010-hero.png.asset.json";
+import owonMTQHero from "@/assets/owon-mtq-hero.jpg.asset.json";
 
 type Slide = {
   image: string;
@@ -41,15 +41,15 @@ const slides: Slide[] = [
     secondaryCta: { label: "Download Datasheet", to: "/interactive-panel" },
   },
   {
-    image: wellerWE1010Hero.url,
-    alt: "Weller WE1010 70W digital soldering station with WEP 70 soldering iron and PH 70 safety rest",
-    badge: "New Arrival — Weller WE Line Soldering Station",
-    titleTop: "Weller WE1010.",
-    titleBottom: "Precision Soldering, 70W.",
+    image: owonMTQHero.url,
+    alt: "OWON MetroQ MTQ32000 and MTQ64000 wide-range linear DC regulated power supplies from 150W to 600W",
+    badge: "New Arrival — OWON MetroQ Wide-Range DC Power Supplies",
+    titleTop: "MTQ32000 / MTQ64000.",
+    titleBottom: "Precise Power. Up to 600W.",
     description:
-      "70W digital soldering station with ergonomic WEP 70 iron, toolless tip change, ESD-safe design, standby/auto setback and 100–450°C range. Ideal for electronics assembly, R&D labs and service benches across India.",
-    primaryCta: { label: "View Product Details", to: "/products/weller-we1010" },
-    secondaryCta: { label: "Request Best Price", to: "/inquiry" },
+      "Four compact 32V and 64V models from 150W to 600W, with triple V/A/W display, 10mV/1mA adjustment, memory recall, CC/CV switching and OVP/OCP/OTP protection.",
+    primaryCta: { label: "Explore DC Power Supplies", to: "/buy-online?category=Power%20Supply" },
+    secondaryCta: { label: "Request Best Price", to: "/inquiry?product=OWON%20MetroQ%20MTQ%20DC%20Power%20Supply" },
   },
 ];
 
