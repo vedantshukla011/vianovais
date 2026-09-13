@@ -6,6 +6,7 @@ import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
+import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
 
 type Launch = {
   title: string;
@@ -19,6 +20,23 @@ type Launch = {
 };
 
 const launches: Launch[] = [
+  {
+    title: "UNI-T UTD2102CEX+ Digital Storage Oscilloscope (100 MHz, 2 Channel)",
+    brand: "UNI-T",
+    model: "UTD2102CEX+",
+    category: "Digital Storage Oscilloscopes",
+    image: utd2102cexImg.url,
+    description:
+      "100 MHz, 2-channel digital storage oscilloscope with 1 GS/s real-time sampling, 64 kpts memory depth and a 7-inch WVGA colour display. Fast waveform capture, advanced trigger modes and USB connectivity support electronics development, education, repair and laboratory testing.",
+    specs: [
+      "100 MHz bandwidth, 2 analogue channels",
+      "1 GS/s real-time sampling rate",
+      "64 kpts memory, up to 5,000 wfms/s",
+      "7-inch WVGA 800 × 480 TFT display",
+      "USB OTG Host/Device and Pass/Fail output",
+    ],
+    href: "/products/unit-utd2102cex-plus",
+  },
   {
     title: "Hantek HDM3065 Digital Multimeter (6½ Digit Bench Multimeter)",
     brand: "Hantek",
