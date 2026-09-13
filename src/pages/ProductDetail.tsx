@@ -131,7 +131,7 @@ const ProductDetail = () => {
               ))}
             </ul>
             <Button asChild className="mt-8 w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
-              <Link to={inquiryLink}>Get Best Price</Link>
+              <Link to={inquiryLink}>{product.ctaLabel ?? "Get Best Price"}</Link>
             </Button>
           </div>
         </div>

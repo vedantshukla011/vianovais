@@ -1,5 +1,6 @@
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
+import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
 
 export type LaunchDetail = {
   slug: string;
@@ -10,12 +11,53 @@ export type LaunchDetail = {
   category: string;
   image: string;
   description: string;
+  ctaLabel?: string;
   highlights: string[];
   specs: { label: string; value: string }[];
   applications: string[];
 };
 
 export const launchDetails: LaunchDetail[] = [
+  {
+    slug: "unit-utd2102cex-plus",
+    title: "UNI-T UTD2102CEX+ 100 MHz 2-Channel Digital Storage Oscilloscope",
+    shortTitle: "UNI-T UTD2102CEX+ Oscilloscope",
+    brand: "UNI-T",
+    model: "UTD2102CEX+",
+    category: "Digital Storage Oscilloscopes",
+    image: utd2102cexImg.url,
+    description:
+      "The UNI-T UTD2102CEX+ is a 100 MHz, 2-channel digital storage oscilloscope with 1 GS/s real-time sampling, 64 kpts memory depth and waveform capture rates up to 5,000 wfms/s. Its 7-inch WVGA colour display, versatile trigger functions and USB connectivity make it suitable for circuit design, debugging, education and service laboratories.",
+    ctaLabel: "Request a Quote",
+    highlights: [
+      "100 MHz bandwidth across two analogue channels",
+      "1 GS/s real-time sampling with 64 kpts memory depth",
+      "Waveform capture rate up to 5,000 wfms/s",
+      "7-inch WVGA 800 × 480 TFT colour display",
+      "Edge, pulse, video, slope and alternate trigger modes",
+      "USB OTG Host/Device with Pass/Fail output",
+    ],
+    specs: [
+      { label: "Model", value: "UTD2102CEX+" },
+      { label: "Bandwidth", value: "100 MHz" },
+      { label: "Analogue Channels", value: "2" },
+      { label: "Real-Time Sample Rate", value: "1 GS/s" },
+      { label: "Memory Depth", value: "64 kpts" },
+      { label: "Waveform Capture Rate", value: "Up to 5,000 wfms/s" },
+      { label: "Rise Time", value: "≤ 3.5 ns" },
+      { label: "Vertical Sensitivity", value: "1 mV/div to 20 V/div" },
+      { label: "Timebase Range", value: "2 ns/div to 50 s/div" },
+      { label: "Trigger Modes", value: "Edge, Pulse, Video, Slope, Alternate" },
+      { label: "Display", value: "7-inch WVGA TFT LCD, 800 × 480" },
+      { label: "Interfaces", value: "USB OTG Host/Device, Pass/Fail output" },
+    ],
+    applications: [
+      "Electronic circuit design and debugging",
+      "Engineering education and practical laboratories",
+      "Electronics repair and service benches",
+      "Research, development and production testing",
+    ],
+  },
   {
     slug: "hantek-hdm3065",
     title: "Hantek HDM3065 6½ Digit Digital Multimeter (Benchtop DMM)",
