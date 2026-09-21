@@ -28,6 +28,7 @@ import BlogOscilloscopeAutomotiveEV from "./pages/BlogOscilloscopeAutomotiveEV";
 
 import BuyOnline from "./pages/BuyOnline";
 import Brands from "./pages/Brands";
+import BrandUnit from "./pages/BrandUnit";
 import InteractivePanel from "./pages/InteractivePanel";
 import ProductWellerWE1010 from "./pages/ProductWellerWE1010";
 import ProductTesto883 from "./pages/ProductTesto883";
@@ -67,6 +68,7 @@ const App = () => (
 
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/brands" element={<Brands />} />
+              <Route path="/brands/uni-t" element={<BrandUnit />} />
               <Route path="/interactive-panel" element={<InteractivePanel />} />
               <Route path="/products/weller-we1010" element={<ProductWellerWE1010 />} />
               <Route path="/products/testo-883-1" element={<ProductTesto883 />} />
