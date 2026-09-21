@@ -12,6 +12,7 @@ interface Brand {
   description: string;
   category: string;
   accentColor: string;
+  href?: string;
 }
 
 const brands: Brand[] = [
@@ -62,6 +63,7 @@ const brands: Brand[] = [
     description: "Cost-effective, reliable test & measurement instruments including multimeters, clamp meters, and oscilloscopes for professionals.",
     category: "Test & Measurement",
     accentColor: "bg-accent/10 text-accent-foreground",
+    href: "/brands/uni-t",
   },
   {
     name: "National Instruments (NI)",
@@ -210,11 +212,9 @@ const Brands = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {brands.map((brand) => (
-              <Card
-                key={brand.name}
-                className="group border border-border/60 shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 bg-card overflow-hidden"
-              >
+            {brands.map((brand) => {
+              const card = (
+              <Card className="group border border-border/60 shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 bg-card overflow-hidden h-full">
                 <CardContent className="p-6 flex flex-col items-center text-center h-full">
                   <BrandLogo
                     name={brand.name}
@@ -229,9 +229,20 @@ const Brands = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {brand.description}
                   </p>
+                  {brand.href && (
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                      View Products <ArrowRight className="h-4 w-4" />
+                    </span>
+                  )}
                 </CardContent>
               </Card>
-            ))}
+              );
+              return brand.href ? (
+                <Link key={brand.name} to={brand.href} aria-label={`View ${brand.name} products`} className="block h-full">
+                  {card}
+                </Link>
+              ) : <div key={brand.name}>{card}</div>;
+            })}
           </div>
         </div>
       </section>
