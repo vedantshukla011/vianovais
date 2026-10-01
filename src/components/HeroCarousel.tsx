@@ -87,7 +87,7 @@ const HeroCarousel = () => {
           <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`} aria-hidden="true">
             <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px)] [background-size:64px_64px]" />
             <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
-            <img src={slide.image} alt="" loading="eager" decoding="async" className="absolute w-[min(94vw,780px)] max-h-[45%] md:max-h-[75%] object-contain right-[-12%] md:right-[-4%] bottom-10 md:bottom-16 drop-shadow-2xl motion-safe:animate-fade-in" />
+            <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden md:block absolute w-[min(94vw,780px)] max-h-[75%] object-contain right-[-4%] bottom-16 drop-shadow-2xl motion-safe:animate-fade-in" />
           </div>
         ) : (
           <img
@@ -107,7 +107,7 @@ const HeroCarousel = () => {
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[680px] flex flex-col justify-start md:justify-center pt-28 md:pt-20 pb-16 md:pb-24" : ""} ${
+            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[680px] flex flex-col justify-start md:justify-center pt-20 md:pt-20 pb-5 md:pb-24" : ""} ${
               i === active ? "opacity-100" : "opacity-0 absolute inset-0 pointer-events-none"
             }`}
             aria-hidden={i !== active}
@@ -117,7 +117,7 @@ const HeroCarousel = () => {
               <span>{slide.badge}</span>
             </div>
             {i === active ? (
-              <h1 className={`${i === 0 ? "text-5xl md:text-7xl max-w-2xl" : "text-5xl md:text-7xl"} font-bold mb-6 leading-tight`}>
+              <h1 className={`${i === 0 ? "text-4xl md:text-7xl max-w-2xl" : "text-5xl md:text-7xl"} font-bold mb-6 leading-tight`}>
                 {slide.titleTop}
                 <span className={`block mt-2 ${i === 0 ? "text-primary-foreground" : "text-accent"}`}>{slide.titleBottom}</span>
               </h1>
@@ -151,10 +151,11 @@ const HeroCarousel = () => {
                 </Button>
               </Link>}
             </div>
+            {i === 0 && <img src={slide.image} alt={slide.alt} loading="eager" decoding="async" className="md:hidden self-center w-[85%] h-[170px] object-contain mt-5 drop-shadow-2xl" />}
           </div>
         ))}
 
-        <div className={`flex gap-2 relative z-20 ${isMicsig ? "justify-start -mt-14 md:-mt-28 mb-10 md:mb-16" : "justify-center mt-12"}`}>
+        <div className={`flex gap-2 relative z-20 ${isMicsig ? "justify-start mt-0 md:-mt-28 mb-5 md:mb-16" : "justify-center mt-12"}`}>
           {slides.map((_, i) => (
             <Button
               key={i}
