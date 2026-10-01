@@ -21,10 +21,15 @@ const Inquiry = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    if (items.length > 0 && textareaRef.current) {
-      const productList = items.map((item, i) => `${i + 1}. ${item}`).join("\n");
-      textareaRef.current.value = `I am interested in the following products:\n\n${productList}\n\nPlease share pricing and availability.`;
-    }
+    if (items.length === 0) return;
+    const productList = items.map((item, i) => `${i + 1}. ${item}`).join("\n");
+    const text = `I am interested in the following products:\n\n${productList}\n\nPlease share pricing and availability.`;
+    let tries = 0;
+    const apply = () => {
+      if (textareaRef.current) textareaRef.current.value = text;
+      else if (tries++ < 20) requestAnimationFrame(apply);
+    };
+    apply();
   }, [items]);
 
   const contactCards = [
