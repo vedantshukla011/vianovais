@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode, useCallback } from "react";
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from "react";
 
 interface QuoteCartContextType {
   items: string[];
@@ -10,8 +10,25 @@ interface QuoteCartContextType {
 
 const QuoteCartContext = createContext<QuoteCartContextType | undefined>(undefined);
 
+const STORAGE_KEY = "quote-cart-items";
+
 export const QuoteCartProvider = ({ children }: { children: ReactNode }) => {
-  const [items, setItems] = useState<string[]>([]);
+  const [items, setItems] = useState<string[]>(() => {
+    try {
+      const raw = sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      /* ignore */
+    }
+  }, [items]);
 
   const addItem = useCallback((name: string) => {
     setItems((prev) => (prev.includes(name) ? prev : [...prev, name]));
