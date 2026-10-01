@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import heroTestMeasurement from "@/assets/hero-test-measurement.jpg";
 import heroEyerisA10 from "@/assets/hero-eyeris-a10.jpg";
 import owonMTQHero from "@/assets/owon-mtq-hero.jpg.asset.json";
+import micsigOscilloscope from "@/assets/micsig-mho6-oscilloscope.png.asset.json";
 
 type Slide = {
   image: string;
@@ -18,6 +19,16 @@ type Slide = {
 };
 
 const slides: Slide[] = [
+  {
+    image: micsigOscilloscope.url,
+    alt: "Micsig high-resolution oscilloscope with an eight-channel waveform display",
+    badge: "ViaNova × Micsig · Authorized Distributor",
+    titleTop: "Micsig.",
+    titleBottom: "A new signal in precision.",
+    description: "Meet Micsig at ViaNova. Discover high-resolution oscilloscopes and measurement solutions, backed by local guidance for your next project.",
+    primaryCta: { label: "Request a Micsig Quote", to: "/inquiry?product=Micsig%20oscilloscopes" },
+    secondaryCta: { label: "Explore Micsig", to: "https://www.micsig.com/" },
+  },
   {
     image: heroTestMeasurement,
     alt: "Industrial test and measurement laboratory with oscilloscope, multimeter and precision instruments",
@@ -55,6 +66,7 @@ const slides: Slide[] = [
 
 const HeroCarousel = () => {
   const [active, setActive] = useState(0);
+  const isMicsig = active === 0;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -65,44 +77,49 @@ const HeroCarousel = () => {
 
   return (
     <section
-      className="relative min-h-[700px] flex items-center justify-center overflow-hidden"
-      aria-label="Featured test instruments and OWON MetroQ DC power supplies"
+      className={`relative min-h-[680px] flex items-center justify-center overflow-hidden ${isMicsig ? "bg-primary-dark" : ""}`}
+      aria-label="Featured Micsig oscilloscopes, test instruments, and interactive displays"
     >
-      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className={`absolute inset-0 transition-opacity duration-700 bg-gradient-hero ${isMicsig ? "opacity-0" : "opacity-100"}`} />
 
       {slides.map((slide, i) => (
-        <img
-          key={i}
-          src={slide.image}
-          alt={slide.alt}
-          loading={i === 0 ? "eager" : "lazy"}
-          decoding="async"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            i === active ? "opacity-25" : "opacity-0"
-          }`}
-        />
+        i === 0 ? (
+          <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`} aria-hidden="true">
+            <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px)] [background-size:64px_64px]" />
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
+            <img src={slide.image} alt="" loading="eager" decoding="async" className="absolute w-[min(94vw,780px)] max-h-[45%] md:max-h-[75%] object-contain right-[-12%] md:right-[-4%] bottom-10 md:bottom-16 drop-shadow-2xl motion-safe:animate-fade-in" />
+          </div>
+        ) : (
+          <img
+            key={i}
+            src={slide.image}
+            alt={slide.alt}
+            loading="lazy"
+            decoding="async"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              i === active ? "opacity-25" : "opacity-0"
+            }`}
+          />
+        )
       ))}
 
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-
-      <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
+      <div className={`relative z-10 container mx-auto px-4 text-primary-foreground ${isMicsig ? "text-left" : "text-center"}`}>
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`transition-opacity duration-700 ${
+            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[680px] flex flex-col justify-start md:justify-center pt-28 md:pt-20 pb-16 md:pb-24" : ""} ${
               i === active ? "opacity-100" : "opacity-0 absolute inset-0 pointer-events-none"
             }`}
             aria-hidden={i !== active}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium">{slide.badge}</span>
+            <div className={`inline-flex self-start items-center gap-2 ${i === 0 ? "border-l-2 border-accent pl-3 mb-5 text-accent uppercase text-xs font-bold" : "px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 mx-auto text-sm font-medium"}`}>
+              {i !== 0 && <Sparkles className="w-4 h-4 text-accent" />}
+              <span>{slide.badge}</span>
             </div>
             {i === active ? (
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className={`${i === 0 ? "text-5xl md:text-7xl max-w-2xl" : "text-5xl md:text-7xl"} font-bold mb-6 leading-tight`}>
                 {slide.titleTop}
-                <span className="block mt-2 text-accent">{slide.titleBottom}</span>
+                <span className={`block mt-2 ${i === 0 ? "text-primary-foreground" : "text-accent"}`}>{slide.titleBottom}</span>
               </h1>
             ) : (
               <p className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -111,10 +128,10 @@ const HeroCarousel = () => {
               </p>
             )}
 
-            <p className="text-xl md:text-2xl mb-10 text-primary-foreground/80 max-w-3xl mx-auto">
+            <p className={`text-lg md:text-2xl mb-8 text-primary-foreground/80 ${i === 0 ? "max-w-xl" : "max-w-3xl mx-auto"}`}>
               {slide.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className={`flex flex-col sm:flex-row gap-4 ${i === 0 ? "items-start" : "justify-center"}`}>
               <Link to={slide.primaryCta.to}>
                 <Button
                   size="lg"
@@ -124,7 +141,7 @@ const HeroCarousel = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to={slide.secondaryCta.to}>
+              {i === 0 ? <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg transition-all duration-300"><a href={slide.secondaryCta.to} target="_blank" rel="noopener noreferrer">{slide.secondaryCta.label} <ArrowRight className="ml-2 h-5 w-5" /></a></Button> : <Link to={slide.secondaryCta.to}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -132,21 +149,23 @@ const HeroCarousel = () => {
                 >
                   {slide.secondaryCta.label}
                 </Button>
-              </Link>
+              </Link>}
             </div>
           </div>
         ))}
 
-        <div className="flex justify-center gap-2 mt-12 relative z-20">
+        <div className={`flex gap-2 relative z-20 ${isMicsig ? "justify-start -mt-14 md:-mt-28 mb-10 md:mb-16" : "justify-center mt-12"}`}>
           {slides.map((_, i) => (
-            <button
+            <Button
               key={i}
+              type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => setActive(i)}
               aria-label={`Show slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-8 bg-accent" : "w-2 bg-primary-foreground/50"
-              }`}
-            />
+              aria-current={i === active ? "true" : undefined}
+              className="h-9 w-9 hover:bg-primary-foreground/10"
+            ><span className={`block h-2 rounded-full transition-all duration-300 ${i === active ? "w-7 bg-accent" : "w-2 bg-primary-foreground/50"}`} /></Button>
           ))}
         </div>
       </div>
