@@ -66,7 +66,6 @@ const slides: Slide[] = [
 
 const HeroCarousel = () => {
   const [active, setActive] = useState(0);
-  const isMicsig = active === 0;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -77,16 +76,16 @@ const HeroCarousel = () => {
 
   return (
     <section
-      className={`relative min-h-[680px] flex items-center justify-center overflow-hidden ${isMicsig ? "bg-primary-dark" : ""}`}
+      className="relative min-h-[680px] flex items-center justify-center overflow-hidden bg-primary-dark"
       aria-label="Featured Micsig oscilloscopes, test instruments, and interactive displays"
     >
-      <div className={`absolute inset-0 transition-opacity duration-700 bg-gradient-hero ${isMicsig ? "opacity-0" : "opacity-100"}`} />
+      <div className="absolute inset-0 bg-gradient-hero" />
 
       {slides.map((slide, i) => (
         i === 0 ? (
           <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`} aria-hidden="true">
-            <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-foreground)/0.16)_1px,transparent_1px)] [background-size:64px_64px]" />
-            <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
+            <div className="absolute right-[6%] top-1/3 w-[480px] h-[480px] rounded-full bg-secondary/25 blur-[130px]" />
+            <div className="absolute left-[-8%] bottom-[-15%] w-[360px] h-[360px] rounded-full bg-accent/15 blur-[110px]" />
             <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden md:block absolute w-[min(94vw,780px)] max-h-[75%] object-contain right-[-4%] bottom-16 drop-shadow-2xl motion-safe:animate-fade-in" />
           </div>
         ) : (
@@ -103,7 +102,7 @@ const HeroCarousel = () => {
         )
       ))}
 
-      <div className={`relative z-10 container mx-auto px-4 text-primary-foreground ${isMicsig ? "text-left" : "text-center"}`}>
+      <div className={`relative z-10 container mx-auto px-4 text-primary-foreground ${active === 0 ? "text-left" : "text-center"}`}>
         {slides.map((slide, i) => (
           <div
             key={i}
@@ -112,14 +111,14 @@ const HeroCarousel = () => {
             }`}
             aria-hidden={i !== active}
           >
-            <div className={`inline-flex self-start items-center gap-2 ${i === 0 ? "border-l-2 border-accent pl-3 mb-5 text-accent uppercase text-xs font-bold" : "px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 mx-auto text-sm font-medium"}`}>
-              {i !== 0 && <Sparkles className="w-4 h-4 text-accent" />}
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 text-sm font-medium ${i === 0 ? "self-start" : "mx-auto"}`}>
+              <Sparkles className="w-4 h-4 text-accent" />
               <span>{slide.badge}</span>
             </div>
             {i === active ? (
               <h1 className={`${i === 0 ? "text-4xl md:text-7xl max-w-2xl" : "text-5xl md:text-7xl"} font-bold mb-6 leading-tight`}>
                 {slide.titleTop}
-                <span className={`block mt-2 ${i === 0 ? "text-primary-foreground" : "text-accent"}`}>{slide.titleBottom}</span>
+                <span className="block mt-2 text-accent">{slide.titleBottom}</span>
               </h1>
             ) : (
               <p className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -155,7 +154,7 @@ const HeroCarousel = () => {
           </div>
         ))}
 
-        <div className={`flex gap-2 relative z-20 ${isMicsig ? "justify-start mt-0 md:-mt-28 mb-5 md:mb-16" : "justify-center mt-12"}`}>
+        <div className="flex gap-2 relative z-20 justify-center mt-12">
           {slides.map((_, i) => (
             <Button
               key={i}
