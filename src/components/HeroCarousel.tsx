@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import heroTestMeasurement from "@/assets/hero-test-measurement.jpg";
 import heroEyerisA10 from "@/assets/hero-eyeris-a10.jpg";
 import owonMTQHero from "@/assets/owon-mtq-hero.jpg.asset.json";
-import micsigOscilloscope from "@/assets/micsig-mho6-oscilloscope.png.asset.json";
+import micsigProbe from "@/assets/micsig-sigofit-probe.png";
 
 type Slide = {
   image: string;
@@ -20,14 +20,14 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    image: micsigOscilloscope.url,
-    alt: "Micsig high-resolution oscilloscope with an eight-channel waveform display",
+    image: micsigProbe,
+    alt: "Micsig SigOFIT Gen 3 optical-fiber isolated probe with sensor, receiver and fiber cable",
     badge: "ViaNova × Micsig · Authorized Distributor",
-    titleTop: "Micsig.",
-    titleBottom: "A new signal in precision.",
-    description: "Meet Micsig at ViaNova. Discover high-resolution oscilloscopes and measurement solutions, backed by local guidance for your next project.",
-    primaryCta: { label: "Request a Micsig Quote", to: "/inquiry?product=Micsig%20oscilloscopes" },
-    secondaryCta: { label: "Explore Micsig", to: "https://www.micsig.com/" },
+    titleTop: "SigOFIT Gen 3.",
+    titleBottom: "See the true signal.",
+    description: "Micsig optical-fiber isolated probes for demanding power electronics measurements. Now available through ViaNova.",
+    primaryCta: { label: "Request a Quote", to: "/inquiry?product=Micsig%20SigOFIT%20Gen%203%20optical-fiber%20isolated%20probe" },
+    secondaryCta: { label: "Explore the Probe", to: "https://www.micsig.com/3MOIP/15.html" },
   },
   {
     image: heroTestMeasurement,
@@ -76,17 +76,15 @@ const HeroCarousel = () => {
 
   return (
     <section
-      className="relative min-h-[680px] flex items-center justify-center overflow-hidden bg-primary-dark"
-      aria-label="Featured Micsig oscilloscopes, test instruments, and interactive displays"
+      className="relative min-h-[580px] md:min-h-[680px] flex items-center justify-center overflow-hidden bg-primary-dark"
+      aria-label="Featured Micsig optical-fiber probes, test instruments, and interactive displays"
     >
       <div className="absolute inset-0 bg-gradient-hero" />
 
       {slides.map((slide, i) => (
         i === 0 ? (
           <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`} aria-hidden="true">
-            <div className="absolute right-[6%] top-1/3 w-[480px] h-[480px] rounded-full bg-secondary/25 blur-[130px]" />
-            <div className="absolute left-[-8%] bottom-[-15%] w-[360px] h-[360px] rounded-full bg-accent/15 blur-[110px]" />
-            <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden md:block absolute w-[min(94vw,780px)] max-h-[75%] object-contain right-[-4%] bottom-16 drop-shadow-2xl motion-safe:animate-fade-in" />
+            <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden lg:block absolute h-[560px] w-[min(48vw,620px)] object-contain right-[2%] bottom-12 drop-shadow-2xl motion-safe:animate-fade-in" />
           </div>
         ) : (
           <img
@@ -106,17 +104,17 @@ const HeroCarousel = () => {
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[680px] flex flex-col justify-start md:justify-center pt-20 md:pt-20 pb-5 md:pb-24" : ""} ${
+            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[580px] md:min-h-[680px] flex flex-col justify-center py-8 md:py-16 lg:py-20" : ""} ${
               i === active ? "opacity-100" : "opacity-0 absolute inset-0 pointer-events-none"
             }`}
             aria-hidden={i !== active}
           >
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-8 text-sm font-medium ${i === 0 ? "self-start" : "mx-auto"}`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-5 md:mb-8 text-xs sm:text-sm font-medium ${i === 0 ? "self-start" : "mx-auto"}`}>
               <Sparkles className="w-4 h-4 text-accent" />
               <span>{slide.badge}</span>
             </div>
             {i === active ? (
-              <h1 className={`${i === 0 ? "text-4xl md:text-7xl max-w-2xl" : "text-5xl md:text-7xl"} font-bold mb-6 leading-tight`}>
+              <h1 className={`${i === 0 ? "text-4xl md:text-6xl max-w-xl" : "text-5xl md:text-7xl"} font-bold mb-4 md:mb-6 leading-tight`}>
                 {slide.titleTop}
                 <span className="block mt-2 text-accent">{slide.titleBottom}</span>
               </h1>
@@ -127,20 +125,25 @@ const HeroCarousel = () => {
               </p>
             )}
 
-            <p className={`text-lg md:text-2xl mb-8 text-primary-foreground/80 ${i === 0 ? "max-w-xl" : "max-w-3xl mx-auto"}`}>
+            <p className={`text-base md:text-2xl mb-5 md:mb-8 text-primary-foreground/80 ${i === 0 ? "max-w-lg" : "max-w-3xl mx-auto"}`}>
               {slide.description}
             </p>
-            <div className={`flex flex-col sm:flex-row gap-4 ${i === 0 ? "items-start" : "justify-center"}`}>
+            {i === 0 && <ul className="flex flex-wrap gap-x-5 gap-y-2 mb-6 text-sm md:text-base font-semibold text-primary-foreground" aria-label="Probe highlights">
+              <li className="border-l-2 border-accent pl-3">Zero drift</li>
+              <li className="border-l-2 border-accent pl-3">Calibration-free</li>
+              <li className="border-l-2 border-accent pl-3">Power-over-laser</li>
+            </ul>}
+            <div className={`flex flex-wrap gap-3 md:gap-4 ${i === 0 ? "items-start" : "justify-center"}`}>
               <Link to={slide.primaryCta.to}>
                 <Button
                   size="lg"
-                  className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-5 md:px-8 py-5 md:py-6 text-sm md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   {slide.primaryCta.label}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              {i === 0 ? <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg transition-all duration-300"><a href={slide.secondaryCta.to} target="_blank" rel="noopener noreferrer">{slide.secondaryCta.label} <ArrowRight className="ml-2 h-5 w-5" /></a></Button> : <Link to={slide.secondaryCta.to}>
+              {i === 0 ? <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-5 md:px-8 py-5 md:py-6 text-sm md:text-lg transition-all duration-300"><a href={slide.secondaryCta.to} target="_blank" rel="noopener noreferrer">{slide.secondaryCta.label} <ArrowRight className="ml-2 h-4 w-4" /></a></Button> : <Link to={slide.secondaryCta.to}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -150,11 +153,11 @@ const HeroCarousel = () => {
                 </Button>
               </Link>}
             </div>
-            {i === 0 && <img src={slide.image} alt={slide.alt} loading="eager" decoding="async" className="md:hidden self-center w-[85%] h-[170px] object-contain mt-5 drop-shadow-2xl" />}
+            {i === 0 && <img src={slide.image} alt={slide.alt} loading="eager" decoding="async" className="lg:hidden self-center w-full h-[145px] sm:h-[210px] md:h-[250px] object-contain mt-4 drop-shadow-2xl" />}
           </div>
         ))}
 
-        <div className="flex gap-2 relative z-20 justify-center mt-12">
+        <div className="flex gap-2 relative z-20 justify-center mt-0 md:mt-6 pb-2">
           {slides.map((_, i) => (
             <Button
               key={i}
