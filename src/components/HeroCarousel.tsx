@@ -84,7 +84,7 @@ const HeroCarousel = () => {
       {slides.map((slide, i) => (
         i === 0 ? (
           <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`} aria-hidden="true">
-            <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden lg:block absolute h-[560px] w-[min(48vw,620px)] object-contain right-[2%] bottom-12 drop-shadow-2xl motion-safe:animate-fade-in" />
+            <img src={slide.image} alt="" loading="eager" decoding="async" className="hidden lg:block absolute h-[570px] w-[min(42vw,520px)] object-contain right-[7%] bottom-10 drop-shadow-[0_18px_16px_hsl(var(--primary-dark)/0.55)] motion-safe:animate-fade-in" />
           </div>
         ) : (
           <img
@@ -104,7 +104,7 @@ const HeroCarousel = () => {
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[580px] md:min-h-[680px] flex flex-col justify-center py-8 md:py-16 lg:py-20" : ""} ${
+            className={`transition-opacity duration-700 ${i === 0 ? "min-h-[580px] md:min-h-[680px] flex flex-col justify-center pt-20 pb-8 md:py-16 lg:py-20" : ""} ${
               i === active ? "opacity-100" : "opacity-0 absolute inset-0 pointer-events-none"
             }`}
             aria-hidden={i !== active}
@@ -153,7 +153,7 @@ const HeroCarousel = () => {
                 </Button>
               </Link>}
             </div>
-            {i === 0 && <img src={slide.image} alt={slide.alt} loading="eager" decoding="async" className="lg:hidden self-center w-full h-[145px] sm:h-[210px] md:h-[250px] object-contain mt-4 drop-shadow-2xl" />}
+            {i === 0 && <img src={slide.image} alt={slide.alt} loading="eager" decoding="async" className="lg:hidden self-center w-full h-[170px] sm:h-[230px] md:h-[280px] object-contain mt-4 drop-shadow-[0_12px_12px_hsl(var(--primary-dark)/0.55)]" />}
           </div>
         ))}
 
