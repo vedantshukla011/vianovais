@@ -1,6 +1,13 @@
 import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
+import micsigDpMain from "@/assets/micsig-dp-main.png.asset.json";
+import micsigDpSide from "@/assets/micsig-dp-side.png.asset.json";
+import micsigDpDetail from "@/assets/micsig-dp-detail.png.asset.json";
+import micsigDpKit from "@/assets/micsig-dp-kit.png.asset.json";
+import micsigDpBrochure from "@/assets/micsig-dp-brochure.pdf.asset.json";
+import micsigDpQuickGuide from "@/assets/micsig-dp-quick-guide.pdf.asset.json";
+import micsigDpControlManual from "@/assets/micsig-dp-control-manual.pdf.asset.json";
 
 export type LaunchDetail = {
   slug: string;
@@ -15,9 +22,59 @@ export type LaunchDetail = {
   highlights: string[];
   specs: { label: string; value: string }[];
   applications: string[];
+  gallery?: { src: string; alt: string }[];
+  documents?: { label: string; url: string; filename: string; description: string }[];
 };
 
 export const launchDetails: LaunchDetail[] = [
+  {
+    slug: "micsig-dp-series",
+    title: "Micsig DP Series High-Voltage Differential Probes",
+    shortTitle: "Micsig DP Series Differential Probe",
+    brand: "Micsig",
+    model: "DP Series",
+    category: "High-Voltage Differential Probes",
+    image: micsigDpMain.url,
+    description: "Micsig DP Series high-voltage differential probes enable floating and high-voltage measurements with standard BNC oscilloscope connectivity. Models in the series span 100–300 MHz bandwidth and up to 7000 V peak differential voltage. One-button zeroing, dual-range selection, a 5 MHz bandwidth limit and overload alerts support power electronics testing.",
+    ctaLabel: "Request a Quote",
+    gallery: [
+      { src: micsigDpMain.url, alt: "Micsig DP Series high-voltage differential probe with test leads" },
+      { src: micsigDpSide.url, alt: "Micsig DP Series probe angled product view" },
+      { src: micsigDpDetail.url, alt: "Micsig DP Series differential probe in hand" },
+      { src: micsigDpKit.url, alt: "Micsig DP Series connected to an oscilloscope" },
+    ],
+    documents: [
+      { label: "Product brochure & datasheet", url: micsigDpBrochure.url, filename: "Micsig-DP-Series-Brochure-Datasheet.pdf", description: "Series overview and technical specifications · PDF" },
+      { label: "Quick guide", url: micsigDpQuickGuide.url, filename: "Micsig-DP-Series-Quick-Guide.pdf", description: "Model comparison, specifications and operation · PDF" },
+      { label: "Programming & control manual", url: micsigDpControlManual.url, filename: "Micsig-DP-Series-Control-Manual.pdf", description: "Remote-control commands and connection details · PDF" },
+    ],
+    highlights: [
+      "100, 200 and 300 MHz models across the DP Series",
+      "Maximum differential input voltage up to 7000 Vpk (model dependent)",
+      "Standard BNC connection for compatible oscilloscopes",
+      "One-button zero calibration and two selectable ranges",
+      "5 MHz bandwidth limiting for reduced high-frequency noise",
+      "Over-range LED and audible alert",
+    ],
+    specs: [
+      { label: "Series", value: "DP High-Voltage Differential Probes" },
+      { label: "Models", value: "DP700 / DP702 / DP1500 / DP1502 / DP1503 / DP3000 / DP3002 / DP3003 / DP7000 / DP7002" },
+      { label: "Bandwidth", value: "100–300 MHz, model dependent" },
+      { label: "Maximum differential voltage", value: "Up to 7000 Vpk (DP7000/DP7002); other models have different ratings" },
+      { label: "Typical accuracy", value: "±2%; 1% customization available for select models" },
+      { label: "Attenuation", value: "Dual-range, model dependent: 20×/200×, 50×/500× or 100×/1000×" },
+      { label: "Common-mode rejection", value: "Model and frequency dependent; refer to brochure" },
+      { label: "Bandwidth limit", value: "5 MHz selectable" },
+      { label: "Oscilloscope connection", value: "Standard BNC" },
+      { label: "Functions", value: "Quick zero, range memory, overload alarm, command-based control" },
+    ],
+    applications: [
+      "Floating high-voltage measurements",
+      "Switching power supply and power converter design",
+      "Inverter, UPS and motor drive testing",
+      "Power electronics research and automated testing",
+    ],
+  },
   {
     slug: "unit-utd2102cex-plus",
     title: "UNI-T UTD2102CEX+ 100 MHz 2-Channel Digital Storage Oscilloscope",

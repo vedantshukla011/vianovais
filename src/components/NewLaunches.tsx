@@ -7,6 +7,7 @@ import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
+import micsigDpImg from "@/assets/micsig-dp-main.png.asset.json";
 
 type Launch = {
   title: string;
@@ -20,6 +21,21 @@ type Launch = {
 };
 
 const launches: Launch[] = [
+  {
+    title: "Micsig DP Series High-Voltage Differential Probes",
+    brand: "Micsig",
+    model: "DP Series",
+    category: "High-Voltage Differential Probes",
+    image: micsigDpImg.url,
+    description: "Differential probes for floating and high-voltage measurements, with 100–300 MHz bandwidth and models rated up to 7000 V peak. Standard BNC output for compatible oscilloscopes.",
+    specs: [
+      "100–300 MHz bandwidth across the series",
+      "Models up to 7000 V peak differential input",
+      "One-button zero and dual-range switching",
+      "5 MHz bandwidth limit and overload alarm",
+    ],
+    href: "/products/micsig-dp-series",
+  },
   {
     title: "UNI-T UTD2102CEX+ Digital Storage Oscilloscope (100 MHz, 2 Channel)",
     brand: "UNI-T",
