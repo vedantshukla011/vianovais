@@ -7,6 +7,7 @@ import utl8211Img from "@/assets/unit-utl8211plus.jpg.asset.json";
 import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
+import micsigDpImg from "@/assets/micsig-dp-main.png.asset.json";
 
 type Launch = {
   title: string;
@@ -20,6 +21,21 @@ type Launch = {
 };
 
 const launches: Launch[] = [
+  {
+    title: "Micsig DP1503 / DP3003 High-Voltage Differential Probes",
+    brand: "Micsig",
+    model: "DP1503 / DP3003",
+    category: "High-Voltage Differential Probes",
+    image: micsigDpImg.url,
+    description: "300 MHz differential probes for floating and high-voltage measurements. Choose the DP1503 (up to 1500 Vpk) or DP3003 (up to 3000 Vpk), with standard BNC connection for compatible oscilloscopes.",
+    specs: [
+      "300 MHz bandwidth on both models",
+      "Up to 1500 Vpk (DP1503) or 3000 Vpk (DP3003)",
+      "One-button zero and dual-range switching",
+      "5 MHz bandwidth limit and overload alarm",
+    ],
+    href: "/products/micsig-dp-series",
+  },
   {
     title: "UNI-T UTD2102CEX+ Digital Storage Oscilloscope (100 MHz, 2 Channel)",
     brand: "UNI-T",

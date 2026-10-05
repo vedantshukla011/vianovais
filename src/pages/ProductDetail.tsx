@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getLaunchDetail } from "@/data/launchDetails";
@@ -60,6 +60,15 @@ const ProductDetail = () => {
               className="w-full h-72 object-contain"
               loading="eager"
             />
+            {product.gallery && (
+              <div className="grid grid-cols-4 gap-2 mt-4" aria-label="Product views">
+                {product.gallery.map((photo) => (
+                  <a key={photo.src} href={photo.src} target="_blank" rel="noopener noreferrer" className="border border-border rounded-md bg-background overflow-hidden focus-visible:ring-2 focus-visible:ring-ring" aria-label={`Open ${photo.alt}`}>
+                    <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-20 object-contain p-1" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
           <div>
             <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-wider">
@@ -84,6 +93,25 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {product.documents && (
+        <section className="container mx-auto px-4 py-14" aria-labelledby="product-downloads">
+          <h2 id="product-downloads" className="text-2xl md:text-3xl font-bold text-foreground mb-6">Brochure &amp; Downloads</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {product.documents.map((document) => (
+              <div key={document.filename} className="border border-border bg-card rounded-md p-5 flex flex-col gap-3">
+                <h3 className="font-semibold text-foreground">{document.label}</h3>
+                <p className="text-sm text-muted-foreground flex-1">{document.description}</p>
+                <Button asChild variant="outline" className="self-start">
+                  <a href={document.url} download={document.filename} aria-label={`Download ${document.label}`}>
+                    <Download className="w-4 h-4 mr-2" /> Download PDF
+                  </a>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Highlights */}
       <section className="container mx-auto px-4 py-14">
