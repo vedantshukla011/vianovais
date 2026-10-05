@@ -22,15 +22,15 @@ type Launch = {
 
 const launches: Launch[] = [
   {
-    title: "Micsig DP Series High-Voltage Differential Probes",
+    title: "Micsig DP1503 / DP3003 High-Voltage Differential Probes",
     brand: "Micsig",
-    model: "DP Series",
+    model: "DP1503 / DP3003",
     category: "High-Voltage Differential Probes",
     image: micsigDpImg.url,
-    description: "Differential probes for floating and high-voltage measurements, with 100–300 MHz bandwidth and models rated up to 7000 V peak. Standard BNC output for compatible oscilloscopes.",
+    description: "300 MHz differential probes for floating and high-voltage measurements. Choose the DP1503 (up to 1500 Vpk) or DP3003 (up to 3000 Vpk), with standard BNC connection for compatible oscilloscopes.",
     specs: [
-      "100–300 MHz bandwidth across the series",
-      "Models up to 7000 V peak differential input",
+      "300 MHz bandwidth on both models",
+      "Up to 1500 Vpk (DP1503) or 3000 Vpk (DP3003)",
       "One-button zero and dual-range switching",
       "5 MHz bandwidth limit and overload alarm",
     ],
