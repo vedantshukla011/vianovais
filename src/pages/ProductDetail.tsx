@@ -64,7 +64,7 @@ const ProductDetail = () => {
               <div className="grid grid-cols-4 gap-2 mt-4" aria-label="Product views">
                 {product.gallery.map((photo) => (
                   <a key={photo.src} href={photo.src} target="_blank" rel="noopener noreferrer" className="border border-border rounded-md bg-background overflow-hidden focus-visible:ring-2 focus-visible:ring-ring" aria-label={`Open ${photo.alt}`}>
-                    <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-20 object-contain p-1" />
+                    <img src={photo.src} alt={photo.alt} loading="eager" className="w-full h-20 object-contain p-1" />
                   </a>
                 ))}
               </div>
