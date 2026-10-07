@@ -8,4 +8,4 @@
 - [x] Verify images, quote flow, desktop/mobile presentation, and build status.
 - [x] Micsig hero banner: re-sync with site theme (navy-teal gradient, amber accent, shared badge/dot styling); verified desktop + mobile, build OK.
 - [x] Update Micsig homepage banner to feature the official SigOFIT Gen 3 probe direction with ViaNova branding and probe inquiry link.
-- [ ] Add the Micsig DP Series to Just Launched with official product images, a product page, and downloadable documents.
+- [x] Add the Micsig DP Series to Just Launched with official product images, a product page, and downloadable documents.
