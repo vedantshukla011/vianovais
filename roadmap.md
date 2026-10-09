@@ -10,3 +10,4 @@
 - [x] Update Micsig homepage banner to feature the official SigOFIT Gen 3 probe direction with ViaNova branding and probe inquiry link.
 - [x] Add the Micsig DP Series to Just Launched with official product images, a product page, and downloadable documents.
 - [x] Add the FLIR E52 to Just Launched with its official image, technical specifications, product details, and downloadable datasheet; verify the card, image, and download.
+- [ ] Add FLIR as a brand partner with an overview page, selected official product imagery/specifications, and verified product and quote links.
