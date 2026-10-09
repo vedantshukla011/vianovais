@@ -8,6 +8,8 @@ import micsigDpKit from "@/assets/micsig-dp-kit.png.asset.json";
 import micsigDpBrochure from "@/assets/micsig-dp-brochure.pdf.asset.json";
 import micsigDpQuickGuide from "@/assets/micsig-dp-quick-guide.pdf.asset.json";
 import micsigDpControlManual from "@/assets/micsig-dp-control-manual.pdf.asset.json";
+import flirE52Img from "@/assets/flir-e52.png.asset.json";
+import flirE52Datasheet from "@/assets/flir-e52-datasheet.pdf.asset.json";
 
 export type LaunchDetail = {
   slug: string;
@@ -27,6 +29,59 @@ export type LaunchDetail = {
 };
 
 export const launchDetails: LaunchDetail[] = [
+  {
+    slug: "flir-e52",
+    title: "FLIR E52 Advanced Thermal Imaging Camera",
+    shortTitle: "FLIR E52 Thermal Imaging Camera",
+    brand: "FLIR",
+    model: "E52",
+    category: "Thermal Imaging Cameras",
+    image: flirE52Img.url,
+    description: "The FLIR E52 is an Exx-Series thermal imaging camera with 240 × 180 infrared resolution for electrical and mechanical inspections. Its manual-focus 24° lens, temperature measurement up to 550°C, MSX® image enhancement and 1-Touch Level/Span help identify hot spots and early signs of equipment failure. FLIR Ignite™ connectivity supports automatic image uploads, storage and sharing over Wi-Fi.",
+    ctaLabel: "Request a Quote",
+    documents: [
+      { label: "FLIR E52 datasheet", url: flirE52Datasheet.url, filename: "FLIR-E52-Datasheet.pdf", description: "Official FLIR E52 24° technical datasheet with imaging, measurement, connectivity and environmental specifications · PDF" },
+    ],
+    highlights: [
+      "240 × 180 pixel infrared detector with <50 mK thermal sensitivity",
+      "Temperature measurement from −20°C to 550°C across two ranges",
+      "MSX® overlays visual detail onto thermal images",
+      "1-Touch Level/Span for rapid image contrast adjustment",
+      "4-inch touchscreen with 640 × 480 resolution and auto-rotation",
+      "FLIR Ignite™ cloud uploads and FLIR Inspection Route support",
+    ],
+    specs: [
+      { label: "Model / part number", value: "FLIR E52 24° / 84502-0301" },
+      { label: "Infrared resolution", value: "240 × 180 pixels" },
+      { label: "Thermal sensitivity (NETD)", value: "<50 mK at +30°C" },
+      { label: "Detector / spectral range", value: "Uncooled microbolometer / 7.5–14 µm" },
+      { label: "Field of view", value: "24° × 18°" },
+      { label: "Spatial resolution (IFOV)", value: "1.75 mrad/pixel" },
+      { label: "Focus / digital zoom", value: "Manual / 1–4× continuous" },
+      { label: "Minimum focus distance", value: "0.15 m; 0.5 m with MSX" },
+      { label: "Image frequency", value: "30 Hz" },
+      { label: "Object temperature ranges", value: "−20°C to 120°C; 0°C to 550°C" },
+      { label: "Temperature accuracy", value: "±2°C below 100°C; ±2% from 100°C (ambient temperature 15°C to 35°C; see datasheet for range-specific conditions)" },
+      { label: "Display", value: "4-inch IPS touchscreen, 640 × 480 pixels, auto-rotation" },
+      { label: "Image modes", value: "Infrared, visual, MSX®, Picture-in-Picture" },
+      { label: "Digital camera", value: "5 MP with built-in LED light" },
+      { label: "Measurement tools", value: "3 spotmeters and 1 area in live mode; automatic hot/cold markers; difference temperature" },
+      { label: "Colour palettes", value: "Arctic, White hot, Black hot, Iron, Lava, Rainbow, Rainbow HC" },
+      { label: "Interfaces", value: "USB Type-C (USB 2.0), Bluetooth, Wi-Fi, DisplayPort over USB-C" },
+      { label: "Storage / image format", value: "Removable SD card (8 GB); FLIR Ignite™ via Wi-Fi; JPEG with measurement data" },
+      { label: "Battery", value: "Rechargeable Li-ion; >2.5 hours at 25°C with typical use" },
+      { label: "Operating temperature", value: "−15°C to +50°C" },
+      { label: "Protection / drop", value: "IP54; designed for a 2 m drop" },
+      { label: "Dimensions (L × W × H)", value: "278.4 × 116.1 × 113.1 mm" },
+      { label: "Weight including battery", value: "1 kg" },
+    ],
+    applications: [
+      "Electrical panel, connection and component inspections",
+      "Mechanical equipment and rotating machinery condition monitoring",
+      "Preventive maintenance and hot-spot detection",
+      "Industrial thermal inspections and reporting",
+    ],
+  },
   {
     slug: "micsig-dp-series",
     title: "Micsig DP1503 / DP3003 High-Voltage Differential Probes",
