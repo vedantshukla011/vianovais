@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sparkles, ArrowRight, Check, Plus } from "lucide-react";
+import { Sparkles, ArrowRight, Check, Plus, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 import wellerImg from "@/assets/weller-we1010-banner.jpeg.asset.json";
@@ -8,6 +8,8 @@ import uti260bImg from "@/assets/unit-uti260b.jpg.asset.json";
 import hdm3065Img from "@/assets/hantek-hdm3065.jpg.asset.json";
 import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
 import micsigDpImg from "@/assets/micsig-dp-main.png.asset.json";
+import flirE52Img from "@/assets/flir-e52.png.asset.json";
+import flirE52Datasheet from "@/assets/flir-e52-datasheet.pdf.asset.json";
 
 type Launch = {
   title: string;
@@ -18,9 +20,27 @@ type Launch = {
   description: string;
   specs: string[];
   href?: string;
+  datasheet?: { url: string; filename: string };
 };
 
 const launches: Launch[] = [
+  {
+    title: "FLIR E52 Advanced Thermal Imaging Camera (240 × 180 IR)",
+    brand: "FLIR",
+    model: "E52",
+    category: "Thermal Imaging Cameras",
+    image: flirE52Img.url,
+    description: "Exx-Series thermal imaging camera for electrical and mechanical inspections, with 240 × 180 infrared resolution, manual focus and temperature measurement up to 550°C. MSX® image enhancement, 1-Touch Level/Span and FLIR Ignite™ cloud connectivity support efficient condition monitoring.",
+    specs: [
+      "240 × 180 px IR, thermal sensitivity <50 mK",
+      "−20°C to 120°C / 0°C to 550°C ranges",
+      "24° × 18° field of view, manual focus",
+      "4-inch 640 × 480 touchscreen, 5 MP visual camera",
+      "30 Hz imaging, Wi-Fi, Bluetooth and USB-C",
+    ],
+    href: "/products/flir-e52",
+    datasheet: { url: flirE52Datasheet.url, filename: "FLIR-E52-Datasheet.pdf" },
+  },
   {
     title: "Micsig DP1503 / DP3003 High-Voltage Differential Probes",
     brand: "Micsig",
@@ -340,6 +360,13 @@ const NewLaunches = () => {
                       {added ? <Check className="mr-1.5 h-4 w-4" /> : <Plus className="mr-1.5 h-4 w-4" />}
                       {added ? "Added" : "Request Quote"}
                     </Button>
+                    {item.datasheet && (
+                      <Button asChild size="sm" variant="outline">
+                        <a href={item.datasheet.url} download={item.datasheet.filename} aria-label={`Download ${item.brand} ${item.model} datasheet`}>
+                          <Download className="h-4 w-4" /> Datasheet
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </article>
