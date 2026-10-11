@@ -44,7 +44,7 @@ const HotSellingProducts = () => {
                   <div className="absolute top-2 right-2 z-10 w-10 h-10 bg-white rounded-md shadow-sm flex items-center justify-center p-1">
                     <img
                       src={product.brandLogo}
-                      alt="Brand"
+                      alt={`Brand logo for ${product.name}`}
                       className="w-full h-full object-contain"
                       loading="lazy"
                     />
@@ -67,7 +67,9 @@ const HotSellingProducts = () => {
                   <Button
                     size="sm"
                     variant={inCart ? "secondary" : "default"}
-                    className="w-full text-xs h-7"
+                    className="w-full text-xs min-h-11"
+                    aria-label={`${inCart ? "Remove" : "Add"} ${product.name} ${inCart ? "from" : "to"} quote request`}
+                    aria-pressed={inCart}
                     onClick={() => inCart ? removeItem(product.name) : addItem(product.name)}
                   >
                     {inCart ? (
