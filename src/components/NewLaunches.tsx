@@ -309,7 +309,7 @@ const NewLaunches = () => {
                 <div className="relative h-52 bg-muted">
                   <img
                     src={item.image}
-                    alt={`${item.brand} ${item.title}`}
+                    alt={`${item.title} — ${item.category}`}
                     loading="lazy"
                     className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
                   />
@@ -345,7 +345,7 @@ const NewLaunches = () => {
 
                   <div className="mt-6 pt-5 border-t border-border flex flex-wrap gap-3">
                     <Button asChild size="sm" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold">
-                      <Link to={item.href ?? `/inquiry?product=${encodeURIComponent(item.title)}`}>
+                      <Link to={item.href ?? `/inquiry?product=${encodeURIComponent(item.title)}`} aria-label={`View details for ${item.title}`}>
                         View Details
                         <ArrowRight className="ml-1.5 h-4 w-4" />
                       </Link>

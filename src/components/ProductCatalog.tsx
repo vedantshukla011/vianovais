@@ -2,7 +2,6 @@ import { useState, useMemo, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
 import { Search, ChevronLeft, ChevronRight, Package, Plus, Check, ShoppingCart } from "lucide-react";
 import { CATALOG_PRODUCTS, CATALOG_CATEGORIES, CATALOG_SUBCATEGORIES } from "@/data/catalogProducts";
@@ -101,28 +100,32 @@ const ProductCatalog = () => {
 
         {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
-          <Badge
+          <Button
+            type="button"
+            aria-pressed={selectedCategory === null}
             variant={selectedCategory === null ? "default" : "outline"}
-            className={`cursor-pointer px-4 py-2 text-sm transition-all ${
+            className={`min-h-11 h-auto whitespace-normal px-4 py-2 text-sm transition-all ${
               selectedCategory === null ? "bg-secondary text-secondary-foreground hover:bg-secondary/90" : "hover:bg-secondary/10 hover:text-secondary"
             }`}
             onClick={() => handleCategoryClick(null)}
           >
             All ({CATALOG_PRODUCTS.length.toLocaleString()})
-          </Badge>
+          </Button>
           {CATALOG_CATEGORIES.map((cat) => {
             const count = CATALOG_PRODUCTS.filter((p) => p.category === cat).length;
             return (
-              <Badge
+              <Button
+                type="button"
+                aria-pressed={selectedCategory === cat}
                 key={cat}
                 variant={selectedCategory === cat ? "default" : "outline"}
-                className={`cursor-pointer px-3 py-1.5 text-xs transition-all ${
+                className={`min-h-11 h-auto whitespace-normal px-3 py-1.5 text-xs transition-all ${
                   selectedCategory === cat ? "bg-secondary text-secondary-foreground hover:bg-secondary/90" : "hover:bg-secondary/10 hover:text-secondary"
                 }`}
                 onClick={() => handleCategoryClick(cat)}
               >
                 {cat} ({count})
-              </Badge>
+              </Button>
             );
           })}
         </div>
@@ -130,28 +133,32 @@ const ProductCatalog = () => {
         {/* Sub Category Filters */}
         {subCategories.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            <Badge
+            <Button
+              type="button"
+              aria-pressed={selectedSubCategory === null}
               variant={selectedSubCategory === null ? "default" : "outline"}
-              className={`cursor-pointer px-3 py-1 text-xs transition-all ${
+              className={`min-h-11 h-auto whitespace-normal px-3 py-1 text-xs transition-all ${
                 selectedSubCategory === null ? "bg-accent text-accent-foreground hover:bg-accent/90" : "hover:bg-accent/10 hover:text-accent"
               }`}
               onClick={() => handleSubCategoryClick(null)}
             >
               All Sub Categories
-            </Badge>
+            </Button>
             {subCategories.map((sub) => {
               const count = CATALOG_PRODUCTS.filter((p) => p.category === selectedCategory && p.subCategory === sub).length;
               return (
-                <Badge
+                <Button
+                  type="button"
+                  aria-pressed={selectedSubCategory === sub}
                   key={sub}
                   variant={selectedSubCategory === sub ? "default" : "outline"}
-                  className={`cursor-pointer px-3 py-1 text-xs transition-all ${
+                  className={`min-h-11 h-auto whitespace-normal px-3 py-1 text-xs transition-all ${
                     selectedSubCategory === sub ? "bg-accent text-accent-foreground hover:bg-accent/90" : "hover:bg-accent/10 hover:text-accent"
                   }`}
                   onClick={() => handleSubCategoryClick(sub)}
                 >
                   {sub} ({count})
-                </Badge>
+                </Button>
               );
             })}
           </div>
@@ -175,7 +182,7 @@ const ProductCatalog = () => {
         )}
 
         {/* Results count */}
-        <p className="text-sm text-muted-foreground mb-6 text-center">
+        <p aria-live="polite" aria-atomic="true" className="text-sm text-muted-foreground mb-6 text-center">
           Showing{" "}
           <span className="font-semibold text-foreground">
             {filtered.length > 0 ? ((currentPage - 1) * ITEMS_PER_PAGE) + 1 : 0}–{Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)}
@@ -194,7 +201,7 @@ const ProductCatalog = () => {
                   className={`border-none shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 bg-card group overflow-hidden ${inCart ? "ring-2 ring-secondary" : ""}`}
                 >
                   <div className="aspect-square bg-muted/50 flex items-center justify-center p-4 relative">
-                    <Package className="w-12 h-12 text-muted-foreground/30 group-hover:text-secondary/40 transition-colors" />
+                    <Package aria-hidden="true" className="w-12 h-12 text-muted-foreground/30 group-hover:text-secondary/40 transition-colors" />
                     <span className="absolute bottom-1 left-1 right-1 text-[10px] text-muted-foreground text-center truncate">{product.subCategory}</span>
                   </div>
                   <CardContent className="p-3 flex flex-col gap-2">
@@ -204,7 +211,9 @@ const ProductCatalog = () => {
                     <Button
                       size="sm"
                       variant={inCart ? "outline" : "default"}
-                      className={`w-full text-xs py-1 h-8 ${
+                      aria-label={`${inCart ? "Remove" : "Add"} ${product.name} ${inCart ? "from" : "to"} quote request`}
+                      aria-pressed={inCart}
+                      className={`w-full text-xs py-1 min-h-11 ${
                         inCart
                           ? "border-secondary text-secondary hover:bg-secondary/10"
                           : "bg-primary hover:bg-primary-light text-primary-foreground"
@@ -236,8 +245,8 @@ const ProductCatalog = () => {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2 mt-10 flex-wrap">
-            <Button variant="outline" size="sm" disabled={currentPage === 1} onClick={() => setCurrentPage((p) => p - 1)} className="border-border">
+          <nav aria-label="Product catalog pagination" className="flex justify-center items-center gap-2 mt-10 flex-wrap">
+            <Button aria-label="Previous product page" variant="outline" size="sm" disabled={currentPage === 1} onClick={() => setCurrentPage((p) => p - 1)} className="border-border min-h-11 min-w-11">
               <ChevronLeft className="w-4 h-4" />
             </Button>
             {getPageNumbers().map((page, i) =>
@@ -248,17 +257,19 @@ const ProductCatalog = () => {
                   key={page}
                   variant={currentPage === page ? "default" : "outline"}
                   size="sm"
+                  aria-label={`Product page ${page}`}
+                  aria-current={currentPage === page ? "page" : undefined}
                   onClick={() => setCurrentPage(page as number)}
-                  className={currentPage === page ? "bg-primary text-primary-foreground" : "border-border hover:border-secondary hover:text-secondary"}
+                  className={`min-h-11 min-w-11 ${currentPage === page ? "bg-primary text-primary-foreground" : "border-border hover:border-secondary hover:text-secondary"}`}
                 >
                   {page}
                 </Button>
               )
             )}
-            <Button variant="outline" size="sm" disabled={currentPage === totalPages} onClick={() => setCurrentPage((p) => p + 1)} className="border-border">
+            <Button aria-label="Next product page" variant="outline" size="sm" disabled={currentPage === totalPages} onClick={() => setCurrentPage((p) => p + 1)} className="border-border min-h-11 min-w-11">
               <ChevronRight className="w-4 h-4" />
             </Button>
-          </div>
+          </nav>
         )}
       </div>
     </section>
