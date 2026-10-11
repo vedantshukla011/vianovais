@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Give the homepage a stable business H1 and verify catalog images, keyboard controls, and accessible names.
+
 - [x] Read the UNI-T oscillator product workbook.
 - [x] Host all supplied product images.
 - [x] Create the UNI-T brand catalogue with 14 priced product cards.

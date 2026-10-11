@@ -99,6 +99,11 @@ const Home = () => {
         <script type="application/ld+json">{JSON.stringify(owonPowerSupplySchema)}</script>
       </Helmet>
       {/* Hero Section */}
+      <header className="bg-primary-dark text-primary-foreground pt-24 pb-6">
+        <div className="container mx-auto px-4">
+          <h1 className="text-2xl md:text-3xl font-bold leading-tight">ViaNova Industrial Solutions — Precision Measuring Instruments, Test &amp; Industrial Equipment in India</h1>
+        </div>
+      </header>
       <HeroCarousel />
 
 
