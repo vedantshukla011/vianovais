@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
+import flirLogo from "@/assets/flir-logo.png.asset.json";
 
 interface Brand {
   name: string;
@@ -13,6 +14,7 @@ interface Brand {
   category: string;
   accentColor: string;
   href?: string;
+  logo?: string;
 }
 
 const brands: Brand[] = [
@@ -47,6 +49,16 @@ const brands: Brand[] = [
     description: "Rugged industrial test & measurement tools including digital multimeters, thermal imagers, and calibration equipment.",
     category: "Industrial Tools",
     accentColor: "bg-primary/10 text-primary",
+  },
+  {
+    name: "FLIR",
+    initials: "FLIR",
+    domain: "flir.com",
+    description: "Measuring instruments and thermal imaging cameras for electrical inspections, mechanical condition monitoring and building diagnostics.",
+    category: "Thermal Imaging",
+    accentColor: "bg-secondary/10 text-secondary",
+    href: "/brands/flir",
+    logo: flirLogo.url,
   },
   {
     name: "Testo",
@@ -123,8 +135,8 @@ const logoSources = (domain: string) => [
   `https://unavatar.io/${domain}?fallback=false`,
 ];
 
-const BrandLogo = ({ name, domain, initials, accentColor }: { name: string; domain: string; initials: string; accentColor: string }) => {
-  const sources = logoSources(domain);
+const BrandLogo = ({ name, domain, initials, accentColor, logo }: { name: string; domain: string; initials: string; accentColor: string; logo?: string }) => {
+  const sources = logo ? [logo, ...logoSources(domain)] : logoSources(domain);
   const [index, setIndex] = useState(0);
 
   if (index >= sources.length) {
@@ -163,7 +175,7 @@ const Brands = () => {
     <div className="min-h-screen pt-20">
       <Helmet>
         <title>Brands We Deal In | ViaNova Industrial Solutions</title>
-        <meta name="description" content="Explore the premium test & measurement brands ViaNova Industrial Solutions deals in: Keysight, Keithley, Tektronix, Fluke, Testo, UNI-T, NI, Weller, Hantek, and Rigol." />
+        <meta name="description" content="Explore measuring instruments from ViaNova brand partners: Keysight, Keithley, Tektronix, Fluke, FLIR, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/brands" />
         <meta property="og:title" content="Brands We Deal In | ViaNova Industrial Solutions" />
         <meta property="og:description" content="Authorized distributor and solution partner for leading test & measurement brands in India." />
@@ -221,6 +233,7 @@ const Brands = () => {
                     domain={brand.domain}
                     initials={brand.initials}
                     accentColor={brand.accentColor}
+                    logo={brand.logo}
                   />
                   <h3 className="text-lg font-bold text-foreground mb-2">{brand.name}</h3>
                   <span className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full mb-4">
