@@ -49,20 +49,20 @@ const BrandFlir = () => {
         })}</script>
       </Helmet>
 
-      <section className="bg-muted/30 border-b border-border">
+      <section className="bg-primary text-primary-foreground border-b border-border">
         <div className="container mx-auto px-4 py-10 md:py-14">
-          <Button asChild variant="ghost" className="mb-6">
+          <Button asChild variant="ghost" className="mb-6 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
             <Link to="/brands"><ArrowLeft /> Back to Brands</Link>
           </Button>
           <div className="flex flex-wrap items-center gap-6 mb-6">
-            <img src={flirLogo.url} alt="FLIR logo" className="w-36 h-16 object-contain" />
-            <span className="text-sm font-semibold uppercase text-secondary">Brand Partner · Measuring Instruments</span>
+            <div className="bg-card rounded-md px-4 py-3"><img src={flirLogo.url} alt="FLIR logo" className="w-28 h-10 object-contain" /></div>
+            <span className="text-sm font-semibold uppercase text-accent">Brand Partner · Measuring Instruments</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-5">FLIR Thermal Imaging Cameras</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-5">FLIR Thermal Imaging Cameras</h1>
+          <p className="text-lg text-primary-foreground/80 leading-relaxed max-w-3xl">
             Measuring instruments from FLIR bring infrared imaging to electrical inspections, mechanical condition monitoring and building diagnostics. From compact everyday cameras to advanced handheld systems, explore thermal imaging for your next inspection through ViaNova Industrial Solutions.
           </p>
-          <div className="flex flex-wrap gap-x-8 gap-y-3 mt-7 text-sm font-medium text-foreground">
+          <div className="flex flex-wrap gap-x-8 gap-y-3 mt-7 text-sm font-medium text-primary-foreground">
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-secondary" /> Electrical &amp; mechanical inspections</span>
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-secondary" /> Preventive maintenance</span>
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-secondary" /> Building diagnostics</span>
