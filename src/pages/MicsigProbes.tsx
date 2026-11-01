@@ -158,7 +158,7 @@ const MicsigProbes = () => {
         <div className="container mx-auto px-4 py-12 text-center">
           <h2 className="text-2xl font-bold mb-2">Need help choosing a probe?</h2>
           <p className="text-muted-foreground mb-6">Contact ViaNova Industrial Solutions for product guidance and availability.</p>
-          <Button asChild><Link to="/contact">Contact ViaNova</Link></Button>
+          <Button asChild><Link to="/inquiry">Contact ViaNova</Link></Button>
         </div>
       </section>
     </main>
