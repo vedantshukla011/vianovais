@@ -61,6 +61,15 @@ const brands: Brand[] = [
     logo: flirLogo.url,
   },
   {
+    name: "Micsig",
+    initials: "MS",
+    domain: "micsig.com",
+    description: "Authorized distributor of Micsig oscilloscope probes: differential, optical-fiber isolated, current and Rogowski probes with downloadable documentation.",
+    category: "Oscilloscope Probes",
+    accentColor: "bg-primary/10 text-primary",
+    href: "/micsig-probes",
+  },
+  {
     name: "Testo",
     initials: "TE",
     domain: "testo.com",
