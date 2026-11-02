@@ -63,7 +63,7 @@ const brands: Brand[] = [
     category: "Thermal Imaging",
     accentColor: "bg-secondary/10 text-secondary",
     href: "/brands/flir",
-    logo: flirLogo.url,
+    logo: assetUrl(flirLogo),
   },
   {
     name: "Micsig",
@@ -73,7 +73,7 @@ const brands: Brand[] = [
     category: "Oscilloscope Probes",
     accentColor: "bg-primary/10 text-primary",
     href: "/micsig-probes",
-    logo: micsigLogo.url,
+    logo: assetUrl(micsigLogo),
   },
   {
     name: "Testo",
