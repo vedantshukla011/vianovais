@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
 import flirLogo from "@/assets/flir-logo.png.asset.json";
+import micsigLogo from "@/assets/micsig-logo.webp";
+
+// Relative asset URLs work both in the local preview and on the hosted site
+// (the /__l5e/assets-v1/* rewrite forwards to the CDN).
+const assetUrl = (p: { url: string }) => p.url.replace(/^https:\/\/vianovais\.lovable\.app/, "");
 
 interface Brand {
   name: string;
@@ -58,7 +63,7 @@ const brands: Brand[] = [
     category: "Thermal Imaging",
     accentColor: "bg-secondary/10 text-secondary",
     href: "/brands/flir",
-    logo: flirLogo.url,
+    logo: assetUrl(flirLogo),
   },
   {
     name: "Micsig",
@@ -68,6 +73,7 @@ const brands: Brand[] = [
     category: "Oscilloscope Probes",
     accentColor: "bg-primary/10 text-primary",
     href: "/micsig-probes",
+    logo: micsigLogo,
   },
   {
     name: "Testo",
