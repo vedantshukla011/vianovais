@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
 import flirLogo from "@/assets/flir-logo.png.asset.json";
+import micsigLogo from "@/assets/micsig-logo.webp.asset.json";
 
 interface Brand {
   name: string;
@@ -68,6 +69,7 @@ const brands: Brand[] = [
     category: "Oscilloscope Probes",
     accentColor: "bg-primary/10 text-primary",
     href: "/micsig-probes",
+    logo: micsigLogo.url,
   },
   {
     name: "Testo",
