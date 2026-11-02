@@ -4,11 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
-import micsigLogo from "@/assets/micsig-logo.webp.asset.json";
-
-// Relative asset URLs work both in the local preview and on the hosted site
-// (the /__l5e/assets-v1/* rewrite forwards to the CDN).
-const assetUrl = (p: { url: string }) => p.url.replace(/^https:\/\/vianovais\.lovable\.app/, "");
+import flirLogo from "@/assets/flir-logo.png.asset.json";
 
 interface Brand {
   name: string;
