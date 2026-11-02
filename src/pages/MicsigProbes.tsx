@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 
-const CDN = "https://vianovais.lovable.app";
+// Absolute host in production builds (custom-domain hosting rewrites); relative in preview, where new assets serve before publishing.
+const CDN = import.meta.env.DEV ? "" : "https://vianovais.lovable.app";
 const SITE = "https://vianovaindustrial.solutions";
 const PAGE = `${SITE}/micsig-probes`;
 const DESCRIPTION = "Micsig oscilloscope probes in India: DP differential probes, SigOFIT optical-fiber isolated probes, CP and RCP current probes. Download brochures and manuals from ViaNova.";
