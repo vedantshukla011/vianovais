@@ -73,7 +73,7 @@ const brands: Brand[] = [
     category: "Oscilloscope Probes",
     accentColor: "bg-primary/10 text-primary",
     href: "/micsig-probes",
-    logo: assetUrl(micsigLogo),
+    logo: micsigLogo,
   },
   {
     name: "Testo",
