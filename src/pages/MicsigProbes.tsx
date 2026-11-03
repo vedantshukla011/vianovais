@@ -10,6 +10,8 @@ const DESCRIPTION =
 
 const pointers = import.meta.glob("@/assets/micsig-catalog/*.asset.json", { eager: true, import: "default" }) as Record<string, { url: string }>;
 // Preview serves assets relative; production uses the absolute host stored in the pointer.
+const images = import.meta.glob("@/assets/micsig-catalog/*.jpg", { eager: true, import: "default" }) as Record<string, string>;
+const image = (file: string) => images[Object.keys(images).find((k) => k.endsWith(`/${file}`)) ?? ""];
 const asset = (file: string): string => {
   const key = Object.keys(pointers).find((k) => k.endsWith(`/${file}.asset.json`));
   const url = key ? pointers[key].url : "";
@@ -129,7 +131,7 @@ const MicsigProbes = () => {
           {visible.map((p) => (
             <article key={p.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
               <div className="h-[185px] overflow-hidden bg-gradient-to-br from-muted to-secondary/10 sm:h-[190px]">
-                <img src={asset(p.hero)} alt={`Micsig ${p.name} probe`} loading="lazy" className="h-full w-full object-cover" />
+                <img src={image(p.hero)} alt={`Micsig ${p.name} probe`} loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="flex flex-1 flex-col px-5 pb-4 pt-5">
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-secondary">Micsig probe family</p>
@@ -142,7 +144,7 @@ const MicsigProbes = () => {
                   {p.docs.length ? (
                     p.docs.map((d) => (
                       <a key={d.file} href={asset(d.file)} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-2 border-b border-border/60 py-2 text-[11px] text-foreground/80 hover:text-secondary">
-                        <span className="truncate">{d.name}</span>
+                        <span className="min-w-0 truncate">{d.name}</span>
                         <b className="inline-flex items-center gap-0.5 whitespace-nowrap text-[10px] text-secondary">OPEN <ArrowUpRight className="h-3 w-3" /></b>
                       </a>
                     ))
