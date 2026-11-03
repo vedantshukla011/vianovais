@@ -15,4 +15,5 @@
 - [x] Add FLIR as a brand partner with an overview page, selected official product imagery/specifications, and verified product and quote links.
 
 - [x] Micsig probes page at /micsig-probes + Micsig card on Brands
+- [ ] Repair Micsig catalog document hosting and verify all seven brochures open in new tabs.
 - [ ] Add 6 remaining Micsig PDFs (11,15,16,17,18,20) — waiting on user upload
