@@ -1,168 +1,180 @@
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Clock, Download, FileText, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useQuoteCart } from "@/contexts/QuoteCartContext";
+import { Link } from "react-router-dom";
+import { ArrowDown, ArrowUpRight, Search } from "lucide-react";
 
-// Absolute host in production builds (custom-domain hosting rewrites); relative in preview, where new assets serve before publishing.
-const CDN = import.meta.env.DEV ? "" : "https://vianovais.lovable.app";
 const SITE = "https://vianovaindustrial.solutions";
 const PAGE = `${SITE}/micsig-probes`;
-const DESCRIPTION = "Micsig oscilloscope probes in India: DP differential probes, SigOFIT optical-fiber isolated probes, CP and RCP current probes. Download brochures and manuals from ViaNova.";
+const DESCRIPTION =
+  "Explore Micsig probe families — DP differential, SigOFIT optical-fiber isolated, CP, CP2100, ACP and RCP current probes — and open brochures from ViaNova Industrial Solutions.";
 
-const pointers = import.meta.glob("@/assets/micsig-probes/*.asset.json", { eager: true, import: "default" }) as Record<string, { url: string }>;
-const asset = (file: string): string | undefined => {
+const pointers = import.meta.glob("@/assets/micsig-catalog/*.asset.json", { eager: true, import: "default" }) as Record<string, { url: string }>;
+// Preview serves assets relative; production uses the absolute host stored in the pointer.
+const asset = (file: string): string => {
   const key = Object.keys(pointers).find((k) => k.endsWith(`/${file}.asset.json`));
-  return key ? `${CDN}${pointers[key].url}` : undefined;
+  const url = key ? pointers[key].url : "";
+  return import.meta.env.DEV ? url.replace(/^https?:\/\/[^/]+/, "") : url;
 };
 
-type Doc = { label: string; file: string };
-type Family = { name: string; type: "Voltage" | "Current"; description: string; banner?: string; docs: Doc[] };
+type Category = "ACP" | "CP" | "DP" | "SigOFIT" | "RCP";
+type Product = { name: string; category: Category; hero: string; docs: { name: string; file: string }[] };
 
-const FAMILIES: Family[] = [
-  { name: "DP Series", type: "Voltage", banner: "differential-probes.png", description: "High-voltage differential probe family for differential voltage measurements.", docs: [
-    { label: "Brochure", file: "02-Brochure---DP-series-high-voltage-differential-probe_202603.pdf" },
-    { label: "Quick guide", file: "01-Quick-Guide---DP-series-high-voltage-differential-probe-202603.pdf" } ] },
-  { name: "SigOFIT Gen 3", type: "Voltage", banner: "sigofit-gen3.png", description: "Optical-fiber isolated probe family, with product brochure and operating documentation.", docs: [
-    { label: "Brochure", file: "16-Brochure-SigOFIT-Gen-3-optical-fiber-isolated-probe.pdf" },
-    { label: "User manual", file: "12-User-Manual---SigOFIT-Gen3-optical-fiber-isolated-probe.pdf" },
-    { label: "Quick guide", file: "05-Quick-Guide---SigOFIT-Gen3-optical-fiber-isolated-probe.pdf" } ] },
-  { name: "SigOFIT Gen 2", type: "Voltage", banner: "sigofit-gen2.png", description: "Optical-fiber isolated probe family, with product brochure and operating documentation.", docs: [
-    { label: "Brochure", file: "13-Brochure-SigOFIToptical-fiberisolatedprobe_V2_1767073200.pdf" },
-    { label: "User manual", file: "14-UserManual-SigOFIToptical-fiberisolatedprobe-V2_1767073187.pdf" },
-    { label: "Quick guide", file: "03-QuickGuide-SigOFIToptical-fiberisolatedprobe-V2_1767073211.pdf" } ] },
-  { name: "ACP1000", type: "Current", banner: "ac-current-probe-acp1000.png", description: "AC current probe family with the user manual included.", docs: [
-    { label: "User manual", file: "04-AC-Current-Probe-ACP1000-User-Manual.pdf" } ] },
-  { name: "CP Series", type: "Current", banner: "high-frequency-current-probes.png", description: "High-frequency AC/DC current probe literature for the CP Series models.", docs: [
-    { label: "Product introduction", file: "07-Product-Introduction-High-Frequency-ACDC-Current-Probe-CP-series.pdf" },
-    { label: "Quick guide", file: "06-Quick-Guide-High-Frequency-ACDC-Current-Probe-CP-series.pdf" },
-    { label: "User manual", file: "15-User-Manual-High-Frequency-AC-DC-Current-Probe-CP-Series.pdf" },
-    { label: "Product introduction · CP1503B group", file: "08-Product-Introduction-High-Frequency-ACDC-Current-Probe-CP-series.pdf" },
-    { label: "Quick guide · CP1503B group", file: "09-Quick-Guide-High-Frequency-ACDC-Current-Probe-CP-series.pdf" },
-    { label: "User manual · CP1503B group", file: "11-User-Manual-High-Frequency-AC-DC-Current-Probe-CP-Series.pdf" } ] },
-  { name: "CP2100 Series", type: "Current", banner: "low-frequency-current-probe-cp2100.png", description: "Low-frequency AC/DC current probe series with a brochure and quick guide.", docs: [
-    { label: "Brochure", file: "20-Brochure-CP2100seriesLFcurrentprobe.pdf" },
-    { label: "Quick guide", file: "17-QuickGuide-LowFrequencyACDCCurrentProbeCP2100series.pdf" } ] },
-  { name: "RCP Series", type: "Current", banner: "rogowski-current-probes.png", description: "Rogowski AC current probe family with product literature and operating guidance.", docs: [
-    { label: "Brochure", file: "18-Brochure-Rogowski-AC-Current-Probe-RCP-Series-EN-20251203_1765247024.pdf" },
-    { label: "User manual", file: "19-User-Manual--Rogowski-AC-Current-Probe-RCP-Series.pdf" },
-    { label: "Quick guide", file: "21-QuickGuide-RCPseriesRogowskiACcurrentprobe.pdf" } ] },
-  { name: "MSP510 Passive Probe", type: "Voltage", description: "Passive oscilloscope probe with user guide included.", docs: [
-    { label: "User guide", file: "10-MSP510-USER-Guide-2025.5.12-1-2-.pdf" } ] },
+const PRODUCTS: Product[] = [
+  { name: "ACP1000", category: "ACP", hero: "product-acp1000.jpg", docs: [] },
+  { name: "CP1503B / CP1003B / CP503B", category: "CP", hero: "product-cp1503b-cp1003b-cp503b.jpg", docs: [{ name: "Product Introduction – High Frequency AC/DC Current Probe CP Series", file: "document-001.pdf" }] },
+  { name: "CP5005 / CP3008 / CP3005 / CP1510", category: "CP", hero: "product-cp5005-cp3008-cp3005-cp1510.jpg", docs: [{ name: "Product Introduction – High Frequency AC/DC Current Probe CP Series", file: "document-002.pdf" }] },
+  { name: "CP2100 Series", category: "CP", hero: "product-cp2100-series.jpg", docs: [{ name: "Brochure – CP2100 Series LF Current Probe", file: "document-003.pdf" }] },
+  { name: "DP Series", category: "DP", hero: "product-dp-series.jpg", docs: [{ name: "Brochure – DP Series High-Voltage Differential Probe", file: "document-004.pdf" }] },
+  { name: "SigOFIT Gen 2 (MOIP)", category: "SigOFIT", hero: "product-sigofit-gen-2-moip.jpg", docs: [{ name: "Brochure – SigOFIT Optical-Fiber Isolated Probe V2", file: "document-005.pdf" }] },
+  { name: "SigOFIT Gen 3 (MOIP)", category: "SigOFIT", hero: "product-sigofit-gen-3-moip.jpg", docs: [{ name: "Brochure – SigOFIT Gen 3 Optical-Fiber Isolated Probe", file: "document-006.pdf" }] },
+  { name: "RCP Series", category: "RCP", hero: "product-rcp-series.jpg", docs: [{ name: "Brochure – Rogowski AC Current Probe RCP Series", file: "document-007.pdf" }] },
 ];
 
-const FILTERS = ["All", "Voltage", "Current"] as const;
+const FILTERS: ("All" | Category)[] = ["All", "ACP", "CP", "DP", "SigOFIT", "RCP"];
+const TOTAL_DOCS = PRODUCTS.reduce((n, p) => n + p.docs.length, 0);
 
 const MicsigProbes = () => {
-  const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
+  const [active, setActive] = useState<(typeof FILTERS)[number]>("All");
   const [query, setQuery] = useState("");
-  const { addItem } = useQuoteCart();
-  const navigate = useNavigate();
 
-  const list = useMemo(() => FAMILIES.filter((f) =>
-    (filter === "All" || f.type === filter) && f.name.toLowerCase().includes(query.trim().toLowerCase())), [filter, query]);
-
-  const requestQuote = (name: string) => { addItem(`Micsig ${name} probe`); navigate("/inquiry"); };
+  const visible = useMemo(() => {
+    const q = query.toLowerCase().trim();
+    return PRODUCTS.filter((p) => {
+      const hay = `${p.name} ${p.docs.map((d) => d.name).join(" ")}`.toLowerCase();
+      return (active === "All" || p.category === active) && (!q || hay.includes(q));
+    });
+  }, [active, query]);
 
   return (
-    <main className="min-h-screen pt-20">
+    <div className="min-h-screen bg-muted/40 pt-20">
       <Helmet>
-        <title>Micsig Oscilloscope Probes in India | ViaNova</title>
+        <title>Micsig Probes | ViaNova Industrial Solutions</title>
         <meta name="description" content={DESCRIPTION} />
         <link rel="canonical" href={PAGE} />
-        <meta property="og:title" content="Micsig Probe Range | ViaNova" />
+        <meta property="og:title" content="Micsig Probes | ViaNova Industrial Solutions" />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content={PAGE} />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org", "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-            { "@type": "ListItem", position: 2, name: "Brands", item: `${SITE}/brands` },
-            { "@type": "ListItem", position: 3, name: "Micsig Probes", item: PAGE },
-          ],
-        })}</script>
       </Helmet>
 
-      <section className="bg-primary text-primary-foreground border-b border-border">
-        <div className="container mx-auto px-4 py-10 md:py-14">
-          <Button asChild variant="ghost" className="mb-6 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-            <Link to="/brands"><ArrowLeft /> Back to Brands</Link>
-          </Button>
-          <span className="block text-sm font-semibold uppercase text-accent mb-4">Authorized Distributor · Micsig</span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 max-w-3xl">Micsig Probes — See the signal. Choose the right probe.</h1>
-          <p className="text-primary-foreground/80 max-w-2xl mb-6">Explore Micsig probe families for voltage and current measurement. Browse the range and download the brochures, manuals and quick guides available for each family.</p>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild variant="secondary"><a href="#probe-range">Explore probe range</a></Button>
-            <Button variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={() => requestQuote("oscilloscope")}>Request a Quote</Button>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground">
+        <div aria-hidden className="pointer-events-none absolute right-[7%] -top-64 h-[530px] w-[530px] rounded-full border border-primary-foreground/10 shadow-[0_0_0_55px_hsl(var(--primary-foreground)/0.03),0_0_0_110px_hsl(var(--primary-foreground)/0.02)]" />
+        <div className="relative mx-auto flex min-h-[350px] max-w-[1240px] items-center px-5 pb-14 pt-12 sm:px-6 md:min-h-[380px] md:pt-16">
+          <div className="z-10 max-w-[700px]">
+            <p className="flex items-center gap-2.5 text-[11px] font-extrabold uppercase tracking-[0.19em] text-accent">
+              <span className="h-0.5 w-6 bg-accent" /> Micsig · Probe portfolio
+            </p>
+            <h1 className="mb-4 mt-5 text-[clamp(38px,5vw,60px)] font-bold leading-[1.02] tracking-tight">
+              Find the right probe<br />for your measurement.
+            </h1>
+            <p className="max-w-[600px] text-sm leading-relaxed text-primary-foreground/80 md:text-base">
+              Explore Micsig probe families and access available brochures and product introductions from ViaNova Industrial Solutions.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="#catalog" className="inline-flex items-center gap-1.5 rounded-md bg-accent px-[18px] py-3 text-[13px] font-bold text-accent-foreground transition-transform hover:-translate-y-0.5">
+                Explore probe range <ArrowDown className="h-3.5 w-3.5" />
+              </a>
+              <a href="#support" className="inline-flex items-center rounded-md border border-primary-foreground/40 px-[18px] py-3 text-[13px] font-bold transition-transform hover:-translate-y-0.5">
+                Talk to ViaNova
+              </a>
+            </div>
           </div>
+          <p className="absolute bottom-7 right-5 text-[11px] tracking-[0.08em] text-primary-foreground/60 sm:right-6">PRODUCTS · DOCUMENTS · SUPPORT</p>
         </div>
       </section>
 
-      <section id="probe-range" className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore the Micsig probe range</h2>
-        <p className="text-muted-foreground mb-6">Filter by measurement type or search by series name.</p>
-        <div className="flex flex-wrap gap-3 items-center mb-8">
-          {FILTERS.map((f) => (
-            <Button key={f} variant={filter === f ? "default" : "outline"} aria-pressed={filter === f} onClick={() => setFilter(f)} className="min-h-11">{f === "All" ? "All probes" : `${f} probes`}</Button>
-          ))}
-          <div className="relative w-full sm:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden />
-            <Input aria-label="Search probe series" placeholder="Search series…" value={query} onChange={(e) => setQuery(e.target.value)} className="pl-9 min-h-11" />
+      {/* Catalog */}
+      <section id="catalog" className="scroll-mt-24">
+        <div className="mx-auto max-w-[1240px] px-5 pb-3.5 pt-7 sm:px-6 md:flex md:items-end md:justify-between md:gap-5 md:pb-4 md:pt-9">
+          <div>
+            <h2 className="mb-1.5 text-[26px] font-bold tracking-tight text-foreground">Micsig probe catalog</h2>
+            <p className="text-[13px] leading-relaxed text-muted-foreground">Search by model or document name, or filter by product family. Brochures open in a new tab.</p>
+          </div>
+          <p className="mt-3 whitespace-nowrap text-xs text-muted-foreground md:mt-0" aria-live="polite">
+            {visible.length} product famil{visible.length === 1 ? "y" : "ies"} · {TOTAL_DOCS} documents
+          </p>
+        </div>
+
+        <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-3 px-5 pb-5 pt-3 sm:px-6 md:pb-6">
+          <label className="relative w-full md:max-w-[430px] md:flex-1">
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search probes or documents…"
+              aria-label="Search probes or documents"
+              className="h-[46px] w-full rounded-md border border-border bg-background pl-11 pr-4 text-[13px] text-foreground outline-none focus:border-secondary focus:ring-[3px] focus:ring-secondary/15"
+            />
+          </label>
+          <div className="flex w-full gap-1.5 overflow-x-auto p-0.5 md:w-auto" role="group" aria-label="Filter by product family">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                type="button"
+                aria-pressed={active === f}
+                onClick={() => setActive(f)}
+                className={`whitespace-nowrap rounded-full border px-3.5 py-2 text-[11px] font-bold transition-colors ${
+                  active === f ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background text-muted-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                }`}
+              >
+                {f === "All" ? "All probes" : f}
+              </button>
+            ))}
           </div>
         </div>
-        <p className="sr-only" aria-live="polite">{list.length} probe families shown</p>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {list.map((f) => {
-            const banner = f.banner && asset(f.banner);
-            return (
-              <article key={f.name} className="bg-card border border-border rounded-lg overflow-hidden flex flex-col shadow-sm">
-                {banner ? (
-                  <img src={banner} alt={`Micsig ${f.name} ${f.type.toLowerCase()} probe banner`} loading="lazy" className="w-full aspect-[16/9] object-cover bg-muted" />
-                ) : (
-                  <div className="w-full aspect-[16/9] bg-gradient-hero flex items-center justify-center text-primary-foreground text-2xl font-bold">{f.name}</div>
-                )}
-                <div className="p-5 flex flex-col flex-1">
-                  <span className="text-xs font-semibold uppercase text-secondary mb-1">{f.type} measurement</span>
-                  <h3 className="text-xl font-bold mb-2">{f.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{f.description}</p>
-                  <ul className="space-y-2 mb-5 flex-1">
-                    {f.docs.map((d) => {
-                      const url = asset(d.file);
-                      return (
-                        <li key={d.file}>
-                          {url ? (
-                            <a href={url} download target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary hover:underline">
-                              <Download className="w-4 h-4 shrink-0" aria-hidden /> {d.label} <span className="text-muted-foreground">(PDF)</span>
-                            </a>
-                          ) : (
-                            <span className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-4 h-4 shrink-0" aria-hidden /> {d.label} — coming soon</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <Button onClick={() => requestQuote(f.name)} className="w-full">Request Quote</Button>
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-3 px-5 pb-12 sm:grid-cols-2 sm:gap-[18px] sm:px-6 md:pb-[70px] lg:grid-cols-3">
+          {visible.map((p) => (
+            <article key={p.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all hover:-translate-y-1 hover:shadow-lg">
+              <div className="h-[185px] overflow-hidden bg-gradient-to-br from-muted to-secondary/10 sm:h-[190px]">
+                <img src={asset(p.hero)} alt={`Micsig ${p.name} probe`} loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="flex flex-1 flex-col px-5 pb-4 pt-5">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-secondary">Micsig probe family</p>
+                <h3 className="my-2 text-[19px] font-bold leading-tight tracking-tight text-card-foreground">{p.name}</h3>
+                <p className="mb-4 text-xs leading-relaxed text-muted-foreground">Product resources and available technical documents for the {p.name} family.</p>
+                <p className="mb-2 mt-auto border-t border-border pt-3.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
+                  Available documents · {p.docs.length}
+                </p>
+                <div className="grid gap-0.5">
+                  {p.docs.length ? (
+                    p.docs.map((d) => (
+                      <a key={d.file} href={asset(d.file)} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-2 border-b border-border/60 py-2 text-[11px] text-foreground/80 hover:text-secondary">
+                        <span className="truncate">{d.name}</span>
+                        <b className="inline-flex items-center gap-0.5 whitespace-nowrap text-[10px] text-secondary">OPEN <ArrowUpRight className="h-3 w-3" /></b>
+                      </a>
+                    ))
+                  ) : (
+                    <span className="py-2 text-[11px] text-muted-foreground">Documents available on request</span>
+                  )}
                 </div>
-              </article>
-            );
-          })}
+                <Link to={`/inquiry?product=${encodeURIComponent(`Micsig ${p.name}`)}`} className="pt-3 text-[11px] font-bold text-secondary hover:underline">
+                  Request a quote →
+                </Link>
+              </div>
+            </article>
+          ))}
+          {visible.length === 0 && (
+            <p className="col-span-full p-12 text-center text-muted-foreground">No probe families match your search. Try another term.</p>
+          )}
         </div>
-        {list.length === 0 && <p className="text-muted-foreground"><FileText className="inline w-4 h-4 mr-1" />No probe families match your search.</p>}
       </section>
 
-      <section className="bg-muted">
-        <div className="container mx-auto px-4 py-12 text-center">
-          <h2 className="text-2xl font-bold mb-2">Need help choosing a probe?</h2>
-          <p className="text-muted-foreground mb-6">Contact ViaNova Industrial Solutions for product guidance and availability.</p>
-          <Button asChild><Link to="/inquiry">Contact ViaNova</Link></Button>
+      {/* Support */}
+      <section id="support" className="border-y border-border bg-secondary/10">
+        <div className="mx-auto flex max-w-[1240px] flex-col items-start justify-between gap-6 px-5 py-7 sm:px-6 md:flex-row md:items-center md:py-9">
+          <div>
+            <h2 className="mb-1.5 text-[22px] font-bold tracking-tight text-foreground">Need help choosing a probe?</h2>
+            <p className="text-[13px] text-muted-foreground">Contact ViaNova for product guidance, availability, and technical assistance.</p>
+          </div>
+          <Link to="/inquiry?product=Micsig%20probes" className="whitespace-nowrap rounded-md bg-secondary px-[18px] py-3 text-[13px] font-bold text-secondary-foreground transition-transform hover:-translate-y-0.5">
+            Contact ViaNova
+          </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 
