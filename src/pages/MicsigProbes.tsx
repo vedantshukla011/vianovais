@@ -8,15 +8,10 @@ const PAGE = `${SITE}/micsig-probes`;
 const DESCRIPTION =
   "Explore Micsig probe families — DP differential, SigOFIT optical-fiber isolated, CP, CP2100, ACP and RCP current probes — and open brochures from ViaNova Industrial Solutions.";
 
-const pointers = import.meta.glob("@/assets/micsig-catalog/*.asset.json", { eager: true, import: "default" }) as Record<string, { url: string }>;
-// Preview serves assets relative; production uses the absolute host stored in the pointer.
 const images = import.meta.glob("@/assets/micsig-catalog/*.jpg", { eager: true, import: "default" }) as Record<string, string>;
 const image = (file: string) => images[Object.keys(images).find((k) => k.endsWith(`/${file}`)) ?? ""];
-const asset = (file: string): string => {
-  const key = Object.keys(pointers).find((k) => k.endsWith(`/${file}.asset.json`));
-  const url = key ? pointers[key].url : "";
-  return import.meta.env.DEV ? url.replace(/^https?:\/\/[^/]+/, "") : url;
-};
+// Serve bundled brochures from the current website in preview and production.
+const asset = (file: string): string => `/assets/documents/micsig/${encodeURIComponent(file)}`;
 
 type Category = "ACP" | "CP" | "DP" | "SigOFIT" | "RCP";
 type Product = { name: string; category: Category; hero: string; docs: { name: string; file: string }[] };
