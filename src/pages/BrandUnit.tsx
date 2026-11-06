@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 import { UNIT_OSCILLOSCOPES, type UnitOscilloscope } from "@/data/unitOscilloscopes";
 
-const SITE_URL = "https://vianovais.lovable.app";
+const SITE_URL = "https://vianovaindustrial.solutions";
 const PAGE_URL = `${SITE_URL}/brands/uni-t`;
 
 const formatPrice = (price: number) =>
