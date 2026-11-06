@@ -31,19 +31,23 @@ const Industry = () => {
   const kw = industryKeywords[industry.slug] ?? "industrial equipment supplier India, instrumentation company India, one stop solution for industrial instruments";
 
   const rawDescription = `${industry.tagline}. ${industry.intro}`;
-  const metaDescription =
-    rawDescription.length > 155
+  const pageTitle = industry.slug === "qa"
+    ? "Factory QA & Inspection Equipment Supplier India | ViaNova"
+    : `${industry.name} Solutions | ViaNova Industrial Solutions`;
+  const metaDescription = industry.slug === "qa"
+    ? "Source dimensional inspection tools, hardness and coating testers, calibration instruments and in-process inspection equipment for factory QA across India."
+    : rawDescription.length > 155
       ? `${rawDescription.slice(0, 152).replace(/[\s,.;:-]+$/, "")}...`
       : rawDescription;
 
   return (
     <div className="min-h-screen bg-background pt-20">
       <Helmet>
-        <title>{`${industry.name} Solutions | ViaNova Industrial Solutions`}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={kw} />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={`${industry.name} Solutions | ViaNova Industrial Solutions`} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
@@ -78,7 +82,7 @@ const Industry = () => {
               <span className="text-sm font-semibold uppercase tracking-wider">Industries We Serve</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-5">
-              {industry.name} — Test, Measurement &amp; Industrial Equipment Solutions
+              {industry.slug === "qa" ? "Factory QA, Inspection & Calibration Solutions" : `${industry.name} — Test, Measurement & Industrial Equipment Solutions`}
             </h1>
 
             <p className="text-xl md:text-2xl text-primary-foreground/85 mb-8">{industry.tagline}</p>

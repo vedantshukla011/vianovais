@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Align homepage, product, and QA search metadata with relevant Search Console queries; correct the FLIR sitemap URLs and prepare sitemap resubmission after publishing.
+- [x] Align homepage, product, and QA search metadata with relevant Search Console queries; correct the FLIR sitemap URLs.
+- [ ] Resubmit the updated sitemap after the changes are published.
 
 - [x] Give the homepage a stable business H1 and verify catalog images, keyboard controls, and accessible names.
 

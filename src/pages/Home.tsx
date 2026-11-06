@@ -88,13 +88,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Test Instruments & DC Power Supplies India | ViaNova</title>
-        <meta name="description" content="Buy test instruments and OWON MetroQ linear DC power supplies, including MTQ32051, MTQ32103, MTQ64103 and MTQ64106, with delivery across India." />
-        <meta name="keywords" content="test and measurement instruments India, OWON power supply India, OWON MetroQ, MTQ32051, MTQ32103, MTQ64103, MTQ64106, linear DC regulated power supply, 600W DC power supply, laboratory power supply, oscilloscope supplier India, digital multimeter dealer, ESD lab setup, interactive flat panel India" />
-        <link rel="canonical" href="https://vianovais.lovable.app/" />
-        <meta property="og:title" content="Test Instruments & OWON DC Power Supplies | ViaNova" />
-        <meta property="og:description" content="Explore OWON MetroQ 32V and 64V linear DC power supplies from 150W to 600W, plus test and measurement solutions across India." />
-        <meta property="og:url" content="https://vianovais.lovable.app/" />
+        <title>Measuring Instruments & Test Equipment Supplier India | ViaNova</title>
+        <meta name="description" content="ViaNova Industrial Solutions supplies precision measuring instruments and test equipment in India, including oscilloscopes, multimeters, DC power supplies, analyzers and thermal cameras." />
+        <link rel="canonical" href="https://vianovaindustrial.solutions/" />
+        <meta property="og:title" content="Measuring Instruments & Test Equipment Supplier India | ViaNova" />
+        <meta property="og:description" content="Precision measuring instruments and test equipment in India, including oscilloscopes, multimeters, DC power supplies, analyzers and thermal cameras." />
+        <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(owonPowerSupplySchema)}</script>
       </Helmet>

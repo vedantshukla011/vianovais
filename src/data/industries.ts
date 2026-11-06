@@ -117,9 +117,9 @@ export const INDUSTRIES: IndustryDetail[] = [
     slug: "qa",
     name: "QA",
     icon: ClipboardCheck,
-    tagline: "End-to-end quality assurance & inspection systems for any industry",
+    tagline: "Inspection and calibration equipment for factory quality assurance",
     intro:
-      "Our QA solutions help manufacturers and labs maintain consistency, traceability, and compliance — combining precision instruments with calibration and documentation support.",
+      "Support factory QA teams with dimensional inspection tools, hardness and coating testing, calibration support, and in-process fault detection for manufacturing and OEM production lines.",
     offerings: [
       { title: "Dimensional Inspection Tools", description: "Callipers, micrometers, CMM accessories, height gauges, and surface plates." },
       { title: "Hardness & Material Testing", description: "Rockwell, Brinell, Vickers hardness testers and tensile testing equipment." },
