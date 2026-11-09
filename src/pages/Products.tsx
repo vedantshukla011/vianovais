@@ -126,7 +126,7 @@ const Products = () => {
           <span className="inline-block px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
             Our Portfolio
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-5">Our Products</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-5">Measuring Instruments &amp; Test Equipment</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
             Precision measuring instruments, oscilloscopes, multimeters, analyzers, and industrial engineering solutions supplied across India.
           </p>

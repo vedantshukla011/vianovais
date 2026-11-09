@@ -30,7 +30,7 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "OWON MetroQ Linear DC Regulated Power Supplies",
-    url: "https://vianovais.lovable.app/buy-online?category=Power%20Supply",
+    url: "https://vianovaindustrial.solutions/buy-online?category=Power%20Supply",
     itemListElement: [
       { model: "MTQ32051", output: "32V, 5A, 150W" },
       { model: "MTQ32103", output: "32V, 10A, 300W" },
