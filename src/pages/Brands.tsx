@@ -189,11 +189,11 @@ const Brands = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Brands We Deal In | ViaNova Industrial Solutions</title>
-        <meta name="description" content="Explore measuring instruments from ViaNova brand partners: Keysight, Keithley, Tektronix, Fluke, FLIR, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
+        <title>Test &amp; Measurement Brands in India | ViaNova</title>
+        <meta name="description" content="Explore measuring instruments and test equipment from Keysight, Keithley, Tektronix, Fluke, FLIR, Micsig, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/brands" />
-        <meta property="og:title" content="Brands We Deal In | ViaNova Industrial Solutions" />
-        <meta property="og:description" content="Authorized distributor and solution partner for leading test & measurement brands in India." />
+        <meta property="og:title" content="Test &amp; Measurement Brands in India | ViaNova" />
+        <meta property="og:description" content="Explore measuring instruments and test equipment from Keysight, Keithley, Tektronix, Fluke, FLIR, Micsig, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/brands" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
@@ -220,7 +220,7 @@ const Brands = () => {
           <span className="inline-block px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
             Authorized Channel Partner
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-5">Brands We Deal In</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-5">Test &amp; Measurement Brands We Deal In</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
             ViaNova Industrial Solutions partners with the world&apos;s most trusted names in test, measurement, and precision instruments to deliver reliable solutions for your industry.
           </p>
