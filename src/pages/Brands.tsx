@@ -220,7 +220,7 @@ const Brands = () => {
           <span className="inline-block px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
             Authorized Channel Partner
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-5">Brands We Deal In</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-5">Test <h1 className="text-4xl md:text-6xl font-bold mb-5">Brands We Deal In</amp; Measurement Brands We Deal In</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
             ViaNova Industrial Solutions partners with the world&apos;s most trusted names in test, measurement, and precision instruments to deliver reliable solutions for your industry.
           </p>
