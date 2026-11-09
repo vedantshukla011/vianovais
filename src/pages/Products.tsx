@@ -110,10 +110,10 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Measuring Instruments & Test Equipment Supplier India | ViaNova</title>
+        <title>Measuring Instruments & Test Equipment Catalogue | ViaNova</title>
         <meta name="description" content="Source oscilloscopes, digital multimeters, spectrum analyzers, LCR meters, power supplies, thermal cameras and precision dimensional tools from ViaNova across India." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/products" />
-        <meta property="og:title" content="Measuring Instruments & Test Equipment Supplier India | ViaNova" />
+        <meta property="og:title" content="Measuring Instruments & Test Equipment Catalogue | ViaNova" />
         <meta property="og:description" content="Source oscilloscopes, digital multimeters, spectrum analyzers, LCR meters, power supplies, thermal cameras and precision dimensional tools from ViaNova across India." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/products" />
         <meta property="og:type" content="website" />
