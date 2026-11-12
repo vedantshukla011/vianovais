@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search, Calendar, Clock, BookOpen } from "lucide-react";
+import { ArrowRight, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search, Calendar, Clock, BookOpen } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "@/data/blogPosts";
@@ -9,21 +9,6 @@ import ClientsCarousel from "@/components/ClientsCarousel";
 import HeroCarousel from "@/components/HeroCarousel";
 
 import NewLaunches from "@/components/NewLaunches";
-import valveImage from "@/assets/product-valve.jpg";
-import steamImage from "@/assets/product-steam.jpg";
-import gasketsImage from "@/assets/product-gaskets.jpg";
-import ballImage from "@/assets/product-ball.jpg";
-import mechanicalToolsImage from "@/assets/product-mechanical-tools.jpg";
-import faultDevicesImage from "@/assets/product-fault-devices.jpg";
-import measuringInstrumentsImage from "@/assets/product-measuring-instruments.jpg";
-import esdLabImage from "@/assets/product-esd-lab.jpg";
-import dimensionalToolsImage from "@/assets/product-dimensional-tools.jpg";
-import scientificLabImage from "@/assets/product-scientific-lab.jpg";
-import analyticalBalancesImage from "@/assets/product-analytical-balances.jpg";
-import interactiveDisplaysImage from "@/assets/product-interactive-displays.jpg";
-import environmentalSensingImage from "@/assets/product-environmental-sensing.jpg";
-import industrialAutomationImage from "@/assets/product-industrial-automation.jpg";
-import industrialManagementImage from "@/assets/product-industrial-management.jpg";
 
 const Home = () => {
   const owonPowerSupplySchema = {
@@ -49,24 +34,6 @@ const Home = () => {
       },
     })),
   };
-
-  const products = [
-    { title: "Measuring Instruments", description: "Oscilloscopes, multimeters, power & spectrum analyzers, LCR meters and calibration instruments", image: measuringInstrumentsImage },
-    { title: "Industrial Automation", description: "RFID, PLC, SCADA, IoT sensors & smart automation solutions", image: industrialAutomationImage },
-    { title: "ESD Lab Solutions", description: "Customized ESD-safe tables, chairs, racks & lab furniture for your needs", image: esdLabImage },
-    { title: "Dimensional Measurement Tools", description: "Vernier callipers, micrometers, laser distance meters & more", image: dimensionalToolsImage },
-    { title: "Scientific Laboratory Equipments", description: "Beakers, flasks, centrifuges, microscopes & complete lab setups", image: scientificLabImage },
-    { title: "Analytical Balances", description: "High-precision digital weighing scales for laboratory & industrial use", image: analyticalBalancesImage },
-    { title: "Interactive Displays", description: "GenAI-powered interactive flat panels (65\"/75\"/86\") for smart classrooms & boardrooms", image: interactiveDisplaysImage },
-    { title: "Control & Safety Valves", description: "High-precision valves for critical industrial applications", image: valveImage },
-    { title: "Steam Traps & Systems", description: "Energy-efficient steam management solutions", image: steamImage },
-    { title: "Gaskets & Jointing", description: "Premium sealing solutions for all industries", image: gasketsImage },
-    { title: "Ball & Specialty Valves", description: "Durable valves for demanding environments", image: ballImage },
-    { title: "Mechanical Tools", description: "Professional-grade tools for industrial maintenance", image: mechanicalToolsImage },
-    { title: "Environmental Sensing Solutions", description: "Temperature, humidity, air quality & gas detection instruments", image: environmentalSensingImage },
-    { title: "Fault Recognition Devices", description: "Advanced diagnostic and monitoring equipment", image: faultDevicesImage },
-    { title: "Industrial Management Solutions", description: "Energy monitoring, asset management & workflow optimization systems", image: industrialManagementImage },
-  ];
 
   const features = [
     { icon: Shield, title: "Quality Assured", description: "ISO 9001 certified with compliance to ASTM, ASME, API, and BS international standards" },
@@ -137,55 +104,6 @@ const Home = () => {
 
       {/* New Launches */}
       <NewLaunches />
-
-      {/* Products Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">Test, Measurement & Interactive Display Solutions</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From oscilloscopes, multimeters and ESD lab setups to GenAI interactive flat panels — sourced, integrated and supported across India.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden border-none shadow-elegant hover:shadow-hover transition-all duration-500 group hover:-translate-y-2 bg-card"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <Link to={`/inquiry?product=${encodeURIComponent(product.title)}`}>
-                      <Button size="sm" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        Request Quote
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-                <CardContent className="pt-6 pb-6">
-                  <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-secondary transition-colors">{product.title}</h3>
-                  <p className="text-sm text-muted-foreground">{product.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-14">
-            <Link to="/products">
-              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold transition-all duration-300">
-                View All Products
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Buy Online CTA */}
       <section className="py-24 bg-background relative overflow-hidden">
