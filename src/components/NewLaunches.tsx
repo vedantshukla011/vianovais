@@ -280,6 +280,15 @@ const launches: Launch[] = [
   },
 ];
 
+const launchBrandLogos: Record<string, string> = {
+  FLIR: "/brand-logos/teledyne-flir.svg",
+  Micsig: "/brand-logos/micsig.webp",
+  "UNI-T": "/brand-logos/uni-t.svg",
+  Hantek: "/brand-logos/hantek.png",
+  Testo: "/brand-logos/testo.svg",
+  Weller: "/brand-logos/weller.svg",
+};
+
 
 const NewLaunches = () => {
   const { addItem, hasItem } = useQuoteCart();
@@ -299,7 +308,7 @@ const NewLaunches = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {launches.map((item) => {
+          {launches.map((item, index) => {
             const added = hasItem(item.title);
             return (
               <article
@@ -310,8 +319,17 @@ const NewLaunches = () => {
                   <img
                     src={item.image}
                     alt={`${item.title} — ${item.category}`}
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority={index < 3 ? "high" : "auto"}
+                    decoding="async"
                     className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
+                    onError={(event) => {
+                      const image = event.currentTarget;
+                      image.onerror = null;
+                      image.src = launchBrandLogos[item.brand] ?? "/placeholder.svg";
+                      image.alt = `${item.brand} logo for ${item.title}`;
+                      image.classList.add("object-contain", item.brand === "Hantek" ? "bg-slate-800" : "bg-white");
+                    }}
                   />
                   <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold shadow-md">
                     New
