@@ -20,12 +20,16 @@ export type LaunchDetail = {
   category: string;
   image: string;
   description: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
   ctaLabel?: string;
   highlights: string[];
   specs: { label: string; value: string }[];
   applications: string[];
   gallery?: { src: string; alt: string }[];
   documents?: { label: string; url: string; filename: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
 };
 
 export const launchDetails: LaunchDetail[] = [
@@ -480,6 +484,158 @@ export const launchDetails: LaunchDetail[] = [
       "Utility network switching operations",
       "Substation maintenance and commissioning",
       "Industrial MV distribution work",
+    ],
+  },
+  {
+    slug: "micsig-cp2100b",
+    title: "Micsig CP2100B Current Probe | 2.5 MHz, 100 A AC/DC",
+    shortTitle: "Micsig CP2100B AC/DC Current Probe",
+    brand: "Micsig",
+    model: "CP2100B",
+    category: "AC/DC Current Probes",
+    image: "/micsig-probes/cp2100b-main.png",
+    seoTitle: "Micsig CP2100B Current Probe | 2.5 MHz, 100 A | ViaNova",
+    seoDescription: "Buy or request a quote for the Micsig CP2100B AC/DC current probe from ViaNova, an authorized Micsig distributor. 2.5 MHz bandwidth, 10 A/100 A ranges, 13 mm jaw and BNC output.",
+    seoKeywords: ["Micsig CP2100B", "CP2100B current probe", "AC DC current probe", "100A current probe", "oscilloscope current probe", "Micsig authorized distributor India"],
+    description: "The Micsig CP2100B is a low-frequency AC/DC current probe for oscilloscope measurements in power electronics, automotive and industrial test. It combines DC to 2.5 MHz bandwidth with selectable 10 A and 100 A ranges, automatic or manual zeroing and a standard BNC output. The 100 A range is specified in peak current; check the manual for waveform and duty-cycle limits before use.",
+    ctaLabel: "Request CP2100B Quote",
+    gallery: [
+      { src: "/micsig-probes/cp2100b-main.png", alt: "Micsig CP2100B low-frequency AC/DC current probe" },
+      { src: "/micsig-probes/cp2100b-detail.png", alt: "Micsig CP2100B current probe jaw and measurement lead detail" },
+    ],
+    documents: [
+      { label: "CP2100 Series brochure", url: "/assets/documents/micsig/micsig-cp2100-series-brochure.pdf", filename: "Micsig-CP2100-Series-Brochure.pdf", description: "Micsig CP2100 series overview and technical information · PDF" },
+      { label: "CP2100 Series quick guide", url: "/assets/documents/micsig/micsig-cp2100-series-quick-guide.pdf", filename: "Micsig-CP2100-Series-Quick-Guide.pdf", description: "Operating and safety guidance for the CP2100 series · PDF" },
+    ],
+    highlights: [
+      "DC to 2.5 MHz bandwidth for low-frequency current waveform analysis",
+      "Selectable 10 A and 100 A peak measurement ranges",
+      "0.1 V/A sensitivity on 10 A range and 0.01 V/A on 100 A range",
+      "13 mm maximum conductor diameter with BNC oscilloscope output",
+      "Manual and automatic zero adjustment",
+      "CAT III 300 V / CAT II 600 V safety ratings",
+    ],
+    specs: [
+      { label: "Model", value: "CP2100B" },
+      { label: "Bandwidth", value: "DC to 2.5 MHz" },
+      { label: "Rise time", value: "≤ 140 ns" },
+      { label: "Current ranges", value: "10 A and 100 A" },
+      { label: "Measurement range", value: "10 A range: 50 mA–10 A peak; 100 A range: 1–100 A peak" },
+      { label: "Maximum current", value: "100 A peak (DC + AC peak); 200 A peak-to-peak (AC), subject to manual operating limits" },
+      { label: "Sensitivity", value: "10 A range: 0.1 V/A; 100 A range: 0.01 V/A" },
+      { label: "Maximum conductor diameter", value: "13 mm" },
+      { label: "Output / power", value: "BNC / 5 V DC" },
+      { label: "Safety rating", value: "CAT III 300 V; CAT II 600 V" },
+      { label: "Cable length / weight", value: "228 cm / 290 g" },
+    ],
+    applications: [
+      "Low-frequency AC and DC current measurement with compatible oscilloscopes",
+      "Switch-mode power supply, inverter and converter waveform checks",
+      "Automotive electrical and battery system diagnostics",
+      "Industrial equipment commissioning and troubleshooting",
+    ],
+    faqs: [
+      { question: "What is the bandwidth of the Micsig CP2100B?", answer: "The CP2100B has DC to 2.5 MHz bandwidth and a specified rise time of 140 ns or less." },
+      { question: "What current ranges does the CP2100B support?", answer: "It has 10 A and 100 A ranges. The 100 A rating is a peak measurement rating, not 100 A RMS continuous current; consult the Micsig manual for waveform and duty-cycle limits." },
+      { question: "How does the CP2100B connect to an oscilloscope?", answer: "It provides a BNC output and is powered by 5 V DC. Confirm your oscilloscope input and accessory requirements before connecting." },
+    ],
+  },
+  {
+    slug: "micsig-dp7002",
+    title: "Micsig DP7002 Differential Probe | 200 MHz, 7 kV",
+    shortTitle: "Micsig DP7002 High-Voltage Differential Probe",
+    brand: "Micsig",
+    model: "DP7002",
+    category: "High-Voltage Differential Probes",
+    image: "/micsig-probes/dp7000-series.png",
+    seoTitle: "Micsig DP7002 Differential Probe | 200 MHz, 7 kV | ViaNova",
+    seoDescription: "Explore the Micsig DP7002 differential oscilloscope probe from ViaNova, an authorized Micsig distributor. 200 MHz bandwidth, 100X/1000X attenuation and up to 7 kV differential voltage.",
+    seoKeywords: ["Micsig DP7002", "DP7002 differential probe", "200MHz differential probe", "7kV oscilloscope probe", "high voltage differential probe India"],
+    description: "The Micsig DP7002 is a 200 MHz high-voltage differential probe designed to measure floating signals with a compatible oscilloscope. Select 100X or 1000X attenuation for differential measurements up to 700 V or 7000 V respectively, within the probe's specified operating conditions. Its high input impedance, BNC output and overload indication support power electronics development, service and validation work.",
+    ctaLabel: "Request DP7002 Quote",
+    documents: [
+      { label: "DP Series brochure", url: "/assets/documents/micsig/micsig-dp-series-brochure-2026.pdf", filename: "Micsig-DP-Series-Brochure-2026.pdf", description: "Micsig DP series model overview and technical specifications · PDF" },
+      { label: "DP Series quick guide", url: "/assets/documents/micsig/micsig-dp-series-quick-guide-2026.pdf", filename: "Micsig-DP-Series-Quick-Guide-2026.pdf", description: "DP series operating and safety information · PDF" },
+    ],
+    highlights: [
+      "200 MHz bandwidth for high-speed switching waveform analysis",
+      "100X and 1000X attenuation ranges",
+      "Maximum differential voltage up to 7000 V at 1000X range; 700 V at 100X range",
+      "High differential input impedance of 120 MΩ / 0.78 pF",
+      "Overload LED and audible alarm with standard BNC output",
+      "12.5 ns typical delay on both attenuation ranges",
+    ],
+    specs: [
+      { label: "Model", value: "DP7002" },
+      { label: "Bandwidth", value: "200 MHz" },
+      { label: "Attenuation", value: "100X / 1000X" },
+      { label: "Maximum differential voltage", value: "700 V at 100X; 7000 V at 1000X" },
+      { label: "Typical accuracy", value: "±2%" },
+      { label: "Differential input impedance", value: "120 MΩ / 0.78 pF" },
+      { label: "Input-to-ground impedance", value: "60 MΩ / 1.57 pF per input" },
+      { label: "Typical delay", value: "12.5 ns" },
+      { label: "Output / power", value: "BNC, 1 MΩ output impedance / 5 V DC" },
+      { label: "Overload indication", value: "LED and audible alarm" },
+    ],
+    applications: [
+      "High-side and floating voltage measurement in power converters",
+      "Switching device and gate-drive waveform analysis",
+      "Inverter, motor drive and UPS development and maintenance",
+      "Power semiconductor and high-voltage laboratory testing",
+    ],
+    faqs: [
+      { question: "What is the bandwidth of the Micsig DP7002?", answer: "The DP7002 provides 200 MHz bandwidth." },
+      { question: "What voltage can the DP7002 measure?", answer: "The product specifications list up to 700 V differential at 100X and 7000 V at 1000X. Use the correct attenuation range and follow the full safety limits and derating conditions in the Micsig documentation." },
+      { question: "Is the DP7002 the same as the DP7000?", answer: "They are separate models in the DP7000 series: DP7002 has 200 MHz bandwidth, while DP7000 has 100 MHz bandwidth. Both use 100X/1000X attenuation." },
+    ],
+  },
+  {
+    slug: "micsig-dp7000",
+    title: "Micsig DP7000 Differential Probe | 100 MHz, 7 kV",
+    shortTitle: "Micsig DP7000 High-Voltage Differential Probe",
+    brand: "Micsig",
+    model: "DP7000",
+    category: "High-Voltage Differential Probes",
+    image: "/micsig-probes/dp7000-series.png",
+    seoTitle: "Micsig DP7000 Differential Probe | 100 MHz, 7 kV | ViaNova",
+    seoDescription: "Request a quote for the Micsig DP7000 differential oscilloscope probe from ViaNova, an authorized Micsig distributor. 100 MHz bandwidth, 100X/1000X attenuation and up to 7 kV differential voltage.",
+    seoKeywords: ["Micsig DP7000", "DP7000 differential probe", "100MHz differential probe", "7kV oscilloscope probe", "high voltage differential probe India"],
+    description: "The Micsig DP7000 is a 100 MHz high-voltage differential probe for floating voltage measurements using a compatible oscilloscope. Its 100X and 1000X attenuation ranges cover differential voltages up to 700 V and 7000 V respectively, within the limits and conditions stated by Micsig. A high-impedance input, BNC output and overload alert make it suitable for power conversion, inverter and industrial test applications.",
+    ctaLabel: "Request DP7000 Quote",
+    documents: [
+      { label: "DP Series brochure", url: "/assets/documents/micsig/micsig-dp-series-brochure-2026.pdf", filename: "Micsig-DP-Series-Brochure-2026.pdf", description: "Micsig DP series model overview and technical specifications · PDF" },
+      { label: "DP Series quick guide", url: "/assets/documents/micsig/micsig-dp-series-quick-guide-2026.pdf", filename: "Micsig-DP-Series-Quick-Guide-2026.pdf", description: "DP series operating and safety information · PDF" },
+    ],
+    highlights: [
+      "100 MHz bandwidth for high-voltage switching waveform analysis",
+      "100X and 1000X attenuation ranges",
+      "Maximum differential voltage up to 7000 V at 1000X range; 700 V at 100X range",
+      "High differential input impedance of 120 MΩ / 0.78 pF",
+      "Overload LED and audible alarm with standard BNC output",
+      "12.5 ns typical delay on both attenuation ranges",
+    ],
+    specs: [
+      { label: "Model", value: "DP7000" },
+      { label: "Bandwidth", value: "100 MHz" },
+      { label: "Attenuation", value: "100X / 1000X" },
+      { label: "Maximum differential voltage", value: "700 V at 100X; 7000 V at 1000X" },
+      { label: "Typical accuracy", value: "±2%" },
+      { label: "Differential input impedance", value: "120 MΩ / 0.78 pF" },
+      { label: "Input-to-ground impedance", value: "60 MΩ / 1.57 pF per input" },
+      { label: "Typical delay", value: "12.5 ns" },
+      { label: "Output / power", value: "BNC, 1 MΩ output impedance / 5 V DC" },
+      { label: "Overload indication", value: "LED and audible alarm" },
+    ],
+    applications: [
+      "High-side and floating voltage measurement in power converters",
+      "Switching device and gate-drive waveform analysis",
+      "Inverter, motor drive and UPS maintenance and troubleshooting",
+      "Industrial power electronics validation and laboratory testing",
+    ],
+    faqs: [
+      { question: "What is the bandwidth of the Micsig DP7000?", answer: "The DP7000 provides 100 MHz bandwidth." },
+      { question: "What voltage can the DP7000 measure?", answer: "The product specifications list up to 700 V differential at 100X and 7000 V at 1000X. Follow Micsig's safety limits and frequency-dependent derating conditions." },
+      { question: "How does the DP7000 compare with the DP7002?", answer: "The DP7000 is the 100 MHz model and the DP7002 is the 200 MHz model. The attenuation ranges and listed maximum differential voltage are shared across these models." },
     ],
   },
 ];

@@ -25,6 +25,36 @@ type Launch = {
 
 const launches: Launch[] = [
   {
+    title: "Micsig CP2100B AC/DC Current Probe (2.5 MHz, 100 A)",
+    brand: "Micsig",
+    model: "CP2100B",
+    category: "AC/DC Current Probes",
+    image: "/micsig-probes/cp2100b-main.png",
+    description: "Low-frequency oscilloscope current probe with DC–2.5 MHz bandwidth, selectable 10 A / 100 A peak ranges, BNC output and 13 mm jaw opening.",
+    specs: ["DC to 2.5 MHz bandwidth", "10 A / 100 A peak ranges", "0.1 V/A or 0.01 V/A sensitivity", "13 mm conductor diameter, BNC output"],
+    href: "/products/micsig-cp2100b",
+  },
+  {
+    title: "Micsig DP7002 Differential Probe (200 MHz, 7 kV)",
+    brand: "Micsig",
+    model: "DP7002",
+    category: "High-Voltage Differential Probes",
+    image: "/micsig-probes/dp7000-series.png",
+    description: "200 MHz high-voltage differential probe with 100X / 1000X attenuation, up to 7 kV differential range and overload warning.",
+    specs: ["200 MHz bandwidth", "100X / 1000X attenuation", "700 V / 7000 V maximum differential range", "120 MΩ / 0.78 pF differential input"],
+    href: "/products/micsig-dp7002",
+  },
+  {
+    title: "Micsig DP7000 Differential Probe (100 MHz, 7 kV)",
+    brand: "Micsig",
+    model: "DP7000",
+    category: "High-Voltage Differential Probes",
+    image: "/micsig-probes/dp7000-series.png",
+    description: "100 MHz high-voltage differential probe with 100X / 1000X attenuation, up to 7 kV differential range and overload warning.",
+    specs: ["100 MHz bandwidth", "100X / 1000X attenuation", "700 V / 7000 V maximum differential range", "120 MΩ / 0.78 pF differential input"],
+    href: "/products/micsig-dp7000",
+  },
+  {
     title: "FLIR E52 Advanced Thermal Imaging Camera (240 × 180 IR)",
     brand: "FLIR",
     model: "E52",

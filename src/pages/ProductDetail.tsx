@@ -15,39 +15,64 @@ const ProductDetail = () => {
 
   const canonical = `${SITE}/products/${product.slug}`;
   const inquiryLink = `/inquiry?product=${encodeURIComponent(product.shortTitle)}`;
-  const metaDescription = product.description.slice(0, 155);
+  const metaDescription = product.seoDescription ?? product.description.slice(0, 155);
+  const pageTitle = product.seoTitle ?? `${product.shortTitle} | ViaNova Industrial Solutions`;
+  const imageUrl = product.image.startsWith("http") ? product.image : `${SITE}${product.image}`;
 
   const productJsonLd = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.title,
-    image: product.image ? [product.image] : undefined,
+    image: product.image ? [imageUrl] : undefined,
     description: product.description,
     brand: { "@type": "Brand", name: product.brand },
     sku: product.model,
     mpn: product.model,
     category: product.category,
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
-      url: canonical,
-      seller: { "@type": "Organization", name: "ViaNova Industrial Solutions" },
-    },
+    additionalProperty: product.specs.map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.label,
+      value: spec.value,
+    })),
   };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${SITE}/products` },
+      { "@type": "ListItem", position: 3, name: product.shortTitle, item: canonical },
+    ],
+  };
+  const faqJsonLd = product.faqs?.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: product.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  } : undefined;
 
   return (
     <main className="pt-20">
       <Helmet>
-        <title>{`${product.shortTitle} | ViaNova Industrial Solutions`}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
+        {product.seoKeywords?.length ? <meta name="keywords" content={product.seoKeywords.join(", ")} /> : null}
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={`${product.shortTitle} | ViaNova`} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={imageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={imageUrl} />
         <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+        {faqJsonLd ? <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script> : null}
       </Helmet>
 
       {/* Hero */}
@@ -93,6 +118,20 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {product.faqs?.length ? (
+        <section className="container mx-auto px-4 py-14" aria-labelledby="product-faqs">
+          <h2 id="product-faqs" className="text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {product.faqs.map((faq) => (
+              <article key={faq.question} className="rounded-xl border border-border bg-card p-5">
+                <h3 className="font-semibold text-foreground">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {product.documents && (
         <section className="container mx-auto px-4 py-14" aria-labelledby="product-downloads">
