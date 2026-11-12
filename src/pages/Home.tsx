@@ -1,217 +1,484 @@
 import { Helmet } from "react-helmet-async";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Factory, Shield, Zap, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, Calendar, Clock, BookOpen } from "lucide-react";
-
 import { Link } from "react-router-dom";
-import { BLOG_POSTS } from "@/data/blogPosts";
+import {
+  Activity,
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Calendar,
+  CheckCircle2,
+  Clock,
+  FlaskConical,
+  Gauge,
+  Ruler,
+  ShieldCheck,
+  Sparkles,
+  Truck,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ClientsCarousel from "@/components/ClientsCarousel";
-import HeroCarousel from "@/components/HeroCarousel";
-
 import NewLaunches from "@/components/NewLaunches";
+import { BLOG_POSTS } from "@/data/blogPosts";
+import { INDUSTRIES } from "@/data/industries";
+import heroMeasurementImage from "@/assets/hero-test-measurement.jpg";
+import measurementImage from "@/assets/product-measuring-instruments.jpg";
+import thermalImage from "@/assets/product-environmental-sensing.jpg";
+import precisionImage from "@/assets/product-dimensional-tools.jpg";
+import labImage from "@/assets/product-scientific-lab.jpg";
+import esdImage from "@/assets/product-esd-lab.jpg";
+import displayImage from "@/assets/product-interactive-displays.jpg";
+
+const solutions = [
+  {
+    eyebrow: "Test & measurement",
+    title: "Oscilloscopes & electrical test",
+    description: "Find the right oscilloscope, multimeter, power supply, analyzer or diagnostic instrument for your bench or production line.",
+    image: measurementImage,
+    imageAlt: "Test and measurement instruments for electronics and industrial applications",
+    href: "/products?category=Testing%20%26%20Diagnostic",
+    icon: Activity,
+  },
+  {
+    eyebrow: "Inspection & maintenance",
+    title: "Thermal imaging",
+    description: "Thermal cameras and environmental instruments for electrical inspection, preventive maintenance and facility monitoring.",
+    image: thermalImage,
+    imageAlt: "Environmental sensing and thermal inspection equipment",
+    href: "/products?category=Testing%20%26%20Diagnostic&subcategory=Thermal%20Imager",
+    icon: Gauge,
+  },
+  {
+    eyebrow: "Metrology",
+    title: "Precision measuring tools",
+    description: "Dimensional measurement tools that help quality, production and R&D teams work with confidence.",
+    image: precisionImage,
+    imageAlt: "Precision dimensional measuring tools for quality and production teams",
+    href: "/products?category=Precision%20Measuring",
+    icon: Ruler,
+  },
+  {
+    eyebrow: "Research & quality",
+    title: "Scientific laboratory equipment",
+    description: "Laboratory instruments and essentials for research, education, testing and quality-control environments.",
+    image: labImage,
+    imageAlt: "Scientific laboratory instruments and equipment",
+    href: "/products?category=Scientific%20Laboratory%20Equipments",
+    icon: FlaskConical,
+  },
+  {
+    eyebrow: "Electronics workspaces",
+    title: "ESD & soldering solutions",
+    description: "Build safer electronics work areas with ESD products, soldering equipment and practical lab setup support.",
+    image: esdImage,
+    imageAlt: "ESD-safe electronics lab and workstation solutions",
+    href: "/products?category=Soldering&subcategory=ESD%20Supplies",
+    icon: ShieldCheck,
+  },
+  {
+    eyebrow: "Learning & collaboration",
+    title: "Interactive displays",
+    description: "Interactive flat panels and digital whiteboards for modern classrooms, training spaces and boardrooms.",
+    image: displayImage,
+    imageAlt: "Interactive display for modern classrooms and boardrooms",
+    href: "/products?category=Interactive%20Displays",
+    icon: Sparkles,
+  },
+];
+
+const reasons = [
+  {
+    icon: CheckCircle2,
+    title: "Guidance around your application",
+    description: "Tell us what you need to measure, inspect or build. We help you navigate the options and identify a suitable solution.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "A portfolio built on trusted brands",
+    description: "Explore test equipment, instruments and engineering products from established international and Indian manufacturers.",
+  },
+  {
+    icon: Truck,
+    title: "Supply and support across India",
+    description: "From a single instrument to a larger project requirement, our team helps coordinate sourcing, quotations and delivery.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What test and measurement instruments does ViaNova supply?",
+    answer: "ViaNova supplies oscilloscopes, digital multimeters, DC power supplies, power and spectrum analyzers, thermal imagers, precision measuring tools, ESD products and scientific laboratory equipment. Availability depends on the brand and model.",
+  },
+  {
+    question: "Can ViaNova help us choose equipment for a specific application?",
+    answer: "Yes. Share your application, required specifications and preferred models through the inquiry form. The ViaNova team can help you review suitable options and request a quotation.",
+  },
+  {
+    question: "Does ViaNova deliver test equipment across India?",
+    answer: "ViaNova supports business requirements across India, with pan-India delivery and GST invoicing for supplied equipment.",
+  },
+];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Test, Measurement and Laboratory Solutions from ViaNova",
+  itemListElement: solutions.map((solution, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: solution.title,
+    url: "https://vianovaindustrial.solutions" + solution.href,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 const Home = () => {
-  const owonPowerSupplySchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "OWON MetroQ Linear DC Regulated Power Supplies",
-    url: "https://vianovaindustrial.solutions/buy-online?category=Power%20Supply",
-    itemListElement: [
-      { model: "MTQ32051", output: "32V, 5A, 150W" },
-      { model: "MTQ32103", output: "32V, 10A, 300W" },
-      { model: "MTQ64103", output: "64V, 10A, 300W" },
-      { model: "MTQ64106", output: "64V, 10A, 600W" },
-    ].map((product, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Product",
-        name: `OWON MetroQ ${product.model} Linear DC Regulated Power Supply`,
-        model: product.model,
-        description: `${product.output} wide-range linear DC regulated power supply with 10mV/1mA adjustment, CC/CV switching and OVP/OCP/OTP protection.`,
-        brand: { "@type": "Brand", name: "OWON" },
-        category: "Laboratory DC Power Supply",
-      },
-    })),
-  };
-
-  const features = [
-    { icon: Shield, title: "Quality Assured", description: "ISO 9001 certified with compliance to ASTM, ASME, API, and BS international standards" },
-    { icon: Factory, title: "15+ Industries", description: "Serving chemical, petrochemical, pharmaceutical, and more" },
-    { icon: Zap, title: "25+ Years", description: "Decades of expertise in industrial engineering solutions" },
-  ];
-
-  const industries = [
-    { name: "Manufacturing", icon: Factory },
-    { name: "Automobile", icon: CarFront },
-    { name: "R&D", icon: FlaskConical },
-    { name: "Education", icon: GraduationCap },
-    { name: "Pharmaceuticals", icon: Pill },
-    { name: "Medical", icon: Stethoscope },
-    { name: "QA", icon: ClipboardCheck },
-    { name: "Automation", icon: Bot },
-  ];
+  const latestPosts = BLOG_POSTS.slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <Helmet>
-        <title>Measuring Instruments & Test Equipment Supplier India | ViaNova</title>
-        <meta name="description" content="ViaNova Industrial Solutions supplies precision measuring instruments and test equipment in India, including oscilloscopes, multimeters, DC power supplies, analyzers and thermal cameras." />
+        <title>Test &amp; Measurement Instruments Supplier India | ViaNova</title>
+        <meta
+          name="description"
+          content="Source oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and lab equipment from ViaNova Industrial Solutions, serving businesses across India."
+        />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Measuring Instruments & Test Equipment Supplier India | ViaNova" />
-        <meta property="og:description" content="Precision measuring instruments and test equipment in India, including oscilloscopes, multimeters, DC power supplies, analyzers and thermal cameras." />
+        <meta property="og:title" content="Test &amp; Measurement Instruments Supplier India | ViaNova" />
+        <meta
+          property="og:description"
+          content="Explore oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and laboratory equipment from ViaNova Industrial Solutions."
+        />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(owonPowerSupplySchema)}</script>
+        <meta property="og:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
+        <meta property="og:image:alt" content="Test and measurement instruments in an electronics laboratory" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Test &amp; Measurement Instruments Supplier India | ViaNova" />
+        <meta
+          name="twitter:description"
+          content="Oscilloscopes, multimeters, thermal cameras, power supplies, precision tools and lab equipment—sourced with support across India."
+        />
+        <meta name="twitter:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
+        <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-      {/* Hero Section */}
-      <header className="bg-primary-dark text-primary-foreground pt-24 pb-6">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl md:text-3xl font-bold leading-tight">ViaNova Industrial Solutions — Precision Measuring Instruments, Test &amp; Industrial Equipment in India</h1>
-        </div>
-      </header>
-      <HeroCarousel />
 
+      <main>
+        <section className="relative isolate overflow-hidden bg-primary-dark text-primary-foreground">
+          <img
+            src={heroMeasurementImage}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/90 to-primary-dark/45" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_25%,hsl(var(--secondary)/0.3),transparent_48%)]" />
 
-
-      {/* Features Section */}
-      <section className="py-24 bg-background relative" aria-labelledby="why-choose-vianova">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative">
-          <h2 id="why-choose-vianova" className="sr-only">Why choose ViaNova Industrial Solutions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="border-none shadow-elegant hover:shadow-hover transition-all duration-500 hover:-translate-y-2 bg-card group overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="pt-8 pb-8 relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" />
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center mb-5 shadow-glow">
-                      <feature.icon className="w-8 h-8 text-secondary-foreground" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 text-foreground">{feature.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* New Launches */}
-      <NewLaunches />
-
-      {/* Clients Carousel */}
-      <ClientsCarousel />
-
-      {/* Industries Section */}
-      <section className="py-24 bg-gradient-hero text-primary-foreground relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-14">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Sectors We Serve</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Industries We Serve</h2>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-              Trusted by leading companies across diverse industrial sectors
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            {industries.map((industry, index) => (
-              <Link
-                key={index}
-                to={`/industries/${industry.name.toLowerCase().replace("&", "").replace(/\s+/g, "")}`}
-                className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-6 text-center hover:bg-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 group"
-              >
-                <industry.icon className="w-10 h-10 mx-auto mb-3 text-accent group-hover:scale-110 transition-transform" />
-                <p className="font-semibold">{industry.name}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Latest from the Blog */}
-      <section className="py-24 bg-muted/50" aria-labelledby="latest-blog">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 text-secondary font-semibold text-sm uppercase tracking-wider">
-              <BookOpen className="w-4 h-4" /> Insights & Articles
-            </span>
-            <h2 id="latest-blog" className="text-4xl md:text-5xl font-bold mt-3 mb-5 text-foreground">
-              Latest from the ViaNova Blog
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Practical guides on precision measurement, power electronics testing and industrial automation.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="group bg-card border border-border rounded-2xl p-6 shadow-elegant hover:shadow-hover transition-all duration-300 hover:-translate-y-1 flex flex-col"
-              >
-                <span className="inline-block self-start px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
-                  {post.category}
-                </span>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-1">{post.excerpt}</p>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                  <span className="inline-flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" /> {post.date}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" /> {post.readTime}
-                  </span>
-                </div>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  Read article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/blog">
-              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold">
-                View All Articles
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-br from-secondary via-secondary to-secondary-light text-secondary-foreground border-none shadow-2xl overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <CardContent className="p-14 text-center relative">
-              <h2 className="text-3xl md:text-5xl font-bold mb-5">
-                Ready to Enhance Your Industrial Operations?
-              </h2>
-              <p className="text-lg mb-10 text-secondary-foreground/90 max-w-2xl mx-auto">
-                Partner with ViaNova Industrial Solutions for reliable, efficient, and sustainable industrial solutions
+          <div className="container relative mx-auto px-4 pb-12 pt-32 sm:pb-16 sm:pt-36 lg:pb-20 lg:pt-44">
+            <div className="max-w-4xl">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/90 sm:text-sm">
+                <span className="h-2 w-2 rounded-full bg-accent" />
+                Your engineering supply partner in India
+              </div>
+              <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Test &amp; measurement instruments
+                <span className="mt-2 block text-accent">for industry across India.</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg md:text-xl">
+                ViaNova Industrial Solutions helps businesses source oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and laboratory equipment—with practical guidance and delivery across India.
               </p>
-              <Link to="/inquiry">
-                <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-10 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                  Get Your Custom Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button
+                  asChild
+                  size="lg"
+                  className="min-h-12 bg-accent px-6 text-base font-semibold text-accent-foreground shadow-lg transition-all hover:bg-accent-light hover:shadow-xl"
+                >
+                  <Link to="/inquiry">
+                    Discuss your requirement
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="min-h-12 border-primary-foreground/40 bg-primary-foreground/10 px-6 text-base font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground hover:text-primary"
+                >
+                  <a href="#solutions">Explore our solutions</a>
+                </Button>
+              </div>
+            </div>
+
+            <div className="mt-12 grid max-w-4xl grid-cols-1 gap-4 border-t border-primary-foreground/20 pt-6 sm:grid-cols-3 sm:gap-8">
+              <div>
+                <p className="text-3xl font-bold text-primary-foreground">25<span className="text-accent">+</span></p>
+                <p className="mt-1 text-sm text-primary-foreground/70">years of industrial experience</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-primary-foreground">15<span className="text-accent">+</span></p>
+                <p className="mt-1 text-sm text-primary-foreground/70">industries served</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-primary-foreground">Pan-India</p>
+                <p className="mt-1 text-sm text-primary-foreground/70">supply and delivery support</p>
+              </div>
+            </div>
+
+            <div className="absolute bottom-12 right-4 hidden max-w-xs rounded-2xl border border-white/20 bg-primary-dark/70 p-5 shadow-2xl backdrop-blur-md xl:block">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-white">The right instrument starts with the right conversation.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">Share your application. We’ll help you move from shortlist to quotation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solutions" className="bg-background py-20 sm:py-24 lg:py-28" aria-labelledby="solutions-title">
+          <div className="container mx-auto px-4">
+            <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">Find the right fit</p>
+                <h2 id="solutions-title" className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                  Equipment for every stage of your work
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  Browse key ViaNova categories, from electronics test instruments to precision metrology and laboratory equipment.
+                </p>
+              </div>
+              <Link to="/products" className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-secondary">
+                Browse all categories <ArrowUpRight className="h-4 w-4" />
               </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {solutions.map((solution) => (
+                <Link
+                  key={solution.title}
+                  to={solution.href}
+                  className="group overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    <img
+                      src={solution.image}
+                      alt={solution.imageAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/65 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-white/25 bg-primary-dark/70 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+                      <solution.icon className="h-4 w-4 text-accent" />
+                      {solution.eyebrow}
+                    </div>
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-secondary">{solution.title}</h3>
+                      <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-secondary" />
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{solution.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-muted/45 py-20 sm:py-24" aria-labelledby="why-vianova-title">
+          <div className="container mx-auto grid items-center gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">More than a catalogue</p>
+              <h2 id="why-vianova-title" className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                A dependable partner for better decisions
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Selecting equipment is easier when you can talk through the application, compare options and get a clear quotation. ViaNova brings product sourcing and engineering context together for teams across India.
+              </p>
+              <Button asChild size="lg" className="mt-7 min-h-12 bg-primary px-6 text-base font-semibold text-primary-foreground transition-all hover:bg-primary-light">
+                <Link to="/about">
+                  Get to know ViaNova <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {reasons.map((reason, index) => (
+                <article
+                  key={reason.title}
+                  className={index === 0 ? "rounded-2xl border border-border/70 bg-card p-6 shadow-sm sm:col-span-2" : "rounded-2xl border border-border/70 bg-card p-6 shadow-sm"}
+                >
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+                    <reason.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">{reason.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-background py-16 sm:py-20" aria-label="New product launches">
+          <NewLaunches />
+        </section>
+
+        <ClientsCarousel />
+
+        <section className="relative overflow-hidden bg-primary-dark py-20 text-primary-foreground sm:py-24" aria-labelledby="industries-title">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,hsl(var(--secondary)/0.35),transparent_45%)]" />
+          <div className="container relative mx-auto px-4">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">Built for your sector</p>
+              <h2 id="industries-title" className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                Industry solutions with the details in mind
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
+                From manufacturing and automotive to research and education, explore equipment and solutions for the environments you work in.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {INDUSTRIES.map((industry) => {
+                const Icon = industry.icon;
+                return (
+                  <Link
+                    key={industry.slug}
+                    to={"/industries/" + industry.slug}
+                    className="group rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-4 text-center transition-all hover:-translate-y-1 hover:border-accent/60 hover:bg-primary-foreground/10 sm:p-6"
+                  >
+                    <Icon className="mx-auto h-8 w-8 text-accent transition-transform group-hover:scale-110 sm:h-9 sm:w-9" />
+                    <h3 className="mt-3 text-sm font-semibold text-primary-foreground sm:text-base">{industry.name}</h3>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="mt-10 text-center">
+              <Link to="/industries/manufacturing" className="inline-flex items-center gap-2 font-semibold text-accent transition-colors hover:text-primary-foreground">
+                Explore sector solutions <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-muted/40 py-20 sm:py-24" aria-labelledby="insights-title">
+          <div className="container mx-auto px-4">
+            <div className="mb-10 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">Knowledge for engineers</p>
+                <h2 id="insights-title" className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                  Practical insights for better testing
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  Explore guides on oscilloscopes, power electronics, thermal imaging and industrial measurement.
+                </p>
+              </div>
+              <Link to="/blog" className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-secondary">
+                Visit the ViaNova blog <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  to={"/blog/" + post.slug}
+                  className="group flex min-h-64 flex-col rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-elegant sm:p-7"
+                >
+                  <span className="inline-flex items-center gap-2 self-start rounded-full bg-secondary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-secondary">
+                    <BookOpen className="h-3.5 w-3.5" /> {post.category}
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-secondary">{post.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
+                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5" /> {post.date}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5" /> {post.readTime}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-background py-20 sm:py-24" aria-labelledby="faq-title">
+          <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">A few useful answers</p>
+              <h2 id="faq-title" className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Frequently asked questions
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Need help with a specific make, model or application? Send us the details and our team will get back to you.
+              </p>
+              <Link to="/inquiry" className="mt-5 inline-flex items-center gap-2 font-semibold text-primary hover:text-secondary">
+                Contact ViaNova <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="divide-y divide-border border-y border-border">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group py-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-base font-semibold text-foreground marker:hidden sm:text-lg">
+                    {faq.question}
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-secondary transition-transform group-open:rotate-45">
+                      <span className="text-xl leading-none">+</span>
+                    </span>
+                  </summary>
+                  <p className="max-w-3xl pr-12 pt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 pb-20 sm:pb-24">
+          <div className="container relative mx-auto overflow-hidden rounded-[2rem] bg-gradient-hero px-6 py-12 text-center text-primary-foreground shadow-elegant sm:px-12 sm:py-16 lg:py-20">
+            <div className="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
+            <div className="absolute -bottom-28 -left-12 h-64 w-64 rounded-full bg-secondary-light/30 blur-3xl" />
+            <div className="relative mx-auto max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">Start with your requirement</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                Let’s find the right solution for your team.
+              </h2>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
+                Tell us your application, specifications or preferred models. ViaNova will help you take the next step with a clear, tailored quotation.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="mt-8 min-h-12 bg-accent px-7 text-base font-semibold text-accent-foreground shadow-lg transition-all hover:bg-accent-light hover:shadow-xl"
+              >
+                <Link to="/inquiry">
+                  Request a tailored quotation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
