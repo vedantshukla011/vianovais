@@ -4,143 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Award, Headphones } from "lucide-react";
-import flirLogo from "@/assets/flir-logo.png.asset.json";
-import micsigLogo from "@/assets/micsig-logo.webp";
-
-// Relative asset URLs work both in the local preview and on the hosted site
-// (the /__l5e/assets-v1/* rewrite forwards to the CDN).
-const assetUrl = (p: { url: string }) => p.url.replace(/^https:\/\/vianovais\.lovable\.app/, "");
-
-interface Brand {
-  name: string;
-  initials: string;
-  domain: string;
-  description: string;
-  category: string;
-  accentColor: string;
-  href?: string;
-  logo?: string;
-  authorized?: boolean;
-}
-
-const brands: Brand[] = [
-  {
-    name: "Keysight Technologies",
-    initials: "KT",
-    domain: "keysight.com",
-    description: "Premium electronic test & measurement solutions including oscilloscopes, network analyzers, and RF instruments for R&D and manufacturing.",
-    category: "Test & Measurement",
-    accentColor: "bg-primary/10 text-primary",
-  },
-  {
-    name: "Keithley",
-    initials: "KE",
-    domain: "tek.com",
-    description: "Precision DC instruments, source measure units (SMUs), and low-level measurement solutions for research and characterization.",
-    category: "Precision Instruments",
-    accentColor: "bg-secondary/10 text-secondary",
-  },
-  {
-    name: "Tektronix",
-    initials: "TX",
-    domain: "tektronix.com",
-    description: "Industry-leading oscilloscopes, probes, and test equipment trusted by engineers worldwide for signal analysis and debugging.",
-    category: "Oscilloscopes",
-    accentColor: "bg-accent/10 text-accent-foreground",
-  },
-  {
-    name: "Fluke",
-    initials: "FL",
-    domain: "fluke.com",
-    description: "Rugged industrial test & measurement tools including digital multimeters, thermal imagers, and calibration equipment.",
-    category: "Industrial Tools",
-    accentColor: "bg-primary/10 text-primary",
-  },
-  {
-    name: "Teledyne FLIR",
-    initials: "FLIR",
-    domain: "flir.com",
-    description: "Measuring instruments and thermal imaging cameras for electrical inspections, mechanical condition monitoring and building diagnostics.",
-    category: "Thermal Imaging",
-    accentColor: "bg-secondary/10 text-secondary",
-    href: "/brands/flir",
-    logo: assetUrl(flirLogo),
-    authorized: true,
-  },
-  {
-    name: "MICSIG",
-    initials: "MS",
-    domain: "micsig.com",
-    description: "Authorized distributor of Micsig oscilloscope probes: differential, optical-fiber isolated, current and Rogowski probes with downloadable documentation.",
-    category: "Oscilloscope Probes",
-    accentColor: "bg-primary/10 text-primary",
-    href: "/micsig-probes",
-    logo: micsigLogo,
-    authorized: true,
-  },
-  {
-    name: "TESTO",
-    initials: "TE",
-    domain: "testo.com",
-    description: "Specialists in temperature, humidity, HVAC, and environmental measurement instruments for industrial and commercial applications.",
-    category: "Environmental Testing",
-    accentColor: "bg-secondary/10 text-secondary",
-    authorized: true,
-  },
-  {
-    name: "UNI-T",
-    initials: "UT",
-    domain: "uni-trend.com",
-    description: "Cost-effective, reliable test & measurement instruments including multimeters, clamp meters, and oscilloscopes for professionals.",
-    category: "Test & Measurement",
-    accentColor: "bg-accent/10 text-accent-foreground",
-    href: "/brands/uni-t",
-    authorized: true,
-  },
-  {
-    name: "National Instruments (NI)",
-    initials: "NI",
-    domain: "ni.com",
-    description: "Automated test, data acquisition, and control systems that power research labs and production test floors globally.",
-    category: "Automated Test",
-    accentColor: "bg-primary/10 text-primary",
-  },
-  {
-    name: "Weller",
-    initials: "WE",
-    domain: "weller-tools.com",
-    description: "Professional soldering stations, desoldering tools, and accessories for electronics manufacturing and repair workflows.",
-    category: "Soldering Solutions",
-    accentColor: "bg-secondary/10 text-secondary",
-  },
-  {
-    name: "SIGLENT",
-    initials: "SIG",
-    domain: "siglent.com",
-    description: "Test and measurement instruments for electronics development, production testing, education and service environments.",
-    category: "Test & Measurement",
-    accentColor: "bg-secondary/10 text-secondary",
-    authorized: true,
-  },
-  {
-    name: "Hantek",
-    initials: "HA",
-    domain: "hantek.com",
-    description: "Affordable oscilloscopes, automotive diagnostic tools, and USB-based test instruments for education and field service.",
-    category: "Oscilloscopes",
-    accentColor: "bg-accent/10 text-accent-foreground",
-    authorized: true,
-  },
-  {
-    name: "RIGOL",
-    initials: "RI",
-    domain: "rigol.com",
-    description: "High-performance oscilloscopes, spectrum analyzers, signal generators, and programmable DC power supplies.",
-    category: "Test & Measurement",
-    accentColor: "bg-primary/10 text-primary",
-    authorized: true,
-  },
-];
+import { BRANDS as brands } from "@/data/brands";
 
 const valueProps = [
   {
@@ -161,16 +25,10 @@ const valueProps = [
 ];
 
 
-const logoSources = (domain: string) => [
-  `https://www.google.com/s2/favicons?domain=${domain}&sz=256`,
-  `https://unavatar.io/${domain}?fallback=false`,
-];
-
-const BrandLogo = ({ name, domain, initials, accentColor, logo }: { name: string; domain: string; initials: string; accentColor: string; logo?: string }) => {
-  const sources = logo ? [logo, ...logoSources(domain)] : logoSources(domain);
+const BrandLogo = ({ name, initials, accentColor, logo, darkBackground }: { name: string; initials: string; accentColor: string; logo: string; darkBackground?: boolean }) => {
   const [index, setIndex] = useState(0);
 
-  if (index >= sources.length) {
+  if (index > 0) {
     return (
       <div
         className={`w-20 h-20 rounded-2xl ${accentColor} flex items-center justify-center text-2xl font-bold mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300`}
@@ -183,18 +41,14 @@ const BrandLogo = ({ name, domain, initials, accentColor, logo }: { name: string
   }
 
   return (
-    <div className="w-20 h-20 rounded-2xl bg-card border border-border/60 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden p-3">
+    <div className={`w-20 h-20 rounded-2xl ${darkBackground ? "bg-slate-800" : "bg-card"} border border-border/60 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden p-3`}>
       <img
-        key={sources[index]}
-        src={sources[index]}
+        src={logo}
         alt={`${name} logo`}
         className="max-h-14 max-w-full object-contain"
         loading="lazy"
         referrerPolicy="no-referrer"
-        onError={() => setIndex((i) => i + 1)}
-        onLoad={(e) => {
-          if (e.currentTarget.naturalWidth < 24) setIndex((i) => i + 1);
-        }}
+        onError={() => setIndex(1)}
       />
     </div>
   );
@@ -261,10 +115,10 @@ const Brands = () => {
                 <CardContent className="p-6 flex flex-col items-center text-center h-full">
                   <BrandLogo
                     name={brand.name}
-                    domain={brand.domain}
                     initials={brand.initials}
                     accentColor={brand.accentColor}
                     logo={brand.logo}
+                    darkBackground={brand.logoBackground === "dark"}
                   />
                   <h3 className="text-lg font-bold text-foreground mb-2">{brand.name}</h3>
                   <span className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full mb-4">

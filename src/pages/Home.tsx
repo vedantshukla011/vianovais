@@ -18,6 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import NewLaunches from "@/components/NewLaunches";
 import { BLOG_POSTS } from "@/data/blogPosts";
+import { AUTHORIZED_BRANDS, BRANDS } from "@/data/brands";
 import { INDUSTRIES } from "@/data/industries";
 import heroMeasurementImage from "@/assets/hero-test-measurement.jpg";
 import measurementImage from "@/assets/product-measuring-instruments.jpg";
@@ -84,7 +85,7 @@ const solutions = [
   },
 ];
 
-const authorizedBrands = ["MICSIG", "RIGOL", "SIGLENT", "TESTO", "Teledyne FLIR", "UNI-T", "Hantek"];
+const authorizedBrands = AUTHORIZED_BRANDS.map((brand) => brand.name);
 
 const reasons = [
   {
@@ -362,15 +363,21 @@ const Home = () => {
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">Genuine products. Trusted manufacturers.</p>
             <h2 id="authorized-brands-title" className="mx-auto mt-3 max-w-3xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Authorized distributor for leading test &amp; measurement brands
+              Authorized partners and brands we supply
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              ViaNova Industrial Solutions is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Get genuine instruments, product guidance and a quotation for your application.
+              ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Explore our wider portfolio of global test, measurement and engineering brands.
             </p>
-            <ul className="mx-auto mt-8 flex max-w-5xl flex-wrap justify-center gap-3" aria-label="Brands ViaNova is an authorized distributor for">
-              {authorizedBrands.map((brand) => (
-                <li key={brand} className="rounded-xl border border-border/70 bg-card px-5 py-3 text-base font-bold tracking-wide text-foreground shadow-sm sm:px-7 sm:text-lg">
-                  {brand}
+            <ul className="mx-auto mt-9 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5" aria-label="ViaNova authorized and represented brands">
+              {BRANDS.map((brand) => (
+                <li key={brand.name} className="flex min-h-36 flex-col items-center justify-center rounded-2xl border border-border/70 bg-card px-4 py-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                  <div className={`flex h-14 w-full items-center justify-center rounded-md ${brand.logoBackground === "dark" ? "bg-slate-800" : ""}`}>
+                    <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" decoding="async" className="max-h-12 max-w-[90%] object-contain" />
+                  </div>
+                  <span className="mt-3 text-center text-sm font-bold text-foreground">{brand.name}</span>
+                  <span className={`mt-1 text-center text-[10px] font-semibold uppercase tracking-wide ${brand.authorized ? "text-secondary" : "text-muted-foreground"}`}>
+                    {brand.authorized ? "Authorized distributor" : "Brand portfolio"}
+                  </span>
                 </li>
               ))}
             </ul>
