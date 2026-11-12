@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="space-y-5">
             <img src={logoImage} alt="ViaNova Industrial Solutions" className="h-14 w-auto bg-white p-2 rounded-lg shadow-lg" />
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
-              Providing comprehensive engineering products for industrial applications.
+              Industrial test, measurement and laboratory equipment sourcing from India for domestic and international buyers.
             </p>
           </div>
 
@@ -24,6 +24,15 @@ export const Footer = () => {
               </NavLink>
               <NavLink to="/products" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 Products
+              </NavLink>
+              <NavLink to="/exports" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                International Exports
+              </NavLink>
+              <NavLink to="/exports/middle-east" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                Middle East &amp; Arab Markets
+              </NavLink>
+              <NavLink to="/exports/africa" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                African Markets
               </NavLink>
               <NavLink to="/industries" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 Industries
@@ -41,11 +50,11 @@ export const Footer = () => {
           <div className="space-y-5">
             <h4 className="font-bold text-lg">Our Products</h4>
             <div className="flex flex-col space-y-3 text-sm text-primary-foreground/70">
-              <span>Measuring Instruments</span>
-              <span>Valves & Control Systems</span>
-              <span>Steam Traps & Accessories</span>
-              <span>Gaskets & Jointing Sheets</span>
-              <span>Industrial Compounds</span>
+              <span>Electronic Test &amp; Measurement</span>
+              <span>Industrial Inspection Instruments</span>
+              <span>Scientific &amp; Laboratory Equipment</span>
+              <span>Precision Tools &amp; Metrology</span>
+              <span>ESD &amp; Soldering Workstations</span>
             </div>
             <a 
               href="/Flow_Solutions_ViaNova.pdf" 
@@ -122,6 +131,9 @@ export const Footer = () => {
               { label: "Engineering lab equipment supplier Delhi", to: "/scientific-laboratory-instruments" },
               { label: "Pharmacy lab equipment", to: "/scientific-laboratory-instruments" },
               { label: "One stop solution for industrial instruments", to: "/products" },
+              { label: "Test equipment exports from India", to: "/exports" },
+              { label: "Instrument exports to Middle East and Arab markets", to: "/exports/middle-east" },
+              { label: "Test and measurement exports to Africa", to: "/exports/africa" },
             ].map((k) => (
               <a key={k.label} href={k.to} className="hover:text-primary-foreground/90 transition-colors">
                 {k.label}

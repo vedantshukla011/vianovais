@@ -24,11 +24,11 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>About ViaNova Industrial Solutions | Our Story</title>
-        <meta name="description" content="Learn about ViaNova Industrial Solutions — 25+ years delivering precision measuring instruments and engineering products to 15+ industries across India." />
+        <title>About ViaNova | Industrial Equipment Sourcing from India</title>
+        <meta name="description" content="Learn about ViaNova Industrial Solutions, an India-based source for test, measurement and engineering equipment, with export inquiries reviewed by destination." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/about" />
         <meta property="og:title" content="About ViaNova Industrial Solutions" />
-        <meta property="og:description" content="25+ years of engineering excellence serving 15+ industries across India." />
+        <meta property="og:description" content="India-based engineering and measurement equipment sourcing for domestic projects and destination-specific export inquiries." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/about" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -42,7 +42,7 @@ const About = () => {
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-5">About ViaNova Industrial Solutions</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            In collaboration with UVTS (UV Test Solutions) and DASKMEI, committed to delivering high-quality engineering and testing products for industrial applications
+            ViaNova is based in India and works with UVTS (UV Test Solutions) and DASKMEI to source engineering, test and measurement products for domestic requirements and review international export inquiries.
           </p>
         </div>
       </section>
@@ -60,8 +60,9 @@ const About = () => {
               UVTS specializes in advanced testing and measurement solutions, while DASKMEI focuses on industrial engineering products. Together, they empower ViaNova to offer a comprehensive portfolio spanning flow control systems, precision instruments, and industrial components.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our products serve diverse industries including oil refineries, chemical and petrochemical plants, pharmaceuticals, food and beverage, paper, textiles, and tire manufacturing. We are committed to providing solutions that enhance safety, efficiency, and sustainability in industrial operations across India.
+              Our products serve industries including oil refineries, chemical and petrochemical plants, pharmaceuticals, food and beverage, paper, textiles, and tire manufacturing. For overseas requirements, we review each product and destination before confirming export eligibility and shipment terms.
             </p>
+            <Link to="/exports" className="mt-5 inline-flex items-center gap-2 font-semibold text-primary hover:text-secondary">Explore international export inquiries <ArrowRight className="h-4 w-4" /></Link>
           </div>
 
           {/* Stats */}

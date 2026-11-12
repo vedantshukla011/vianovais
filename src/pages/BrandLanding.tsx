@@ -88,6 +88,9 @@ const BrandLanding = () => {
               <Link to="/products">Browse products</Link>
             </Button>
           </div>
+          <Link to={`/inquiry?market=export&product=${encodeURIComponent(profile.name)}`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground">
+            International buyer? Start an export inquiry <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 

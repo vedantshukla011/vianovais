@@ -115,6 +115,9 @@ const ProductDetail = () => {
                 <Link to="/products">Browse All Products</Link>
               </Button>
             </div>
+            <Link to={`/inquiry?market=export&product=${encodeURIComponent(product.shortTitle)}`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary">
+              Ordering from outside India? Request an export quotation <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

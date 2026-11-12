@@ -110,11 +110,11 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Measuring Instruments & Test Equipment Catalogue | ViaNova</title>
-        <meta name="description" content="Source oscilloscopes, digital multimeters, spectrum analyzers, LCR meters, power supplies, thermal cameras and precision dimensional tools from ViaNova across India." />
+        <title>Test Equipment Catalogue &amp; Export Sourcing | ViaNova India</title>
+        <meta name="description" content="Explore oscilloscopes, multimeters, analyzers, power supplies, thermal cameras and laboratory equipment. International buyers can request a destination-specific export quotation from India." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/products" />
-        <meta property="og:title" content="Measuring Instruments & Test Equipment Catalogue | ViaNova" />
-        <meta property="og:description" content="Source oscilloscopes, digital multimeters, spectrum analyzers, LCR meters, power supplies, thermal cameras and precision dimensional tools from ViaNova across India." />
+        <meta property="og:title" content="Test Equipment Catalogue &amp; Export Sourcing | ViaNova India" />
+        <meta property="og:description" content="Explore instruments for industrial and laboratory use. Overseas buyers can submit equipment lists for destination-specific export review." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/products" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -128,8 +128,11 @@ const Products = () => {
           </span>
         <h1 className="text-4xl md:text-6xl font-bold mb-5">Measuring Instruments &amp; Test Equipment</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            Precision measuring instruments, oscilloscopes, multimeters, analyzers, and industrial engineering solutions supplied across India.
+            Browse instruments for industrial, engineering and laboratory applications. Overseas buyers can request export review with their destination and equipment list.
           </p>
+          <Link to="/exports" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-foreground underline decoration-primary-foreground/50 underline-offset-4 hover:decoration-primary-foreground">
+            International buyers: export information <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 

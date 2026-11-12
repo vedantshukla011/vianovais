@@ -28,6 +28,7 @@ import BlogOscilloscopeAutomotiveEV from "./pages/BlogOscilloscopeAutomotiveEV";
 
 import BuyOnline from "./pages/BuyOnline";
 import Brands from "./pages/Brands";
+import ExportLanding from "./pages/ExportLanding";
 import BrandUnit from "./pages/BrandUnit";
 import BrandFlir from "./pages/BrandFlir";
 import BrandLanding from "./pages/BrandLanding";
@@ -71,6 +72,8 @@ const App = () => (
 
               <Route path="/buy-online" element={<BuyOnline />} />
               <Route path="/brands" element={<Brands />} />
+              <Route path="/exports" element={<ExportLanding />} />
+              <Route path="/exports/:slug" element={<ExportLanding />} />
               <Route path="/brands/uni-t" element={<BrandUnit />} />
               <Route path="/brands/flir" element={<BrandFlir />} />
               <Route path="/brands/:slug" element={<BrandLanding />} />

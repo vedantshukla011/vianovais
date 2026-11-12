@@ -100,8 +100,8 @@ const reasons = [
   },
   {
     icon: Truck,
-    title: "Supply and support across India",
-    description: "From a single instrument to a larger project requirement, our team helps coordinate sourcing, quotations and delivery.",
+    title: "Export inquiries reviewed by destination",
+    description: "We review product availability, export eligibility, warranty territory and shipment terms for each destination before quotation.",
   },
 ];
 
@@ -121,6 +121,14 @@ const faqs = [
   {
     question: "Does ViaNova deliver test equipment across India?",
     answer: "ViaNova supports business requirements across India, with pan-India delivery and GST invoicing for supplied equipment.",
+  },
+  {
+    question: "Can overseas buyers request export quotations from ViaNova?",
+    answer: "Yes. International buyers can submit product requirements and destination details for review. Export eligibility, available shipment terms, documentation and quotation currency are confirmed for each order.",
+  },
+  {
+    question: "Which Arab and African countries can ViaNova export to?",
+    answer: "Buyers can request a destination review through our Middle East and Africa export pages. Service availability depends on the product and destination and is confirmed before an order is accepted.",
   },
 ];
 
@@ -166,26 +174,26 @@ const Home = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       <Helmet>
-        <title>Authorized Test Equipment Distributor India | ViaNova</title>
+        <title>Industrial Test Equipment Exporter from India | ViaNova</title>
         <meta
           name="description"
-          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA. Source test instruments and lab equipment with expert support."
+          content="Source test and measurement equipment from India for projects across the Middle East, Arab markets and Africa. ViaNova reviews destination-specific export inquiries and confirms product eligibility and terms before quotation."
         />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Authorized Test Equipment Distributor India | ViaNova" />
+        <meta property="og:title" content="Industrial Test Equipment Exporter from India | ViaNova" />
         <meta
           property="og:description"
-          content="Explore genuine test and measurement equipment from MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA through ViaNova, an authorized distributor in India."
+          content="ViaNova helps overseas procurement teams source test, measurement and laboratory equipment from India for Arab and African markets. Destination-specific terms are confirmed before order."
         />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
         <meta property="og:image:alt" content="Test and measurement instruments in an electronics laboratory" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Authorized Test Equipment Distributor India | ViaNova" />
+        <meta name="twitter:title" content="Industrial Test Equipment Exporter from India | ViaNova" />
         <meta
           name="twitter:description"
-          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA."
+          content="Test and measurement equipment exports from India for Middle East, Arab and African buyers. Request a destination-specific quotation from ViaNova."
         />
         <meta name="twitter:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
@@ -210,14 +218,14 @@ const Home = () => {
             <div className="max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground/90 sm:text-sm">
                 <span className="h-2 w-2 rounded-full bg-accent" />
-                Your engineering supply partner in India
+                Export sourcing from India · Middle East & Africa
               </div>
               <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                Test &amp; measurement instruments
-                <span className="mt-2 block text-accent">for industry across India.</span>
+                Test &amp; measurement equipment
+                <span className="mt-2 block text-accent">exported from India.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg md:text-xl">
-                ViaNova Industrial Solutions helps businesses source oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and laboratory equipment—with practical guidance and delivery across India.
+                ViaNova helps international distributors, engineering firms, laboratories and procurement teams source oscilloscopes, meters, thermal cameras, power instruments and laboratory equipment from India. Export eligibility and shipment terms are reviewed by destination.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button
@@ -225,8 +233,8 @@ const Home = () => {
                   size="lg"
                   className="min-h-12 bg-accent px-6 text-base font-semibold text-accent-foreground shadow-lg transition-all hover:bg-accent-light hover:shadow-xl"
                 >
-                  <Link to="/inquiry">
-                    Discuss your requirement
+                  <Link to="/inquiry?market=export">
+                    Start an export inquiry
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -236,7 +244,7 @@ const Home = () => {
                   variant="outline"
                   className="min-h-12 border-primary-foreground/40 bg-primary-foreground/10 px-6 text-base font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground hover:text-primary"
                 >
-                  <a href="#solutions">Explore our solutions</a>
+                  <Link to="/exports">Explore export markets</Link>
                 </Button>
               </div>
             </div>
@@ -251,8 +259,8 @@ const Home = () => {
                 <p className="mt-1 text-sm text-primary-foreground/70">industries served</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary-foreground">Pan-India</p>
-                <p className="mt-1 text-sm text-primary-foreground/70">supply and delivery support</p>
+                <p className="text-3xl font-bold text-primary-foreground">Export</p>
+                <p className="mt-1 text-sm text-primary-foreground/70">terms reviewed by destination</p>
               </div>
             </div>
 
@@ -263,9 +271,36 @@ const Home = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-white">The right instrument starts with the right conversation.</p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">Share your application. We’ll help you move from shortlist to quotation.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">Share your destination and equipment list to begin an export quote review.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-background py-14 sm:py-18" aria-labelledby="export-markets-title">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">International procurement</p>
+                <h2 id="export-markets-title" className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Export equipment from India for Arab and African markets</h2>
+                <p className="mt-4 leading-relaxed text-muted-foreground">Send your destination, equipment list and quantity. ViaNova reviews product eligibility and available shipment terms for each export inquiry.</p>
+              </div>
+              <Link to="/exports" className="inline-flex items-center gap-2 font-semibold text-primary hover:text-secondary">Export information <ArrowUpRight className="h-4 w-4" /></Link>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              <Link to="/exports/middle-east" className="group rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-elegant sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-wider text-secondary">Regional export inquiries</p>
+                <h3 className="mt-2 text-2xl font-bold text-foreground group-hover:text-primary">Middle East &amp; Arab countries</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Explore destination-specific export inquiry guidance for the UAE, Saudi Arabia, Oman, Qatar, Kuwait, Egypt and other Arab markets.</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">View market information <ArrowRight className="h-4 w-4" /></span>
+              </Link>
+              <Link to="/exports/africa" className="group rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-elegant sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-wider text-secondary">Regional export inquiries</p>
+                <h3 className="mt-2 text-2xl font-bold text-foreground group-hover:text-primary">African countries</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Request a review for markets including South Africa, Nigeria, Kenya, Ghana, Tanzania, Ethiopia and other destinations.</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">View market information <ArrowRight className="h-4 w-4" /></span>
+              </Link>
             </div>
           </div>
         </section>

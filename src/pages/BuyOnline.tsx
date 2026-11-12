@@ -226,6 +226,9 @@ const BuyOnline = () => {
                 <span className="block text-sm mt-1 text-primary-foreground/70">
                   All listed prices are <strong>exclusive of taxes</strong>. 18% GST applied at checkout summary.
                 </span>
+                <span className="mt-3 block rounded-lg border border-primary-foreground/15 bg-primary-foreground/5 p-3 text-sm text-primary-foreground/80">
+                  Online prices and GST calculations are for India orders. For delivery outside India, <Link to="/exports" className="font-semibold text-primary-foreground underline underline-offset-4">request an export quotation</Link> with your destination; eligibility and shipment terms are confirmed separately.
+                </span>
               </p>
             </div>
           </div>

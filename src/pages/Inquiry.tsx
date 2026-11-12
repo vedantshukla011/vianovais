@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,28 +10,28 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, MapPin, Phone, Clock, Send, X } from "lucide-react";
 import { useQuoteCart } from "@/contexts/QuoteCartContext";
 
-const indianStates = [
-  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana",
-  "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-  "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana",
-  "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Delhi", "Jammu & Kashmir", "Ladakh",
-];
-
 const Inquiry = () => {
   const { items, removeItem, clearCart } = useQuoteCart();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [searchParams] = useSearchParams();
+  const isExportInquiry = searchParams.get("market") === "export";
+  const initialCountry = searchParams.get("country") ?? "";
+  const requestedProduct = searchParams.get("product") ?? "";
 
   useEffect(() => {
-    if (items.length === 0) return;
-    const productList = items.map((item, i) => `${i + 1}. ${item}`).join("\n");
-    const text = `I am interested in the following products:\n\n${productList}\n\nPlease share pricing and availability.`;
+    if (items.length === 0 && !requestedProduct) return;
+    const productList = items.length
+      ? items.map((item, i) => `${i + 1}. ${item}`).join("\n")
+      : `1. ${requestedProduct}`;
+    const destination = initialCountry ? `\nDestination country: ${initialCountry}` : "";
+    const text = `${isExportInquiry ? "International export inquiry" : "Product inquiry"}${destination}\n\nI am interested in the following products:\n\n${productList}\n\nPlease confirm availability and quotation details.`;
     let tries = 0;
     const apply = () => {
       if (textareaRef.current) textareaRef.current.value = text;
       else if (tries++ < 20) requestAnimationFrame(apply);
     };
     apply();
-  }, [items]);
+  }, [items, requestedProduct, initialCountry, isExportInquiry]);
 
   const contactCards = [
     { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9654109754", subContent: "", href: "tel:+919654109754" },
@@ -41,8 +42,8 @@ const Inquiry = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Contact Us | Request a Quote — ViaNova Industrial</title>
-        <meta name="description" content="Reach out to ViaNova Industrial Solutions for quotations on measuring instruments, lab equipment, valves and engineering products. Pan-India delivery." />
+        <title>{isExportInquiry ? "International Export Inquiry | ViaNova Industrial" : "Request a Quote | ViaNova Industrial Solutions"}</title>
+        <meta name="description" content={isExportInquiry ? "Request an export quotation for test, measurement and laboratory equipment from India. Share your destination country, product list, quantity and preferred currency." : "Contact ViaNova Industrial Solutions for quotations on test and measurement instruments, laboratory equipment and engineering products."} />
         <link rel="canonical" href="https://vianovaindustrial.solutions/inquiry" />
         <meta property="og:title" content="Contact ViaNova Industrial Solutions" />
         <meta property="og:description" content="Request quotations and best prices on measuring instruments and engineering products." />
@@ -55,11 +56,11 @@ const Inquiry = () => {
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
         <div className="container mx-auto px-4 text-center relative">
           <span className="inline-block px-4 py-2 bg-accent-foreground/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
-            Get In Touch
+            {isExportInquiry ? "International procurement" : "Get in touch"}
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-5">Request a Quote</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-5">{isExportInquiry ? "Request an Export Quotation" : "Request a Quote"}</h1>
           <p className="text-xl text-accent-foreground/80 max-w-3xl mx-auto">
-            Get in touch with our team for customized industrial engineering solutions
+            {isExportInquiry ? "Tell us your destination and equipment requirement. We will review export eligibility and confirm available terms for your inquiry." : "Share your product and application requirements with the ViaNova team."}
           </p>
         </div>
       </section>
@@ -156,31 +157,47 @@ const Inquiry = () => {
                         <Input id="email" type="email" name="email" placeholder="rajesh@example.com" required className="h-12" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-foreground font-medium">Mobile Number *</Label>
-                        <div className="flex">
-                          <span className="inline-flex items-center px-4 text-sm text-muted-foreground bg-muted border border-r-0 border-input rounded-l-lg font-medium">+91</span>
-                          <Input id="phone" type="tel" name="phone" placeholder="9876543210" pattern="[6-9][0-9]{9}" title="Please enter a valid 10-digit Indian mobile number" required className="rounded-l-none h-12" />
-                        </div>
+                        <Label htmlFor="phone" className="text-foreground font-medium">Phone / WhatsApp *</Label>
+                        <Input id="phone" type="tel" name="phone" placeholder="Include country code, e.g. +971 50 123 4567" required className="h-12" />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="state" className="text-foreground font-medium">State *</Label>
-                        <select id="state" name="state" required className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                          <option value="">Select your state</option>
-                          {indianStates.map((state) => (<option key={state} value={state}>{state}</option>))}
+                        <Label htmlFor="market_type" className="text-foreground font-medium">Inquiry Type *</Label>
+                        <select id="market_type" name="inquiry_type" defaultValue={isExportInquiry ? "International export inquiry" : "India domestic inquiry"} required className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                          <option value="International export inquiry">International export inquiry</option>
+                          <option value="India domestic inquiry">India domestic inquiry</option>
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="city" className="text-foreground font-medium">City</Label>
-                        <Input id="city" name="city" placeholder="Mumbai" className="h-12" />
+                        <Label htmlFor="country" className="text-foreground font-medium">Country / Delivery Destination *</Label>
+                        <Input id="country" name="country" defaultValue={initialCountry} placeholder="e.g. UAE, Saudi Arabia, Kenya" required className="h-12" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="city" className="text-foreground font-medium">Delivery City / Port</Label>
+                        <Input id="city" name="city_or_port" placeholder="City or destination port" className="h-12" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="currency" className="text-foreground font-medium">Preferred Quotation Currency</Label>
+                        <select id="currency" name="preferred_currency" defaultValue="" className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                          <option value="">No preference</option>
+                          <option value="USD">USD</option>
+                          <option value="EUR">EUR</option>
+                          <option value="AED">AED</option>
+                          <option value="SAR">SAR</option>
+                          <option value="INR">INR</option>
+                          <option value="Other">Other / specify in message</option>
+                        </select>
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="industry" className="text-foreground font-medium">Industry / Application</Label>
-                      <Input id="industry" name="industry" placeholder="e.g., Oil & Gas, Pharmaceuticals, Chemicals" className="h-12" />
+                      <Input id="industry" name="industry" placeholder="e.g., Oil & Gas, utilities, manufacturing, laboratory" className="h-12" />
                     </div>
 
                     <div className="space-y-2">
@@ -189,7 +206,7 @@ const Inquiry = () => {
                         id="message"
                         name="message"
                         ref={textareaRef}
-                        placeholder="Please describe your requirements, specifications, or questions..."
+                        placeholder={isExportInquiry ? "List product models or specifications, quantity, required date and any destination or documentation needs..." : "Please describe your product requirements, specifications, or questions..."}
                         rows={6}
                         required
                         minLength={10}
@@ -202,7 +219,7 @@ const Inquiry = () => {
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">
-                      * Required fields. We respect your privacy and will not share your information.
+                      * Required fields. Export eligibility, available currency, shipment terms and documents are confirmed in the quotation.
                     </p>
                   </form>
                 </CardContent>
