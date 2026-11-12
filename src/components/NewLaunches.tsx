@@ -10,6 +10,8 @@ import utd2102cexImg from "@/assets/unit-utd2102cex-plus.png.asset.json";
 import micsigDpImg from "@/assets/micsig-dp-main.png.asset.json";
 import flirE52Img from "@/assets/flir-e52.png.asset.json";
 import flirE52Datasheet from "@/assets/flir-e52-datasheet.pdf.asset.json";
+import micsigSigofitGen3 from "@/assets/micsig-catalog/product-sigofit-gen-3-moip.jpg";
+import micsigRogowskiRcp from "@/assets/micsig-catalog/product-rcp-series.jpg";
 
 type Launch = {
   title: string;
@@ -24,6 +26,26 @@ type Launch = {
 };
 
 const launches: Launch[] = [
+  {
+    title: "Micsig SigOFIT Gen 3 Optical-Fiber Isolated Probe (MOIP Series)",
+    brand: "Micsig",
+    model: "SigOFIT Gen 3 / MOIP",
+    category: "Optical-Fiber Isolated Probes",
+    image: micsigSigofitGen3,
+    description: "Optically isolated differential probe family for demanding power-electronics measurements, with model bandwidths from 200 MHz to 1.2 GHz and high common-mode voltage capability.",
+    specs: ["200 MHz to 1.2 GHz bandwidth (model dependent)", "Up to 85 kVpk common-mode voltage", "DC gain accuracy ≤1%", "Optical-fiber isolation with BNC output"],
+    href: "/products/micsig-sigofit-gen3",
+  },
+  {
+    title: "Micsig Rogowski AC Current Probe (RCP Series, up to 12 kA)",
+    brand: "Micsig",
+    model: "RCP Series",
+    category: "Rogowski AC Current Probes",
+    image: micsigRogowskiRcp,
+    description: "Flexible Rogowski coil current probe family for high-current AC waveform measurement, with model-dependent ranges up to 12,000 Apk and bandwidth up to 30 MHz.",
+    specs: ["AC peak current ranges up to 12,000 Apk (model dependent)", "Bandwidth up to 30 MHz (model dependent)", "Flexible coil with low insertion impedance", "BNC oscilloscope output; 12 V DC powered integrator"],
+    href: "/products/micsig-rogowski-rcp-series",
+  },
   {
     title: "Micsig CP2100B AC/DC Current Probe (2.5 MHz, 100 A)",
     brand: "Micsig",

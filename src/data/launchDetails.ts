@@ -10,6 +10,8 @@ import micsigDpQuickGuide from "@/assets/micsig-dp-quick-guide.pdf.asset.json";
 import micsigDpControlManual from "@/assets/micsig-dp-control-manual.pdf.asset.json";
 import flirE52Img from "@/assets/flir-e52.png.asset.json";
 import flirE52Datasheet from "@/assets/flir-e52-datasheet.pdf.asset.json";
+import micsigSigofitGen3 from "@/assets/micsig-catalog/product-sigofit-gen-3-moip.jpg";
+import micsigRogowskiRcp from "@/assets/micsig-catalog/product-rcp-series.jpg";
 
 export type LaunchDetail = {
   slug: string;
@@ -636,6 +638,98 @@ export const launchDetails: LaunchDetail[] = [
       { question: "What is the bandwidth of the Micsig DP7000?", answer: "The DP7000 provides 100 MHz bandwidth." },
       { question: "What voltage can the DP7000 measure?", answer: "The product specifications list up to 700 V differential at 100X and 7000 V at 1000X. Follow Micsig's safety limits and frequency-dependent derating conditions." },
       { question: "How does the DP7000 compare with the DP7002?", answer: "The DP7000 is the 100 MHz model and the DP7002 is the 200 MHz model. The attenuation ranges and listed maximum differential voltage are shared across these models." },
+    ],
+  },
+  {
+    slug: "micsig-sigofit-gen3",
+    title: "Micsig SigOFIT Gen 3 Optical-Fiber Isolated Probe (MOIP Series)",
+    shortTitle: "Micsig SigOFIT Gen 3 Isolated Probe",
+    brand: "Micsig",
+    model: "SigOFIT Gen 3 / MOIP Series",
+    category: "Optical-Fiber Isolated Probes",
+    image: micsigSigofitGen3,
+    seoTitle: "Micsig SigOFIT Gen 3 Optical Isolated Probe | ViaNova",
+    seoDescription: "Explore Micsig SigOFIT Gen 3 MOIP optical-fiber isolated probes from ViaNova, an authorized Micsig distributor. 200 MHz–1.2 GHz bandwidth, up to 85 kVpk common-mode voltage, and model options for high-voltage power electronics.",
+    seoKeywords: ["Micsig SigOFIT", "SigOFIT Gen 3", "MOIP optical fiber isolated probe", "optically isolated oscilloscope probe", "high voltage differential probe", "SiC GaN probe", "Micsig India"],
+    description: "The Micsig SigOFIT Gen 3 MOIP Series is an optical-fiber isolated probe family for floating and high-common-mode-voltage measurements. Select models span 200 MHz to 1.2 GHz bandwidth, measure differential signals from ±0.01 V to ±20 kV, and provide common-mode isolation up to 85 kVpk. Model-specific operating limits, attenuator tips and safety instructions apply; consult the product documentation when selecting a configuration.",
+    ctaLabel: "Request SigOFIT Quote",
+    documents: [
+      { label: "SigOFIT Gen 3 brochure", url: "/assets/documents/micsig/document-006.pdf", filename: "Micsig-SigOFIT-Gen-3-Brochure.pdf", description: "Micsig optical-fiber isolated probe Gen 3 product information · PDF" },
+    ],
+    highlights: [
+      "Optical-fiber isolated measurement for floating, high-common-mode signals",
+      "Model bandwidth range from 200 MHz to 1.2 GHz",
+      "Differential measurement range from ±0.01 V up to ±20 kV, by model and tip",
+      "Common-mode isolation voltage up to 85 kVpk",
+      "DC gain accuracy of 1% or better",
+      "Low-noise optical transmission for SiC, GaN and power-conversion testing",
+    ],
+    specs: [
+      { label: "Series", value: "SigOFIT Gen 3 / MOIP" },
+      { label: "Probe type", value: "Optical-fiber isolated differential probe" },
+      { label: "Bandwidth", value: "200 MHz to 1.2 GHz (model dependent)" },
+      { label: "Differential measurement range", value: "±0.01 V to ±20 kV (model / attenuator dependent)" },
+      { label: "Common-mode isolation voltage", value: "Up to 85 kVpk (model dependent)" },
+      { label: "DC gain accuracy", value: "≤1%" },
+      { label: "CMRR", value: "Up to 128 dB at 100 MHz; model and frequency dependent" },
+      { label: "Interface", value: "BNC output" },
+    ],
+    applications: [
+      "Floating switch-node and gate-drive measurements in power converters",
+      "SiC and GaN semiconductor switching and double-pulse testing",
+      "Inverter, motor-drive and high-voltage power supply validation",
+      "High-side measurements where galvanic isolation is required",
+    ],
+    faqs: [
+      { question: "What does the SigOFIT Gen 3 probe measure?", answer: "It measures differential voltage waveforms while using optical-fiber isolation to support floating and high-common-mode measurement setups. Choose the MOIP model and attenuator tip for the voltage and bandwidth required." },
+      { question: "What bandwidth is available in the MOIP series?", answer: "Micsig lists Gen 3 MOIP models from 200 MHz to 1.2 GHz. The exact bandwidth depends on the selected model." },
+      { question: "Can SigOFIT Gen 3 be used for SiC and GaN testing?", answer: "Micsig describes the series for fast switching measurements on wide-bandgap devices such as SiC and GaN. Follow the specific model's connection, voltage and safety limits." },
+    ],
+  },
+  {
+    slug: "micsig-rogowski-rcp-series",
+    title: "Micsig Rogowski AC Current Probe RCP Series (up to 12 kA)",
+    shortTitle: "Micsig RCP Series Rogowski AC Current Probe",
+    brand: "Micsig",
+    model: "RCP Series",
+    category: "Rogowski AC Current Probes",
+    image: micsigRogowskiRcp,
+    seoTitle: "Micsig Rogowski AC Current Probe RCP Series | ViaNova",
+    seoDescription: "Request a quote for Micsig RCP Series Rogowski AC current probes from ViaNova, an authorized Micsig distributor. Flexible coils, model ranges up to 12,000 Apk, up to 30 MHz bandwidth and BNC output.",
+    seoKeywords: ["Micsig RCP Rogowski probe", "Rogowski AC current probe", "RCP series current probe", "12kA oscilloscope current probe", "flexible coil current probe", "Micsig current probe India"],
+    description: "The Micsig RCP Series is a family of flexible Rogowski AC current probes for oscilloscope measurements around conductors that are difficult to reach with rigid clamps. Depending on the model, the range extends up to 12,000 Apk and bandwidth up to 30 MHz. Each probe uses a separate integrator, a standard BNC output and a 12 V DC supply. Current, bandwidth, sensitivity, coil size and insulation ratings vary by model.",
+    ctaLabel: "Request RCP Series Quote",
+    documents: [
+      { label: "Rogowski RCP Series brochure", url: "/assets/documents/micsig/document-007.pdf", filename: "Micsig-Rogowski-RCP-Series-Brochure.pdf", description: "Micsig RCP Series model overview and technical information · PDF" },
+    ],
+    highlights: [
+      "Flexible Rogowski coil fits around conductors in confined spaces",
+      "AC peak-current models available up to 12,000 Apk",
+      "Bandwidth available up to 30 MHz, depending on model",
+      "Low insertion impedance helps reduce circuit loading",
+      "Standard BNC output for compatible oscilloscopes",
+      "Integrator powered by 12 V DC; model-specific coil options available",
+    ],
+    specs: [
+      { label: "Series", value: "Micsig RCP Rogowski AC Current Probe" },
+      { label: "Measurement type", value: "AC current" },
+      { label: "Peak current range", value: "Model dependent; options up to 12,000 Apk" },
+      { label: "Bandwidth", value: "Model dependent; up to 30 MHz" },
+      { label: "Typical accuracy", value: "2% on RCP-M series models; confirm selected model datasheet" },
+      { label: "Coil", value: "Flexible; circumference and dimensions depend on model" },
+      { label: "Output", value: "Standard BNC, 1 MΩ oscilloscope input" },
+      { label: "Power", value: "12 V DC adapter for integrator" },
+    ],
+    applications: [
+      "High-current waveform measurement in motor drives and inverters",
+      "AC current and harmonic measurement in UPS and SMPS circuits",
+      "MOSFET and IGBT switching-current testing, including SiC and GaN devices",
+      "Three-phase power systems, converters and transient current analysis",
+    ],
+    faqs: [
+      { question: "What is a Rogowski current probe used for?", answer: "A flexible Rogowski coil encircles a conductor to measure changing AC current without opening the circuit. The RCP integrator converts the coil signal for a compatible oscilloscope." },
+      { question: "What is the maximum current range of the Micsig RCP Series?", answer: "Micsig lists RCP models with ranges up to 12,000 Apk. The exact range and bandwidth depend on the selected model." },
+      { question: "Does the RCP Series measure DC current?", answer: "The Micsig RCP Series is specified as a Rogowski AC current probe. For DC and AC/DC measurements, select a suitable Micsig AC/DC current probe instead." },
     ],
   },
 ];
