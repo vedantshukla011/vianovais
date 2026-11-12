@@ -16,7 +16,6 @@ import {
   Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ClientsCarousel from "@/components/ClientsCarousel";
 import NewLaunches from "@/components/NewLaunches";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { INDUSTRIES } from "@/data/industries";
@@ -85,6 +84,8 @@ const solutions = [
   },
 ];
 
+const authorizedBrands = ["MICSIG", "RIGOL", "SIGLENT", "TESTO", "Teledyne FLIR", "UNI-T", "Hantek"];
+
 const reasons = [
   {
     icon: CheckCircle2,
@@ -104,6 +105,10 @@ const reasons = [
 ];
 
 const faqs = [
+  {
+    question: "Which brands is ViaNova an authorized distributor for?",
+    answer: "ViaNova Industrial Solutions is an authorized distributor for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Contact our team to check availability and request a quotation for your required brand or model.",
+  },
   {
     question: "What test and measurement instruments does ViaNova supply?",
     answer: "ViaNova supplies oscilloscopes, digital multimeters, DC power supplies, power and spectrum analyzers, thermal imagers, precision measuring tools, ESD products and scientific laboratory equipment. Availability depends on the brand and model.",
@@ -143,35 +148,47 @@ const faqSchema = {
   })),
 };
 
+const authorizedBrandsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Authorized test and measurement brands distributed by ViaNova Industrial Solutions",
+  itemListElement: authorizedBrands.map((brand, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: { "@type": "Brand", name: brand },
+  })),
+};
+
 const Home = () => {
   const latestPosts = BLOG_POSTS.slice(0, 3);
 
   return (
     <div className="min-h-screen overflow-hidden">
       <Helmet>
-        <title>Test &amp; Measurement Instruments Supplier India | ViaNova</title>
+        <title>Authorized Test Equipment Distributor India | ViaNova</title>
         <meta
           name="description"
-          content="Source oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and lab equipment from ViaNova Industrial Solutions, serving businesses across India."
+          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Source test instruments and lab equipment with expert support."
         />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
-        <meta property="og:title" content="Test &amp; Measurement Instruments Supplier India | ViaNova" />
+        <meta property="og:title" content="Authorized Test Equipment Distributor India | ViaNova" />
         <meta
           property="og:description"
-          content="Explore oscilloscopes, multimeters, thermal cameras, DC power supplies, precision tools and laboratory equipment from ViaNova Industrial Solutions."
+          content="Explore genuine test and measurement equipment from MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek through ViaNova, an authorized distributor in India."
         />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
         <meta property="og:image:alt" content="Test and measurement instruments in an electronics laboratory" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Test &amp; Measurement Instruments Supplier India | ViaNova" />
+        <meta name="twitter:title" content="Authorized Test Equipment Distributor India | ViaNova" />
         <meta
           name="twitter:description"
-          content="Oscilloscopes, multimeters, thermal cameras, power supplies, precision tools and lab equipment—sourced with support across India."
+          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek."
         />
         <meta name="twitter:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(authorizedBrandsSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -341,7 +358,27 @@ const Home = () => {
           <NewLaunches />
         </section>
 
-        <ClientsCarousel />
+        <section className="bg-muted/40 py-16 sm:py-20" aria-labelledby="authorized-brands-title">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-secondary">Genuine products. Trusted manufacturers.</p>
+            <h2 id="authorized-brands-title" className="mx-auto mt-3 max-w-3xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Authorized distributor for leading test &amp; measurement brands
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              ViaNova Industrial Solutions is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Get genuine instruments, product guidance and a quotation for your application.
+            </p>
+            <ul className="mx-auto mt-8 flex max-w-5xl flex-wrap justify-center gap-3" aria-label="Brands ViaNova is an authorized distributor for">
+              {authorizedBrands.map((brand) => (
+                <li key={brand} className="rounded-xl border border-border/70 bg-card px-5 py-3 text-base font-bold tracking-wide text-foreground shadow-sm sm:px-7 sm:text-lg">
+                  {brand}
+                </li>
+              ))}
+            </ul>
+            <Link to="/brands" className="mt-7 inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-secondary">
+              Explore our brands <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
 
         <section className="relative overflow-hidden bg-primary-dark py-20 text-primary-foreground sm:py-24" aria-labelledby="industries-title">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,hsl(var(--secondary)/0.35),transparent_45%)]" />

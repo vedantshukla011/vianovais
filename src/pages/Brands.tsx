@@ -20,6 +20,7 @@ interface Brand {
   accentColor: string;
   href?: string;
   logo?: string;
+  authorized?: boolean;
 }
 
 const brands: Brand[] = [
@@ -56,7 +57,7 @@ const brands: Brand[] = [
     accentColor: "bg-primary/10 text-primary",
   },
   {
-    name: "FLIR",
+    name: "Teledyne FLIR",
     initials: "FLIR",
     domain: "flir.com",
     description: "Measuring instruments and thermal imaging cameras for electrical inspections, mechanical condition monitoring and building diagnostics.",
@@ -64,9 +65,10 @@ const brands: Brand[] = [
     accentColor: "bg-secondary/10 text-secondary",
     href: "/brands/flir",
     logo: assetUrl(flirLogo),
+    authorized: true,
   },
   {
-    name: "Micsig",
+    name: "MICSIG",
     initials: "MS",
     domain: "micsig.com",
     description: "Authorized distributor of Micsig oscilloscope probes: differential, optical-fiber isolated, current and Rogowski probes with downloadable documentation.",
@@ -74,14 +76,16 @@ const brands: Brand[] = [
     accentColor: "bg-primary/10 text-primary",
     href: "/micsig-probes",
     logo: micsigLogo,
+    authorized: true,
   },
   {
-    name: "Testo",
+    name: "TESTO",
     initials: "TE",
     domain: "testo.com",
     description: "Specialists in temperature, humidity, HVAC, and environmental measurement instruments for industrial and commercial applications.",
     category: "Environmental Testing",
     accentColor: "bg-secondary/10 text-secondary",
+    authorized: true,
   },
   {
     name: "UNI-T",
@@ -91,6 +95,7 @@ const brands: Brand[] = [
     category: "Test & Measurement",
     accentColor: "bg-accent/10 text-accent-foreground",
     href: "/brands/uni-t",
+    authorized: true,
   },
   {
     name: "National Instruments (NI)",
@@ -109,20 +114,31 @@ const brands: Brand[] = [
     accentColor: "bg-secondary/10 text-secondary",
   },
   {
+    name: "SIGLENT",
+    initials: "SIG",
+    domain: "siglent.com",
+    description: "Test and measurement instruments for electronics development, production testing, education and service environments.",
+    category: "Test & Measurement",
+    accentColor: "bg-secondary/10 text-secondary",
+    authorized: true,
+  },
+  {
     name: "Hantek",
     initials: "HA",
     domain: "hantek.com",
     description: "Affordable oscilloscopes, automotive diagnostic tools, and USB-based test instruments for education and field service.",
     category: "Oscilloscopes",
     accentColor: "bg-accent/10 text-accent-foreground",
+    authorized: true,
   },
   {
-    name: "Rigol",
+    name: "RIGOL",
     initials: "RI",
     domain: "rigol.com",
     description: "High-performance oscilloscopes, spectrum analyzers, signal generators, and programmable DC power supplies.",
     category: "Test & Measurement",
     accentColor: "bg-primary/10 text-primary",
+    authorized: true,
   },
 ];
 
@@ -130,7 +146,7 @@ const valueProps = [
   {
     icon: ShieldCheck,
     title: "Authorized Partnerships",
-    description: "We work with globally recognized test & measurement brands to supply genuine products with valid warranties.",
+    description: "We supply genuine products from our authorized brand partners, with manufacturer-backed warranties subject to product terms.",
   },
   {
     icon: Award,
@@ -189,11 +205,11 @@ const Brands = () => {
   return (
     <div className="min-h-screen pt-20">
       <Helmet>
-        <title>Test &amp; Measurement Brands in India | ViaNova</title>
-        <meta name="description" content="Explore measuring instruments and test equipment from Keysight, Keithley, Tektronix, Fluke, FLIR, Micsig, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
+        <title>Authorized Test Equipment Brands in India | ViaNova</title>
+        <meta name="description" content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Explore genuine test and measurement equipment." />
         <link rel="canonical" href="https://vianovaindustrial.solutions/brands" />
-        <meta property="og:title" content="Test &amp; Measurement Brands in India | ViaNova" />
-        <meta property="og:description" content="Explore measuring instruments and test equipment from Keysight, Keithley, Tektronix, Fluke, FLIR, Micsig, Testo, UNI-T, NI, Weller, Hantek and Rigol." />
+        <meta property="og:title" content="Authorized Test Equipment Brands in India | ViaNova" />
+        <meta property="og:description" content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Explore genuine test and measurement equipment." />
         <meta property="og:url" content="https://vianovaindustrial.solutions/brands" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
@@ -202,8 +218,8 @@ const Brands = () => {
             "@type": "Organization",
             name: "ViaNova Industrial Solutions",
             url: "https://vianovaindustrial.solutions/brands",
-            description: "Authorized partner for leading test and measurement instrument brands.",
-            brand: brands.map((b) => ({
+            description: "ViaNova Industrial Solutions is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek.",
+            brand: brands.filter((b) => b.authorized).map((b) => ({
               "@type": "Brand",
               name: b.name,
               description: b.description,
@@ -222,7 +238,7 @@ const Brands = () => {
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-5">Test &amp; Measurement Brands We Deal In</h1>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            ViaNova Industrial Solutions partners with the world&apos;s most trusted names in test, measurement, and precision instruments to deliver reliable solutions for your industry.
+            ViaNova Industrial Solutions is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. We help businesses source genuine products with manufacturer-backed support.
           </p>
         </div>
       </section>
@@ -252,7 +268,7 @@ const Brands = () => {
                   />
                   <h3 className="text-lg font-bold text-foreground mb-2">{brand.name}</h3>
                   <span className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full mb-4">
-                    {brand.category}
+                    {brand.authorized ? "Authorized Distributor · " : ""}{brand.category}
                   </span>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {brand.description}
