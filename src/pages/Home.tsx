@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Factory, Shield, Zap, Sparkles, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, ShoppingBag, Tag, Search, Calendar, Clock, BookOpen } from "lucide-react";
+import { ArrowRight, Factory, Shield, Zap, CarFront, FlaskConical, GraduationCap, Pill, Stethoscope, ClipboardCheck, Bot, Calendar, Clock, BookOpen } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "@/data/blogPosts";
@@ -104,61 +104,6 @@ const Home = () => {
 
       {/* New Launches */}
       <NewLaunches />
-
-      {/* Buy Online CTA */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative">
-          <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground border-none shadow-2xl overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-secondary/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-            <CardContent className="p-10 md:p-14 relative">
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 mb-5">
-                    <ShoppingBag className="w-4 h-4 text-accent" />
-                    <span className="text-xs font-semibold uppercase tracking-wider">Online Store</span>
-                  </div>
-                  <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-                    Explore 500+ Products with Live Pricing
-                  </h2>
-                  <p className="text-base md:text-lg text-primary-foreground/85 mb-7">
-                    Browse our complete catalog of measuring instruments, lab equipment, and industrial tools online.
-                    Build your cart, view instant totals, and request a personalised quote in one click.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Link to="/buy-online">
-                      <Button size="lg" className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-7 py-6 text-base shadow-lg">
-                        Shop Now
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                    </Link>
-                    <Link to="/buy-online">
-                      <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-7 py-6 text-base">
-                        Browse Catalog
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: Search, title: "Smart Search", desc: "Find products by name or category instantly" },
-                    { icon: Tag, title: "Listed Prices", desc: "Transparent pricing on every product" },
-                    { icon: ShoppingBag, title: "Cart & Total", desc: "Auto-calculated subtotal with 18% GST" },
-                    { icon: Sparkles, title: "Best Quote", desc: "Reach out for negotiated bulk pricing" },
-                  ].map((f, i) => (
-                    <div key={i} className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-4">
-                      <f.icon className="w-6 h-6 text-accent mb-2" />
-                      <h3 className="font-semibold text-sm mb-1">{f.title}</h3>
-                      <p className="text-xs text-primary-foreground/75">{f.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* Clients Carousel */}
       <ClientsCarousel />
