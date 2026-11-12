@@ -14,6 +14,7 @@ These logo files are stored locally so the site does not request logo images fro
 | UNI-T | https://logoapi.sh/uni-trend.com.svg |
 | National Instruments (NI) | https://logoapi.sh/ni.com.svg |
 | Weller | https://www.weller-tools.com/sites/default/files/vector_images/2023-04/Weller-Logo_Blue_0.svg |
+| VAISALA | https://brand.vaisala.com/ (official brand book logo asset hosted on Cloudinary) |
 | SIGLENT | https://siglentna.com/wp-content/uploads/2023/10/SIGLENT-Logo@300x.png |
 | Hantek | https://www.hantek.com/images/logo-bai.png |
 | RIGOL | https://www.rigolna.com/assets/img/RIGOL-logotype.svg |

@@ -67,6 +67,11 @@ export const BRANDS: Brand[] = [
     category: "Soldering Solutions", accentColor: "bg-secondary/10 text-secondary", logo: "/brand-logos/weller.svg",
   },
   {
+    name: "VAISALA", initials: "VA", domain: "vaisala.com",
+    description: "Environmental and industrial measurement instruments for reliable monitoring and process insight.",
+    category: "Environmental Measurement", accentColor: "bg-primary/10 text-primary", logo: "/brand-logos/vaisala.png", authorized: true,
+  },
+  {
     name: "SIGLENT", initials: "SIG", domain: "siglent.com",
     description: "Test and measurement instruments for electronics development, production testing, education and service environments.",
     category: "Test & Measurement", accentColor: "bg-secondary/10 text-secondary", logo: "/brand-logos/siglent.png", authorized: true,

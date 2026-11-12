@@ -108,7 +108,7 @@ const reasons = [
 const faqs = [
   {
     question: "Which brands is ViaNova an authorized distributor for?",
-    answer: "ViaNova Industrial Solutions is an authorized distributor for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Contact our team to check availability and request a quotation for your required brand or model.",
+    answer: "ViaNova Industrial Solutions is an authorized distributor for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA. Contact our team to check availability and request a quotation for your required brand or model.",
   },
   {
     question: "What test and measurement instruments does ViaNova supply?",
@@ -169,13 +169,13 @@ const Home = () => {
         <title>Authorized Test Equipment Distributor India | ViaNova</title>
         <meta
           name="description"
-          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Source test instruments and lab equipment with expert support."
+          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA. Source test instruments and lab equipment with expert support."
         />
         <link rel="canonical" href="https://vianovaindustrial.solutions/" />
         <meta property="og:title" content="Authorized Test Equipment Distributor India | ViaNova" />
         <meta
           property="og:description"
-          content="Explore genuine test and measurement equipment from MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek through ViaNova, an authorized distributor in India."
+          content="Explore genuine test and measurement equipment from MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA through ViaNova, an authorized distributor in India."
         />
         <meta property="og:url" content="https://vianovaindustrial.solutions/" />
         <meta property="og:type" content="website" />
@@ -185,7 +185,7 @@ const Home = () => {
         <meta name="twitter:title" content="Authorized Test Equipment Distributor India | ViaNova" />
         <meta
           name="twitter:description"
-          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek."
+          content="ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA."
         />
         <meta name="twitter:image" content={"https://vianovaindustrial.solutions" + heroMeasurementImage} />
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
@@ -366,7 +366,7 @@ const Home = () => {
               Authorized partners and brands we supply
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T and Hantek. Explore our wider portfolio of global test, measurement and engineering brands.
+              ViaNova is an authorized distributor in India for MICSIG, RIGOL, SIGLENT, TESTO, Teledyne FLIR, UNI-T, Hantek and VAISALA. Explore our wider portfolio of global test, measurement and engineering brands.
             </p>
             <ul className="mx-auto mt-9 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5" aria-label="ViaNova authorized and represented brands">
               {BRANDS.map((brand) => (
