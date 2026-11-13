@@ -393,6 +393,36 @@ const Home = () => {
           </div>
         </section>
 
+        <section className="relative overflow-hidden bg-primary-dark py-16 text-primary-foreground sm:py-20" aria-labelledby="micsig-feature-title">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_20%,hsl(var(--secondary)/0.35),transparent_48%)]" />
+          <div className="container relative mx-auto px-4">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">Featured measurement partner</p>
+              <h2 id="micsig-feature-title" className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Micsig probes for demanding measurements</h2>
+              <p className="mt-4 text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
+                ViaNova is an authorized Micsig distributor in India. Explore oscilloscope probes for current, high-voltage differential and optically isolated measurements. Overseas availability and authorization are confirmed for each destination.
+              </p>
+            </div>
+            <div className="mx-auto mt-8 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["CP2100B AC/DC current probe", "/products/micsig-cp2100b"],
+                ["DP7002 high-voltage differential probe", "/products/micsig-dp7002"],
+                ["DP7000 high-voltage differential probe", "/products/micsig-dp7000"],
+                ["SigOFIT Gen 3 isolated probe", "/products/micsig-sigofit-gen3"],
+                ["RCP Rogowski AC current probe", "/products/micsig-rogowski-rcp-series"],
+                ["Browse the Micsig probe range", "/micsig-probes"],
+              ].map(([label, href]) => (
+                <Link key={href} to={href} className="group flex min-h-14 items-center justify-between rounded-xl border border-primary-foreground/15 bg-primary-foreground/[0.06] px-5 py-4 text-sm font-semibold transition-colors hover:border-accent/60 hover:bg-primary-foreground/10">
+                  {label}<ArrowRight className="ml-3 h-4 w-4 shrink-0 text-accent transition-transform group-hover:translate-x-1" />
+                </Link>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-sm text-primary-foreground/70">
+              Need help choosing? <Link to="/inquiry?product=Micsig%20probes" className="font-semibold text-accent underline-offset-4 hover:underline">Ask our team for product guidance and a quotation</Link>.
+            </p>
+          </div>
+        </section>
+
         <section className="bg-background py-16 sm:py-20" aria-label="New product launches">
           <NewLaunches />
         </section>

@@ -6,7 +6,7 @@ import { ArrowDown, ArrowUpRight, Search } from "lucide-react";
 const SITE = "https://vianovaindustrial.solutions";
 const PAGE = `${SITE}/micsig-probes`;
 const DESCRIPTION =
-  "Explore Micsig probe families — DP differential, SigOFIT optical-fiber isolated, CP, CP2100, ACP and RCP current probes — and open brochures from ViaNova Industrial Solutions.";
+  "Explore Micsig oscilloscope probes in India from ViaNova, an authorized Micsig distributor. Compare CP current, DP differential, SigOFIT isolated and RCP Rogowski probe families and request a quote.";
 
 const images = import.meta.glob("@/assets/micsig-catalog/*.jpg", { eager: true, import: "default" }) as Record<string, string>;
 const image = (file: string) => images[Object.keys(images).find((k) => k.endsWith(`/${file}`)) ?? ""];
@@ -45,10 +45,10 @@ const MicsigProbes = () => {
   return (
     <div className="min-h-screen bg-muted/40 pt-20">
       <Helmet>
-        <title>Micsig Probes | ViaNova Industrial Solutions</title>
+        <title>Micsig Oscilloscope Probes in India | ViaNova</title>
         <meta name="description" content={DESCRIPTION} />
         <link rel="canonical" href={PAGE} />
-        <meta property="og:title" content="Micsig Probes | ViaNova Industrial Solutions" />
+        <meta property="og:title" content="Micsig Oscilloscope Probes in India | ViaNova" />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content={PAGE} />
         <meta property="og:type" content="website" />
@@ -66,7 +66,7 @@ const MicsigProbes = () => {
               Find the right probe<br />for your measurement.
             </h1>
             <p className="max-w-[600px] text-sm leading-relaxed text-primary-foreground/80 md:text-base">
-              Explore Micsig probe families and access available brochures and product introductions from ViaNova Industrial Solutions.
+              ViaNova is an authorized Micsig distributor in India. Compare oscilloscope probes for current, high-voltage differential and optical-fiber isolated measurements, then request product guidance or a quotation. Overseas requests are reviewed for destination-specific availability and authorization.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#catalog" className="inline-flex items-center gap-1.5 rounded-md bg-accent px-[18px] py-3 text-[13px] font-bold text-accent-foreground transition-transform hover:-translate-y-0.5">
@@ -78,6 +78,26 @@ const MicsigProbes = () => {
             </div>
           </div>
           <p className="absolute bottom-7 right-5 text-[11px] tracking-[0.08em] text-primary-foreground/60 sm:right-6">PRODUCTS · DOCUMENTS · SUPPORT</p>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-background" aria-labelledby="featured-micsig-models">
+        <div className="mx-auto max-w-[1240px] px-5 py-8 sm:px-6">
+          <h2 id="featured-micsig-models" className="text-xl font-bold tracking-tight text-foreground">Featured Micsig probes</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Open a model page for key specifications, application notes, available documents and quotation requests.</p>
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            {[
+              ["CP2100B AC/DC current probe", "/products/micsig-cp2100b"],
+              ["DP7002 200 MHz differential probe", "/products/micsig-dp7002"],
+              ["DP7000 100 MHz differential probe", "/products/micsig-dp7000"],
+              ["SigOFIT Gen 3 isolated probe", "/products/micsig-sigofit-gen3"],
+              ["RCP Rogowski AC current probe", "/products/micsig-rogowski-rcp-series"],
+            ].map(([label, href]) => (
+              <Link key={href} to={href} className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-secondary hover:text-secondary">
+                {label}<ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
