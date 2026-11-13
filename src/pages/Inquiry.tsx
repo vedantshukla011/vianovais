@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,10 +13,48 @@ import { useQuoteCart } from "@/contexts/QuoteCartContext";
 const Inquiry = () => {
   const { items, removeItem, clearCart } = useQuoteCart();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [searchParams] = useSearchParams();
   const isExportInquiry = searchParams.get("market") === "export";
   const initialCountry = searchParams.get("country") ?? "";
   const requestedProduct = searchParams.get("product") ?? "";
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setIsSubmitting(true);
+    setSubmissionMessage(null);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        const detail = Array.isArray(result?.errors)
+          ? result.errors.map((error: { message?: string }) => error.message).filter(Boolean).join(" ")
+          : "";
+        throw new Error(detail || "Formspree could not accept this inquiry. Please check the fields and try again.");
+      }
+
+      form.reset();
+      clearCart();
+      setSubmissionMessage({ type: "success", text: "Your inquiry was submitted successfully. Our team will follow up using the contact details you provided." });
+    } catch (error) {
+      setSubmissionMessage({
+        type: "error",
+        text: error instanceof Error && error.message
+          ? error.message
+          : "We could not submit your inquiry. Please try again or contact sales@vianovaindustrial.solutions directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     if (items.length === 0 && !requestedProduct) return;
@@ -139,7 +177,8 @@ const Inquiry = () => {
                     </div>
                   )}
 
-                  <form action="https://formspree.io/f/mpqwvvna" method="POST" className="space-y-6">
+                  <form action="https://formspree.io/f/mpqwvvna" method="POST" onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="_subject" value="New ViaNova website quote request" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-foreground font-medium">Full Name *</Label>
@@ -213,9 +252,19 @@ const Inquiry = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold h-14 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    {submissionMessage && (
+                      <p
+                        role={submissionMessage.type === "error" ? "alert" : "status"}
+                        aria-live={submissionMessage.type === "error" ? "assertive" : "polite"}
+                        className={`rounded-lg border px-4 py-3 text-sm ${submissionMessage.type === "success" ? "border-green-600/30 bg-green-600/10 text-green-800" : "border-destructive/30 bg-destructive/10 text-destructive"}`}
+                      >
+                        {submissionMessage.text}
+                      </p>
+                    )}
+
+                    <Button type="submit" disabled={isSubmitting} size="lg" className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold h-14 text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60">
                       <Send className="w-5 h-5 mr-2" />
-                      Submit Inquiry
+                      {isSubmitting ? "Submitting…" : "Submit Inquiry"}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">
