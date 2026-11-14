@@ -72,7 +72,7 @@ const Inquiry = () => {
   }, [items, requestedProduct, initialCountry, isExportInquiry]);
 
   const contactCards = [
-    { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9654109754", subContent: "", href: "tel:+919654109754" },
+    { icon: Phone, color: "from-primary to-primary-light", title: "Phone", content: "+91 9205028508", subContent: "", href: "tel:+919205028508" },
     { icon: Mail, color: "from-secondary to-secondary-light", title: "Email", content: "sales@vianovaindustrial.solutions", subContent: "", href: "mailto:sales@vianovaindustrial.solutions" },
     { icon: MapPin, color: "from-accent to-accent-light", title: "Head Office", content: "123-Aditya High Street, Lal Kuan", subContent: "Ghaziabad, Uttar Pradesh 201001, India", href: "" },
   ];

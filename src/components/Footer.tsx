@@ -82,7 +82,7 @@ export const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
-                <a href="tel:+919654109754" className="hover:text-primary-foreground transition-colors">+91 9654109754</a>
+                <a href="tel:+919205028508" className="hover:text-primary-foreground transition-colors">+91 9205028508</a>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
