@@ -86,6 +86,12 @@ export const BRANDS: Brand[] = [
     description: "Oscilloscopes, spectrum analyzers, signal generators and programmable DC power supplies.",
     category: "Test & Measurement", accentColor: "bg-primary/10 text-primary", href: "/brands/rigol", logo: "/brand-logos/rigol.svg", authorized: true,
   },
+  {
+    name: "Ingersoll Rand", initials: "IR", domain: "ingersollrand.com",
+    description: "Industrial compressed-air systems, air treatment, power tools, pumps and lifting solutions.",
+    category: "Industrial Equipment", accentColor: "bg-accent/10 text-accent-foreground", href: "/brands/ingersoll-rand",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Ingersoll_Rand_logo.svg", authorized: true,
+  },
 ];
 
 export const AUTHORIZED_BRANDS = BRANDS.filter((brand) => brand.authorized);

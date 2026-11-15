@@ -231,6 +231,33 @@ export const BRAND_PROFILES: BrandProfile[] = [
       { question: "Can ViaNova help select a RIGOL oscilloscope?", answer: "Yes. Share the signal bandwidth, channel count, sample rate, analysis needs and budget so we can help narrow the instrument options." },
     ],
   },
+  {
+    slug: "ingersoll-rand",
+    name: "Ingersoll Rand",
+    title: "Ingersoll Rand Industrial Equipment",
+    metaTitle: "Ingersoll Rand Products in India | ViaNova",
+    metaDescription: "Explore Ingersoll Rand industrial air compressors, compressed-air treatment, power tools, pumps and lifting solutions. ViaNova is an authorized distributor in India; request product guidance and availability.",
+    overview: "ViaNova Industrial Solutions is an authorized Ingersoll Rand distributor in India. Ingersoll Rand’s portfolio spans industrial air compressors and compressed-air treatment, gas and nitrogen solutions, pneumatic and cordless power tools, pumps, and lifting equipment. Tell us about your process, capacity and operating conditions so we can help identify suitable products and confirm current model availability and supply terms.",
+    categories: [
+      { name: "Industrial air compressors", description: "Reciprocating, oil-flooded rotary, oil-free, centrifugal and high-pressure compressor options for different flow, pressure and air-quality requirements." },
+      { name: "Compressed-air treatment", description: "Air dryers, filtration and related equipment to help manage moisture and contaminants in compressed-air systems." },
+      { name: "Gas and nitrogen solutions", description: "On-site nitrogen generation and engineered gas solutions for applications with defined purity, flow and pressure requirements." },
+      { name: "Pneumatic and cordless power tools", description: "Industrial and vehicle-service tools for fastening, assembly, maintenance and repair work." },
+      { name: "Pumps and lifting equipment", description: "Industrial process and gear pumps, along with lifting and material-handling solutions for plant operations." },
+    ],
+    applications: [
+      "Manufacturing plants and production lines",
+      "Automotive workshops and vehicle service",
+      "Food, beverage and pharmaceutical processes requiring suitable oil-free air systems",
+      "Mining, metal fabrication, construction and heavy industry",
+      "Industrial assembly, maintenance and material handling",
+    ],
+    faqs: [
+      { question: "Where can I request Ingersoll Rand products in India?", answer: "ViaNova Industrial Solutions is an authorized Ingersoll Rand distributor in India. Share the model or application, location and required quantity to request product guidance and a quotation." },
+      { question: "Which Ingersoll Rand product categories can ViaNova help with?", answer: "You can enquire about industrial air compressors, compressed-air treatment, gas and nitrogen solutions, power tools, pumps and lifting equipment. Availability and supply terms are confirmed for the specific product and requirement." },
+      { question: "How do I select an Ingersoll Rand air compressor?", answer: "Provide required working pressure, flow or demand profile, air quality, duty cycle, installation environment and power supply. These details help narrow suitable compressor and treatment configurations." },
+    ],
+  },
 ];
 
 export const getBrandProfile = (slug?: string) => BRAND_PROFILES.find((profile) => profile.slug === slug);
